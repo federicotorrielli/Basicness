@@ -1,6 +1,6 @@
-# Cultural Concept Annotation Analysis
+# Basicness
 
-This repository contains code and data for analyzing agreement between human and LLM annotations of cultural concepts across different languages.
+This repository contains code and data for analyzing agreement between human and LLM annotations of Basicness of words across different languages.
 
 ## Structure
 
