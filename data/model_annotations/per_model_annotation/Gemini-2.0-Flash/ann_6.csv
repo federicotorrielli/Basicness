@@ -1,0 +1,81 @@
+en_most_freq_lemma,en_definitions,basicness_score
+['tea'],['a beverage made by steeping tea leaves in water'],3
+"['horse', 'knight']",['a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa)'],2
+['breakfast'],['the first meal of the day (usually in the morning)'],4
+['countryside'],['rural regions'],3
+['soccer'],"[""a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal""]",3
+['fish'],['any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills'],4
+['prince'],['a male member of a royal family other than the sovereign (especially the son of a sovereign)'],3
+['fog'],['droplets of water vapor suspended in the air near the ground'],3
+"['lodge', 'inn']",['a hotel providing overnight lodging for travelers'],3
+"['conditions', 'weather']",['the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation'],2
+"['theatre', 'theater']",['the art of writing and producing plays'],3
+"['rain', 'rainfall']",['water falling in drops from vapor condensed in the atmosphere'],4
+"['king', 'Rex']",['a male sovereign; ruler of a kingdom'],3
+"['boiler', 'kettle']",['a metal pot for stewing or boiling; usually has a lid'],3
+['umbrella'],['a lightweight handheld collapsible canopy'],4
+"['crown', 'diadem']",['an ornamental jeweled headdress signifying sovereignty'],2
+"['coach', 'bus']",['a vehicle carrying many passengers; used for public transport'],3
+"['brand', 'steel']",['a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard'],2
+['beer'],['a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops'],3
+"['rose', 'rosebush']",['any of many shrubs of the genus Rosa that bear roses'],3
+"['guest', 'invitee']",['a visitor to whom hospitality is extended'],3
+"['memorial', 'monument']",['a structure erected to commemorate persons or events'],2
+['party'],['an occasion on which people can assemble for social interaction and entertainment'],3
+"['faith', 'religion']",['a strong belief in a supernatural power or powers that control human destiny'],2
+['sea'],['a division of an ocean or a large body of salt water partially enclosed by land'],4
+['fish'],['any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills'],4
+"['picture', 'painting']",['graphic art consisting of an artistic composition made by applying paints to a surface'],3
+['soccer'],"[""a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal""]",3
+['nature'],['a causal agent creating and controlling things in the universe'],2
+"['mountain', 'mount']",['a land mass that projects well above its surroundings; higher than a hill'],4
+"['village', 'settlement']",['a community of people smaller than a town'],3
+"['culture', 'civilization']",['a particular society at a particular time and place'],2
+"['coast', 'sea-coast']",['the shore of a sea or ocean'],3
+['church'],['a place for public (especially Christian) worship'],3
+"['celebration', 'festivity']",['any joyous diversion'],3
+"['wine', 'vino']",['fermented juice (of grapes especially)'],3
+"['summer', 'summertime']",['the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox'],3
+"['coffee', 'java']",['a beverage consisting of an infusion of ground coffee beans'],3
+['farm'],['workplace consisting of farm buildings and cultivated land as a unit'],3
+['sculpture'],['a three-dimensional work of plastic art'],2
+['mosaic'],['art consisting of a design made of small pieces of colored stone or glass'],2
+['soccer'],"[""a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal""]",3
+['guitar'],['a stringed instrument usually having six strings; played by strumming or plucking'],4
+['monastery'],['the residence of a religious community'],2
+['pastry'],['any of various baked foods made of dough or batter'],3
+['statue'],['a sculpture representing a human or animal'],3
+['cathedral'],['any large and important church'],2
+"['terrace', 'patio']",['usually paved outdoor area adjoining a residence'],3
+"['wine', 'vino']",['fermented juice (of grapes especially)'],3
+"['ham', 'gammon']",['meat cut from the thigh of a hog (usually smoked)'],3
+['cheese'],['a solid food prepared from the pressed curd of milk'],4
+"['family', 'sept']",['people descended from a common ancestor'],3
+"['sun', 'Sun']",['the star that is the source of light and heat for the planets in the solar system'],3
+['sea'],['a division of an ocean or a large body of salt water partially enclosed by land'],4
+"['valley', 'vale']",['a long depression in the surface of the land that usually contains a river'],3
+"['fisher', 'fisherman']",['someone whose occupation is catching fish'],3
+['bean'],['any of various edible seeds of plants of the family Leguminosae used for food'],3
+"['pig', 'hog']",['domestic swine'],4
+['saint'],['a person who has died and has been declared a saint by canonization'],2
+"['morning', 'dawn']",['the first light of day'],3
+"['sport', 'athletics']",['an active diversion requiring physical exertion and competition'],3
+['river'],['a large natural stream of water (larger than a creek)'],4
+['wave'],['one of a series of ridges that moves across the surface of a liquid (especially across a large body of water)'],3
+"['crown', 'diadem']",['an ornamental jeweled headdress signifying sovereignty'],2
+['lake'],['a body of (usually fresh) water surrounded by land'],4
+"['harbor', 'haven']",['a sheltered port where ships can take on or discharge cargo'],3
+['season'],['one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions'],3
+['cave'],['a geological formation consisting of an underground enclosure with access from the surface of the ground or from the sea'],3
+['storm'],['a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning'],3
+"['snow', 'snowfall']",['precipitation falling from clouds in the form of ice crystals'],4
+['midnight'],"[""12 o'clock at night; the middle of the night""]",3
+"['king', 'Rex']",['a male sovereign; ruler of a kingdom'],3
+"['morning', 'dawn']",['the first light of day'],3
+['boat'],['a small vessel for travel on water'],4
+['wood'],['the hard fibrous lignified substance under the bark of trees'],3
+"['fall', 'twilight']",['the time of day immediately following sunset'],3
+['ski'],['narrow wood or metal or plastic runners used in pairs for gliding over snow'],3
+"['mountain', 'mount']",['a land mass that projects well above its surroundings; higher than a hill'],4
+"['falls', 'waterfall']",['a steep descent of the water of a river'],3
+['nature'],['a causal agent creating and controlling things in the universe'],2

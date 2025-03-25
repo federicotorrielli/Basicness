@@ -1,0 +1,28 @@
+% This is a standalone LaTeX document
+% To include in another document, copy everything between 'begin{table}' and 'end{table}'
+% and ensure your document has \usepackage{booktabs} in the preamble
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{table}[htbp]
+\centering
+\caption{Pairwise Inter-Language Agreement Metrics}
+\label{tab:pairwise_language_agreement}
+\begin{tabular}{lcccc}
+\toprule
+Language Pair & Cohen's $\kappa$ & Spearman $\rho$ & Agreement & $n$ \\
+\midrule
+Italian -- Norwegian & 0.495 & 0.704 & 90.7\% & 560 \\
+Italian -- English & 0.626 & 0.582 & 93.2\% & 560 \\
+Italian -- Spanish & 0.093 & 0.190 & 93.2\% & 560 \\
+Norwegian -- English & 0.375 & 0.324 & 96.1\% & 560 \\
+Norwegian -- Spanish & 0.039 & -0.048 & 96.4\% & 560 \\
+English -- Spanish & 0.138 & 0.481 & 98.9\% & 560 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}

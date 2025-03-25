@@ -1,0 +1,58 @@
+% This is a standalone LaTeX document
+% To include in another document, copy everything between 'begin{table}' and 'end{table}'
+% and ensure your document has \usepackage{booktabs} in the preamble
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{table}[htbp]
+\centering
+\caption{Pairwise Inter-Model Agreement Metrics}
+\label{tab:pairwise_agreement}
+\begin{tabular}{lcccc}
+\toprule
+Model Pair & Cohen's $\kappa$ & Spearman $\rho$ & Binary Agreement & $n$ \\
+\midrule
+claude\_3\_7\_sonnet -- deepseek\_r1 & 0.347 & 0.508 & 91.2\% & 80 \\
+claude\_3\_7\_sonnet -- gpt\_4o & 0.571 & 0.669 & 91.2\% & 80 \\
+claude\_3\_7\_sonnet -- gpt\_o1 & 0.121 & 0.700 & 76.2\% & 80 \\
+claude\_3\_7\_sonnet -- gpt\_o3\_mini\_high & 0.536 & 0.572 & 93.8\% & 80 \\
+claude\_3\_7\_sonnet -- gemini\_2\_0\_flash & 0.163 & 0.671 & 78.8\% & 80 \\
+claude\_3\_7\_sonnet -- grok\_2 & 0.129 & 0.609 & 83.8\% & 80 \\
+claude\_3\_7\_sonnet -- llama\_3\_70b & 0.391 & 0.578 & 93.8\% & 80 \\
+claude\_3\_7\_sonnet -- mistral\_medium & 0.238 & 0.377 & 82.5\% & 80 \\
+deepseek\_r1 -- gpt\_4o & 0.506 & 0.621 & 97.5\% & 80 \\
+deepseek\_r1 -- gpt\_o1 & 0.045 & 0.585 & 72.5\% & 80 \\
+deepseek\_r1 -- gpt\_o3\_mini\_high & 0.564 & 0.668 & 95.0\% & 80 \\
+deepseek\_r1 -- gemini\_2\_0\_flash & 0.049 & 0.612 & 77.5\% & 80 \\
+deepseek\_r1 -- grok\_2 & 0.056 & 0.621 & 82.5\% & 80 \\
+deepseek\_r1 -- llama\_3\_70b & 0.171 & 0.415 & 95.0\% & 80 \\
+deepseek\_r1 -- mistral\_medium & 0.266 & 0.448 & 86.2\% & 80 \\
+gpt\_4o -- gpt\_o1 & 0.094 & 0.638 & 75.0\% & 80 \\
+gpt\_4o -- gpt\_o3\_mini\_high & 0.585 & 0.704 & 95.0\% & 80 \\
+gpt\_4o -- gemini\_2\_0\_flash & 0.105 & 0.719 & 80.0\% & 80 \\
+gpt\_4o -- grok\_2 & 0.121 & 0.645 & 85.0\% & 80 \\
+gpt\_4o -- llama\_3\_70b & 0.336 & 0.541 & 92.5\% & 80 \\
+gpt\_4o -- mistral\_medium & 0.419 & 0.562 & 86.2\% & 80 \\
+gpt\_o1 -- gpt\_o3\_mini\_high & 0.106 & 0.631 & 77.5\% & 80 \\
+gpt\_o1 -- gemini\_2\_0\_flash & 0.749 & 0.823 & 92.5\% & 80 \\
+gpt\_o1 -- grok\_2 & 0.722 & 0.775 & 90.0\% & 80 \\
+gpt\_o1 -- llama\_3\_70b & 0.175 & 0.436 & 75.0\% & 80 \\
+gpt\_o1 -- mistral\_medium & 0.189 & 0.556 & 81.2\% & 80 \\
+gpt\_o3\_mini\_high -- gemini\_2\_0\_flash & 0.161 & 0.676 & 82.5\% & 80 \\
+gpt\_o3\_mini\_high -- grok\_2 & 0.133 & 0.591 & 87.5\% & 80 \\
+gpt\_o3\_mini\_high -- llama\_3\_70b & 0.242 & 0.428 & 95.0\% & 80 \\
+gpt\_o3\_mini\_high -- mistral\_medium & 0.390 & 0.486 & 88.8\% & 80 \\
+gemini\_2\_0\_flash -- grok\_2 & 0.807 & 0.874 & 95.0\% & 80 \\
+gemini\_2\_0\_flash -- llama\_3\_70b & 0.250 & 0.506 & 82.5\% & 80 \\
+gemini\_2\_0\_flash -- mistral\_medium & 0.208 & 0.673 & 86.2\% & 80 \\
+grok\_2 -- llama\_3\_70b & 0.251 & 0.445 & 85.0\% & 80 \\
+grok\_2 -- mistral\_medium & 0.240 & 0.687 & 91.2\% & 80 \\
+llama\_3\_70b -- mistral\_medium & 0.037 & 0.167 & 83.8\% & 80 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
