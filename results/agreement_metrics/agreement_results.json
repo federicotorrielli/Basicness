@@ -1,0 +1,1301 @@
+{
+  "silver_dataset": {
+    "name": "Silver",
+    "metrics": {
+      "mean_kappa": 0.2909115338826807,
+      "min_kappa": 0.03719912472647702,
+      "mean_correlation": 0.589325310016688,
+      "min_correlation": 0.16724256030327347,
+      "krippendorff_alpha": 0.29961065379914253,
+      "icc": 0.5859276451889602,
+      "gwet_ac2": 0.3010284118235245,
+      "mse": 0.6326388888888889,
+      "binary_kappa": 0.44107225784377974,
+      "binary_agreement": 0.8625,
+      "n_comparisons": 36,
+      "complete_agreement_count": 0
+    },
+    "by_language": {
+      "en": {
+        "kappa": 0.3362534716115632,
+        "correlation": 0.6522748607619243,
+        "n_items": 20,
+        "binary_agreement": 0.7916666666666666
+      },
+      "it": {
+        "kappa": 0.32210086131481813,
+        "correlation": 0.6575550938964418,
+        "n_items": 20,
+        "binary_agreement": 0.8833333333333333
+      },
+      "es": {
+        "kappa": 0.26470418311574057,
+        "correlation": 0.6045932609722804,
+        "n_items": 20,
+        "binary_agreement": 0.8916666666666667
+      },
+      "nb": {
+        "kappa": 0.23116311997737654,
+        "correlation": 0.5181930005588425,
+        "n_items": 20,
+        "binary_agreement": 0.8833333333333333
+      }
+    },
+    "top_agreements": [
+      {
+        "representation_lemma": "sword",
+        "relevant_lang": "en",
+        "disagreement": 0.33333333333333337,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 2.0,
+        "basicness_score_gpt_4o": 2.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 2.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 2.0,
+        "basicness_score_llama_3_70b": 2.0,
+        "basicness_score_mistral_medium": 2.0
+      },
+      {
+        "representation_lemma": "fisherman",
+        "relevant_lang": "es",
+        "disagreement": 0.33333333333333337,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 3.0,
+        "basicness_score_gpt_o3_mini_high": 3.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 3.0
+      },
+      {
+        "representation_lemma": "countryside",
+        "relevant_lang": "en",
+        "disagreement": 0.4409585518440984,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 3.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 3.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 3.0
+      },
+      {
+        "representation_lemma": "kettle",
+        "relevant_lang": "en",
+        "disagreement": 0.4409585518440984,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 4.0,
+        "basicness_score_deepseek_r1": 3.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 3.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 3.0
+      },
+      {
+        "representation_lemma": "painting",
+        "relevant_lang": "it",
+        "disagreement": 0.4409585518440984,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 4.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 3.0,
+        "basicness_score_gpt_o3_mini_high": 3.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 3.0
+      },
+      {
+        "representation_lemma": "culture",
+        "relevant_lang": "it",
+        "disagreement": 0.4409585518440984,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 2.0,
+        "basicness_score_deepseek_r1": 3.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 2.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 2.0,
+        "basicness_score_llama_3_70b": 2.0,
+        "basicness_score_mistral_medium": 2.0
+      },
+      {
+        "representation_lemma": "family",
+        "relevant_lang": "es",
+        "disagreement": 0.4409585518440984,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 3.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 3.0
+      },
+      {
+        "representation_lemma": "twilight",
+        "relevant_lang": "nb",
+        "disagreement": 0.4409585518440984,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 3.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 3.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 4.0
+      },
+      {
+        "representation_lemma": "breakfast",
+        "relevant_lang": "en",
+        "disagreement": 0.5,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 4.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 4.0,
+        "basicness_score_gpt_o1": 3.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 4.0,
+        "basicness_score_mistral_medium": 4.0
+      },
+      {
+        "representation_lemma": "soccer",
+        "relevant_lang": "en",
+        "disagreement": 0.5,
+        "range": 1.0,
+        "basicness_score_claude_3_7_sonnet": 4.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 4.0,
+        "basicness_score_gpt_o1": 3.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 4.0,
+        "basicness_score_mistral_medium": 4.0
+      }
+    ],
+    "top_disagreements": [
+      {
+        "representation_lemma": "weather",
+        "relevant_lang": "en",
+        "disagreement": 0.8660254037844386,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 2.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 2.0,
+        "basicness_score_llama_3_70b": 2.0,
+        "basicness_score_mistral_medium": 3.0
+      },
+      {
+        "representation_lemma": "king",
+        "relevant_lang": "en",
+        "disagreement": 0.8333333333333334,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 2.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 2.0
+      },
+      {
+        "representation_lemma": "crown",
+        "relevant_lang": "en",
+        "disagreement": 0.8333333333333334,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 2.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 2.0
+      },
+      {
+        "representation_lemma": "sport",
+        "relevant_lang": "nb",
+        "disagreement": 0.8333333333333334,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 2.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 4.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 4.0
+      },
+      {
+        "representation_lemma": "crown",
+        "relevant_lang": "nb",
+        "disagreement": 0.8333333333333334,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 2.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 2.0
+      },
+      {
+        "representation_lemma": "king",
+        "relevant_lang": "nb",
+        "disagreement": 0.8333333333333334,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 2.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 2.0
+      },
+      {
+        "representation_lemma": "season",
+        "relevant_lang": "nb",
+        "disagreement": 0.7817359599705717,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 3.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 2.0,
+        "basicness_score_mistral_medium": 4.0
+      },
+      {
+        "representation_lemma": "fog",
+        "relevant_lang": "en",
+        "disagreement": 0.7264831572567788,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 4.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 4.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 4.0
+      },
+      {
+        "representation_lemma": "harbor",
+        "relevant_lang": "nb",
+        "disagreement": 0.7071067811865475,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 4.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 4.0,
+        "basicness_score_gemini_2_0_flash": 3.0,
+        "basicness_score_grok_2": 3.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 4.0
+      },
+      {
+        "representation_lemma": "theater",
+        "relevant_lang": "en",
+        "disagreement": 0.6666666666666666,
+        "range": 2.0,
+        "basicness_score_claude_3_7_sonnet": 3.0,
+        "basicness_score_deepseek_r1": 4.0,
+        "basicness_score_gpt_4o": 3.0,
+        "basicness_score_gpt_o1": 2.0,
+        "basicness_score_gpt_o3_mini_high": 3.0,
+        "basicness_score_gemini_2_0_flash": 2.0,
+        "basicness_score_grok_2": 2.0,
+        "basicness_score_llama_3_70b": 3.0,
+        "basicness_score_mistral_medium": 3.0
+      }
+    ]
+  },
+  "human_datasets": [
+    {
+      "name": "Human (IT)",
+      "metrics": {
+        "mean_kappa": 0.3183987492704547,
+        "min_kappa": 0.17588706600534132,
+        "mean_correlation": 0.4633466028012858,
+        "min_correlation": 0.3279666651807362,
+        "krippendorff_alpha": 0.4498185706401766,
+        "icc": 0.47389661686415935,
+        "gwet_ac2": 0.45996088781354033,
+        "mse": 0.6583333333333333,
+        "binary_kappa": 0.34614722613567395,
+        "binary_agreement": 0.7999999999999999,
+        "n_comparisons": 3,
+        "complete_agreement_count": 22
+      },
+      "by_language": {
+        "en": {
+          "kappa": 0.30557970314562605,
+          "correlation": 0.46488851670585274,
+          "n_items": 20,
+          "binary_agreement": 0.7666666666666666
+        },
+        "it": {
+          "kappa": 0.2156690140845071,
+          "correlation": 0.38129785147253975,
+          "n_items": 20,
+          "binary_agreement": 0.7666666666666666
+        },
+        "es": {
+          "kappa": 0.361759673235083,
+          "correlation": 0.5843195493258243,
+          "n_items": 20,
+          "binary_agreement": 0.8666666666666666
+        },
+        "nb": {
+          "kappa": 0.3912300182501814,
+          "correlation": 0.5878950168318614,
+          "n_items": 20,
+          "binary_agreement": 0.8000000000000002
+        }
+      },
+      "top_agreements": [
+        {
+          "representation_lemma": "aurora",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 3,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "boat",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "fish",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "fish",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "fisherman",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 3,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "kettle",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 2,
+          "annotator_2": 2,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "lake",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "mountain",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "mountain",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "pastry",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        }
+      ],
+      "top_disagreements": [
+        {
+          "representation_lemma": "cathedral",
+          "relevant_lang": "es",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 4,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "knight",
+          "relevant_lang": "en",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 3,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "crown",
+          "relevant_lang": "en",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 1,
+          "annotator_2": 2,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "bus",
+          "relevant_lang": "en",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 4,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "guest",
+          "relevant_lang": "it",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 3,
+          "annotator_2": 4,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "coast",
+          "relevant_lang": "it",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 3,
+          "annotator_2": 4,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "farm",
+          "relevant_lang": "it",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 3,
+          "annotator_2": 2,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "saint",
+          "relevant_lang": "es",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 1,
+          "annotator_2": 3,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "crown",
+          "relevant_lang": "nb",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 1,
+          "annotator_2": 2,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "midnight",
+          "relevant_lang": "nb",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 3,
+          "annotator_2": 2,
+          "annotator_3": 4
+        }
+      ]
+    },
+    {
+      "name": "Human (NB)",
+      "metrics": {
+        "mean_kappa": 0.3731502270556195,
+        "min_kappa": 0.25194071983062805,
+        "mean_correlation": 0.543909377694089,
+        "min_correlation": 0.48399900929116785,
+        "krippendorff_alpha": 0.4555330749734843,
+        "icc": 0.5573561853045985,
+        "gwet_ac2": 0.4768481248248748,
+        "mse": 0.6749999999999999,
+        "binary_kappa": 0.3761101749568329,
+        "binary_agreement": 0.7999999999999999,
+        "n_comparisons": 3,
+        "complete_agreement_count": 25
+      },
+      "by_language": {
+        "en": {
+          "kappa": 0.30809771697120286,
+          "correlation": 0.6179114905752974,
+          "n_items": 20,
+          "binary_agreement": 0.7333333333333334
+        },
+        "it": {
+          "kappa": 0.32243248814677383,
+          "correlation": 0.5244386223992065,
+          "n_items": 20,
+          "binary_agreement": 0.8333333333333334
+        },
+        "es": {
+          "kappa": 0.45153443380150543,
+          "correlation": 0.6097861475256284,
+          "n_items": 20,
+          "binary_agreement": 0.7999999999999999
+        },
+        "nb": {
+          "kappa": 0.38503641951917816,
+          "correlation": 0.4851512013927568,
+          "n_items": 20,
+          "binary_agreement": 0.8333333333333334
+        }
+      },
+      "top_agreements": [
+        {
+          "representation_lemma": "boat",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "breakfast",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "cave",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 3,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "church",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 3,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "farm",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 3,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "fish",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "fish",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "guitar",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "ham",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 3,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "harbor",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 3,
+          "annotator_2": 3,
+          "annotator_3": 3
+        }
+      ],
+      "top_disagreements": [
+        {
+          "representation_lemma": "inn",
+          "relevant_lang": "en",
+          "disagreement": 1.1547005383792517,
+          "range": 2,
+          "annotator_1": 3,
+          "annotator_2": 1,
+          "annotator_3": 1
+        },
+        {
+          "representation_lemma": "countryside",
+          "relevant_lang": "en",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 2,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "family",
+          "relevant_lang": "es",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "storm",
+          "relevant_lang": "nb",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "rose",
+          "relevant_lang": "en",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 3,
+          "annotator_2": 2,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "village",
+          "relevant_lang": "it",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 2,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "culture",
+          "relevant_lang": "it",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 3,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "sculpture",
+          "relevant_lang": "it",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 3,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "bean",
+          "relevant_lang": "es",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 3,
+          "annotator_2": 2,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "season",
+          "relevant_lang": "nb",
+          "disagreement": 1.0,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 3,
+          "annotator_3": 2
+        }
+      ]
+    },
+    {
+      "name": "Human (EN)",
+      "metrics": {
+        "mean_kappa": 0.34388008113734,
+        "min_kappa": 0.32124049151550615,
+        "mean_correlation": 0.5937468003026454,
+        "min_correlation": 0.466270626927827,
+        "krippendorff_alpha": 0.49734739679159856,
+        "icc": 0.5200927357032457,
+        "gwet_ac2": 0.3975739832510678,
+        "mse": 0.9499999999999998,
+        "binary_kappa": 0.17682222860176067,
+        "binary_agreement": 0.7166666666666667,
+        "n_comparisons": 3,
+        "complete_agreement_count": 28
+      },
+      "by_language": {
+        "en": {
+          "kappa": 0.38995370361695575,
+          "correlation": 0.6665440459480236,
+          "n_items": 20,
+          "binary_agreement": 0.7333333333333334
+        },
+        "it": {
+          "kappa": 0.37768394325771365,
+          "correlation": 0.6225561274276087,
+          "n_items": 20,
+          "binary_agreement": 0.7333333333333334
+        },
+        "es": {
+          "kappa": 0.43185714406357406,
+          "correlation": 0.711801036699343,
+          "n_items": 20,
+          "binary_agreement": 0.6999999999999998
+        },
+        "nb": {
+          "kappa": 0.1824267443742917,
+          "correlation": 0.4688920363474174,
+          "n_items": 20,
+          "binary_agreement": 0.7000000000000001
+        }
+      },
+      "top_agreements": [
+        {
+          "representation_lemma": "beer",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "boat",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "breakfast",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "cheese",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "coffee",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "family",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "farm",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "fish",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "fish",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "guitar",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        }
+      ],
+      "top_disagreements": [
+        {
+          "representation_lemma": "bus",
+          "relevant_lang": "en",
+          "disagreement": 1.5275252316519465,
+          "range": 3,
+          "annotator_1": 1,
+          "annotator_2": 3,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "religion",
+          "relevant_lang": "it",
+          "disagreement": 1.5275252316519465,
+          "range": 3,
+          "annotator_1": 1,
+          "annotator_2": 3,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "ham",
+          "relevant_lang": "es",
+          "disagreement": 1.5275252316519465,
+          "range": 3,
+          "annotator_1": 3,
+          "annotator_2": 1,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "knight",
+          "relevant_lang": "en",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 4,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "kettle",
+          "relevant_lang": "en",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 1,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "rose",
+          "relevant_lang": "en",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 2,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "monastery",
+          "relevant_lang": "es",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 1,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "cathedral",
+          "relevant_lang": "es",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 1,
+          "annotator_2": 3,
+          "annotator_3": 3
+        },
+        {
+          "representation_lemma": "bean",
+          "relevant_lang": "es",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 2,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "season",
+          "relevant_lang": "nb",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 4,
+          "annotator_3": 4
+        }
+      ]
+    },
+    {
+      "name": "Human (ES)",
+      "metrics": {
+        "mean_kappa": 0.11691666500921098,
+        "min_kappa": 0.005942733657482546,
+        "mean_correlation": 0.13756182352822147,
+        "min_correlation": -0.0070436537504981675,
+        "krippendorff_alpha": 0.09078777545850003,
+        "icc": 0.1474172954149738,
+        "gwet_ac2": 0.12693943344896227,
+        "mse": 0.65,
+        "binary_kappa": 0.18587791793533426,
+        "binary_agreement": 0.8916666666666666,
+        "n_comparisons": 3,
+        "complete_agreement_count": 39
+      },
+      "by_language": {
+        "en": {
+          "kappa": 0.15894809487486836,
+          "correlation": 0.17555898744804224,
+          "n_items": 20,
+          "binary_agreement": 0.8333333333333334
+        },
+        "it": {
+          "kappa": 0.19297138047138043,
+          "correlation": 0.2938499371926377,
+          "n_items": 20,
+          "binary_agreement": 0.9333333333333332
+        },
+        "es": {
+          "kappa": 0.07718053551386887,
+          "correlation": 0.0782912439599517,
+          "n_items": 20,
+          "binary_agreement": 0.8666666666666667
+        },
+        "nb": {
+          "kappa": 0.06227656227656231,
+          "correlation": 0.07370452577129283,
+          "n_items": 20,
+          "binary_agreement": 0.9333333333333332
+        }
+      },
+      "top_agreements": [
+        {
+          "representation_lemma": "beer",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "boat",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "bus",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "cheese",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "church",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "coast",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "coffee",
+          "relevant_lang": "it",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "crown",
+          "relevant_lang": "nb",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "crown",
+          "relevant_lang": "en",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "family",
+          "relevant_lang": "es",
+          "disagreement": 0.0,
+          "range": 0,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 4
+        }
+      ],
+      "top_disagreements": [
+        {
+          "representation_lemma": "fish",
+          "relevant_lang": "en",
+          "disagreement": 1.5275252316519465,
+          "range": 3,
+          "annotator_1": 4,
+          "annotator_2": 3,
+          "annotator_3": 1
+        },
+        {
+          "representation_lemma": "breakfast",
+          "relevant_lang": "en",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 2,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "kettle",
+          "relevant_lang": "en",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 2,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "umbrella",
+          "relevant_lang": "en",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "monument",
+          "relevant_lang": "it",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "monastery",
+          "relevant_lang": "es",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "cathedral",
+          "relevant_lang": "es",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "bean",
+          "relevant_lang": "es",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 4,
+          "annotator_3": 4
+        },
+        {
+          "representation_lemma": "cave",
+          "relevant_lang": "nb",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 4,
+          "annotator_2": 4,
+          "annotator_3": 2
+        },
+        {
+          "representation_lemma": "ski",
+          "relevant_lang": "nb",
+          "disagreement": 1.1547005383792515,
+          "range": 2,
+          "annotator_1": 2,
+          "annotator_2": 2,
+          "annotator_3": 4
+        }
+      ]
+    }
+  ],
+  "cross_dataset_comparisons": [
+    {
+      "silver_vs": "Human (IT) (median)",
+      "method": "median",
+      "cohen_kappa": 0.4650349650349651,
+      "spearman_corr": 0.6454033613956478,
+      "kendall_tau": 0.5846138817846765,
+      "percent_agreement": 0.6176470588235294,
+      "mse": 0.36764705882352944,
+      "common_items": 102
+    },
+    {
+      "silver_vs": "Human (NB) (median)",
+      "method": "median",
+      "cohen_kappa": 0.25391849529780564,
+      "spearman_corr": 0.33144020288510356,
+      "kendall_tau": 0.3101235577019193,
+      "percent_agreement": 0.5294117647058824,
+      "mse": 0.7058823529411765,
+      "common_items": 102
+    },
+    {
+      "silver_vs": "Human (EN) (median)",
+      "method": "median",
+      "cohen_kappa": 0.42450295540032246,
+      "spearman_corr": 0.5685005518278995,
+      "kendall_tau": 0.5279704294264373,
+      "percent_agreement": 0.6078431372549019,
+      "mse": 0.45098039215686275,
+      "common_items": 102
+    },
+    {
+      "silver_vs": "Human (ES) (median)",
+      "method": "median",
+      "cohen_kappa": 0.0901118838826731,
+      "spearman_corr": 0.12941710978174628,
+      "kendall_tau": 0.12482181749878295,
+      "percent_agreement": 0.5098039215686274,
+      "mse": 0.7549019607843137,
+      "common_items": 102
+    }
+  ]
+}

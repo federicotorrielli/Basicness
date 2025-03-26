@@ -2,17 +2,18 @@ import krippendorff
 import numpy as np
 import pandas as pd
 import xlsxwriter
+import json
 from pingouin import intraclass_corr
 from scipy.stats import kendalltau, spearmanr
 from sklearn.metrics import cohen_kappa_score, mean_squared_error
 
 # Configuration
-SILVER_PATH = "culture_annotation_datasets_silver_annotated_simple.csv"
+SILVER_PATH = "data/model_annotations/culture_annotation_datasets_silver_annotated.csv"
 HUMAN_PATHS = [
-    "culture_annotation_datasets_annotated_human_it.csv",
-    "culture_annotation_datasets_annotated_human_nb.csv",
-    "culture_annotation_datasets_annotated_human_en.csv",
-    "culture_annotation_datasets_annotated_human_es.csv",
+    "data/human_annotations/culture_annotation_datasets_annotated_human_it.csv",
+    "data/human_annotations/culture_annotation_datasets_annotated_human_nb.csv",
+    "data/human_annotations/culture_annotation_datasets_annotated_human_en.csv",
+    "data/human_annotations/culture_annotation_datasets_annotated_human_es.csv",
 ]
 
 
@@ -551,22 +552,14 @@ def inter_dataset_agreement(silver_df, human_df, method="weighted"):
 
 
 def export_to_excel(
-    silver_results, human_results, cross_results, output_path="agreement_results.xlsx"
+    silver_results,
+    human_results,
+    cross_results,
+    output_path="results/agreement_metrics/agreement_results.xlsx",
 ):
-    """
-    Export analysis results to Excel.
+    import os
 
-    Parameters:
-    -----------
-    silver_results : dict
-        Results from analyzing silver dataset
-    human_results : list
-        List of results from analyzing human datasets
-    cross_results : list
-        List of results from cross-dataset comparisons (using median method only)
-    output_path : str
-        Path to output Excel file
-    """
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     workbook = xlsxwriter.Workbook(output_path)
     ws = workbook.add_worksheet()
 
@@ -606,7 +599,11 @@ def export_to_excel(
             silver_results.get("binary_kappa", np.nan),
             metric_cell,
         ),
-        ("Binary Agreement %", silver_results.get("binary_agreement", np.nan), pct_cell),
+        (
+            "Binary Agreement %",
+            silver_results.get("binary_agreement", np.nan),
+            pct_cell,
+        ),
         ("Number of Comparisons", silver_results.get("n_comparisons", np.nan), cell),
         (
             "Items with Complete Agreement",
@@ -797,6 +794,136 @@ def export_to_excel(
     workbook.close()
 
 
+def export_to_json(
+    silver_results,
+    human_results,
+    cross_results,
+    output_path="results/agreement_metrics/agreement_results.json",
+):
+    import os
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    # Create a structured JSON object
+    result_obj = {
+        "silver_dataset": {
+            "name": silver_results["dataset"],
+            "metrics": {
+                "mean_kappa": silver_results["mean_kappa"],
+                "min_kappa": silver_results.get("min_kappa", None),
+                "mean_correlation": silver_results["mean_correlation"],
+                "min_correlation": silver_results.get("min_correlation", None),
+                "krippendorff_alpha": silver_results["krippendorff_alpha"],
+                "icc": silver_results["icc"],
+                "gwet_ac2": silver_results.get("gwet_ac2", None),
+                "mse": silver_results["mse"],
+                "binary_kappa": silver_results.get("binary_kappa", None),
+                "binary_agreement": silver_results.get("binary_agreement", None),
+                "n_comparisons": silver_results.get("n_comparisons", None),
+                "complete_agreement_count": silver_results.get(
+                    "complete_agreement_count", None
+                ),
+            },
+            "by_language": {},
+            "top_agreements": silver_results["top_agreements"].to_dict(
+                orient="records"
+            ),
+            "top_disagreements": silver_results["top_disagreements"].to_dict(
+                orient="records"
+            ),
+        },
+        "human_datasets": [],
+        "cross_dataset_comparisons": [],
+    }
+
+    # Handle silver dataset language breakdown
+    for lang, metrics in silver_results["by_language"].items():
+        result_obj["silver_dataset"]["by_language"][lang] = {
+            "kappa": metrics["kappa"],
+            "correlation": metrics["correlation"],
+            "n_items": metrics["n_items"],
+        }
+        if "binary_agreement" in metrics:
+            result_obj["silver_dataset"]["by_language"][lang]["binary_agreement"] = (
+                metrics["binary_agreement"]
+            )
+
+    # Handle human datasets
+    for human in human_results:
+        human_obj = {
+            "name": human["dataset"],
+            "metrics": {
+                "mean_kappa": human["mean_kappa"],
+                "min_kappa": human.get("min_kappa", None),
+                "mean_correlation": human["mean_correlation"],
+                "min_correlation": human.get("min_correlation", None),
+                "krippendorff_alpha": human["krippendorff_alpha"],
+                "icc": human["icc"],
+                "gwet_ac2": human.get("gwet_ac2", None),
+                "mse": human["mse"],
+                "binary_kappa": human.get("binary_kappa", None),
+                "binary_agreement": human.get("binary_agreement", None),
+                "n_comparisons": human.get("n_comparisons", None),
+                "complete_agreement_count": human.get("complete_agreement_count", None),
+            },
+            "by_language": {},
+            "top_agreements": human["top_agreements"].to_dict(orient="records"),
+            "top_disagreements": human["top_disagreements"].to_dict(orient="records"),
+        }
+
+        # Handle language breakdown for each human dataset
+        for lang, metrics in human["by_language"].items():
+            human_obj["by_language"][lang] = {
+                "kappa": metrics["kappa"],
+                "correlation": metrics["correlation"],
+                "n_items": metrics["n_items"],
+            }
+            if "binary_agreement" in metrics:
+                human_obj["by_language"][lang]["binary_agreement"] = metrics[
+                    "binary_agreement"
+                ]
+
+        result_obj["human_datasets"].append(human_obj)
+
+    # Handle cross-dataset comparisons
+    for cross in cross_results:
+        cross_obj = {
+            "silver_vs": cross["dataset"],
+            "method": cross.get("method", "median"),
+            "cohen_kappa": cross["cohen_kappa"],
+            "spearman_corr": cross["spearman_corr"],
+            "kendall_tau": cross.get("kendall_tau", None),
+            "percent_agreement": cross["percent_agreement"],
+            "mse": cross.get("mse", None),
+            "common_items": cross["common_items"],
+        }
+        result_obj["cross_dataset_comparisons"].append(cross_obj)
+
+    # Convert numpy values to native Python types for JSON serialization
+    def convert_numpy(obj):
+        if isinstance(obj, dict):
+            return {k: convert_numpy(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [convert_numpy(item) for item in obj]
+        elif isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return convert_numpy(obj.tolist())
+        elif obj is np.nan:
+            return None
+        else:
+            return obj
+
+    result_obj = convert_numpy(result_obj)
+
+    # Write to file
+    with open(output_path, "w") as f:
+        json.dump(result_obj, f, indent=2)
+
+    print(f"JSON results exported to {output_path}")
+
+
 def main():
     """
     Main function to run the agreement analysis.
@@ -834,7 +961,9 @@ def main():
     print(f"ICC(2,k): {silver_results['icc']:.3f}")
     print(f"Gwet's AC2: {silver_results.get('gwet_ac2', np.nan):.3f}")
     print(f"Mean Squared Error: {silver_results['mse']:.3f}")
-    print(f"Binary Kappa (1-2→0, 3-4→1): {silver_results.get('binary_kappa', np.nan):.3f}")
+    print(
+        f"Binary Kappa (1-2→0, 3-4→1): {silver_results.get('binary_kappa', np.nan):.3f}"
+    )
     print(f"Binary Agreement %: {silver_results.get('binary_agreement', np.nan):.2%}")
     print(
         f"Number of pairwise comparisons: {silver_results.get('n_comparisons', 'N/A')}"
@@ -904,7 +1033,11 @@ def main():
 
     # Export to Excel
     export_to_excel(silver_results, human_results, cross_results)
-    print("\nResults exported to agreement_results.xlsx")
+    print("\nResults exported to results/agreement_metrics/agreement_results.xlsx")
+
+    # Export to JSON
+    export_to_json(silver_results, human_results, cross_results)
+    print("Results exported to results/agreement_metrics/agreement_results.json")
 
 
 if __name__ == "__main__":
