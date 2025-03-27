@@ -5,3 +5,7 @@ seaborn
 scikit-learn
 scipy
 openpyxl
+xlsxwriter
+krippendorff
+pingouin
+statsmodels
