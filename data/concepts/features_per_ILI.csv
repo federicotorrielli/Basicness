@@ -1,0 +1,281 @@
+Language,word_in_children_res,word_in_second_lang_learn_res,en_lemmas,n_hyponyms,n_synonyms,n_syn_senses,avg_word_length,avg_pronounce_complexity,avg_word_frequency,avg_n_senses,example_en_lemma,example_en_gloss,ili
+it,0,0,"rose, rosebush",5,2,10,5,0.1925,3.31E-05,5,rose,any of many shrubs of the genus Rosa that bear roses,i103203
+es,0,0,"rose, rosebush",0,1,5,4,0.186,5.13E-05,5,rose,any of many shrubs of the genus Rosa that bear roses,i103203
+nb,1,1,"rose, rosebush",0,1,1,4,0.466,2.19E-05,1,rose,any of many shrubs of the genus Rosa that bear roses,i103203
+en,0,0,"rose, rosebush",11,2,4,6,0.4865,3.31E-05,2,rose,any of many shrubs of the genus Rosa that bear roses,i103203
+en,0,1,wood,91,1,8,4,0.199,6.03E-05,8,wood,the hard fibrous lignified substance under the bark of trees,i116549
+nb,0,0,wood,0,1,2,3,0.442,6.92E-04,2,wood,the hard fibrous lignified substance under the bark of trees,i116549
+it,0,0,wood,44,2,5,6,0.1875,2.57E-05,2.5,wood,the hard fibrous lignified substance under the bark of trees,i116549
+es,0,0,wood,12,1,3,6,0.189,4.90E-05,3,wood,the hard fibrous lignified substance under the bark of trees,i116549
+nb,0,1,midnight,0,1,1,7,0.884,1.35E-05,1,midnight,12 o'clock at night; the middle of the night,i116927
+it,0,0,midnight,0,1,3,10,0.797,1.78E-05,3,midnight,12 o'clock at night; the middle of the night,i116927
+en,0,0,midnight,0,1,1,8,0.638,2.04E-05,1,midnight,12 o'clock at night; the middle of the night,i116927
+es,0,0,midnight,0,1,1,10,0.758,7.59E-06,1,midnight,12 o'clock at night; the middle of the night,i116927
+it,0,0,"break of day, first light, morning",0,7,26,5.333333,0.362333,1.06E-05,5.666667,break of day,the first light of day,i116932
+en,1,1,"break of day, first light, morning",0,12,21,10,0.711,1.75E-04,2,break of day,the first light of day,i116932
+es,0,0,"break of day, first light, morning",0,2,4,6,0.194,1.91E-05,2,break of day,the first light of day,i116932
+nb,0,0,"break of day, first light, morning",0,1,1,6,0.828,1.29E-06,1,break of day,the first light of day,i116932
+en,0,1,"dusk, fall, twilight",1,9,22,5.333333,0.269,4.81E-05,5.333333,dusk,the time of day immediately following sunset,i116935
+es,0,0,"dusk, fall, twilight",1,3,6,9.666667,0.778667,1.63E-06,2,dusk,the time of day immediately following sunset,i116935
+it,0,0,"dusk, fall, twilight",0,2,4,9.5,0.7925,1.03E-06,2,dusk,the time of day immediately following sunset,i116935
+nb,0,0,"dusk, fall, twilight",0,1,1,9,0.892,5.75E-08,1,dusk,the time of day immediately following sunset,i116935
+it,0,1,"time of year, season",11,1,5,8,0.842,1.29E-04,5,time of year,one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions,i117307
+en,0,1,"time of year, season",8,2,4,9,0.758,4.54E-04,2,time of year,one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions,i117307
+es,0,1,"time of year, season",5,1,3,8,0.804,6.46E-05,3,time of year,one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions,i117307
+nb,0,0,"time of year, season",5,1,1,6,0.862,9.55E-07,1,time of year,one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions,i117307
+es,1,1,"summer, summertime",0,1,1,6,0.2,8.71E-05,1,summer,the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox,i117310
+nb,1,1,"summer, summertime",0,1,1,6,0.754,1.02E-04,1,summer,the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox,i117310
+en,1,1,"summer, summertime",0,2,3,8,0.203,8.59E-05,1.5,summer,the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox,i117310
+it,1,1,"summer, summertime",0,1,2,6,0.729,6.92E-05,2,summer,the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox,i117310
+nb,1,1,"celebration, festivity",1,3,13,5.666667,0.675,4.47E-05,4.333333,celebration,any joyous diversion,i37653
+it,0,0,"celebration, festivity",3,2,7,9.75,0.65575,5.96E-06,3,celebration,any joyous diversion,i37653
+es,0,0,"celebration, festivity",3,2,5,9,0.7585,1.68E-05,2.5,celebration,any joyous diversion,i37653
+en,0,0,"celebration, festivity",7,2,4,10,0.7365,9.92E-06,2,celebration,any joyous diversion,i37653
+it,1,1,"association football, soccer",0,3,14,7,0.716667,5.36E-05,4.666667,association football,a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal,i37904
+es,1,1,"association football, soccer",0,1,2,6,0.701,1.15E-04,2,association football,a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal,i37904
+nb,1,1,"association football, soccer",0,1,1,7,0.84,2.00E-04,1,association football,a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal,i37904
+en,0,0,"association football, soccer",0,2,2,13,0.679,4.36E-05,1,association football,a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal,i37904
+en,0,1,"sport, athletics",20,2,10,7,0.7915,3.02E-05,5,sport,an active diversion requiring physical exertion and competition,i38140
+it,0,1,"sport, athletics",20,1,2,5,0.759,8.91E-05,2,sport,an active diversion requiring physical exertion and competition,i38140
+nb,0,1,"sport, athletics",1,2,2,5.5,0.832,4.75E-05,1,sport,an active diversion requiring physical exertion and competition,i38140
+es,0,1,"sport, athletics",8,1,2,7,0.208,4.90E-05,2,sport,an active diversion requiring physical exertion and competition,i38140
+es,0,1,"squealer, hog, pig",1,5,10,4.666667,0.386,7.85E-04,2.666667,squealer,domestic swine,i48199
+en,0,0,"squealer, hog, pig",1,5,15,4.666667,0.429,5.86E-06,3.666667,squealer,domestic swine,i48199
+it,0,1,"squealer, hog, pig",0,3,10,6.5,0.42975,6.49E-06,3,squealer,domestic swine,i48199
+nb,0,1,"squealer, hog, pig",0,1,2,4,0.644,1.15E-05,2,squealer,domestic swine,i48199
+en,1,1,fish,13,1,4,4,0.197,7.94E-05,4,fish,any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills,i48880
+nb,1,1,fish,0,1,2,4,0.398,5.13E-05,2,fish,any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills,i48880
+it,1,0,fish,3,1,5,5,0.199,4.07E-05,5,fish,any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills,i48880
+es,1,0,fish,2,2,3,4.5,0.477,7.77E-06,1.5,fish,any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills,i48880
+es,1,1,boat,8,3,12,6.666667,0.406,1.57E-05,4,boat,a small vessel for travel on water,i50885
+it,1,0,boat,19,3,9,6.666667,0.416333,9.00E-06,3,boat,a small vessel for travel on water,i50885
+nb,1,1,boat,2,1,1,3,0.203,5.01E-05,1,boat,a small vessel for travel on water,i50885
+en,1,1,boat,26,1,2,4,0.202,5.13E-05,2,boat,a small vessel for travel on water,i50885
+en,0,1,"passenger vehicle, bus, coach",3,10,18,8.333333,0.496667,5.86E-05,3.333333,passenger vehicle,a vehicle carrying many passengers; used for public transport,i51285
+it,0,0,"passenger vehicle, bus, coach",3,7,9,7.75,0.57625,1.01E-05,1.5,passenger vehicle,a vehicle carrying many passengers; used for public transport,i51285
+nb,0,1,"passenger vehicle, bus, coach",0,1,1,4,0.273,3.89E-05,1,passenger vehicle,a vehicle carrying many passengers; used for public transport,i51285
+es,0,1,"passenger vehicle, bus, coach",2,1,1,7,0.2,2.04E-05,1,passenger vehicle,a vehicle carrying many passengers; used for public transport,i51285
+it,0,0,cathedral,0,2,3,7.5,0.6445,1.71E-05,1.5,cathedral,any large and important church,i51645
+es,0,1,cathedral,0,1,2,8,0.753,1.82E-05,2,cathedral,any large and important church,i51645
+en,0,0,cathedral,2,1,2,9,0.865,9.77E-06,2,cathedral,any large and important church,i51645
+nb,0,0,cathedral,0,1,1,8,0.826,1.05E-06,1,cathedral,any large and important church,i51645
+it,0,1,"church, church building",4,1,4,6,0.658,1.91E-04,4,church,a place for public (especially Christian) worship,i51914
+es,0,1,"church, church building",3,1,4,7,0.758,1.32E-04,4,church,a place for public (especially Christian) worship,i51914
+en,0,1,"church, church building",5,2,5,10.5,0.8735,1.14E-04,2.5,church,a place for public (especially Christian) worship,i51914
+nb,0,1,"church, church building",1,3,3,8.333333,0.808333,3.00E-05,1,church,a place for public (especially Christian) worship,i51914
+en,0,0,"diadem, crown",1,2,13,5.5,0.427,1.83E-05,6.5,diadem,an ornamental jeweled headdress signifying sovereignty,i52549
+it,0,0,"diadem, crown",1,2,14,6.5,0.4875,1.29E-05,7,diadem,an ornamental jeweled headdress signifying sovereignty,i52549
+nb,1,1,"diadem, crown",0,1,1,5,0.792,1.48E-05,1,diadem,an ornamental jeweled headdress signifying sovereignty,i52549
+es,0,0,"diadem, crown",0,1,6,6,0.2,2.95E-05,6,diadem,an ornamental jeweled headdress signifying sovereignty,i52549
+es,0,0,farm,4,4,15,7.666667,0.809333,1.51E-05,4.333333,farm,workplace consisting of farm buildings and cultivated land as a unit,i53601
+it,0,0,farm,9,4,12,9,0.730667,6.77E-06,3.666667,farm,workplace consisting of farm buildings and cultivated land as a unit,i53601
+en,0,1,farm,13,1,1,4,0.204,5.62E-05,1,farm,workplace consisting of farm buildings and cultivated land as a unit,i53601
+nb,0,1,farm,1,3,5,8,0.618667,6.16E-06,1.666667,farm,workplace consisting of farm buildings and cultivated land as a unit,i53601
+es,0,1,guitar,1,1,2,8,0.197,1.86E-05,2,guitar,a stringed instrument usually having six strings; played by strumming or plucking,i54496
+nb,0,1,guitar,0,1,1,5,0.694,1.32E-05,1,guitar,a stringed instrument usually having six strings; played by strumming or plucking,i54496
+en,0,0,guitar,6,1,1,6,0.592,3.02E-05,1,guitar,a stringed instrument usually having six strings; played by strumming or plucking,i54496
+it,0,0,guitar,2,1,2,8,0.2,1.91E-05,2,guitar,a stringed instrument usually having six strings; played by strumming or plucking,i54496
+en,0,0,"inn, hostel, lodge",4,5,11,4.666667,0.523,8.80E-06,3,inn,a hotel providing overnight lodging for travelers,i54942
+es,0,1,"inn, hostel, lodge",1,5,8,7.666667,0.565667,3.67E-06,2,inn,a hotel providing overnight lodging for travelers,i54942
+it,0,0,"inn, hostel, lodge",1,1,2,7,0.202,3.31E-06,2,inn,a hotel providing overnight lodging for travelers,i54942
+nb,0,0,"inn, hostel, lodge",0,1,1,3,0.446,2.14E-06,1,inn,a hotel providing overnight lodging for travelers,i54942
+en,0,0,"boiler, kettle",1,2,6,6,0.467,4.30E-06,3,boiler,a metal pot for stewing or boiling; usually has a lid,i55356
+it,0,0,"boiler, kettle",0,2,6,8,0.4705,2.39E-06,3,boiler,a metal pot for stewing or boiling; usually has a lid,i55356
+nb,0,1,"boiler, kettle",0,1,1,5,0.472,2.19E-06,1,boiler,a metal pot for stewing or boiling; usually has a lid,i55356
+es,0,0,"boiler, kettle",0,1,1,7,0.73,4.57E-06,1,boiler,a metal pot for stewing or boiling; usually has a lid,i55356
+en,0,1,"horse, knight",0,2,7,5.5,0.2,3.83E-05,3.5,horse,a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa),i55427
+es,0,0,"horse, knight",0,1,8,7,0.198,3.63E-05,8,horse,a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa),i55427
+it,0,0,"horse, knight",0,1,7,7,0.198,4.68E-05,7,horse,a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa),i55427
+nb,0,1,"horse, knight",0,2,3,6,0.6145,1.49E-05,1.5,horse,a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa),i55427
+en,0,0,"monument, memorial",12,2,6,8,0.529,1.68E-05,3,monument,a structure erected to commemorate persons or events,i56131
+es,0,1,"monument, memorial",8,1,3,9,0.206,1.74E-05,3,monument,a structure erected to commemorate persons or events,i56131
+it,0,0,"monument, memorial",9,2,4,16,0.5075,1.08E-05,2,monument,a structure erected to commemorate persons or events,i56131
+nb,0,0,"monument, memorial",0,1,1,11,0.858,1.38E-06,1,monument,a structure erected to commemorate persons or events,i56131
+it,0,0,monastery,2,2,10,8.5,0.813,1.40E-05,5,monastery,the residence of a religious community,i56337
+es,0,1,monastery,3,2,3,9,0.828,1.30E-05,1.5,monastery,the residence of a religious community,i56337
+nb,0,0,monastery,1,1,2,7,0.885,4.90E-06,2,monastery,the residence of a religious community,i56337
+en,0,0,monastery,4,1,1,9,0.661,4.47E-06,1,monastery,the residence of a religious community,i56337
+en,0,0,mosaic,0,1,6,6,0.206,3.80E-06,6,mosaic,art consisting of a design made of small pieces of colored stone or glass,i56381
+it,0,0,mosaic,0,2,6,7,0.2025,2.63E-06,3,mosaic,art consisting of a design made of small pieces of colored stone or glass,i56381
+es,0,0,mosaic,0,1,4,7,0.2,2.75E-06,4,mosaic,art consisting of a design made of small pieces of colored stone or glass,i56381
+nb,0,0,mosaic,0,1,1,7,0.799,4.79E-07,1,mosaic,art consisting of a design made of small pieces of colored stone or glass,i56381
+en,1,1,"picture, painting",20,2,14,7.5,0.771,8.74E-05,7,picture,graphic art consisting of an artistic composition made by applying paints to a surface,i56911
+es,0,1,"picture, painting",3,2,10,6.5,0.7545,3.43E-05,5,picture,graphic art consisting of an artistic composition made by applying paints to a surface,i56911
+it,0,1,"picture, painting",16,2,8,6.5,0.698,3.20E-05,4,picture,graphic art consisting of an artistic composition made by applying paints to a surface,i56911
+nb,0,1,"picture, painting",0,1,1,6,0.704,5.25E-06,1,picture,graphic art consisting of an artistic composition made by applying paints to a surface,i56911
+it,0,0,"terrace, patio",0,3,7,7,0.65575,5.56E-06,2.25,terrace,usually paved outdoor area adjoining a residence,i57055
+es,0,0,"terrace, patio",0,1,2,5,0.205,2.51E-05,2,terrace,usually paved outdoor area adjoining a residence,i57055
+en,0,0,"terrace, patio",1,2,4,6,0.526,5.17E-06,2,terrace,usually paved outdoor area adjoining a residence,i57055
+nb,0,1,"terrace, patio",0,1,1,8,0.861,4.47E-06,1,terrace,usually paved outdoor area adjoining a residence,i57055
+it,0,0,sculpture,8,1,3,8,0.852,1.02E-05,3,sculpture,a three-dimensional work of plastic art,i58585
+es,0,1,sculpture,5,1,2,9,0.811,7.24E-06,2,sculpture,a three-dimensional work of plastic art,i58585
+en,0,0,sculpture,9,1,2,9,0.756,8.32E-06,2,sculpture,a three-dimensional work of plastic art,i58585
+nb,0,0,sculpture,2,1,1,8,0.895,1.66E-06,1,sculpture,a three-dimensional work of plastic art,i58585
+nb,0,1,ski,0,1,1,3,0.185,6.31E-05,1,ski,narrow wood or metal or plastic runners used in pairs for gliding over snow,i58996
+it,0,0,ski,1,1,4,3,0.185,1.23E-05,4,ski,narrow wood or metal or plastic runners used in pairs for gliding over snow,i58996
+en,0,0,ski,1,1,1,3,0.389,1.35E-05,1,ski,narrow wood or metal or plastic runners used in pairs for gliding over snow,i58996
+es,0,0,ski,0,1,1,14,0.802,3.59E-06,1,ski,narrow wood or metal or plastic runners used in pairs for gliding over snow,i58996
+es,0,0,statue,0,2,13,6.5,0.5045,3.59E-05,6.5,statue,a sculpture representing a human or animal,i59503
+it,0,0,statue,1,1,2,6,0.729,2.14E-05,2,statue,a sculpture representing a human or animal,i59503
+en,0,0,statue,7,1,1,6,0.849,1.23E-05,1,statue,a sculpture representing a human or animal,i59503
+nb,0,0,statue,0,2,2,9,0.847,1.35E-06,1,statue,a sculpture representing a human or animal,i59503
+en,0,1,"steel, sword, brand",8,4,19,5,0.505,4.74E-05,3.333333,steel,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,i59896
+it,0,0,"steel, sword, brand",4,5,22,5.25,0.4445,2.16E-05,5.5,steel,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,i59896
+nb,0,1,"steel, sword, brand",0,1,1,5,0.461,1.17E-05,1,steel,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,i59896
+es,0,0,"steel, sword, brand",6,1,2,6,0.707,2.14E-05,2,steel,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,i59896
+it,0,0,umbrella,1,3,7,9.25,0.6765,1.50E-06,2,umbrella,a lightweight handheld collapsible canopy,i60698
+en,0,0,umbrella,1,1,3,8,0.856,7.76E-06,3,umbrella,a lightweight handheld collapsible canopy,i60698
+nb,0,0,umbrella,0,1,1,7,0.832,2.04E-06,1,umbrella,a lightweight handheld collapsible canopy,i60698
+es,0,0,umbrella,0,1,1,8,0.734,6.03E-06,1,umbrella,a lightweight handheld collapsible canopy,i60698
+it,1,1,"religion, religious belief, faith",16,2,16,7,0.594,5.24E-05,6.333333,religion,a strong belief in a supernatural power or powers that control human destiny,i68078
+es,0,1,"religion, religious belief, faith",7,3,10,5,0.474333,4.48E-05,3.333333,religion,a strong belief in a supernatural power or powers that control human destiny,i68078
+en,0,1,"religion, religious belief, faith",26,3,7,9.666667,0.646667,4.72E-05,2.333333,religion,a strong belief in a supernatural power or powers that control human destiny,i68078
+nb,1,0,"religion, religious belief, faith",0,1,1,3,0.446,3.24E-04,1,religion,a strong belief in a supernatural power or powers that control human destiny,i68078
+es,0,1,"theater, dramatic art, theatre",1,1,6,6,0.202,6.76E-05,6,theater,the art of writing and producing plays,i73479
+en,0,1,"theater, dramatic art, theatre",1,5,10,8.666667,0.411667,2.61E-05,2.333333,theater,the art of writing and producing plays,i73479
+it,0,1,"theater, dramatic art, theatre",0,2,9,10,0.607667,3.16E-05,3.333333,theater,the art of writing and producing plays,i73479
+nb,0,1,"theater, dramatic art, theatre",0,1,1,6,0.205,1.70E-05,1,theater,the art of writing and producing plays,i73479
+en,1,0,"moving ridge, wave",13,2,10,8,0.528,2.67E-05,5,moving ridge,one of a series of ridges that moves across the surface of a liquid (especially across a large body of water),i75330
+it,0,1,"moving ridge, wave",10,2,8,5,0.476,2.40E-05,4,moving ridge,one of a series of ridges that moves across the surface of a liquid (especially across a large body of water),i75330
+nb,0,1,"moving ridge, wave",0,3,7,5.666667,0.565667,7.29E-06,2.333333,moving ridge,one of a series of ridges that moves across the surface of a liquid (especially across a large body of water),i75330
+es,0,0,"moving ridge, wave",4,1,4,3,0.18,1.62E-05,4,moving ridge,one of a series of ridges that moves across the surface of a liquid (especially across a large body of water),i75330
+nb,1,1,party,0,3,13,5.666667,0.675,4.47E-05,4.333333,party,an occasion on which people can assemble for social interaction and entertainment,i75850
+it,1,1,party,4,3,12,7,0.570667,4.88E-05,4,party,an occasion on which people can assemble for social interaction and entertainment,i75850
+en,1,1,party,11,1,5,5,0.207,3.09E-04,5,party,an occasion on which people can assemble for social interaction and entertainment,i75850
+es,1,0,party,5,1,4,6,0.758,9.77E-05,4,party,an occasion on which people can assemble for social interaction and entertainment,i75850
+es,1,1,breakfast,0,2,6,8,0.487,1.93E-05,3,breakfast,the first meal of the day (usually in the morning),i76564
+nb,0,1,breakfast,0,1,1,7,0.871,2.51E-05,1,breakfast,the first meal of the day (usually in the morning),i76564
+en,0,1,breakfast,2,1,1,9,0.874,4.07E-05,1,breakfast,the first meal of the day (usually in the morning),i76564
+it,0,0,breakfast,0,2,4,12,0.5015,3.93E-05,2,breakfast,the first meal of the day (usually in the morning),i76564
+nb,1,1,pastry,1,2,3,5.5,0.8415,1.13E-05,1.5,pastry,any of various baked foods made of dough or batter,i76902
+it,0,0,pastry,7,1,4,5,0.206,3.89E-05,4,pastry,any of various baked foods made of dough or batter,i76902
+en,0,0,pastry,17,1,2,6,0.636,3.39E-06,2,pastry,any of various baked foods made of dough or batter,i76902
+es,0,0,pastry,8,2,2,8,0.7415,1.80E-06,1,pastry,any of various baked foods made of dough or batter,i76902
+en,0,1,"ham, gammon, jambon",2,3,7,5,0.418,4.52E-06,2.333333,ham,meat cut from the thigh of a hog (usually smoked),i77246
+es,0,0,"ham, gammon, jambon",0,1,1,5,0.191,7.24E-06,1,ham,meat cut from the thigh of a hog (usually smoked),i77246
+it,0,0,"ham, gammon, jambon",0,1,2,10,0.764,7.59E-06,2,ham,meat cut from the thigh of a hog (usually smoked),i77246
+nb,0,0,"ham, gammon, jambon",0,1,1,6,0.669,4.07E-06,1,ham,meat cut from the thigh of a hog (usually smoked),i77246
+es,0,1,"bean, edible bean",1,2,9,5.5,0.1905,3.85E-06,4.5,bean,any of various edible seeds of plants of the family Leguminosae used for food,i77610
+it,1,0,"bean, edible bean",0,1,4,7,0.811,1.51E-06,4,bean,any of various edible seeds of plants of the family Leguminosae used for food,i77610
+en,0,0,"bean, edible bean",3,2,5,7.5,0.5345,6.25E-06,2.5,bean,any of various edible seeds of plants of the family Leguminosae used for food,i77610
+nb,0,0,"bean, edible bean",0,1,1,5,0.651,5.89E-07,1,bean,any of various edible seeds of plants of the family Leguminosae used for food,i77610
+es,0,1,cheese,4,1,1,5,0.199,2.82E-05,1,cheese,a solid food prepared from the pressed curd of milk,i78427
+en,0,1,cheese,26,1,2,6,0.677,3.72E-05,2,cheese,a solid food prepared from the pressed curd of milk,i78427
+nb,0,1,cheese,0,2,2,5.5,0.569,1.02E-05,1,cheese,a solid food prepared from the pressed curd of milk,i78427
+it,0,0,cheese,10,2,4,7,0.667,9.78E-06,2,cheese,a solid food prepared from the pressed curd of milk,i78427
+nb,0,1,beer,0,4,4,3.666667,0.506333,2.42E-05,1,beer,a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops,i78683
+en,0,0,beer,4,1,1,4,0.233,5.01E-05,1,beer,a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops,i78683
+it,0,0,beer,2,1,3,5,0.195,3.63E-05,3,beer,a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops,i78683
+es,0,0,beer,4,1,1,7,0.694,3.31E-05,1,beer,a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops,i78683
+it,0,1,"wine, vino",17,1,2,4,0.19,6.46E-05,2,wine,fermented juice (of grapes especially),i78715
+es,0,1,"wine, vino",7,1,1,4,0.197,9.12E-05,1,wine,fermented juice (of grapes especially),i78715
+en,0,1,"wine, vino",24,2,3,4,0.1865,2.78E-05,1.5,wine,fermented juice (of grapes especially),i78715
+nb,0,1,"wine, vino",0,2,3,5,0.511,1.86E-05,1.5,wine,fermented juice (of grapes especially),i78715
+en,0,1,"coffee, java",13,2,7,5,0.582,4.12E-05,3.5,coffee,a beverage consisting of an infusion of ground coffee beans,i78981
+es,0,0,"coffee, java",2,1,5,4,0.198,6.46E-05,5,coffee,a beverage consisting of an infusion of ground coffee beans,i78981
+it,0,0,"coffee, java",8,1,8,5,0.507,6.76E-05,8,coffee,a beverage consisting of an infusion of ground coffee beans,i78981
+nb,0,1,"coffee, java",0,2,2,5,0.6965,2.76E-05,1,coffee,a beverage consisting of an infusion of ground coffee beans,i78981
+it,1,0,tea,2,2,9,2.5,0.197,9.81E-06,4.5,tea,a beverage made by steeping tea leaves in water,i79004
+en,0,1,tea,5,1,5,3,0.193,5.37E-05,5,tea,a beverage made by steeping tea leaves in water,i79004
+es,0,0,tea,1,1,4,2,0.196,1.95E-05,4,tea,a beverage made by steeping tea leaves in water,i79004
+nb,0,1,tea,0,2,2,4,0.481,2.09E-05,1,tea,a beverage made by steeping tea leaves in water,i79004
+it,1,1,"sept, family line, family",4,12,66,6,0.535333,2.76E-04,9.666667,sept,people descended from a common ancestor,i79200
+en,1,1,"sept, family line, family",5,7,18,7,0.299667,2.21E-04,3.666667,sept,people descended from a common ancestor,i79200
+es,1,0,"sept, family line, family",3,2,8,6.5,0.19,1.72E-04,4,sept,people descended from a common ancestor,i79200
+nb,1,1,"sept, family line, family",1,3,5,6.333333,0.81,5.09E-05,1.666667,sept,people descended from a common ancestor,i79200
+it,1,1,"village, small town, settlement",0,4,17,7.666667,0.618667,1.44E-04,4.666667,village,a community of people smaller than a town,i80343
+es,1,0,"village, small town, settlement",1,1,13,6,0.748,3.24E-04,13,village,a community of people smaller than a town,i80343
+en,1,1,"village, small town, settlement",1,3,11,9,0.778667,7.00E-05,3.666667,village,a community of people smaller than a town,i80343
+nb,1,1,"village, small town, settlement",0,1,1,7,0.831,6.17E-06,1,village,a community of people smaller than a town,i80343
+it,0,1,"civilization, culture, civilisation",0,2,16,7,0.792,1.01E-04,8,civilization,a particular society at a particular time and place,i80699
+en,0,0,"civilization, culture, civilisation",7,3,15,10.333333,0.369667,3.98E-05,5,civilization,a particular society at a particular time and place,i80699
+es,0,1,"civilization, culture, civilisation",2,2,7,9.5,0.7305,9.39E-05,3.5,civilization,a particular society at a particular time and place,i80699
+nb,0,1,"civilization, culture, civilisation",0,1,3,6,0.881,1.48E-04,3,civilization,a particular society at a particular time and place,i80699
+it,1,1,"harbor, harbour, haven",2,1,6,5,0.518,1.07E-04,6,harbor,a sheltered port where ships can take on or discharge cargo,i82357
+en,1,0,"harbor, harbour, haven",5,4,7,6,0.476333,1.24E-05,2,harbor,a sheltered port where ships can take on or discharge cargo,i82357
+nb,0,1,"harbor, harbour, haven",0,1,2,4,0.203,1.51E-05,2,harbor,a sheltered port where ships can take on or discharge cargo,i82357
+es,0,1,"harbor, harbour, haven",2,1,2,6,0.778,1.15E-04,2,harbor,a sheltered port where ships can take on or discharge cargo,i82357
+es,1,0,countryside,0,1,14,5,0.205,1.51E-04,14,countryside,rural regions,i82392
+nb,1,1,countryside,0,3,9,8.666667,0.647667,1.19E-04,3,countryside,rural regions,i82392
+it,0,1,countryside,0,1,9,8,0.8,1.07E-04,9,countryside,rural regions,i82392
+en,0,0,countryside,0,1,1,11,0.862,8.32E-06,1,countryside,rural regions,i82392
+it,0,0,cave,2,2,8,5.5,0.5035,0.000005,4,cave,a geological formation consisting of an underground enclosure with access from the surface of the ground or from the sea,i85180
+en,0,0,cave,5,1,1,4,0.197,0.000016,1,cave,a geological formation consisting of an underground enclosure with access from the surface of the ground or from the sea,i85180
+es,0,0,cave,0,1,1,5,0.542,0.000014,1,cave,a geological formation consisting of an underground enclosure with access from the surface of the ground or from the sea,i85180
+nb,0,0,cave,0,1,1,4,0.563,0.000004,1,cave,a geological formation consisting of an underground enclosure with access from the surface of the ground or from the sea,i85180
+nb,0,1,lake,1,1,5,3,0.195,0.000015,5,lake,a body of (usually fresh) water surrounded by land,i85647
+it,1,0,lake,7,1,2,4,0.184,0.000044,2,lake,a body of (usually fresh) water surrounded by land,i85647
+es,0,1,lake,6,1,1,4,0.185,0.00003,1,lake,a body of (usually fresh) water surrounded by land,i85647
+en,0,0,lake,51,1,3,4,0.193,0.000068,3,lake,a body of (usually fresh) water surrounded by land,i85647
+en,0,1,"mountain, mount",5,2,7,6.5,0.491,0.000042,3.5,mountain,a land mass that projects well above its surroundings; higher than a hill,i85815
+it,0,1,"mountain, mount",3,2,7,6.5,0.4935,0.000054,3.5,mountain,a land mass that projects well above its surroundings; higher than a hill,i85815
+nb,0,1,"mountain, mount",1,1,1,5,0.46,0.000042,1,mountain,a land mass that projects well above its surroundings; higher than a hill,i85815
+es,0,1,"mountain, mount",3,2,4,6,0.4685,0.000033,2,mountain,a land mass that projects well above its surroundings; higher than a hill,i85815
+es,1,1,river,37,1,2,3,0.179,0.000126,2,river,a large natural stream of water (larger than a creek),i86078
+it,0,1,river,73,1,4,5,0.493,0.000063,4,river,a large natural stream of water (larger than a creek),i86078
+en,1,1,river,200,1,1,5,0.197,0.000107,1,river,a large natural stream of water (larger than a creek),i86078
+nb,1,1,river,0,1,1,3,0.194,0.000007,1,river,a large natural stream of water (larger than a creek),i86078
+it,0,1,sea,23,2,10,4.5,0.1925,0.000107,5,sea,a division of an ocean or a large body of salt water partially enclosed by land,i86143
+nb,0,1,sea,0,2,8,3,0.191,0.000018,4,sea,a division of an ocean or a large body of salt water partially enclosed by land,i86143
+en,0,1,sea,40,1,3,3,0.184,0.000115,3,sea,a division of an ocean or a large body of salt water partially enclosed by land,i86143
+es,0,1,sea,5,2,5,4.5,0.184,0.000074,2.5,sea,a division of an ocean or a large body of salt water partially enclosed by land,i86143
+it,1,0,"coast, sea-coast, seashore",0,6,28,5.75,0.27775,0.000047,5.5,coast,the shore of a sea or ocean,i86148
+es,0,1,"coast, sea-coast, seashore",1,2,6,5,0.375,0.000079,3,coast,the shore of a sea or ocean,i86148
+en,0,0,"coast, sea-coast, seashore",9,4,7,7.333333,0.461667,0.00004,2,coast,the shore of a sea or ocean,i86148
+nb,0,1,"coast, sea-coast, seashore",0,3,3,7.333333,0.715,0.000001,1,coast,the shore of a sea or ocean,i86148
+en,0,1,sun,0,2,8,3,0.192,0.000093,6,sun,the star that is the source of light and heat for the planets in the solar system,i86272
+it,0,1,sun,0,2,12,4,0.188,0.000135,11,sun,the star that is the source of light and heat for the planets in the solar system,i86272
+es,0,1,sun,0,1,7,3,0.183,0.000123,7,sun,the star that is the source of light and heat for the planets in the solar system,i86272
+nb,0,1,sun,0,1,2,3,0.187,0.000031,2,sun,the star that is the source of light and heat for the planets in the solar system,i86272
+it,0,0,"vale, valley",7,3,5,5.666667,0.371,0.000018,1.666667,vale,a long depression in the surface of the land that usually contains a river,i86379
+es,0,1,"vale, valley",3,1,1,5,0.195,0.000046,1,vale,a long depression in the surface of the land that usually contains a river,i86379
+nb,0,1,"vale, valley",0,1,1,3,0.191,0.000009,1,vale,a long depression in the surface of the land that usually contains a river,i86379
+en,0,0,"vale, valley",12,2,2,5,0.19,0.000028,1,vale,a long depression in the surface of the land that usually contains a river,i86379
+it,0,0,"waterfall, falls",1,3,12,8.333333,0.396,0.000002,4,waterfall,a steep descent of the water of a river,i86414
+nb,0,1,"waterfall, falls",0,2,4,4,0.196,0.000106,2,waterfall,a steep descent of the water of a river,i86414
+en,0,0,"waterfall, falls",16,2,3,7,0.5245,0.000023,1.5,waterfall,a steep descent of the water of a river,i86414
+es,0,0,"waterfall, falls",9,1,2,7,0.766,0.000004,2,waterfall,a steep descent of the water of a river,i86414
+nb,1,1,nature,0,1,10,5,0.206,0.000039,10,nature,a causal agent creating and controlling things in the universe,i86562
+it,0,1,nature,0,1,9,6,0.198,0.000123,9,nature,a causal agent creating and controlling things in the universe,i86562
+es,0,1,nature,0,1,5,10,0.197,0.000083,5,nature,a causal agent creating and controlling things in the universe,i86562
+en,0,0,nature,0,1,5,6,0.599,0.000096,5,nature,a causal agent creating and controlling things in the universe,i86562
+nb,0,1,"fisherman, fisher",0,1,1,6,0.804,0.000013,1,fisherman,someone whose occupation is catching fish,i89974
+en,0,0,"fisherman, fisher",2,2,3,7.5,0.5185,0.000007,1.5,fisherman,someone whose occupation is catching fish,i89974
+it,0,0,"fisherman, fisher",1,1,2,9,0.773,0.000004,2,fisherman,someone whose occupation is catching fish,i89974
+es,0,0,"fisherman, fisher",0,1,1,8,0.761,0.000004,1,fisherman,someone whose occupation is catching fish,i89974
+nb,1,1,"invitee, guest",0,1,2,5,0.357,0.000018,2,invitee,a visitor to whom hospitality is extended,i90350
+it,1,0,"invitee, guest",0,2,8,7,0.763,0.000024,4,invitee,a visitor to whom hospitality is extended,i90350
+en,1,0,"invitee, guest",3,2,5,6,0.281,0.000019,2.5,invitee,a visitor to whom hospitality is extended,i90350
+es,0,0,"invitee, guest",1,2,5,7.5,0.7435,0.000014,2.5,invitee,a visitor to whom hospitality is extended,i90350
+it,1,1,"king, male monarch, rex",4,1,9,2,0.176,0.000182,9,king,a male sovereign; ruler of a kingdom,i90847
+en,1,0,"king, male monarch, rex",79,3,12,6.333333,0.508667,0.000053,4,king,a male sovereign; ruler of a kingdom,i90847
+es,1,1,"king, male monarch, rex",9,2,6,5,0.188,0.000091,3,king,a male sovereign; ruler of a kingdom,i90847
+nb,1,1,"king, male monarch, rex",0,1,3,5,0.334,0.000044,3,king,a male sovereign; ruler of a kingdom,i90847
+nb,0,1,prince,0,1,1,5,0.786,0.000016,1,prince,a male member of a royal family other than the sovereign (especially the son of a sovereign),i92240
+en,0,0,prince,14,1,1,6,0.715,0.000053,1,prince,a male member of a royal family other than the sovereign (especially the son of a sovereign),i92240
+it,0,0,prince,11,1,2,8,0.855,0.000056,2,prince,a male member of a royal family other than the sovereign (especially the son of a sovereign),i92240
+es,0,0,prince,1,1,1,8,0.821,0.000042,1,prince,a male member of a royal family other than the sovereign (especially the son of a sovereign),i92240
+it,0,0,saint,4,3,6,3.333333,0.196333,0.000194,2,saint,a person who has died and has been declared a saint by canonization,i92688
+es,0,0,saint,13,1,3,5,0.201,0.000074,3,saint,a person who has died and has been declared a saint by canonization,i92688
+en,0,0,saint,45,1,3,5,0.206,0.000026,3,saint,a person who has died and has been declared a saint by canonization,i92688
+nb,0,0,saint,0,1,1,6,0.75,0.000044,1,saint,a person who has died and has been declared a saint by canonization,i92688
+it,0,0,fog,2,2,8,7,0.4875,0.000006,4,fog,droplets of water vapor suspended in the air near the ground,i97801
+en,0,0,fog,4,1,3,3,0.199,0.000008,3,fog,droplets of water vapor suspended in the air near the ground,i97801
+nb,0,0,fog,1,1,2,4,0.598,0.000007,2,fog,droplets of water vapor suspended in the air near the ground,i97801
+es,0,0,fog,0,1,1,6,0.676,0.000008,1,fog,droplets of water vapor suspended in the air near the ground,i97801
+it,0,0,"storm, violent storm",5,7,28,7.666667,0.743,0.000014,4.666667,storm,a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning,i97824
+nb,0,1,"storm, violent storm",0,2,2,4.5,0.771,0.000013,1,storm,a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning,i97824
+en,0,0,"storm, violent storm",8,2,4,9,0.8035,0.000032,2,storm,a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning,i97824
+es,0,0,"storm, violent storm",4,2,4,12.5,0.8425,0.000018,2,storm,a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning,i97824
+it,1,1,"rainfall, rain",7,2,15,6,0.5375,0.000115,7.5,rainfall,water falling in drops from vapor condensed in the atmosphere,i98034
+en,1,1,"rainfall, rain",5,2,4,6,0.4805,0.000029,2,rainfall,water falling in drops from vapor condensed in the atmosphere,i98034
+es,1,1,"rainfall, rain",3,1,3,6,0.186,0.000041,3,rainfall,water falling in drops from vapor condensed in the atmosphere,i98034
+nb,1,1,"rainfall, rain",1,2,2,5.5,0.506,0.000013,1,rainfall,water falling in drops from vapor condensed in the atmosphere,i98034
+nb,0,1,"snow, snowfall",0,1,1,3,0.486,0.000038,1,snow,precipitation falling from clouds in the form of ice crystals,i98073
+en,0,1,"snow, snowfall",2,2,5,6,0.196,0.000024,2.5,snow,precipitation falling from clouds in the form of ice crystals,i98073
+it,0,0,"snow, snowfall",2,2,5,6,0.1995,0.000015,2.5,snow,precipitation falling from clouds in the form of ice crystals,i98073
+es,0,0,"snow, snowfall",0,1,4,5,0.208,0.000024,4,snow,precipitation falling from clouds in the form of ice crystals,i98073
+it,1,1,"weather condition, weather, conditions",13,1,17,5,0.524,0.000955,17,weather condition,the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation,i98170
+es,1,0,"weather condition, weather, conditions",6,4,9,12.666667,0.811,0.000357,2.666667,weather condition,the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation,i98170
+nb,1,1,"weather condition, weather, conditions",2,1,1,3,0.186,0.000191,1,weather condition,the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation,i98170
+en,0,1,"weather condition, weather, conditions",11,4,6,11.333333,0.632,0.000069,1.666667,weather condition,the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation,i98170

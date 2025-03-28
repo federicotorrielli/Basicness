@@ -1,0 +1,81 @@
+ili,relevant_lang,representation_lemma,en_definitions,en_most_freq_lemma,it_most_freq_lemma,es_most_freq_lemma,nb_most_freq_lemma
+i79004,en,tea,['a beverage made by steeping tea leaves in water'],['tea'],"['tè', 'thè']",['té'],"['te', 'tevann']"
+i55427,en,knight,['a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa)'],"['horse', 'knight']",['cavallo'],['caballo'],"['hest', 'springer']"
+i76564,en,breakfast,['the first meal of the day (usually in the morning)'],['breakfast'],['colazione'],"['desayuno', 'almuerzo']",['frokost']
+i82392,en,countryside,['rural regions'],['countryside'],['campagna'],['campo'],"['land', 'landområde']"
+i37904,en,soccer,"[""a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal""]",['soccer'],"['calcio', 'football']",['fútbol'],['fotball']
+i48880,en,fish,['any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills'],['fish'],['pesce'],"['pez', 'pisces']",['fisk']
+i92240,en,prince,['a male member of a royal family other than the sovereign (especially the son of a sovereign)'],['prince'],['principe'],['príncipe'],['prins']
+i97801,en,fog,['droplets of water vapor suspended in the air near the ground'],['fog'],"['nebbia', 'caligine']",['niebla'],['tåke']
+i54942,en,inn,['a hotel providing overnight lodging for travelers'],"['lodge', 'inn']",['locanda'],"['posada', 'albergue']",['kro']
+i98170,en,weather,['the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation'],"['conditions', 'weather']",['tempo'],"['tiempo', 'condiciones']",['vær']
+i73479,en,theater,['the art of writing and producing plays'],"['theatre', 'theater']","['teatro', 'palcoscenico']",['teatro'],['teater']
+i98034,en,rain,['water falling in drops from vapor condensed in the atmosphere'],"['rain', 'rainfall']","['acqua', 'pioggia']",['lluvia'],"['regn', 'regnvær']"
+i90847,en,king,['a male sovereign; ruler of a kingdom'],"['king', 'Rex']",['re'],"['rey', 'monarca']",['konge']
+i55356,en,kettle,['a metal pot for stewing or boiling; usually has a lid'],"['boiler', 'kettle']","['caldaia', 'bollitore']",['caldera'],['kjele']
+i60698,en,umbrella,['a lightweight handheld collapsible canopy'],['umbrella'],"['ombrello', 'ombrellone']",['paraguas'],['paraply']
+i52549,en,crown,['an ornamental jeweled headdress signifying sovereignty'],"['crown', 'diadem']","['corona', 'diadema']",['corona'],['krone']
+i51285,en,bus,['a vehicle carrying many passengers; used for public transport'],"['coach', 'bus']","['autobus', 'pullman']",['autobús'],['buss']
+i59896,en,sword,['a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard'],"['brand', 'steel']","['ferro', 'spada']",['espada'],['sverd']
+i78683,en,beer,['a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops'],['beer'],['birra'],['cerveza'],"['øl', 'humle']"
+i103203,en,rose,['any of many shrubs of the genus Rosa that bear roses'],"['rose', 'rosebush']","['rosa', 'rosaio']",['rosa'],['rose']
+i90350,it,guest,['a visitor to whom hospitality is extended'],"['guest', 'invitee']","['ospite', 'invitato']","['invitado', 'huésped']",['gjest']
+i56131,it,monument,['a structure erected to commemorate persons or events'],"['memorial', 'monument']",['monumento'],['monumento'],['minnesmerke']
+i75850,it,party,['an occasion on which people can assemble for social interaction and entertainment'],['party'],"['festa', 'party']",['fiesta'],"['selskap', 'fest']"
+i68078,it,religion,['a strong belief in a supernatural power or powers that control human destiny'],"['faith', 'religion']","['fede', 'religione']","['fe', 'religión']",['tro']
+i86143,it,sea,['a division of an ocean or a large body of salt water partially enclosed by land'],['sea'],"['mare', 'acque']","['mar', 'océano']","['hav', 'sjø']"
+i48880,it,fish,['any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills'],['fish'],['pesce'],"['pez', 'pisces']",['fisk']
+i56911,it,painting,['graphic art consisting of an artistic composition made by applying paints to a surface'],"['picture', 'painting']","['quadro', 'dipinto']","['pintura', 'cuadro']",['maleri']
+i37904,it,soccer,"[""a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal""]",['soccer'],"['calcio', 'football']",['fútbol'],['fotball']
+i86562,it,nature,['a causal agent creating and controlling things in the universe'],['nature'],['natura'],['naturaleza'],['natur']
+i85815,it,mountain,['a land mass that projects well above its surroundings; higher than a hill'],"['mountain', 'mount']","['monte', 'montagna']","['montaña', 'monte']",['fjell']
+i80343,it,village,['a community of people smaller than a town'],"['village', 'settlement']","['paese', 'villaggio']",['pueblo'],['landsby']
+i80699,it,culture,['a particular society at a particular time and place'],"['culture', 'civilization']","['cultura', 'civiltà']","['cultura', 'civilización']",['kultur']
+i86148,it,coast,['the shore of a sea or ocean'],"['coast', 'sea-coast']","['costa', 'marina']","['costa', 'playa']","['kyst', 'kystområde']"
+i51914,it,church,['a place for public (especially Christian) worship'],['church'],['chiesa'],['iglesia'],"['kirke', 'kirkebygning']"
+i37653,it,celebration,['any joyous diversion'],"['celebration', 'festivity']","['celebrazione', 'festività']","['celebración', 'festejo']","['selskap', 'fest']"
+i78715,it,wine,['fermented juice (of grapes especially)'],"['wine', 'vino']",['vino'],['vino'],"['vin', 'druevin']"
+i117310,it,summer,['the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox'],"['summer', 'summertime']",['estate'],['verano'],['sommer']
+i78981,it,coffee,['a beverage consisting of an infusion of ground coffee beans'],"['coffee', 'java']",['caffè'],['café'],"['kaffe', 'mokka']"
+i53601,it,farm,['workplace consisting of farm buildings and cultivated land as a unit'],['farm'],"['fattoria', 'allevamento']","['hacienda', 'estancia']","['gård', 'bondegård']"
+i58585,it,sculpture,['a three-dimensional work of plastic art'],['sculpture'],['scultura'],['escultura'],['skulptur']
+i56381,es,mosaic,['art consisting of a design made of small pieces of colored stone or glass'],['mosaic'],"['mosaico', 'musaico']",['mosaico'],['mosaikk']
+i37904,es,soccer,"[""a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal""]",['soccer'],"['calcio', 'football']",['fútbol'],['fotball']
+i54496,es,guitar,['a stringed instrument usually having six strings; played by strumming or plucking'],['guitar'],['chitarra'],['guitarra'],['gitar']
+i56337,es,monastery,['the residence of a religious community'],['monastery'],"['monastero', 'convento']","['convento', 'monasterio']",['kloster']
+i76902,es,pastry,['any of various baked foods made of dough or batter'],['pastry'],['pasta'],"['pastas', 'repostería']","['brød', 'bakverk']"
+i59503,es,statue,['a sculpture representing a human or animal'],['statue'],['statua'],"['figura', 'estatua']","['statue', 'billedstøtte']"
+i51645,es,cathedral,['any large and important church'],['cathedral'],"['duomo', 'cattedrale']",['catedral'],['katedral']
+i57055,es,terrace,['usually paved outdoor area adjoining a residence'],"['terrace', 'patio']","['balcone', 'terrazza']",['patio'],['terrasse']
+i78715,es,wine,['fermented juice (of grapes especially)'],"['wine', 'vino']",['vino'],['vino'],"['vin', 'druevin']"
+i77246,es,ham,['meat cut from the thigh of a hog (usually smoked)'],"['ham', 'gammon']",['prosciutto'],['jamón'],['skinke']
+i78427,es,cheese,['a solid food prepared from the pressed curd of milk'],['cheese'],"['formaggio', 'cacio']",['queso'],"['ost', 'ostetype']"
+i79200,es,family,['people descended from a common ancestor'],"['family', 'sept']","['gente', 'famiglia']","['familia', 'linaje']","['familie', 'slekt']"
+i86272,es,sun,['the star that is the source of light and heat for the planets in the solar system'],"['sun', 'Sun']","['Sole', 'sole']",['sol'],['sol']
+i86143,es,sea,['a division of an ocean or a large body of salt water partially enclosed by land'],['sea'],"['mare', 'acque']","['mar', 'océano']","['hav', 'sjø']"
+i86379,es,valley,['a long depression in the surface of the land that usually contains a river'],"['valley', 'vale']","['valle', 'conca']",['valle'],['dal']
+i89974,es,fisherman,['someone whose occupation is catching fish'],"['fisher', 'fisherman']",['pescatore'],['pescador'],['fisker']
+i77610,es,bean,['any of various edible seeds of plants of the family Leguminosae used for food'],['bean'],['fagiolo'],"['judía', 'alubia']",['bønne']
+i48199,es,pig,['domestic swine'],"['pig', 'hog']","['maiale', 'porco']","['sus', 'cerdo']",['gris']
+i92688,es,saint,['a person who has died and has been declared a saint by canonization'],['saint'],"['S.', 'san']",['santo'],['helgen']
+i116932,es,sunrise,['the first light of day'],"['morning', 'dawn']","['alba', 'aurora']","['orto', 'amanecer']",['daggry']
+i38140,nb,sport,['an active diversion requiring physical exertion and competition'],"['sport', 'athletics']",['sport'],['deporte'],"['sport', 'idrett']"
+i86078,nb,river,['a large natural stream of water (larger than a creek)'],['river'],['fiume'],['río'],['elv']
+i75330,nb,wave,['one of a series of ridges that moves across the surface of a liquid (especially across a large body of water)'],['wave'],"['onda', 'flutto']",['ola'],"['sjø', 'bølge']"
+i52549,nb,crown,['an ornamental jeweled headdress signifying sovereignty'],"['crown', 'diadem']","['corona', 'diadema']",['corona'],['krone']
+i85647,nb,lake,['a body of (usually fresh) water surrounded by land'],['lake'],['lago'],['lago'],['sjø']
+i82357,nb,harbor,['a sheltered port where ships can take on or discharge cargo'],"['harbor', 'haven']",['porto'],['puerto'],['havn']
+i117307,nb,season,['one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions'],['season'],['stagione'],['estación'],['årstid']
+i85180,nb,cave,['a geological formation consisting of an underground enclosure with access from the surface of the ground or from the sea'],['cave'],"['grotta', 'antro']",['cueva'],['hule']
+i97824,nb,storm,['a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning'],['storm'],"['temporale', 'tempesta']",['tormenta'],"['storm', 'uvær']"
+i98073,nb,snow,['precipitation falling from clouds in the form of ice crystals'],"['snow', 'snowfall']","['neve', 'nevicata']",['nieve'],['snø']
+i116927,nb,midnight,"[""12 o'clock at night; the middle of the night""]",['midnight'],['mezzanotte'],['medianoche'],['midnatt']
+i90847,nb,king,['a male sovereign; ruler of a kingdom'],"['king', 'Rex']",['re'],"['rey', 'monarca']",['konge']
+i116932,nb,aurora,['the first light of day'],"['morning', 'dawn']","['alba', 'aurora']","['orto', 'amanecer']",['daggry']
+i50885,nb,boat,['a small vessel for travel on water'],['boat'],"['barca', 'battello']","['barco', 'bote']",['båt']
+i116549,nb,wood,['the hard fibrous lignified substance under the bark of trees'],['wood'],"['legno', 'legname']",['madera'],['tre']
+i116935,nb,twilight,['the time of day immediately following sunset'],"['fall', 'twilight']","['crepuscolo', 'imbrunire']","['anochecer', 'crepúsculo']",['tussmørke']
+i58996,nb,ski,['narrow wood or metal or plastic runners used in pairs for gliding over snow'],['ski'],['sci'],['tabla de esquí'],['ski']
+i85815,nb,mountain,['a land mass that projects well above its surroundings; higher than a hill'],"['mountain', 'mount']","['monte', 'montagna']","['montaña', 'monte']",['fjell']
+i86414,nb,waterfall,['a steep descent of the water of a river'],"['falls', 'waterfall']","['cascata', 'cataratta']",['cascada'],"['fall', 'foss']"
+i86562,nb,nature,['a causal agent creating and controlling things in the universe'],['nature'],['natura'],['naturaleza'],['natur']

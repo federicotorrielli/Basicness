@@ -9,3 +9,8 @@ xlsxwriter
 krippendorff
 pingouin
 statsmodels
+ujson
+pron_difficulty
+wn
+wordfreq
+pandasql

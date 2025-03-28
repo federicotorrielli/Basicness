@@ -1,0 +1,21 @@
+ili,relevant_lang,representation_lemma,en_definitions,en_most_freq_lemma,it_most_freq_lemma,es_most_freq_lemma,nb_most_freq_lemma
+i56381,es,mosaic,['art consisting of a design made of small pieces of colored stone or glass'],['mosaic'],"['mosaico', 'musaico']",['mosaico'],['mosaikk']
+i37904,es,soccer,"[""a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal""]",['soccer'],"['calcio', 'football']",['fútbol'],['fotball']
+i54496,es,guitar,['a stringed instrument usually having six strings; played by strumming or plucking'],['guitar'],['chitarra'],['guitarra'],['gitar']
+i56337,es,monastery,['the residence of a religious community'],['monastery'],"['monastero', 'convento']","['convento', 'monasterio']",['kloster']
+i76902,es,pastry,['any of various baked foods made of dough or batter'],['pastry'],['pasta'],"['pastas', 'repostería']","['brød', 'bakverk']"
+i59503,es,statue,['a sculpture representing a human or animal'],['statue'],['statua'],"['figura', 'estatua']","['statue', 'billedstøtte']"
+i51645,es,cathedral,['any large and important church'],['cathedral'],"['duomo', 'cattedrale']",['catedral'],['katedral']
+i57055,es,terrace,['usually paved outdoor area adjoining a residence'],"['terrace', 'patio']","['balcone', 'terrazza']",['patio'],['terrasse']
+i78715,es,wine,['fermented juice (of grapes especially)'],"['wine', 'vino']",['vino'],['vino'],"['vin', 'druevin']"
+i77246,es,ham,['meat cut from the thigh of a hog (usually smoked)'],"['ham', 'gammon']",['prosciutto'],['jamón'],['skinke']
+i78427,es,cheese,['a solid food prepared from the pressed curd of milk'],['cheese'],"['formaggio', 'cacio']",['queso'],"['ost', 'ostetype']"
+i79200,es,family,['people descended from a common ancestor'],"['family', 'sept']","['gente', 'famiglia']","['familia', 'linaje']","['familie', 'slekt']"
+i86272,es,sun,['the star that is the source of light and heat for the planets in the solar system'],"['sun', 'Sun']","['Sole', 'sole']",['sol'],['sol']
+i86143,es,sea,['a division of an ocean or a large body of salt water partially enclosed by land'],['sea'],"['mare', 'acque']","['mar', 'océano']","['hav', 'sjø']"
+i86379,es,valley,['a long depression in the surface of the land that usually contains a river'],"['valley', 'vale']","['valle', 'conca']",['valle'],['dal']
+i89974,es,fisherman,['someone whose occupation is catching fish'],"['fisher', 'fisherman']",['pescatore'],['pescador'],['fisker']
+i77610,es,bean,['any of various edible seeds of plants of the family Leguminosae used for food'],['bean'],['fagiolo'],"['judía', 'alubia']",['bønne']
+i48199,es,pig,['domestic swine'],"['pig', 'hog']","['maiale', 'porco']","['sus', 'cerdo']",['gris']
+i92688,es,saint,['a person who has died and has been declared a saint by canonization'],['saint'],"['S.', 'san']",['santo'],['helgen']
+i116932,es,sunrise,['the first light of day'],"['morning', 'dawn']","['alba', 'aurora']","['orto', 'amanecer']",['daggry']

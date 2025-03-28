@@ -1,0 +1,21 @@
+ili,relevant_lang,representation_lemma,en_definitions,en_most_freq_lemma,it_most_freq_lemma,es_most_freq_lemma,nb_most_freq_lemma
+i38140,nb,sport,['an active diversion requiring physical exertion and competition'],"['sport', 'athletics']",['sport'],['deporte'],"['sport', 'idrett']"
+i86078,nb,river,['a large natural stream of water (larger than a creek)'],['river'],['fiume'],['río'],['elv']
+i75330,nb,wave,['one of a series of ridges that moves across the surface of a liquid (especially across a large body of water)'],['wave'],"['onda', 'flutto']",['ola'],"['sjø', 'bølge']"
+i52549,nb,crown,['an ornamental jeweled headdress signifying sovereignty'],"['crown', 'diadem']","['corona', 'diadema']",['corona'],['krone']
+i85647,nb,lake,['a body of (usually fresh) water surrounded by land'],['lake'],['lago'],['lago'],['sjø']
+i82357,nb,harbor,['a sheltered port where ships can take on or discharge cargo'],"['harbor', 'haven']",['porto'],['puerto'],['havn']
+i117307,nb,season,['one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions'],['season'],['stagione'],['estación'],['årstid']
+i85180,nb,cave,['a geological formation consisting of an underground enclosure with access from the surface of the ground or from the sea'],['cave'],"['grotta', 'antro']",['cueva'],['hule']
+i97824,nb,storm,['a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning'],['storm'],"['temporale', 'tempesta']",['tormenta'],"['storm', 'uvær']"
+i98073,nb,snow,['precipitation falling from clouds in the form of ice crystals'],"['snow', 'snowfall']","['neve', 'nevicata']",['nieve'],['snø']
+i116927,nb,midnight,"[""12 o'clock at night; the middle of the night""]",['midnight'],['mezzanotte'],['medianoche'],['midnatt']
+i90847,nb,king,['a male sovereign; ruler of a kingdom'],"['king', 'Rex']",['re'],"['rey', 'monarca']",['konge']
+i116932,nb,aurora,['the first light of day'],"['morning', 'dawn']","['alba', 'aurora']","['orto', 'amanecer']",['daggry']
+i50885,nb,boat,['a small vessel for travel on water'],['boat'],"['barca', 'battello']","['barco', 'bote']",['båt']
+i116549,nb,wood,['the hard fibrous lignified substance under the bark of trees'],['wood'],"['legno', 'legname']",['madera'],['tre']
+i116935,nb,twilight,['the time of day immediately following sunset'],"['fall', 'twilight']","['crepuscolo', 'imbrunire']","['anochecer', 'crepúsculo']",['tussmørke']
+i58996,nb,ski,['narrow wood or metal or plastic runners used in pairs for gliding over snow'],['ski'],['sci'],['tabla de esquí'],['ski']
+i85815,nb,mountain,['a land mass that projects well above its surroundings; higher than a hill'],"['mountain', 'mount']","['monte', 'montagna']","['montaña', 'monte']",['fjell']
+i86414,nb,waterfall,['a steep descent of the water of a river'],"['falls', 'waterfall']","['cascata', 'cataratta']",['cascada'],"['fall', 'foss']"
+i86562,nb,nature,['a causal agent creating and controlling things in the universe'],['nature'],['natura'],['naturaleza'],['natur']

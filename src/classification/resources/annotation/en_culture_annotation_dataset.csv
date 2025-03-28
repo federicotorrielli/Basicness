@@ -1,0 +1,21 @@
+ili,relevant_lang,representation_lemma,en_definitions,en_most_freq_lemma,it_most_freq_lemma,es_most_freq_lemma,nb_most_freq_lemma
+i79004,en,tea,['a beverage made by steeping tea leaves in water'],['tea'],"['tè', 'thè']",['té'],"['te', 'tevann']"
+i55427,en,knight,['a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa)'],"['horse', 'knight']",['cavallo'],['caballo'],"['hest', 'springer']"
+i76564,en,breakfast,['the first meal of the day (usually in the morning)'],['breakfast'],['colazione'],"['desayuno', 'almuerzo']",['frokost']
+i82392,en,countryside,['rural regions'],['countryside'],['campagna'],['campo'],"['land', 'landområde']"
+i37904,en,soccer,"[""a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal""]",['soccer'],"['calcio', 'football']",['fútbol'],['fotball']
+i48880,en,fish,['any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills'],['fish'],['pesce'],"['pez', 'pisces']",['fisk']
+i92240,en,prince,['a male member of a royal family other than the sovereign (especially the son of a sovereign)'],['prince'],['principe'],['príncipe'],['prins']
+i97801,en,fog,['droplets of water vapor suspended in the air near the ground'],['fog'],"['nebbia', 'caligine']",['niebla'],['tåke']
+i54942,en,inn,['a hotel providing overnight lodging for travelers'],"['lodge', 'inn']",['locanda'],"['posada', 'albergue']",['kro']
+i98170,en,weather,['the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation'],"['conditions', 'weather']",['tempo'],"['tiempo', 'condiciones']",['vær']
+i73479,en,theater,['the art of writing and producing plays'],"['theatre', 'theater']","['teatro', 'palcoscenico']",['teatro'],['teater']
+i98034,en,rain,['water falling in drops from vapor condensed in the atmosphere'],"['rain', 'rainfall']","['acqua', 'pioggia']",['lluvia'],"['regn', 'regnvær']"
+i90847,en,king,['a male sovereign; ruler of a kingdom'],"['king', 'Rex']",['re'],"['rey', 'monarca']",['konge']
+i55356,en,kettle,['a metal pot for stewing or boiling; usually has a lid'],"['boiler', 'kettle']","['caldaia', 'bollitore']",['caldera'],['kjele']
+i60698,en,umbrella,['a lightweight handheld collapsible canopy'],['umbrella'],"['ombrello', 'ombrellone']",['paraguas'],['paraply']
+i52549,en,crown,['an ornamental jeweled headdress signifying sovereignty'],"['crown', 'diadem']","['corona', 'diadema']",['corona'],['krone']
+i51285,en,bus,['a vehicle carrying many passengers; used for public transport'],"['coach', 'bus']","['autobus', 'pullman']",['autobús'],['buss']
+i59896,en,sword,['a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard'],"['brand', 'steel']","['ferro', 'spada']",['espada'],['sverd']
+i78683,en,beer,['a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops'],['beer'],['birra'],['cerveza'],"['øl', 'humle']"
+i103203,en,rose,['any of many shrubs of the genus Rosa that bear roses'],"['rose', 'rosebush']","['rosa', 'rosaio']",['rosa'],['rose']

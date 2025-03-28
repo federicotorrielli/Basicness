@@ -1,0 +1,101 @@
+lemma,ilis
+auto,['i51496']
+coppia,"['i79247', 'i79244']"
+istanza,['i70690']
+fax,['i53562']
+causa,['i35561']
+partecipazione,"['i41886', 'i69362']"
+babbo,['i89370']
+messaggio,"['i35593', 'i69368']"
+macchina,"['i51496', 'i55888']"
+norma,"['i67332', 'i37579', 'i109732']"
+garanzia,"['i71618', 'i71622']"
+effetto,['i36243']
+discorso,"['i74711', 'i74151']"
+utilizzo,['i40384']
+approvazione,"['i112745', 'i76158', 'i71625']"
+ora,"['i117260', 'i116704', 'i117257']"
+raggruppamento,"['i40705', 'i40714', 'i79104']"
+processo,"['i35587', 'i40766']"
+gente,"['i48658', 'i80034', 'i79059']"
+ripresa,['i36672']
+domanda,['i74475']
+chiave,"['i61282', 'i55358']"
+musica,"['i66962', 'i73566']"
+modalità,['i62886']
+previsione,['i71960']
+innovazione,['i36789']
+iniziativa,['i62405']
+autorità,"['i88364', 'i88363', 'i79516']"
+classe,"['i51976', 'i79319']"
+verifica,"['i74476', 'i36160']"
+palazzo,"['i55888', 'i51221']"
+pace,"['i117514', 'i110351']"
+prestazione,['i38426']
+preparazione,"['i40103', 'i62848']"
+rappresentante,"['i93760', 'i92534']"
+criterio,"['i67968', 'i67915']"
+forza,['i63463']
+capitolo,"['i70093', 'i72136']"
+statuto,"['i70802', 'i70466']"
+creazione,"['i52486', 'i40180']"
+fascia,['i59695']
+occasione,"['i113120', 'i113269']"
+categoria,['i67558']
+giudizio,"['i67309', 'i41619', 'i67555', 'i39989']"
+spirito,"['i61378', 'i86825']"
+viaggio,['i37014']
+avviso,"['i71549', 'i71545', 'i74624']"
+traccia,['i71406']
+pratica,"['i37557', 'i40105']"
+scontro,"['i75256', 'i40416']"
+nota,"['i72562', 'i70636']"
+base,"['i50499', 'i109973', 'i54003']"
+elenco,['i70513']
+vigore,"['i63463', 'i63437']"
+obbligo,['i41323']
+luce,"['i97892', 'i59231', 'i97765']"
+osservazione,"['i66921', 'i66882']"
+esigenza,"['i67810', 'i112940']"
+libertà,['i110463']
+interpretazione,"['i67984', 'i67197']"
+intervista,['i74204']
+incidente,"['i75057', 'i75060']"
+personalità,['i61348']
+seguito,['i75030']
+telefono,['i60065']
+dividendo,"['i109030', 'i106484']"
+racconto,"['i69962', 'i74607']"
+trasformazione,['i37503']
+iscrizione,['i35667']
+tratto,"['i61343', 'i72214', 'i72219']"
+isola,['i85597']
+opera,"['i73576', 'i38422', 'i61245']"
+mercoledì,['i116902']
+raccolta,"['i79104', 'i40718']"
+casco,['i52478']
+dolore,"['i76138', 'i76352']"
+complesso,"['i80459', 'i67722']"
+credito,['i107022']
+internet,['i55155']
+cambiamento,"['i37503', 'i36457']"
+party,['i80527']
+architecture,['i50129']
+artisan,['i89293']
+sculpture,['i58585']
+sun,['i97951']
+literature,['i69925']
+espresso,['i78910']
+sunset,['i75284']
+warmth,['i76412']
+philosophy,['i68068']
+family,['i80348']
+sea,['i98149']
+pizza,['i78596']
+leisure,['i116748']
+romance,['i110153']
+design,['i67858']
+history,['i116663']
+music,['i66962']
+church,['i79691']
+opera,['i73576']
