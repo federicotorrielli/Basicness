@@ -657,11 +657,19 @@ def calculate_feature_human_agreement(
         human_round = human_valid.round().astype(int)
 
         # Calculate overall metrics
+        # Convert to binary: 1-2 → 0, 3-4 → 1
+        feature_binary = feature_valid.apply(lambda x: 0 if x <= 2 else 1)
+        human_binary = human_valid.apply(lambda x: 0 if x <= 2 else 1)
+
+        # Calculate binary agreement
+        binary_agreement = np.mean(feature_binary == human_binary)
+
         overall_metrics = {
             "cohen_kappa": cohen_kappa_score(
                 feature_round, human_round, weights="linear"
             ),
             "percent_agreement": np.mean(feature_round == human_round),
+            "binary_agreement": binary_agreement,
             "mse": mean_squared_error(feature_valid, human_valid),
         }
 
@@ -972,6 +980,11 @@ def export_feature_human_results(
         metrics = [
             ("Cohen's Kappa", result["overall"]["cohen_kappa"], metric_cell),
             ("Percent Agreement", result["overall"]["percent_agreement"], pct_cell),
+            (
+                "Binary Agreement",
+                result["overall"].get("binary_agreement", np.nan),
+                pct_cell,
+            ),
             ("Mean Squared Error", result["overall"]["mse"], metric_cell),
             ("Common Items", result["common_items"], cell),
         ]
@@ -991,6 +1004,7 @@ def export_feature_human_results(
             "Language",
             "Kappa",
             "Agreement",
+            "Binary Agreement",
             "MSE",
             "Items",
         ]
@@ -1002,9 +1016,10 @@ def export_feature_human_results(
         for lang, lang_metrics in result["by_language"].items():
             ws.write(row, 0, lang, cell)
             ws.write(row, 1, lang_metrics["cohen_kappa"], metric_cell)
-            ws.write(row, 4, lang_metrics["percent_agreement"], pct_cell)
-            ws.write(row, 5, lang_metrics["mse"], metric_cell)
-            ws.write(row, 6, lang_metrics["common_items"], cell)
+            ws.write(row, 2, lang_metrics["percent_agreement"], pct_cell)
+            ws.write(row, 3, lang_metrics.get("binary_agreement", np.nan), pct_cell)
+            ws.write(row, 4, lang_metrics["mse"], metric_cell)
+            ws.write(row, 5, lang_metrics["common_items"], cell)
             row += 1
 
         row += 2  # Add space between methods
