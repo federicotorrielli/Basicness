@@ -1,14 +1,12 @@
+import os
 from functools import partial
-from typing import List, Dict
+from typing import Dict, List
 
 import numpy as np
-import pandas as pd
-import ujson as json
-
+import pandas as pd  # type: ignore
+import ujson as json  # type: ignore
+from scipy.optimize import differential_evolution  # type: ignore
 from utils import get_path_from_root
-
-from scipy.optimize import differential_evolution
-import os
 
 
 class OMWBasicnessAnalyzer:
@@ -60,6 +58,14 @@ class OMWBasicnessAnalyzer:
 
     def set_weights(self, basicness_weights: dict):
         self.__basicness_weights = basicness_weights
+
+    def get_weights(self) -> dict:
+        """
+        Get the current basicness weights.
+
+        :return: Dictionary of basicness weights
+        """
+        return self.__basicness_weights
 
     def set_language_specific_weights(self, language_specific_weights: Dict[str, dict]):
         """
@@ -351,9 +357,13 @@ class OMWBasicnessAnalyzer:
 
         # Step 4: Combined metrics
         # Calculate original score (if needed for comparison or if it's still the primary target)
-        normalized['combined_metric_normalized'] = normalized.apply(self.__calculate_basicness_score, axis=1)
+        normalized["combined_metric_normalized"] = normalized.apply(
+            self.__calculate_basicness_score, axis=1
+        )
         # Calculate the NEW experimental score
-        normalized['basicness_score_experimental'] = normalized.apply(self.__calculate_basicness_score_experimental, axis=1)
+        normalized["basicness_score_experimental"] = normalized.apply(
+            self.__calculate_basicness_score_experimental, axis=1
+        )
 
         # Step 5: Min-max of combined metrics
         min_max_values = (
@@ -423,13 +433,19 @@ class OMWBasicnessAnalyzer:
 
         # Step 9: Calculate final scores
         # Original basicness score (derived from the potentially flawed __calculate_basicness_score)
-        result['basicness_score'] = (result['combined_metric_normalized'] - result['min_combined_normalized']) / \
-                                    (result['max_combined_normalized'] - result[
-                                        'min_combined_normalized'] + norm_basicness_denom) # Uses norm_basicness_denom
+        result["basicness_score"] = (
+            result["combined_metric_normalized"] - result["min_combined_normalized"]
+        ) / (
+            result["max_combined_normalized"]
+            - result["min_combined_normalized"]
+            + norm_basicness_denom
+        )  # Uses norm_basicness_denom
 
         # The experimental score is already scaled 0-1 by sigmoid, no further ILI-group scaling needed here.
         # We keep the direct output of __calculate_basicness_score_experimental
-        result['basicness_score_experimental'] = result['basicness_score_experimental'] # Already 0-1
+        result["basicness_score_experimental"] = result[
+            "basicness_score_experimental"
+        ]  # Already 0-1
 
         # Final selection of columns and sorting
         final_result = result[
@@ -466,7 +482,9 @@ class OMWBasicnessAnalyzer:
         self.__result_df = final_result
 
         # Add basicness rank
-        ranked_df = self.add_basicness_rank(score_column="basicness_score_experimental" ,thresholds=thresholds)
+        ranked_df = self.add_basicness_rank(
+            score_column="basicness_score_experimental", thresholds=thresholds
+        )
 
         self.__result_df = ranked_df
 
@@ -544,7 +562,7 @@ class OMWBasicnessAnalyzer:
                 if basicness_score >= basicness_relevance_threshold:
                     true_positive += 1
 
-        return true_positive / n_present_ilis
+        return true_positive // n_present_ilis
 
     def evaluate_basicness_score_mse(self, use_test_set: bool = False) -> float:
         if self.__opt_set_df is None:
@@ -955,7 +973,9 @@ class OMWBasicnessAnalyzer:
 
         return optimal_weights, optimal_df
 
-    def add_basicness_rank(self, score_column: str = 'basicness_score', thresholds: List[float] = None) -> pd.DataFrame:
+    def add_basicness_rank(
+        self, score_column: str = "basicness_score", thresholds: List[float] = None
+    ) -> pd.DataFrame:
         """
         Convert the basicness scores in the input dataframe to ranks, adding a new column 'basicness_rank'.
         Scores are mapped to the range from 1 to 4 (or N+1 based on thresholds).
@@ -965,37 +985,43 @@ class OMWBasicnessAnalyzer:
             score_column: The name of the column containing the score to rank.
             thresholds: If provided, the thresholds defining the rank boundaries.
         """
-        ranked_data = self.__result_df.copy() # Start from the latest result_df
+        ranked_data = self.__result_df.copy()  # Start from the latest result_df
 
         if score_column not in ranked_data.columns:
             raise ValueError(f"Score column '{score_column}' not found in DataFrame.")
 
         if thresholds is not None:
             # Map based on fixed thresholds
-            ranked_data['basicness_rank'] = ranked_data[score_column].apply(
+            ranked_data["basicness_rank"] = ranked_data[score_column].apply(
                 lambda x: map_score_to_rank(x, thresholds)
             )
         else:
             # Rank within ILI group (relative ranking)
-            ranked_data['basicness_rank'] = (ranked_data.groupby('ili')[score_column]
-                                             .rank(method='dense', ascending=False)
-                                             .astype(int))
+            ranked_data["basicness_rank"] = (
+                ranked_data.groupby("ili")[score_column]
+                .rank(method="dense", ascending=False)
+                .astype(int)
+            )
             # Map rank 1 (highest score) to 4, rank 2 to 3, etc. Assumes max 4 languages per ili.
             # This mapping might need adjustment if more languages are possible or if a different scheme is desired.
-            max_rank = ranked_data['basicness_rank'].max() # Find highest rank number (e.g., 4 if 4 languages)
+            max_rank = ranked_data[
+                "basicness_rank"
+            ].max()  # Find highest rank number (e.g., 4 if 4 languages)
             rank_map = {i: max_rank - i + 1 for i in range(1, max_rank + 1)}
-            ranked_data['basicness_rank'] = (ranked_data['basicness_rank']
-                                             .map(rank_map)
-                                             .fillna(1).astype(int) # Handle potential NaNs or single-entry groups
-                                             )
+            ranked_data["basicness_rank"] = (
+                ranked_data["basicness_rank"]
+                .map(rank_map)
+                .fillna(1)
+                .astype(int)  # Handle potential NaNs or single-entry groups
+            )
 
         # Reorder columns to place score and rank prominently
         # Ensure the ranked score column is also included near the rank
-        cols_to_front = ['Language', score_column, 'basicness_rank']
+        cols_to_front = ["Language", score_column, "basicness_rank"]
         other_cols = [col for col in ranked_data.columns if col not in cols_to_front]
         ranked_data = ranked_data[cols_to_front + other_cols]
 
-        self.__result_df_ranked = ranked_data # Update the ranked version
+        self.__result_df_ranked = ranked_data  # Update the ranked version
 
         return ranked_data
 
@@ -1005,10 +1031,10 @@ def map_score_to_rank(basicness_score: float, thresholds: list = None) -> int:
     Maps a basicness score (0 to 1) to an ordinal rank (1 to N+1).
     """
     if thresholds is None:
-        thresholds = [0.25, 0.5, 0.75] # Default thresholds
+        thresholds = [0.25, 0.5, 0.75]  # Default thresholds
 
     if basicness_score is None or np.isnan(basicness_score):
-        return 1 # Or handle as appropriate, maybe None or a specific rank
+        return 1  # Or handle as appropriate, maybe None or a specific rank
 
     # Ensure thresholds are sorted
     thresholds = sorted(thresholds)
@@ -1016,4 +1042,4 @@ def map_score_to_rank(basicness_score: float, thresholds: list = None) -> int:
     for rank, threshold in enumerate(thresholds, start=1):
         if basicness_score <= threshold:
             return rank
-    return len(thresholds) + 1 # Rank N+1 if above the last threshold
+    return len(thresholds) + 1  # Rank N+1 if above the last threshold

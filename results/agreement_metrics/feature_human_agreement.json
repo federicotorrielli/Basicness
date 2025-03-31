@@ -1,0 +1,218 @@
+[
+  {
+    "method": "correlation_weights vs. Human (IT)",
+    "language": "it",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": -0.09006928406466508,
+      "percent_agreement": 0.3375,
+      "mse": 0.8875
+    },
+    "by_language": {
+      "it": {
+        "cohen_kappa": -0.09006928406466508,
+        "percent_agreement": 0.3375,
+        "mse": 0.8875,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "uniform_weights vs. Human (IT)",
+    "language": "it",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.0,
+      "percent_agreement": 0.3875,
+      "mse": 1.1
+    },
+    "by_language": {
+      "it": {
+        "cohen_kappa": 0.0,
+        "percent_agreement": 0.3875,
+        "mse": 1.1,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "literature_weights vs. Human (IT)",
+    "language": "it",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": -0.024685607824872058,
+      "percent_agreement": 0.375,
+      "mse": 0.8125
+    },
+    "by_language": {
+      "it": {
+        "cohen_kappa": -0.024685607824872058,
+        "percent_agreement": 0.375,
+        "mse": 0.8125,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "correlation_weights vs. Human (NB)",
+    "language": "nb",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": -0.05839416058394176,
+      "percent_agreement": 0.425,
+      "mse": 1.05
+    },
+    "by_language": {
+      "nb": {
+        "cohen_kappa": -0.05839416058394176,
+        "percent_agreement": 0.425,
+        "mse": 1.05,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "uniform_weights vs. Human (NB)",
+    "language": "nb",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.0,
+      "percent_agreement": 0.45,
+      "mse": 1.125
+    },
+    "by_language": {
+      "nb": {
+        "cohen_kappa": 0.0,
+        "percent_agreement": 0.45,
+        "mse": 1.125,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "literature_weights vs. Human (NB)",
+    "language": "nb",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.02877697841726612,
+      "percent_agreement": 0.45,
+      "mse": 0.95
+    },
+    "by_language": {
+      "nb": {
+        "cohen_kappa": 0.02877697841726612,
+        "percent_agreement": 0.45,
+        "mse": 0.95,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "correlation_weights vs. Human (EN)",
+    "language": "en",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.10773611770289504,
+      "percent_agreement": 0.475,
+      "mse": 0.7375
+    },
+    "by_language": {
+      "en": {
+        "cohen_kappa": 0.10773611770289504,
+        "percent_agreement": 0.475,
+        "mse": 0.7375,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "uniform_weights vs. Human (EN)",
+    "language": "en",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.0,
+      "percent_agreement": 0.5125,
+      "mse": 1.0
+    },
+    "by_language": {
+      "en": {
+        "cohen_kappa": 0.0,
+        "percent_agreement": 0.5125,
+        "mse": 1.0,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "literature_weights vs. Human (EN)",
+    "language": "en",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.11026975863700905,
+      "percent_agreement": 0.475,
+      "mse": 0.7375
+    },
+    "by_language": {
+      "en": {
+        "cohen_kappa": 0.11026975863700905,
+        "percent_agreement": 0.475,
+        "mse": 0.7375,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "correlation_weights vs. Human (ES)",
+    "language": "es",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": -0.05121293800539095,
+      "percent_agreement": 0.525,
+      "mse": 0.5125
+    },
+    "by_language": {
+      "es": {
+        "cohen_kappa": -0.05121293800539095,
+        "percent_agreement": 0.525,
+        "mse": 0.5125,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "uniform_weights vs. Human (ES)",
+    "language": "es",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.0,
+      "percent_agreement": 0.85,
+      "mse": 0.225
+    },
+    "by_language": {
+      "es": {
+        "cohen_kappa": 0.0,
+        "percent_agreement": 0.85,
+        "mse": 0.225,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "literature_weights vs. Human (ES)",
+    "language": "es",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": -0.0714285714285714,
+      "percent_agreement": 0.5625,
+      "mse": 0.475
+    },
+    "by_language": {
+      "es": {
+        "cohen_kappa": -0.0714285714285714,
+        "percent_agreement": 0.5625,
+        "mse": 0.475,
+        "common_items": 80
+      }
+    }
+  }
+]

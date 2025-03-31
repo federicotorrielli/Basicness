@@ -1,11 +1,12 @@
-import krippendorff
-import numpy as np
-import pandas as pd
-import xlsxwriter
 import json
-from pingouin import intraclass_corr
-from scipy.stats import kendalltau, spearmanr
-from sklearn.metrics import cohen_kappa_score, mean_squared_error
+
+import krippendorff  # type: ignore
+import numpy as np  # type: ignore
+import pandas as pd  # type: ignore
+import xlsxwriter  # type: ignore
+from pingouin import intraclass_corr  # type: ignore
+from scipy.stats import kendalltau, spearmanr  # type: ignore
+from sklearn.metrics import cohen_kappa_score, mean_squared_error  # type: ignore
 
 # Configuration
 SILVER_PATH = "data/model_annotations/culture_annotation_datasets_silver_annotated.csv"
@@ -16,6 +17,13 @@ HUMAN_PATHS = [
     "data/human_annotations/culture_annotation_datasets_annotated_human_es.csv",
 ]
 
+# Feature-based method paths
+FEATURE_BASED_PATHS = {
+    "correlation_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_correlation_weights_lang_syn.csv",
+    "uniform_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_uniform_weights_lang_syn.csv",
+    "literature_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_literature_weights_lang_syn.csv",
+}
+
 
 def load_data(path, human=False):
     df = pd.read_csv(path)
@@ -24,6 +32,26 @@ def load_data(path, human=False):
     else:
         rater_cols = [c for c in df.columns if c.startswith("basicness_score_")]
     return df, rater_cols
+
+
+def load_feature_based_data(path):
+    """
+    Load feature-based method data.
+
+    Parameters:
+    -----------
+    path : str
+        Path to feature-based method data file
+
+    Returns:
+    --------
+    pandas.DataFrame: DataFrame containing feature-based method data
+    """
+    df = pd.read_csv(path)
+    # Add ILI as a field for merging, if not already present
+    if "ili" not in df.columns and "ili" in df.columns:
+        df.rename(columns={"ili": "ili"}, inplace=True)
+    return df
 
 
 def calculate_agreement(ratings):
@@ -551,6 +579,108 @@ def inter_dataset_agreement(silver_df, human_df, method="weighted"):
     }
 
 
+def calculate_feature_human_agreement(
+    feature_df, human_df, method_name, human_lang, by_language=True
+):
+    """
+    Calculate agreement between feature-based method and human annotations,
+    with breakdown by language groups.
+
+    Parameters:
+    -----------
+    feature_df : pandas.DataFrame
+        DataFrame containing feature-based method data
+    human_df : pandas.DataFrame
+        DataFrame containing human annotations
+    method_name : str
+        Name of the feature-based method
+    human_lang : str
+        Language code extracted from the human annotation filename
+    by_language : bool
+        Whether to break down results by language
+
+    Returns:
+    --------
+    dict: Dictionary containing agreement metrics, overall and by language
+    """
+    # Filter feature data to only include rows for this language
+    feature_df_filtered = feature_df[feature_df["Language"] == human_lang]
+
+    print(
+        f"Analyzing {method_name} with {len(feature_df_filtered)} items for language {human_lang}"
+    )
+
+    # Merge on ILI to match items across datasets
+    merged = pd.merge(
+        feature_df_filtered, human_df, on="ili", suffixes=("_feature", "_human")
+    )
+
+    if len(merged) < 5:
+        print(
+            f"Warning: Only {len(merged)} common items between {method_name} and human data for {human_lang}"
+        )
+        return {
+            "method": method_name,
+            "language": human_lang,
+            "common_items": len(merged),
+            "overall": {
+                "cohen_kappa": np.nan,
+                "kendall_tau": np.nan,
+                "percent_agreement": np.nan,
+                "mse": np.nan,
+            },
+            "by_language": {},
+        }
+
+    # Get feature scores (using basicness_rank) and human ratings
+    feature_scores = merged[
+        "basicness_rank"
+    ]  # Use basicness_rank from feature-based methods
+    # Aggregate human ratings using the median method
+    human_ratings = merged[["annotator_1", "annotator_2", "annotator_3"]]
+    human_agg = weighted_vote(human_ratings, method="median")
+
+    # Calculate overall agreement metrics
+    valid_mask = ~(feature_scores.isna() | human_agg.isna())
+    if valid_mask.sum() < 5:
+        overall_metrics = {
+            "cohen_kappa": np.nan,
+            "percent_agreement": np.nan,
+            "mse": np.nan,
+        }
+    else:
+        feature_valid = feature_scores[valid_mask]
+        human_valid = human_agg[valid_mask]
+
+        # Convert scores to comparable scales if needed
+        feature_round = feature_valid.round().astype(int)
+        human_round = human_valid.round().astype(int)
+
+        # Calculate overall metrics
+        overall_metrics = {
+            "cohen_kappa": cohen_kappa_score(
+                feature_round, human_round, weights="linear"
+            ),
+            "percent_agreement": np.mean(feature_round == human_round),
+            "mse": mean_squared_error(feature_valid, human_valid),
+        }
+
+    result = {
+        "method": method_name,
+        "language": human_lang,
+        "common_items": len(merged),
+        "overall": overall_metrics,
+        "by_language": {},
+    }
+
+    # We don't need language breakdowns since we're already filtering by language
+    # Keep the structure consistent for backwards compatibility
+    result["by_language"][human_lang] = overall_metrics.copy()
+    result["by_language"][human_lang]["common_items"] = len(merged)
+
+    return result
+
+
 def export_to_excel(
     silver_results,
     human_results,
@@ -794,6 +924,95 @@ def export_to_excel(
     workbook.close()
 
 
+def export_feature_human_results(
+    feature_human_results,
+    output_path="results/agreement_metrics/feature_human_agreement.xlsx",
+):
+    """
+    Export feature-based vs. human agreement results to Excel.
+
+    Parameters:
+    -----------
+    feature_human_results : list
+        List of dictionaries containing agreement results
+    output_path : str
+        Path to output Excel file
+    """
+    import os
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    workbook = xlsxwriter.Workbook(output_path)
+    ws = workbook.add_worksheet()
+
+    # Formats
+    header = workbook.add_format(
+        {"bold": True, "bg_color": "#4472C4", "font_color": "white", "border": 1}
+    )
+    subheader = workbook.add_format({"bold": True, "bg_color": "#8EA9DB", "border": 1})
+    cell = workbook.add_format({"border": 1})
+    metric_cell = workbook.add_format({"border": 1, "num_format": "0.000"})
+    pct_cell = workbook.add_format({"border": 1, "num_format": "0.0%"})
+
+    # Set column widths
+    ws.set_column("A:A", 25)
+    ws.set_column("B:G", 15)
+
+    row = 0
+    ws.write(row, 0, "Feature-Based Methods vs. Human Annotations", header)
+    row += 2
+
+    for result in feature_human_results:
+        ws.write(row, 0, f"{result['method']} Method", subheader)
+        row += 1
+
+        # Overall metrics
+        ws.write(row, 0, "Overall Metrics", cell)
+        row += 1
+
+        metrics = [
+            ("Cohen's Kappa", result["overall"]["cohen_kappa"], metric_cell),
+            ("Percent Agreement", result["overall"]["percent_agreement"], pct_cell),
+            ("Mean Squared Error", result["overall"]["mse"], metric_cell),
+            ("Common Items", result["common_items"], cell),
+        ]
+
+        for metric, value, fmt in metrics:
+            ws.write(row, 0, metric, cell)
+            ws.write(row, 1, value, fmt)
+            row += 1
+
+        # Language breakdown
+        row += 1
+        ws.write(row, 0, "By Language", subheader)
+        row += 1
+
+        # Headers for language breakdown
+        headers = [
+            "Language",
+            "Kappa",
+            "Agreement",
+            "MSE",
+            "Items",
+        ]
+        for i, header in enumerate(headers):
+            ws.write(row, i, header, cell)
+        row += 1
+
+        # Language data
+        for lang, lang_metrics in result["by_language"].items():
+            ws.write(row, 0, lang, cell)
+            ws.write(row, 1, lang_metrics["cohen_kappa"], metric_cell)
+            ws.write(row, 4, lang_metrics["percent_agreement"], pct_cell)
+            ws.write(row, 5, lang_metrics["mse"], metric_cell)
+            ws.write(row, 6, lang_metrics["common_items"], cell)
+            row += 1
+
+        row += 2  # Add space between methods
+
+    workbook.close()
+    print(f"Feature-human agreement results exported to {output_path}")
+
+
 def export_to_json(
     silver_results,
     human_results,
@@ -924,6 +1143,50 @@ def export_to_json(
     print(f"JSON results exported to {output_path}")
 
 
+def export_feature_human_to_json(
+    feature_human_results,
+    output_path="results/agreement_metrics/feature_human_agreement.json",
+):
+    """
+    Export feature-based vs. human agreement results to JSON.
+
+    Parameters:
+    -----------
+    feature_human_results : list
+        List of dictionaries containing agreement results
+    output_path : str
+        Path to output JSON file
+    """
+    import os
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    # Convert numpy values to Python types
+    def convert_numpy(obj):
+        if isinstance(obj, dict):
+            return {k: convert_numpy(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [convert_numpy(item) for item in obj]
+        elif isinstance(obj, np.integer):
+            return int(obj)
+        elif isinstance(obj, np.floating):
+            return float(obj)
+        elif isinstance(obj, np.ndarray):
+            return convert_numpy(obj.tolist())
+        elif obj is np.nan:
+            return None
+        else:
+            return obj
+
+    result_obj = convert_numpy(feature_human_results)
+
+    # Write to file
+    with open(output_path, "w") as f:
+        json.dump(result_obj, f, indent=2)
+
+    print(f"Feature-human agreement results exported to {output_path}")
+
+
 def main():
     """
     Main function to run the agreement analysis.
@@ -952,6 +1215,32 @@ def main():
         cross["dataset"] = f"{human_name} ({method})"
         cross["method"] = method
         cross_results.append(cross)
+
+    # Feature-based method analysis
+    print("\nRunning feature-based method analysis...")
+    feature_human_results = []
+
+    # Load feature-based method data
+    feature_data = {}
+    for method_name, path in FEATURE_BASED_PATHS.items():
+        feature_data[method_name] = load_feature_based_data(path)
+
+    # Calculate agreement between feature-based methods and human annotations
+    for human_path in HUMAN_PATHS:
+        human_df, _ = load_data(human_path, human=True)
+        human_lang = human_path.split("_")[-1].split(".")[
+            0
+        ]  # Extract language code from filename
+        human_name = f"Human ({human_lang.upper()})"
+
+        for method_name, feature_df in feature_data.items():
+            print(f"Analyzing {method_name} vs. human ({human_lang})...")
+
+            # Calculate agreement between feature-based method and human annotations
+            result = calculate_feature_human_agreement(
+                feature_df, human_df, f"{method_name} vs. {human_name}", human_lang
+            )
+            feature_human_results.append(result)
 
     # Print results
     print(f"\n=== {silver_results['dataset']} Dataset Results ===")
@@ -1030,6 +1319,10 @@ def main():
         if "mse" in cross:
             print(f"Mean Squared Error: {cross['mse']:.3f}")
         print(f"Common Items Analyzed: {cross['common_items']}")
+
+    # Export feature-human results
+    export_feature_human_results(feature_human_results)
+    export_feature_human_to_json(feature_human_results)
 
     # Export to Excel
     export_to_excel(silver_results, human_results, cross_results)
