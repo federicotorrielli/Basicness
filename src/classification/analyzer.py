@@ -671,7 +671,9 @@ class OMWBasicnessAnalyzer:
             ili = row["ili"]
             lang = row["Language"]
             if thresholds is not None:
-                rank = map_score_to_rank(row["basicness_score"], thresholds)
+                rank = map_score_to_rank(
+                    row["basicness_score_experimental"], thresholds
+                )
             else:
                 rank = row["basicness_rank"]
             for i, row_annotation in function_result_df.iterrows():
@@ -1031,7 +1033,7 @@ def map_score_to_rank(basicness_score: float, thresholds: list = None) -> int:
     Maps a basicness score (0 to 1) to an ordinal rank (1 to N+1).
     """
     if thresholds is None:
-        thresholds = [0.25, 0.5, 0.75]  # Default thresholds
+        thresholds = [0.1, 0.65, 0.75]  # Default thresholds
 
     if basicness_score is None or np.isnan(basicness_score):
         return 1  # Or handle as appropriate, maybe None or a specific rank

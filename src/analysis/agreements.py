@@ -415,7 +415,7 @@ def weighted_vote(ratings, method="mean"):
     ratings : pandas.DataFrame
         DataFrame with columns representing different raters and rows representing items.
     method : str
-        Method to use: 'mean', 'median', 'mode', or 'weighted'
+        Method to use: 'mean', 'median', or 'mode'
 
     Returns:
     --------
@@ -427,84 +427,11 @@ def weighted_vote(ratings, method="mean"):
         return ratings.median(axis=1)
     elif method == "mode":
         return ratings.mode(axis=1)[0]  # Original majority vote
-    elif method == "weighted":
-        # Calculate weights based on each rater's agreement with others
-        weights = []
-        for i in range(ratings.shape[1]):
-            # Get column name instead of index
-            col = ratings.columns[i]
-
-            # Get rows where this rater has provided a rating
-            mask = ~ratings[col].isna()
-            if mask.sum() < 5:
-                weights.append(0)  # Too few ratings, give zero weight
-                continue
-
-            # Get other ratings for these rows
-            other_cols = [c for c in ratings.columns if c != col]
-            others = ratings.loc[mask, other_cols]
-            others_mean = others.mean(axis=1)
-
-            if others_mean.isna().all() or others_mean.std() == 0:
-                weights.append(
-                    1 / ratings.shape[1]
-                )  # Equal weight if no comparison possible
-            else:
-                # Use a simple alternative approach instead of spearmanr
-                try:
-                    # Extract values as lists
-                    x = ratings.loc[mask, col][~others_mean.isna()].tolist()
-                    y = others_mean[~others_mean.isna()].tolist()
-
-                    # Calculate ranks manually
-                    x_ranks = pd.Series(x).rank().tolist()
-                    y_ranks = pd.Series(y).rank().tolist()
-
-                    # Calculate correlation between ranks (simplified Spearman)
-                    n = len(x)
-                    if n < 2:
-                        corr = 0
-                    else:
-                        # Use Pearson on the ranks
-                        x_mean = sum(x_ranks) / n
-                        y_mean = sum(y_ranks) / n
-
-                        numerator = sum(
-                            (x_ranks[i] - x_mean) * (y_ranks[i] - y_mean)
-                            for i in range(n)
-                        )
-                        denom_x = sum((x_ranks[i] - x_mean) ** 2 for i in range(n))
-                        denom_y = sum((y_ranks[i] - y_mean) ** 2 for i in range(n))
-
-                        if denom_x > 0 and denom_y > 0:
-                            corr = numerator / (denom_x * denom_y) ** 0.5
-                        else:
-                            corr = 0
-
-                    corr = abs(corr)
-                except:
-                    corr = 0
-
-                weights.append(corr)
-
-        # Normalize weights
-        if sum(weights) == 0:
-            weights = [1 / len(weights)] * len(weights)
-        else:
-            weights = [w / sum(weights) for w in weights]
-
-        # Apply weights
-        weighted_ratings = pd.DataFrame(0, index=ratings.index, columns=["weighted"])
-        for i, col in enumerate(ratings.columns):
-            weighted_ratings["weighted"] += ratings[col].fillna(0) * weights[i]
-
-        return weighted_ratings["weighted"]
-
     else:
         raise ValueError(f"Unknown method: {method}")
 
 
-def inter_dataset_agreement(silver_df, human_df, method="weighted"):
+def inter_dataset_agreement(silver_df, human_df, method):
     """
     Calculate agreement between silver standard and human annotations.
 
