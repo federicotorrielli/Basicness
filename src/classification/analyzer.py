@@ -283,7 +283,6 @@ class OMWBasicnessAnalyzer:
         norm_basicness_denom = avoid_zero_division
         n_senses_denom = avoid_zero_division
 
-        # if not global_normalization:
         # Step 1: Plain metrics
         plain_metrics = (
             df.groupby(["Language", "ili"])
@@ -698,32 +697,6 @@ class OMWBasicnessAnalyzer:
 
         return n_correct / n_total
 
-    # def get_overall_accordance(self, opt_split: str = "full") -> float:
-    #     if self.__opt_set_df is None:
-    #         raise ValueError("Ranking evaluation requires an optimization dataset.")
-    #
-    #     if opt_split == "full":
-    #         truth_df = self.__opt_set_df
-    #     elif opt_split == "train":
-    #         truth_df = self.__opt_set_train_df
-    #     else:
-    #         truth_df = self.__opt_set_test_df
-    #
-    #     n_according = 0
-    #     n_total = 0
-    #
-    #     for index, row in self.__result_df.iterrows():
-    #         ili = row["ili"]
-    #         lang = row["Language"]
-    #         rank = row["basicness_rank"]
-    #         for i, row_annotation in truth_df.iterrows():
-    #             if row_annotation["ili"] == ili and row_annotation["Language"] == lang:
-    #                 n_total += 1
-    #                 if row_annotation["basicness_score"] == rank:
-    #                     n_according += 1
-    #
-    #     return n_according / n_total
-
     def evaluate_ordinal_regression_loss(
         self, opt_split: str = "full", thresholds: list = [0.25, 0.5, 0.75]
     ) -> float:
@@ -842,146 +815,6 @@ class OMWBasicnessAnalyzer:
                     n_samples += 1
 
         return cumulative_loss / n_samples
-
-    def scipy_objective(
-        self,
-        weights,
-        metric,
-        optimize_thresholds: bool = False,
-        optimize_gamma: bool = False,
-        thresholds: list = None,
-    ) -> float:
-        basicness_weights = {
-            "word_frequency_weight": weights[0],
-            "word_length_weight": weights[1],
-            "pronounce_complexity_weight": weights[2],
-            "n_hyponyms_weight": weights[3],
-            "n_synonyms_weight": weights[4],
-            "n_senses_weight": weights[5],
-            "word_in_children_res_weight": weights[6],
-            "word_in_second_lang_learn_res_weight": weights[7],
-            "n_syn_senses_weight": weights[8],
-        }
-
-        self.set_weights(basicness_weights)
-        self.analyze_lang_syn_group()
-        if metric in ["accuracy", "precision", "recall", "f1"]:
-            eval_metrics = self.evaluate_basicness_score()
-            accuracy = eval_metrics["accuracy"]
-            precision = eval_metrics["precision"]
-            recall = eval_metrics["recall"]
-            f1 = eval_metrics["f1"]
-
-        if metric == "accuracy":
-            return -accuracy  # Minimize the negative accuracy
-        elif metric == "precision":
-            return -precision  # Minimize the negative precision
-        elif metric == "recall":
-            return -recall  # Minimize the negative recall
-        elif metric == "f1":
-            return -f1  # Minimize the negative F1-score
-        elif metric == "max":
-            return -self.evaluate_basicness_score_max()
-        elif metric == "mse":
-            return self.evaluate_basicness_score_mse()
-        elif metric == "rank":
-            return -self.evaluate_accordance(thresholds=thresholds)
-        elif metric == "ord_reg_loss":
-            # Extract thresholds if optimized
-            if optimize_thresholds:
-                thresholds = sorted(weights[9:12])
-            return self.evaluate_ordinal_regression_loss(thresholds=thresholds)
-        elif metric == "cum_ord_loss":
-            gamma = 0.1
-            # Extract thresholds and gamma if optimized
-            if optimize_thresholds and optimize_gamma:
-                thresholds = sorted(weights[9:12])
-                gamma = weights[12]
-            elif optimize_thresholds:
-                thresholds = sorted(weights[9:12])
-            elif optimize_gamma:
-                gamma = weights[9]
-
-            return self.evaluate_cumulative_ordinal_loss(
-                thresholds=thresholds, gamma=gamma
-            )
-        else:
-            raise ValueError("Invalid evaluation metric")
-
-    def optimize_weights_diff_evo(
-        self,
-        word: str,
-        metric: str = None,
-        optimize_thresholds: bool = False,
-        optimize_gamma: bool = False,
-        thresholds=None,
-    ) -> (dict, pd.DataFrame):
-        if thresholds is None:
-            thresholds = [0.25, 0.5, 0.75]
-
-        if metric is None:
-            raise ValueError("Evaluation metric must be specified.")
-
-        # Dependent features + independent features
-        bounds = [(0, 3)] * 3 + [(0, 1)] * 6
-
-        if metric in ["cum_ord_loss", "ord_reg_loss"] and optimize_thresholds:
-            # Add thresholds bounds if optimizing thresholds
-            bounds = bounds + [(0, 1)] * 3
-
-        if metric == "cum_ord_loss" and optimize_gamma:
-            # Add gamma bounds if optimizing gamma
-            bounds = bounds + [(0.01, 1)]
-
-        objective_function = partial(
-            self.scipy_objective,
-            metric=metric,
-            optimize_thresholds=optimize_thresholds,
-            optimize_gamma=optimize_gamma,
-            thresholds=thresholds,
-        )
-
-        result = differential_evolution(
-            objective_function,
-            bounds,
-            mutation=(0.5, 1.9),
-            recombination=0.7,
-            disp=True,
-            maxiter=2000,
-            workers=-1,
-        )
-
-        # Check if thresholds and gamma are optimized
-        optimized_thresholds = None
-        optimized_gamma = None
-        if optimize_thresholds and optimize_gamma:
-            optimized_thresholds = sorted(result.x[9:12])
-            optimized_gamma = result.x[12]
-        elif optimize_thresholds:
-            optimized_thresholds = sorted(result.x[9:12])
-            optimized_gamma = None
-        elif optimize_gamma:
-            optimized_thresholds = None
-            optimized_gamma = result.x[9]
-
-        optimal_weights = {
-            "word_frequency_weight": result.x[0],
-            "word_length_weight": result.x[1],
-            "pronounce_complexity_weight": result.x[2],
-            "n_hyponyms_weight": result.x[3],
-            "n_synonyms_weight": result.x[4],
-            "n_senses_weight": result.x[5],
-            "word_in_children_res_weight": result.x[6],
-            "word_in_second_lang_learn_res_weight": result.x[7],
-            "n_syn_senses_weight": result.x[8],
-            "thresholds": optimized_thresholds,
-            "gamma": optimized_gamma,
-        }
-
-        self.set_weights(optimal_weights)
-        optimal_df = self.analyze_lang_syn_group(word)
-
-        return optimal_weights, optimal_df
 
     def add_basicness_rank(
         self, score_column: str = "basicness_score", thresholds: List[float] = None
