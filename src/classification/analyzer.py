@@ -75,6 +75,14 @@ class OMWBasicnessAnalyzer:
         """
         self.__language_specific_weights = language_specific_weights
 
+    def get_language_specific_weights(self) -> Dict[str, dict]:
+        """
+        Get the current language-specific weights.
+
+        :return: Dictionary mapping language codes to weight dictionaries
+        """
+        return self.__language_specific_weights
+
     @staticmethod
     def load_correlation_weights(correlation_csv_path: str) -> Dict[str, dict]:
         """
