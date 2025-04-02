@@ -3,6 +3,9 @@
 
 src/classification/resources/raw
 
+# JetBrains IDEs
+.idea/
+
 ### Linux ###
 *~
 
