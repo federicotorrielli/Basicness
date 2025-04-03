@@ -118,13 +118,18 @@ class OMWBasicnessAnalyzer:
 
     def __calculate_basicness_score(self, row: pd.DataFrame) -> float:
         # Get language-specific weights if available, otherwise use default weights
-        if (
-            self.__language_specific_weights
-            and row["Language"] in self.__language_specific_weights
-        ):
-            weights = self.__language_specific_weights[row["Language"]]
-        else:
-            weights = self.__basicness_weights
+        # TODO check: it doesn't make sense to use this formula with language-specific weights
+        #   since the weights of different feature have different ranges
+        #   but language-specific weights have all the same range
+        # if (
+        #     self.__language_specific_weights
+        #     and row["Language"] in self.__language_specific_weights
+        # ):
+        #     weights = self.__language_specific_weights[row["Language"]]
+        # else:
+        #     weights = self.__basicness_weights
+
+        weights = self.__basicness_weights
 
         # Between 0 and 3
         word_frequency_weight = weights["word_frequency_weight"]
@@ -149,57 +154,58 @@ class OMWBasicnessAnalyzer:
         normalized_n_senses = row["normalized_n_senses"]
         word_in_children_res = row["word_in_children_res"]
         word_in_second_lang_learn_res = row["word_in_second_lang_learn_res"]
-        n_syn_senses = row["n_syn_senses"]
+        normalized_n_syn_senses = row["normalized_n_syn_senses"]
 
         # Handle negative correlations by inverting the normalized values
-        length_factor = (
-            (1 - normalized_length)
-            if weights["word_length_weight"] < 0
-            else normalized_length
-        )
-        pronounce_complexity_factor = (
-            (1 - normalized_pronounce_complexity)
-            if weights["pronounce_complexity_weight"] < 0
-            else normalized_pronounce_complexity
-        )
-        n_synonyms_factor = (
-            (1 - normalized_n_synonyms)
-            if weights["n_synonyms_weight"] < 0
-            else normalized_n_synonyms
-        )
-        n_senses_factor = (
-            (1 - normalized_n_senses)
-            if weights["n_senses_weight"] < 0
-            else normalized_n_senses
-        )
-        n_syn_senses_factor = (
-            (1 - n_syn_senses) if weights["n_syn_senses_weight"] < 0 else n_syn_senses
-        )
-        word_in_children_res_factor = (
-            (1 - word_in_children_res)
-            if weights["word_in_children_res_weight"] < 0
-            else word_in_children_res
-        )
-        word_in_second_lang_learn_res_factor = (
-            (1 - word_in_second_lang_learn_res)
-            if weights["word_in_second_lang_learn_res_weight"] < 0
-            else word_in_second_lang_learn_res
-        )
+        # TODO check: since language-specific weights should not be used with this formula the following is not needed
+        # length_factor = (
+        #     (1 - normalized_length)
+        #     if weights["word_length_weight"] < 0
+        #     else normalized_length
+        # )
+        # pronounce_complexity_factor = (
+        #     (1 - normalized_pronounce_complexity)
+        #     if weights["pronounce_complexity_weight"] < 0
+        #     else normalized_pronounce_complexity
+        # )
+        # n_synonyms_factor = (
+        #     (1 - normalized_n_synonyms)
+        #     if weights["n_synonyms_weight"] < 0
+        #     else normalized_n_synonyms
+        # )
+        # n_senses_factor = (
+        #     (1 - normalized_n_senses)
+        #     if weights["n_senses_weight"] < 0
+        #     else normalized_n_senses
+        # )
+        # n_syn_senses_factor = (
+        #     (1 - n_syn_senses) if weights["n_syn_senses_weight"] < 0 else n_syn_senses
+        # )
+        # word_in_children_res_factor = (
+        #     (1 - word_in_children_res)
+        #     if weights["word_in_children_res_weight"] < 0
+        #     else word_in_children_res
+        # )
+        # word_in_second_lang_learn_res_factor = (
+        #     (1 - word_in_second_lang_learn_res)
+        #     if weights["word_in_second_lang_learn_res_weight"] < 0
+        #     else word_in_second_lang_learn_res
+        # )
 
         dependent_terms = (
             np.pow(normalized_frequency, abs(word_frequency_weight))
-            * np.pow(length_factor, abs(word_length_weight))
-            * np.pow(pronounce_complexity_factor, abs(pronounce_complexity_weight))
+            * np.pow(normalized_length, abs(word_length_weight)) # changed from factor to normalized_length
+            * np.pow(normalized_pronounce_complexity, abs(pronounce_complexity_weight)) # changed from factor to normalized_pronounce_complexity
         )
 
+        # Also here changed from factors to result data directly, restoring original formula
         independent_terms = (
-            abs(n_senses_weight) * n_senses_factor
-            + abs(n_synonyms_weight) * n_synonyms_factor
+            abs(n_senses_weight) * normalized_n_senses
+            + abs(n_synonyms_weight) * normalized_n_synonyms
             + abs(n_hyponyms_weight) * normalized_n_hyponyms
-            + abs(word_in_children_res_weight) * word_in_children_res_factor
-            + abs(word_in_second_lang_learn_res_weight)
-            * word_in_second_lang_learn_res_factor
-            + abs(n_syn_senses_weight) * n_syn_senses_factor
+            + abs(word_in_children_res_weight) * word_in_children_res
+            + abs(word_in_second_lang_learn_res_weight) * word_in_second_lang_learn_res
+            + abs(n_syn_senses_weight) * normalized_n_syn_senses
         )
 
         basicness_score = dependent_terms + independent_terms
@@ -221,7 +227,15 @@ class OMWBasicnessAnalyzer:
         Returns:
             The calculated basicness score, scaled between 0 and 1.
         """
-        weights = self.__basicness_weights
+        # TODO check: here language-specific weights are mandatory because the formula assumes their ranges
+        # weights = self.__basicness_weights
+
+        weights = self.__language_specific_weights
+
+        if weights is None:
+            raise ValueError("Language-specific weights not set but required for this basicness calculation method.")
+        weights = self.__language_specific_weights[row["Language"]]
+
 
         # --- 1. Feature Extraction (Ensure all are scaled 0-1) ---
         # Note: We directly use the normalized features. No (1-feature) inversion needed here.
@@ -237,12 +251,12 @@ class OMWBasicnessAnalyzer:
 
         # CRITICAL ASSUMPTION: 'n_syn_senses' must be pre-normalized to [0, 1]
         # If it's a raw count, it needs scaling before this step.
-        norm_syn_senses = row["n_syn_senses"]
-        if not (0 <= norm_syn_senses <= 1):
-            # Add a warning or raise an error if the assumption is violated
-            # For now, let's clip it as a safeguard, but pre-normalization is better.
-            # print(f"Warning: 'n_syn_senses' ({norm_syn_senses}) not in [0,1]. Clipping.")
-            norm_syn_senses = np.clip(norm_syn_senses, 0, 1)
+        norm_syn_senses = row["normalized_n_syn_senses"] # TODO check: now should be normalized, need to recalculate correlations for this feature
+        # if not (0 <= norm_syn_senses <= 1):
+        #     # Add a warning or raise an error if the assumption is violated
+        #     # For now, let's clip it as a safeguard, but pre-normalization is better.
+        #     # print(f"Warning: 'n_syn_senses' ({norm_syn_senses}) not in [0,1]. Clipping.")
+        #     norm_syn_senses = np.clip(norm_syn_senses, 0, 1)
 
         # --- 2. Weighted Linear Combination (Raw Score) ---
         raw_score = (
@@ -274,7 +288,7 @@ class OMWBasicnessAnalyzer:
             "count"
         )
 
-        avoid_zero_division = 1e-10
+        avoid_zero_division = 1e-12
 
         n_hyponyms_denom = avoid_zero_division
         n_synonyms_denom = avoid_zero_division
@@ -282,6 +296,7 @@ class OMWBasicnessAnalyzer:
         norm_freq_denom = avoid_zero_division
         norm_basicness_denom = avoid_zero_division
         n_senses_denom = avoid_zero_division
+        n_syn_senses_denom = avoid_zero_division
 
         # Step 1: Plain metrics
         plain_metrics = (
@@ -316,6 +331,9 @@ class OMWBasicnessAnalyzer:
                 max_n_synonyms=("n_synonyms", "max"),
                 min_n_senses=("avg_n_senses", "min"),
                 max_n_senses=("avg_n_senses", "max"),
+                # Not present before
+                min_n_syn_senses=("n_syn_senses", "min"),
+                max_n_syn_senses=("n_syn_senses", "max"),
             )
             .reset_index()
         )
@@ -362,6 +380,15 @@ class OMWBasicnessAnalyzer:
             normalized["avg_n_senses"] - normalized["min_n_senses"]
         ) / (normalized["max_n_senses"] - normalized["min_n_senses"] + n_senses_denom)
 
+        # Not present before
+        normalized["normalized_n_syn_senses"] = (
+            normalized["n_syn_senses"] - normalized["min_n_syn_senses"]
+        ) / (
+            normalized["max_n_syn_senses"]
+            - normalized["min_n_syn_senses"]
+            + n_syn_senses_denom
+        )
+
         # Step 4: Combined metrics
         # Calculate original score (if needed for comparison or if it's still the primary target)
         normalized["combined_metric_normalized"] = normalized.apply(
@@ -373,14 +400,18 @@ class OMWBasicnessAnalyzer:
         )
 
         # Step 5: Min-max of combined metrics
-        min_max_values = (
-            normalized.groupby("ili")
-            .agg(
-                min_combined_normalized=("combined_metric_normalized", "min"),
-                max_combined_normalized=("combined_metric_normalized", "max"),
-            )
-            .reset_index()
-        )
+        # min_max_values = (
+        #     normalized.groupby("Language") # TODO check: here changed groupby from ili to language
+        #     .agg(
+        #         min_combined_normalized=("combined_metric_normalized", "min"),
+        #         max_combined_normalized=("combined_metric_normalized", "max"),
+        #     )
+        #     .reset_index()
+        # )
+
+        # Calculate min and max values of metric for each language
+        min_combined_normalized = normalized.groupby("Language")["combined_metric_normalized"].transform("min")
+        max_combined_normalized = normalized.groupby("Language")["combined_metric_normalized"].transform("max")
 
         # Step 6: Lemmas by language
         # Filter the DataFrame for each language and join the lemmas for each group
@@ -433,8 +464,11 @@ class OMWBasicnessAnalyzer:
         )
 
         # Step 8: Merge sub-dataframes to get the final dataframe
-        result = pd.merge(normalized, min_max_values, on="ili")
-        result = pd.merge(result, lemmas_by_language, on="ili")
+        # result = pd.merge(normalized, min_max_values, on="ili") # not needed anymore because we add min and max values to "normalize" below
+        # Add mix and max values (by language) for the metric as new columns
+        normalized["min_combined_normalized"] = min_combined_normalized
+        normalized["max_combined_normalized"] = max_combined_normalized
+        result = pd.merge(normalized, lemmas_by_language, on="ili")
         result = pd.merge(result, example_en_lemma, on="ili")
         result = pd.merge(result, example_en_gloss, on="ili")
 
@@ -476,6 +510,7 @@ class OMWBasicnessAnalyzer:
                 "normalized_frequency",
                 "normalized_n_hyponyms",
                 "normalized_n_synonyms",
+                "normalized_n_syn_senses",
                 "example_en_lemma",
                 "example_en_gloss",
                 "ili",
