@@ -1,11 +1,9 @@
 import os
-from functools import partial
 from typing import Dict, List
 
 import numpy as np
 import pandas as pd  # type: ignore
 import ujson as json  # type: ignore
-from scipy.optimize import differential_evolution  # type: ignore
 from utils import get_path_from_root
 
 
@@ -13,9 +11,9 @@ class OMWBasicnessAnalyzer:
     def __init__(
         self,
         input_df: pd.DataFrame,
-        basicness_weights: dict = None,
-        opt_set_path: str = None,
-        language_specific_weights: Dict[str, dict] = None,
+        basicness_weights: dict | None = None,
+        opt_set_path: str | None = None,
+        language_specific_weights: Dict[str, dict] | None = None,
     ):
         self.__input_df = input_df.copy()
         self.__result_df = input_df.copy()
@@ -28,6 +26,8 @@ class OMWBasicnessAnalyzer:
             get_path_from_root("resources/culture/culture_dict_lang_ilis.json"), "r"
         ) as f:
             self.__lang_ilis_dict = json.load(f)
+
+        self.__opt_set_df: pd.DataFrame | None = pd.DataFrame()
 
         if opt_set_path is not None:
             self.__opt_set_df = pd.read_excel(opt_set_path)
@@ -75,7 +75,7 @@ class OMWBasicnessAnalyzer:
         """
         self.__language_specific_weights = language_specific_weights
 
-    def get_language_specific_weights(self) -> Dict[str, dict]:
+    def get_language_specific_weights(self) -> Dict[str, dict] | None:
         """
         Get the current language-specific weights.
 
@@ -194,8 +194,12 @@ class OMWBasicnessAnalyzer:
 
         dependent_terms = (
             np.pow(normalized_frequency, abs(word_frequency_weight))
-            * np.pow(normalized_length, abs(word_length_weight)) # changed from factor to normalized_length
-            * np.pow(normalized_pronounce_complexity, abs(pronounce_complexity_weight)) # changed from factor to normalized_pronounce_complexity
+            * np.pow(
+                normalized_length, abs(word_length_weight)
+            )  # changed from factor to normalized_length
+            * np.pow(
+                normalized_pronounce_complexity, abs(pronounce_complexity_weight)
+            )  # changed from factor to normalized_pronounce_complexity
         )
 
         # Also here changed from factors to result data directly, restoring original formula
@@ -227,15 +231,14 @@ class OMWBasicnessAnalyzer:
         Returns:
             The calculated basicness score, scaled between 0 and 1.
         """
-        # TODO check: here language-specific weights are mandatory because the formula assumes their ranges
-        # weights = self.__basicness_weights
 
-        weights = self.__language_specific_weights
-
-        if weights is None:
-            raise ValueError("Language-specific weights not set but required for this basicness calculation method.")
-        weights = self.__language_specific_weights[row["Language"]]
-
+        if (
+            self.__language_specific_weights
+            and row["Language"] in self.__language_specific_weights
+        ):
+            weights = self.__language_specific_weights[row["Language"]]
+        else:
+            weights = self.__basicness_weights
 
         # --- 1. Feature Extraction (Ensure all are scaled 0-1) ---
         # Note: We directly use the normalized features. No (1-feature) inversion needed here.
@@ -251,7 +254,9 @@ class OMWBasicnessAnalyzer:
 
         # CRITICAL ASSUMPTION: 'n_syn_senses' must be pre-normalized to [0, 1]
         # If it's a raw count, it needs scaling before this step.
-        norm_syn_senses = row["normalized_n_syn_senses"] # TODO check: now should be normalized, need to recalculate correlations for this feature
+        norm_syn_senses = row[
+            "normalized_n_syn_senses"
+        ]  # TODO check: now should be normalized, need to recalculate correlations for this feature
         # if not (0 <= norm_syn_senses <= 1):
         #     # Add a warning or raise an error if the assumption is violated
         #     # For now, let's clip it as a safeguard, but pre-normalization is better.
@@ -279,7 +284,7 @@ class OMWBasicnessAnalyzer:
         return final_score
 
     def analyze_lang_syn_group(
-        self, word: str = None, thresholds: List[float] = None
+        self, word: str | None = None, thresholds: List[float] | None = None
     ) -> pd.DataFrame:
         df = self.__input_df.copy()
 
@@ -410,8 +415,12 @@ class OMWBasicnessAnalyzer:
         # )
 
         # Calculate min and max values of metric for each language
-        min_combined_normalized = normalized.groupby("Language")["combined_metric_normalized"].transform("min")
-        max_combined_normalized = normalized.groupby("Language")["combined_metric_normalized"].transform("max")
+        min_combined_normalized = normalized.groupby("Language")[
+            "combined_metric_normalized"
+        ].transform("min")
+        max_combined_normalized = normalized.groupby("Language")[
+            "combined_metric_normalized"
+        ].transform("max")
 
         # Step 6: Lemmas by language
         # Filter the DataFrame for each language and join the lemmas for each group
@@ -713,7 +722,7 @@ class OMWBasicnessAnalyzer:
             ili = row["ili"]
             lang = row["Language"]
             if thresholds is not None:
-                rank = map_score_to_rank(
+                rank = self.map_score_to_rank(
                     row["basicness_score_experimental"], thresholds
                 )
             else:
@@ -855,69 +864,84 @@ class OMWBasicnessAnalyzer:
         self, score_column: str = "basicness_score", thresholds: List[float] = None
     ) -> pd.DataFrame:
         """
-        Convert the basicness scores in the input dataframe to ranks, adding a new column 'basicness_rank'.
-        Scores are mapped to the range from 1 to 4 (or N+1 based on thresholds).
-        Can rank based on a specified score column.
+        Convert basicness scores to ranks using adaptive k-means clustering or fixed thresholds.
 
         Args:
-            score_column: The name of the column containing the score to rank.
-            thresholds: If provided, the thresholds defining the rank boundaries.
+            score_column: Column containing the score to rank.
+            thresholds: Fixed thresholds [t1, t2, t3] for rank boundaries or None for adaptive clustering.
+
+        Returns:
+            DataFrame with added 'basicness_rank' column (4 = most basic, 1 = least basic)
         """
-        ranked_data = self.__result_df.copy()  # Start from the latest result_df
+        from sklearn.cluster import KMeans
+
+        ranked_data = self.__result_df.copy()
 
         if score_column not in ranked_data.columns:
             raise ValueError(f"Score column '{score_column}' not found in DataFrame.")
 
         if thresholds is not None:
-            # Map based on fixed thresholds
+            # Fixed threshold approach
             ranked_data["basicness_rank"] = ranked_data[score_column].apply(
-                lambda x: map_score_to_rank(x, thresholds)
+                lambda x: self.map_score_to_rank(x, thresholds)
             )
         else:
-            # Rank within ILI group (relative ranking)
-            ranked_data["basicness_rank"] = (
-                ranked_data.groupby("ili")[score_column]
-                .rank(method="dense", ascending=False)
-                .astype(int)
-            )
-            # Map rank 1 (highest score) to 4, rank 2 to 3, etc. Assumes max 4 languages per ili.
-            # This mapping might need adjustment if more languages are possible or if a different scheme is desired.
-            max_rank = ranked_data[
-                "basicness_rank"
-            ].max()  # Find highest rank number (e.g., 4 if 4 languages)
-            rank_map = {i: max_rank - i + 1 for i in range(1, max_rank + 1)}
-            ranked_data["basicness_rank"] = (
-                ranked_data["basicness_rank"]
-                .map(rank_map)
-                .fillna(1)
-                .astype(int)  # Handle potential NaNs or single-entry groups
-            )
+            # Group by ILI and apply adaptive ranking
+            for ili in ranked_data["ili"].unique():
+                group = ranked_data[ranked_data["ili"] == ili]
 
-        # Reorder columns to place score and rank prominently
-        # Ensure the ranked score column is also included near the rank
+                if len(group) >= 8:  # Enough data for k-means (2+ per cluster)
+                    # Use k-means to find natural clusters in the data
+                    scores = group[score_column].values.reshape(-1, 1)
+                    kmeans = KMeans(n_clusters=4, n_init=10, random_state=42)
+                    clusters = kmeans.fit_predict(scores)
+
+                    # Map clusters to ranks (higher centroid = higher rank)
+                    centers = kmeans.cluster_centers_.flatten()
+                    cluster_rank_map = {
+                        i: r for r, i in enumerate(np.argsort(centers), 1)
+                    }
+                    ranks = np.array([cluster_rank_map[c] for c in clusters])
+
+                    ranked_data.loc[group.index, "basicness_rank"] = ranks
+                elif len(group) >= 4:
+                    # Enough for quartile ranking
+                    ranked_data.loc[group.index, "basicness_rank"] = (
+                        group[score_column]
+                        .rank(ascending=False, method="dense")
+                        .astype(int)
+                    )
+                else:
+                    # Not enough for quartiles, use simple ranking
+                    ranks = (
+                        group[score_column]
+                        .rank(ascending=False, method="dense")
+                        .astype(int)
+                    )
+                    ranked_data.loc[group.index, "basicness_rank"] = ranks
+
+        # Reorder columns
         cols_to_front = ["Language", score_column, "basicness_rank"]
         other_cols = [col for col in ranked_data.columns if col not in cols_to_front]
         ranked_data = ranked_data[cols_to_front + other_cols]
 
-        self.__result_df_ranked = ranked_data  # Update the ranked version
-
+        self.__result_df_ranked = ranked_data
         return ranked_data
 
+    def map_score_to_rank(self, basicness_score: float, thresholds: list = None) -> int:
+        """Maps basicness score to rank (4=most basic, 1=least basic)"""
+        if thresholds is None:
+            thresholds = [
+                0.25,
+                0.5,
+                0.75,
+            ]  # Equal intervals (fixed from [0.1, 0.65, 0.75])
 
-def map_score_to_rank(basicness_score: float, thresholds: list = None) -> int:
-    """
-    Maps a basicness score (0 to 1) to an ordinal rank (1 to N+1).
-    """
-    if thresholds is None:
-        thresholds = [0.1, 0.65, 0.75]  # Default thresholds
+        if basicness_score is None or np.isnan(basicness_score):
+            return 1
 
-    if basicness_score is None or np.isnan(basicness_score):
-        return 1  # Or handle as appropriate, maybe None or a specific rank
-
-    # Ensure thresholds are sorted
-    thresholds = sorted(thresholds)
-
-    for rank, threshold in enumerate(thresholds, start=1):
-        if basicness_score <= threshold:
-            return rank
-    return len(thresholds) + 1  # Rank N+1 if above the last threshold
+        thresholds = sorted(thresholds)
+        for rank, threshold in enumerate(thresholds, start=1):
+            if basicness_score <= threshold:
+                return rank
+        return len(thresholds) + 1

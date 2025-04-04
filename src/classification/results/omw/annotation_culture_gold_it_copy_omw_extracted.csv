@@ -1,18 +1,18 @@
 Language,Synset,ili,Gloss,Lemma,n_hyponyms,n_synonyms,n_syn_senses,word_length,word_frequency,pronounce_complexity,word_in_children_res,word_in_second_lang_learn_res,n_senses
 en,Synset('omw-en-15168185-n'),i116927,12 o'clock at night; the middle of the night,midnight,0,1,1,8,2.04e-05,0.638,0,0,1
-en,Synset('omw-en-07929519-n'),i78981,a beverage consisting of an infusion of ground coffee beans,coffee,13,2,7,6,7.24e-05,0.344,0,1,4
 en,Synset('omw-en-07929519-n'),i78981,a beverage consisting of an infusion of ground coffee beans,java,13,2,7,4,1e-05,0.82,0,0,3
+en,Synset('omw-en-07929519-n'),i78981,a beverage consisting of an infusion of ground coffee beans,coffee,13,2,7,6,7.24e-05,0.344,0,1,4
 en,Synset('omw-en-07933274-n'),i79004,a beverage made by steeping tea leaves in water,tea,5,1,5,3,5.37e-05,0.193,0,1,5
 en,Synset('omw-en-09328904-n'),i85647,a body of (usually fresh) water surrounded by land,lake,51,1,3,4,6.76e-05,0.193,0,0,3
 en,Synset('omw-en-09503682-n'),i86562,a causal agent creating and controlling things in the universe,nature,0,1,5,6,9.55e-05,0.599,0,0,5
-en,Synset('omw-en-03624767-n'),i55427,a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa),horse,0,2,7,5,5.75e-05,0.205,0,1,5
 en,Synset('omw-en-03624767-n'),i55427,a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa),knight,0,2,7,6,1.91e-05,0.195,0,0,2
+en,Synset('omw-en-03624767-n'),i55427,a chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa),horse,0,2,7,5,5.75e-05,0.205,0,1,5
 en,Synset('omw-en-08226699-n'),i80343,a community of people smaller than a town,village,1,3,11,7,6.61e-05,0.686,1,1,3
 en,Synset('omw-en-08226699-n'),i80343,a community of people smaller than a town,settlement,1,3,11,10,3.09e-05,0.832,0,0,7
 en,Synset('omw-en-08226699-n'),i80343,a community of people smaller than a town,small town,1,3,11,10,0.000113,0.818,0,0,1
-en,Synset('omw-en-04373894-n'),i59896,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,brand,8,4,19,5,6.76e-05,0.731,0,1,6
+en,Synset('omw-en-04373894-n'),i59896,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,sword,8,4,19,5,2.34e-05,0.486,0,0,1
 en,Synset('omw-en-04373894-n'),i59896,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,steel,8,4,19,5,5.13e-05,0.58,0,0,3
-en,Synset('omw-en-04373894-n'),i59896,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,sword,8,4,19,5,2.34e-05,0.204,0,0,1
+en,Synset('omw-en-04373894-n'),i59896,a cutting or thrusting weapon that has a long metal blade and a hilt with a hand guard,brand,8,4,19,5,6.76e-05,0.731,0,1,6
 en,Synset('omw-en-09426788-n'),i86143,a division of an ocean or a large body of salt water partially enclosed by land,sea,40,1,3,3,0.000115,0.184,0,1,3
 en,Synset('omw-en-00478262-n'),i37904,a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal,association football,0,2,2,20,5.7e-05,0.871,0,0,1
 en,Synset('omw-en-00478262-n'),i37904,a football game in which two teams of 11 players try to kick or head a ball into the opponents' goal,soccer,0,2,2,6,3.02e-05,0.487,0,0,1
@@ -25,49 +25,49 @@ en,Synset('omw-en-09359803-n'),i85815,a land mass that projects well above its s
 en,Synset('omw-en-09359803-n'),i85815,a land mass that projects well above its surroundings; higher than a hill,mountain,5,2,7,8,5.37e-05,0.778,0,1,2
 en,Synset('omw-en-09411430-n'),i86078,a large natural stream of water (larger than a creek),river,200,1,1,5,0.000107,0.197,1,1,1
 en,Synset('omw-en-04507155-n'),i60698,a lightweight handheld collapsible canopy,umbrella,1,1,3,8,7.76e-06,0.856,0,0,3
-en,Synset('omw-en-09468604-n'),i86379,a long depression in the surface of the land that usually contains a river,valley,12,2,2,6,5.25e-05,0.194,0,0,1
 en,Synset('omw-en-09468604-n'),i86379,a long depression in the surface of the land that usually contains a river,vale,12,2,2,4,4.17e-06,0.186,0,0,1
+en,Synset('omw-en-09468604-n'),i86379,a long depression in the surface of the land that usually contains a river,valley,12,2,2,6,5.25e-05,0.194,0,0,1
 en,Synset('omw-en-10472799-n'),i92240,a male member of a royal family other than the sovereign (especially the son of a sovereign),prince,14,1,1,6,5.25e-05,0.715,0,0,1
-en,Synset('omw-en-10231515-n'),i90847,a male sovereign; ruler of a kingdom,male monarch,79,3,12,12,4.61e-06,0.862,0,0,1
 en,Synset('omw-en-10231515-n'),i90847,a male sovereign; ruler of a kingdom,rex,79,3,12,3,7.76e-06,0.415,0,0,1
 en,Synset('omw-en-10231515-n'),i90847,a male sovereign; ruler of a kingdom,king,79,3,12,4,0.000148,0.249,1,0,10
+en,Synset('omw-en-10231515-n'),i90847,a male sovereign; ruler of a kingdom,male monarch,79,3,12,12,4.61e-06,0.862,0,0,1
 en,Synset('omw-en-03612814-n'),i55356,a metal pot for stewing or boiling; usually has a lid,boiler,1,2,6,6,5.13e-06,0.476,0,0,2
 en,Synset('omw-en-03612814-n'),i55356,a metal pot for stewing or boiling; usually has a lid,kettle,1,2,6,6,3.47e-06,0.458,0,0,4
-en,Synset('omw-en-08287844-n'),i80699,a particular society at a particular time and place,culture,7,3,15,7,0.000107,0.697,0,0,7
 en,Synset('omw-en-08287844-n'),i80699,a particular society at a particular time and place,civilisation,7,3,15,12,2.34e-06,0.206,0,0,4
 en,Synset('omw-en-08287844-n'),i80699,a particular society at a particular time and place,civilization,7,3,15,12,1.02e-05,0.206,0,0,4
+en,Synset('omw-en-08287844-n'),i80699,a particular society at a particular time and place,culture,7,3,15,7,0.000107,0.697,0,0,7
 en,Synset('omw-en-10547145-n'),i92688,a person who has died and has been declared a saint by canonization,saint,45,1,3,5,2.57e-05,0.206,0,0,3
 en,Synset('omw-en-03028079-n'),i51914,a place for public (especially Christian) worship,church building,5,2,5,15,8.3e-05,0.903,0,0,1
 en,Synset('omw-en-03028079-n'),i51914,a place for public (especially Christian) worship,church,5,2,5,6,0.000145,0.844,0,1,4
 en,Synset('omw-en-04306847-n'),i59503,a sculpture representing a human or animal,statue,7,1,1,6,1.23e-05,0.849,0,0,1
-en,Synset('omw-en-08639058-n'),i82357,a sheltered port where ships can take on or discharge cargo,harbor,5,4,7,6,1.41e-05,0.614,0,0,2
 en,Synset('omw-en-08639058-n'),i82357,a sheltered port where ships can take on or discharge cargo,harbour,5,4,7,7,9.55e-06,0.614,0,0,2
+en,Synset('omw-en-08639058-n'),i82357,a sheltered port where ships can take on or discharge cargo,harbor,5,4,7,6,1.41e-05,0.614,0,0,2
 en,Synset('omw-en-08639058-n'),i82357,a sheltered port where ships can take on or discharge cargo,haven,5,4,7,5,1.35e-05,0.201,1,0,2
 en,Synset('omw-en-02858304-n'),i50885,a small vessel for travel on water,boat,26,1,2,4,5.13e-05,0.202,1,1,2
 en,Synset('omw-en-07850329-n'),i78427,a solid food prepared from the pressed curd of milk,cheese,26,1,2,6,3.72e-05,0.677,0,1,2
-en,Synset('omw-en-09475292-n'),i86414,a steep descent of the water of a river,waterfall,16,2,3,9,3.47e-06,0.843,0,0,1
 en,Synset('omw-en-09475292-n'),i86414,a steep descent of the water of a river,falls,16,2,3,5,4.27e-05,0.206,0,0,2
+en,Synset('omw-en-09475292-n'),i86414,a steep descent of the water of a river,waterfall,16,2,3,9,3.47e-06,0.843,0,0,1
 en,Synset('omw-en-03467517-n'),i54496,a stringed instrument usually having six strings; played by strumming or plucking,guitar,6,1,1,6,3.02e-05,0.592,0,0,1
-en,Synset('omw-en-05946687-n'),i68078,a strong belief in a supernatural power or powers that control human destiny,religious belief,26,3,7,16,2.05e-05,0.872,0,0,1
-en,Synset('omw-en-05946687-n'),i68078,a strong belief in a supernatural power or powers that control human destiny,faith,26,3,7,5,6.61e-05,0.189,0,1,4
 en,Synset('omw-en-05946687-n'),i68078,a strong belief in a supernatural power or powers that control human destiny,religion,26,3,7,8,5.5e-05,0.879,0,0,2
+en,Synset('omw-en-05946687-n'),i68078,a strong belief in a supernatural power or powers that control human destiny,faith,26,3,7,5,6.61e-05,0.189,0,1,4
+en,Synset('omw-en-05946687-n'),i68078,a strong belief in a supernatural power or powers that control human destiny,religious belief,26,3,7,16,2.05e-05,0.872,0,0,1
+en,Synset('omw-en-03743902-n'),i56131,a structure erected to commemorate persons or events,memorial,12,2,6,8,2.57e-05,0.205,0,0,3
 en,Synset('omw-en-03743902-n'),i56131,a structure erected to commemorate persons or events,monument,12,2,6,8,7.94e-06,0.858,0,0,3
-en,Synset('omw-en-03743902-n'),i56131,a structure erected to commemorate persons or events,memorial,12,2,6,8,2.57e-05,0.2,0,0,3
 en,Synset('omw-en-04157320-n'),i58585,a three-dimensional work of plastic art,sculpture,9,1,2,9,8.32e-06,0.756,0,0,2
-en,Synset('omw-en-02924116-n'),i51285,a vehicle carrying many passengers; used for public transport,passenger vehicle,3,10,18,17,1.69e-05,0.702,0,0,1
-en,Synset('omw-en-02924116-n'),i51285,a vehicle carrying many passengers; used for public transport,coach,3,10,18,5,9.12e-05,0.532,0,0,5
 en,Synset('omw-en-02924116-n'),i51285,a vehicle carrying many passengers; used for public transport,bus,3,10,18,3,6.76e-05,0.256,0,1,4
-en,Synset('omw-en-11462526-n'),i97824,a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning,violent storm,8,2,4,13,1.77e-05,0.868,0,0,1
-en,Synset('omw-en-11462526-n'),i97824,a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning,storm,8,2,4,5,4.57e-05,0.739,0,0,3
+en,Synset('omw-en-02924116-n'),i51285,a vehicle carrying many passengers; used for public transport,coach,3,10,18,5,9.12e-05,0.532,0,0,5
+en,Synset('omw-en-02924116-n'),i51285,a vehicle carrying many passengers; used for public transport,passenger vehicle,3,10,18,17,1.69e-05,0.702,0,0,1
+en,Synset('omw-en-11462526-n'),i97824,a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning,storm,8,2,4,5,4.57e-05,0.792,0,0,3
+en,Synset('omw-en-11462526-n'),i97824,a violent weather condition with winds 64-72 knots (11 on the Beaufort scale) and precipitation and thunder and lightning,violent storm,8,2,4,13,1.77e-05,0.877,0,0,1
 en,Synset('omw-en-10150940-n'),i90350,a visitor to whom hospitality is extended,guest,3,2,5,5,3.8e-05,0.366,1,0,4
 en,Synset('omw-en-10150940-n'),i90350,a visitor to whom hospitality is extended,invitee,3,2,5,7,1.29e-07,0.196,0,0,1
-en,Synset('omw-en-00523513-n'),i38140,an active diversion requiring physical exertion and competition,sport,20,2,10,5,5.37e-05,0.762,0,1,7
+en,Synset('omw-en-00523513-n'),i38140,an active diversion requiring physical exertion and competition,sport,20,2,10,5,5.37e-05,0.812,0,1,7
 en,Synset('omw-en-00523513-n'),i38140,an active diversion requiring physical exertion and competition,athletics,20,2,10,9,6.61e-06,0.821,0,0,3
 en,Synset('omw-en-07447641-n'),i75850,an occasion on which people can assemble for social interaction and entertainment,party,11,1,5,5,0.000309,0.207,1,1,5
 en,Synset('omw-en-03138669-n'),i52549,an ornamental jeweled headdress signifying sovereignty,crown,1,2,13,5,3.63e-05,0.198,0,0,12
 en,Synset('omw-en-03138669-n'),i52549,an ornamental jeweled headdress signifying sovereignty,diadem,1,2,13,6,2.45e-07,0.656,0,0,1
-en,Synset('omw-en-00428000-n'),i37653,any joyous diversion,festivity,7,2,4,9,3.47e-07,0.839,0,0,1
 en,Synset('omw-en-00428000-n'),i37653,any joyous diversion,celebration,7,2,4,11,1.95e-05,0.634,0,0,3
+en,Synset('omw-en-00428000-n'),i37653,any joyous diversion,festivity,7,2,4,9,3.47e-07,0.839,0,0,1
 en,Synset('omw-en-02984061-n'),i51645,any large and important church,cathedral,2,1,2,9,9.77e-06,0.865,0,0,2
 en,Synset('omw-en-12620196-n'),i103203,any of many shrubs of the genus Rosa that bear roses,rosebush,11,2,4,8,5.89e-08,0.787,0,0,1
 en,Synset('omw-en-12620196-n'),i103203,any of many shrubs of the genus Rosa that bear roses,rose,11,2,4,4,6.61e-05,0.186,0,0,3
@@ -76,70 +76,70 @@ en,Synset('omw-en-07724943-n'),i77610,any of various edible seeds of plants of t
 en,Synset('omw-en-07724943-n'),i77610,any of various edible seeds of plants of the family Leguminosae used for food,edible bean,3,2,5,11,2.95e-06,0.874,0,0,1
 en,Synset('omw-en-02512053-n'),i48880,any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills,fish,13,1,4,4,7.94e-05,0.197,1,1,4
 en,Synset('omw-en-03787759-n'),i56381,art consisting of a design made of small pieces of colored stone or glass,mosaic,0,1,6,6,3.8e-06,0.206,0,0,6
+en,Synset('omw-en-02395406-n'),i48199,domestic swine,hog,1,5,15,3,3.72e-06,0.197,0,0,3
 en,Synset('omw-en-02395406-n'),i48199,domestic swine,squealer,1,5,15,8,4.57e-08,0.843,0,0,2
 en,Synset('omw-en-02395406-n'),i48199,domestic swine,pig,1,5,15,3,1.38e-05,0.247,0,0,6
-en,Synset('omw-en-02395406-n'),i48199,domestic swine,hog,1,5,15,3,3.72e-06,0.197,0,0,3
 en,Synset('omw-en-11458314-n'),i97801,droplets of water vapor suspended in the air near the ground,fog,4,1,3,3,7.94e-06,0.199,0,0,3
-en,Synset('omw-en-07891726-n'),i78715,fermented juice (of grapes especially),vino,24,2,3,4,5.89e-07,0.193,0,0,1
 en,Synset('omw-en-07891726-n'),i78715,fermented juice (of grapes especially),wine,24,2,3,4,5.5e-05,0.18,0,1,2
-en,Synset('omw-en-03876519-n'),i56911,graphic art consisting of an artistic composition made by applying paints to a surface,painting,20,2,14,8,3.98e-05,0.797,0,0,4
+en,Synset('omw-en-07891726-n'),i78715,fermented juice (of grapes especially),vino,24,2,3,4,5.89e-07,0.193,0,0,1
 en,Synset('omw-en-03876519-n'),i56911,graphic art consisting of an artistic composition made by applying paints to a surface,picture,20,2,14,7,0.000135,0.745,1,1,10
-en,Synset('omw-en-07669891-n'),i77246,meat cut from the thigh of a hog (usually smoked),ham,2,3,7,3,1.32e-05,0.192,0,1,4
-en,Synset('omw-en-07669891-n'),i77246,meat cut from the thigh of a hog (usually smoked),jambon,2,3,7,6,4.27e-08,0.862,0,0,1
+en,Synset('omw-en-03876519-n'),i56911,graphic art consisting of an artistic composition made by applying paints to a surface,painting,20,2,14,8,3.98e-05,0.797,0,0,4
 en,Synset('omw-en-07669891-n'),i77246,meat cut from the thigh of a hog (usually smoked),gammon,2,3,7,6,3.24e-07,0.2,0,0,2
+en,Synset('omw-en-07669891-n'),i77246,meat cut from the thigh of a hog (usually smoked),jambon,2,3,7,6,4.27e-08,0.862,0,0,1
+en,Synset('omw-en-07669891-n'),i77246,meat cut from the thigh of a hog (usually smoked),ham,2,3,7,3,1.32e-05,0.192,0,1,4
 en,Synset('omw-en-04228054-n'),i58996,narrow wood or metal or plastic runners used in pairs for gliding over snow,ski,1,1,1,3,1.35e-05,0.389,0,0,1
-en,Synset('omw-en-07352190-n'),i75330,one of a series of ridges that moves across the surface of a liquid (especially across a large body of water),moving ridge,13,2,10,12,1.17e-05,0.872,0,0,1
 en,Synset('omw-en-07352190-n'),i75330,one of a series of ridges that moves across the surface of a liquid (especially across a large body of water),wave,13,2,10,4,4.17e-05,0.184,1,0,9
+en,Synset('omw-en-07352190-n'),i75330,one of a series of ridges that moves across the surface of a liquid (especially across a large body of water),moving ridge,13,2,10,12,1.17e-05,0.872,0,0,1
 en,Synset('omw-en-15236475-n'),i117307,one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions,time of year,8,2,4,12,0.000606,0.844,0,0,1
 en,Synset('omw-en-15236475-n'),i117307,one of the natural periods into which the year is divided by the equinoxes and solstices or atmospheric conditions,season,8,2,4,6,0.000302,0.672,0,1,3
 en,Synset('omw-en-07970721-n'),i79200,people descended from a common ancestor,sept,5,7,18,4,2.24e-05,0.495,0,0,2
-en,Synset('omw-en-07970721-n'),i79200,people descended from a common ancestor,family line,5,7,18,11,0.000184,0.199,0,0,1
 en,Synset('omw-en-07970721-n'),i79200,people descended from a common ancestor,family,5,7,18,6,0.000457,0.205,1,1,8
+en,Synset('omw-en-07970721-n'),i79200,people descended from a common ancestor,family line,5,7,18,11,0.000184,0.199,0,0,1
 en,Synset('omw-en-11508382-n'),i98073,precipitation falling from clouds in the form of ice crystals,snowfall,2,2,5,8,1.66e-06,0.203,0,0,1
 en,Synset('omw-en-11508382-n'),i98073,precipitation falling from clouds in the form of ice crystals,snow,2,2,5,4,4.57e-05,0.189,0,1,4
 en,Synset('omw-en-08645033-n'),i82392,rural regions,countryside,0,1,1,11,8.32e-06,0.862,0,0,1
-en,Synset('omw-en-10093658-n'),i89974,someone whose occupation is catching fish,fisher,2,2,3,6,1.05e-05,0.202,0,0,2
 en,Synset('omw-en-10093658-n'),i89974,someone whose occupation is catching fish,fisherman,2,2,3,9,3.09e-06,0.835,0,0,1
-en,Synset('omw-en-07006119-n'),i73479,the art of writing and producing plays,theatre,1,5,10,7,3.31e-05,0.194,0,1,3
+en,Synset('omw-en-10093658-n'),i89974,someone whose occupation is catching fish,fisher,2,2,3,6,1.05e-05,0.202,0,0,2
 en,Synset('omw-en-07006119-n'),i73479,the art of writing and producing plays,dramatic art,1,5,10,12,2.27e-05,0.847,0,0,1
+en,Synset('omw-en-07006119-n'),i73479,the art of writing and producing plays,theatre,1,5,10,7,3.31e-05,0.194,0,1,3
 en,Synset('omw-en-07006119-n'),i73479,the art of writing and producing plays,theater,1,5,10,7,2.24e-05,0.194,0,0,3
 en,Synset('omw-en-11524662-n'),i98170,the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation,weather condition,11,4,6,17,3.66e-05,0.879,0,0,1
 en,Synset('omw-en-11524662-n'),i98170,the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation,conditions,11,4,6,10,9.55e-05,0.822,0,0,3
 en,Synset('omw-en-11524662-n'),i98170,the atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation,weather,11,4,6,7,7.41e-05,0.195,0,1,1
-en,Synset('omw-en-15168790-n'),i116932,the first light of day,morning,0,12,21,7,0.000214,0.818,1,1,4
-en,Synset('omw-en-15168790-n'),i116932,the first light of day,first light,0,12,21,11,0.000183,0.667,0,0,1
 en,Synset('omw-en-15168790-n'),i116932,the first light of day,break of day,0,12,21,12,0.000129,0.648,0,0,1
+en,Synset('omw-en-15168790-n'),i116932,the first light of day,first light,0,12,21,11,0.000183,0.667,0,0,1
+en,Synset('omw-en-15168790-n'),i116932,the first light of day,morning,0,12,21,7,0.000214,0.818,1,1,4
 en,Synset('omw-en-07574602-n'),i76564,the first meal of the day (usually in the morning),breakfast,2,1,1,9,4.07e-05,0.874,0,1,1
 en,Synset('omw-en-15098161-n'),i116549,the hard fibrous lignified substance under the bark of trees,wood,91,1,8,4,6.03e-05,0.199,0,1,8
 en,Synset('omw-en-03781244-n'),i56337,the residence of a religious community,monastery,4,1,1,9,4.47e-06,0.661,0,0,1
 en,Synset('omw-en-09428293-n'),i86148,the shore of a sea or ocean,sea-coast,9,4,7,9,4.5e-05,0.206,0,0,1
-en,Synset('omw-en-09428293-n'),i86148,the shore of a sea or ocean,seashore,9,4,7,8,8.32e-07,0.714,0,0,1
+en,Synset('omw-en-09428293-n'),i86148,the shore of a sea or ocean,seashore,9,4,7,8,8.32e-07,0.776,0,0,1
 en,Synset('omw-en-09428293-n'),i86148,the shore of a sea or ocean,coast,9,4,7,5,7.41e-05,0.465,0,0,4
 en,Synset('omw-en-09450163-n'),i86272,the star that is the source of light and heat for the planets in the solar system,sun,0,2,8,3,9.33e-05,0.192,0,1,6
-en,Synset('omw-en-15169421-n'),i116935,the time of day immediately following sunset,twilight,1,9,22,8,6.61e-06,0.199,0,0,3
 en,Synset('omw-en-15169421-n'),i116935,the time of day immediately following sunset,dusk,1,9,22,4,2.75e-06,0.41,0,0,1
+en,Synset('omw-en-15169421-n'),i116935,the time of day immediately following sunset,twilight,1,9,22,8,6.61e-06,0.199,0,0,3
 en,Synset('omw-en-15169421-n'),i116935,the time of day immediately following sunset,fall,1,9,22,4,0.000135,0.198,0,1,12
 en,Synset('omw-en-15237250-n'),i117310,the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox,summer,0,2,3,6,0.00017,0.198,1,1,2
 en,Synset('omw-en-15237250-n'),i117310,the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox,summertime,0,2,3,10,1.78e-06,0.208,0,0,1
-en,Synset('omw-en-03899768-n'),i57055,usually paved outdoor area adjoining a residence,patio,1,2,4,5,2.75e-06,0.562,0,0,1
 en,Synset('omw-en-03899768-n'),i57055,usually paved outdoor area adjoining a residence,terrace,1,2,4,7,7.59e-06,0.49,0,0,3
-en,Synset('omw-en-11501381-n'),i98034,water falling in drops from vapor condensed in the atmosphere,rainfall,5,2,4,8,6.61e-06,0.78,0,0,1
+en,Synset('omw-en-03899768-n'),i57055,usually paved outdoor area adjoining a residence,patio,1,2,4,5,2.75e-06,0.562,0,0,1
 en,Synset('omw-en-11501381-n'),i98034,water falling in drops from vapor condensed in the atmosphere,rain,5,2,4,4,5.13e-05,0.181,1,1,3
+en,Synset('omw-en-11501381-n'),i98034,water falling in drops from vapor condensed in the atmosphere,rainfall,5,2,4,8,6.61e-06,0.78,0,0,1
 en,Synset('omw-en-03322099-n'),i53601,workplace consisting of farm buildings and cultivated land as a unit,farm,13,1,1,4,5.62e-05,0.204,0,1,1
-it,Synset('omw-iwn-10547145-n'),i92688,Chi è stato canonizzato ed è venerato con culto pubblico nella chiesa universale,santo,4,3,6,5,7.76e-05,0.202,0,0,4
-it,Synset('omw-iwn-10547145-n'),i92688,Chi è stato canonizzato ed è venerato con culto pubblico nella chiesa universale,san,4,3,6,3,0.000234,0.184,0,0,1
 it,Synset('omw-iwn-10547145-n'),i92688,Chi è stato canonizzato ed è venerato con culto pubblico nella chiesa universale,s.,4,3,6,2,0.000269,0.203,0,0,1
+it,Synset('omw-iwn-10547145-n'),i92688,Chi è stato canonizzato ed è venerato con culto pubblico nella chiesa universale,san,4,3,6,3,0.000234,0.184,0,0,1
+it,Synset('omw-iwn-10547145-n'),i92688,Chi è stato canonizzato ed è venerato con culto pubblico nella chiesa universale,santo,4,3,6,5,7.76e-05,0.202,0,0,4
 it,Synset('omw-iwn-07352190-n'),i75330,afflusso e riflusso di massa d'acqua sulla superficie di uno specchio d'acqua,onda,10,1,7,4,4.79e-05,0.196,0,1,7
 it,Synset('omw-iwn-03541696-n'),i54942,albergo di categoria e di dimensioni modeste,locanda,1,1,2,7,3.31e-06,0.202,0,0,2
 it,Synset('omw-iwn-07669891-n'),i77246,alimento ottenuto dalla coscia di maiale salata e fatta asciugare,prosciutto,0,1,2,10,7.59e-06,0.764,0,0,2
 it,Synset('omw-iwn-09468604-n'),i86379,ampia e profonda depressione della superficie terrestre,valle,7,1,3,5,4.79e-05,0.188,0,0,3
 it,Synset('omw-iwn-02512053-n'),i48880,animale vertebrato acquatico,pesce,3,1,5,5,4.07e-05,0.199,1,0,5
+it,Synset('omw-it-04373894-n'),i59896,arma bianca da taglio,ferro,4,5,22,5,4.57e-05,0.2,0,0,7
 it,Synset('omw-it-04373894-n'),i59896,arma bianca da taglio,spada,4,5,22,5,2.63e-05,0.614,0,0,2
 it,Synset('omw-it-04373894-n'),i59896,arma bianca da taglio,lama,4,5,22,4,1.45e-05,0.182,0,0,11
-it,Synset('omw-it-04373894-n'),i59896,arma bianca da taglio,ferro,4,5,22,5,4.57e-05,0.2,0,0,7
-it,Synset('omw-iwn-04507155-n'),i60698,arnese per ripararsi dalla pioggia o dal sole,paracqua,1,3,7,8,0.0,0.203,0,0,2
 it,Synset('omw-iwn-04507155-n'),i60698,arnese per ripararsi dalla pioggia o dal sole,parapioggia,1,3,7,11,6.92e-08,0.858,0,0,2
 it,Synset('omw-iwn-04507155-n'),i60698,arnese per ripararsi dalla pioggia o dal sole,ombrello,1,3,7,8,4.47e-06,0.843,0,0,3
+it,Synset('omw-iwn-04507155-n'),i60698,arnese per ripararsi dalla pioggia o dal sole,paracqua,1,3,7,8,0.0,0.203,0,0,2
 it,Synset('omw-iwn-07006119-n'),i73479,arte teatrale,teatro,0,2,9,6,8.71e-05,0.202,0,1,6
 it,Synset('omw-iwn-07006119-n'),i73479,arte teatrale,palcoscenico,0,2,9,12,6.46e-06,0.779,0,0,3
 it,Synset('omw-iwn-07891726-n'),i78715,bevanda alcolica ottenuta dalla fermentazione delle uve pigiate,vino,17,1,2,4,6.46e-05,0.19,0,1,2
@@ -155,48 +155,48 @@ it,Synset('omw-iwn-15236475-n'),i117307,ciascuno dei quattro periodi in cui è s
 it,Synset('omw-it-11524662-n'),i98170,condizioni meteorologiche,tempo,13,1,17,5,0.000955,0.524,1,1,17
 it,Synset('omw-it-09411430-n'),i86078,corso d'acqua,fiume,73,1,4,5,6.31e-05,0.493,0,1,4
 it,Synset('omw-iwn-03743902-n'),i56131,"costruzione, opera importante sotto il profilo storico o artistico",monumento,9,1,3,9,2.04e-05,0.204,0,0,3
-it,Synset('omw-it-03322099-n'),i53601,costruzioni e terreno di una fattoria considerati come unità,allevamento,9,4,12,11,8.91e-06,0.729,0,0,6
 it,Synset('omw-it-03322099-n'),i53601,costruzioni e terreno di una fattoria considerati come unità,fattoria,9,4,12,8,9.77e-06,0.738,0,0,3
+it,Synset('omw-it-03322099-n'),i53601,costruzioni e terreno di una fattoria considerati come unità,allevamento,9,4,12,11,8.91e-06,0.729,0,0,6
 it,Synset('omw-it-03322099-n'),i53601,costruzioni e terreno di una fattoria considerati come unità,masseria,9,4,12,8,1.62e-06,0.725,0,0,2
-it,Synset('omw-iwn-05946687-n'),i68078,credenza,fede,16,2,16,4,7.94e-05,0.199,0,1,9
 it,Synset('omw-iwn-05946687-n'),i68078,credenza,credenza,16,2,16,8,5.25e-06,0.826,1,0,7
+it,Synset('omw-iwn-05946687-n'),i68078,credenza,fede,16,2,16,4,7.94e-05,0.199,0,1,9
 it,Synset('omw-iwn-08287844-n'),i80699,cultura di un determinato popolo,cultura,0,2,16,7,0.000174,0.794,0,1,10
 it,Synset('omw-iwn-08287844-n'),i80699,cultura di un determinato popolo,civiltà,0,2,16,7,2.75e-05,0.79,0,0,6
 it,Synset('omw-iwn-03787759-n'),i56381,"decorazione di pareti o pavimenti ottenuta accostando cubetti o frammenti colorati di pietra, vetro e simili per ottenere il disegno stabilito",mosaico,0,1,4,7,5.25e-06,0.201,0,0,4
 it,Synset('omw-iwn-03028079-n'),i51914,edificio sacro in cui si svolgono pubblicamente gli atti di culto delle religioni cristiane,chiesa,4,1,4,6,0.000191,0.658,0,1,4
 it,Synset('omw-iwn-11458314-n'),i97801,fenomeno atmosferico consistente in massa di goccioline minutissime di acqua in sospensione nell'atmosfera,nebbia,2,1,4,6,1.17e-05,0.199,0,0,4
-it,Synset('omw-it-07447641-n'),i75850,"festeggiamento, pubblico o privato, organizzato per celebrare una circostanza lieta o per divertimento",party,4,3,12,5,2.09e-05,0.453,0,0,1
 it,Synset('omw-it-07447641-n'),i75850,"festeggiamento, pubblico o privato, organizzato per celebrare una circostanza lieta o per divertimento",festa,4,3,12,5,0.00012,0.493,1,1,8
 it,Synset('omw-it-07447641-n'),i75850,"festeggiamento, pubblico o privato, organizzato per celebrare una circostanza lieta o per divertimento",ricevimento,4,3,12,11,5.5e-06,0.766,0,0,3
+it,Synset('omw-it-07447641-n'),i75850,"festeggiamento, pubblico o privato, organizzato per celebrare una circostanza lieta o per divertimento",party,4,3,12,5,2.09e-05,0.453,0,0,1
 it,Synset('omw-iwn-10472799-n'),i92240,"figlio di sovrano regnante, futuro sovrano",principe,11,1,2,8,5.62e-05,0.855,0,0,2
 it,Synset('omw-iwn-00478262-n'),i37904,gioco del calcio,calcio,0,2,10,6,0.000135,0.642,1,1,6
 it,Synset('omw-iwn-00478262-n'),i37904,gioco del calcio,football,0,2,10,8,1.32e-05,0.784,0,0,4
 it,Synset('omw-it-00478262-n'),i37904,gioco tra due squadre di undici giocatori l'una che consiste nel mandare il pallone nella rete avversaria colpendolo con i piedi o con la testa,pallone,0,3,14,7,1.26e-05,0.724,0,0,4
 it,Synset('omw-iwn-08226699-n'),i80343,"gruppo di persone che abitano un piccolo borgo, un villagggio",villaggio,0,1,4,9,5.13e-05,0.821,1,0,4
-it,Synset('omw-iwn-09426788-n'),i86143,il complesso delle acque salate che coprono gran parte della superficie terrestre,mare,23,2,10,4,0.000166,0.183,0,1,7
 it,Synset('omw-iwn-09426788-n'),i86143,il complesso delle acque salate che coprono gran parte della superficie terrestre,acque,23,2,10,5,4.9e-05,0.202,0,0,3
+it,Synset('omw-iwn-09426788-n'),i86143,il complesso delle acque salate che coprono gran parte della superficie terrestre,mare,23,2,10,4,0.000166,0.183,0,1,7
 it,Synset('omw-iwn-00428000-n'),i37653,il festeggiare,celebrazione,3,2,5,12,1.07e-05,0.834,0,0,3
 it,Synset('omw-iwn-00428000-n'),i37653,il festeggiare,festeggiamento,3,2,5,14,4.47e-07,0.837,0,0,2
-it,Synset('omw-iwn-15098161-n'),i116549,il materiale,legname,44,2,5,7,3.55e-06,0.189,0,0,2
 it,Synset('omw-iwn-15098161-n'),i116549,il materiale,legno,44,2,5,5,4.79e-05,0.186,0,0,3
+it,Synset('omw-iwn-15098161-n'),i116549,il materiale,legname,44,2,5,7,3.55e-06,0.189,0,0,2
 it,Synset('omw-iwn-07574602-n'),i76564,il primo pasto del mattino,colazione,0,1,3,9,3.98e-05,0.206,0,0,3
 it,Synset('omw-it-07970721-n'),i79200,l'insieme dei consanguinei di tutte le generazioni presenti e passate,famiglia,4,1,11,8,0.000355,0.192,1,1,11
-it,Synset('omw-iwn-07970721-n'),i79200,l'insieme delle famiglie con uno stesso capostipite,razza,4,12,66,5,3.55e-05,0.564,0,0,10
 it,Synset('omw-iwn-07970721-n'),i79200,l'insieme delle famiglie con uno stesso capostipite,gente,4,12,66,5,0.000437,0.85,0,1,8
+it,Synset('omw-iwn-07970721-n'),i79200,l'insieme delle famiglie con uno stesso capostipite,razza,4,12,66,5,3.55e-05,0.564,0,0,10
 it,Synset('omw-iwn-10150940-n'),i90350,la persona accolta in casa d'altri,ospite,0,1,7,6,2.75e-05,0.756,1,0,7
-it,Synset('omw-it-15168790-n'),i116932,la prima luce del giorno,alba,0,7,26,4,2.24e-05,0.194,0,0,6
-it,Synset('omw-it-15168790-n'),i116932,la prima luce del giorno,albori,0,7,26,6,2.04e-06,0.694,0,0,5
 it,Synset('omw-it-15168790-n'),i116932,la prima luce del giorno,aurora,0,7,26,6,7.41e-06,0.199,0,0,6
+it,Synset('omw-it-15168790-n'),i116932,la prima luce del giorno,albori,0,7,26,6,2.04e-06,0.694,0,0,5
+it,Synset('omw-it-15168790-n'),i116932,la prima luce del giorno,alba,0,7,26,4,2.24e-05,0.194,0,0,6
 it,Synset('omw-it-15237250-n'),i117310,"la stagione più calda dell'anno, tra la primavera e l'autunno",estate,0,1,2,6,6.92e-05,0.729,1,1,2
 it,Synset('omw-it-09450163-n'),i86272,la stella attorno alla quale gravitano i corpi celesti del sistema solare,sole,0,2,12,4,0.000135,0.188,0,1,11
 it,Synset('omw-iwn-09428293-n'),i86148,la striscia di terra e la regione situata vicino al mare,marina,0,6,28,6,4.47e-05,0.189,0,0,7
-it,Synset('omw-iwn-09428293-n'),i86148,la striscia di terra e la regione situata vicino al mare,costa,0,6,28,5,0.000112,0.533,0,0,8
 it,Synset('omw-iwn-09428293-n'),i86148,la striscia di terra e la regione situata vicino al mare,costiera,0,6,28,8,1.07e-05,0.203,0,0,3
+it,Synset('omw-iwn-09428293-n'),i86148,la striscia di terra e la regione situata vicino al mare,costa,0,6,28,5,0.000112,0.533,0,0,8
 it,Synset('omw-iwn-15168185-n'),i116927,la ventiquattresima ora della giornata,mezzanotte,0,1,3,10,1.78e-05,0.797,0,0,3
 it,Synset('omw-iwn-08639058-n'),i82357,luogo di scalo di navi,porto,2,1,6,5,0.000107,0.518,1,1,6
-it,Synset('omw-iwn-02395406-n'),i48199,"mammifero onnivoro, domestico, allevato per la sua carne",maiale,0,3,10,6,1.26e-05,0.188,0,1,5
-it,Synset('omw-iwn-02395406-n'),i48199,"mammifero onnivoro, domestico, allevato per la sua carne",suino,0,3,10,5,8.32e-07,0.193,0,0,2
 it,Synset('omw-iwn-02395406-n'),i48199,"mammifero onnivoro, domestico, allevato per la sua carne",porco,0,3,10,5,1.2e-05,0.518,0,0,3
+it,Synset('omw-iwn-02395406-n'),i48199,"mammifero onnivoro, domestico, allevato per la sua carne",suino,0,3,10,5,8.32e-07,0.193,0,0,2
+it,Synset('omw-iwn-02395406-n'),i48199,"mammifero onnivoro, domestico, allevato per la sua carne",maiale,0,3,10,6,1.26e-05,0.188,0,1,5
 it,Synset('omw-it-09328904-n'),i85647,massa d'acqua circondata dalla terra,lago,7,1,2,4,4.37e-05,0.184,1,0,2
 it,Synset('omw-iwn-12620196-n'),i103203,monte Rosa,rosaio,5,2,10,6,3.98e-08,0.192,0,0,3
 it,Synset('omw-iwn-12620196-n'),i103203,monte Rosa,rosa,5,2,10,4,6.61e-05,0.193,0,0,7
@@ -204,10 +204,10 @@ it,Synset('omw-it-03624767-n'),i55427,"negli scacchi, pezzo che rappresenta la t
 it,Synset('omw-iwn-04157320-n'),i58585,opera fatta da uno scultore,scultura,8,1,3,8,1.02e-05,0.852,0,0,3
 it,Synset('omw-iwn-02858304-n'),i50885,piccola imbarcazione a remi a vela o a motore,barca,19,1,5,5,2.45e-05,0.203,1,0,5
 it,Synset('omw-iwn-11508382-n'),i98073,precipitazione atmosferica costituita da piccole particelle di ghiaccio,neve,2,1,4,4,2.88e-05,0.195,0,0,4
-it,Synset('omw-iwn-11501381-n'),i98034,precipitazione d'acqua dal cielo,pioggia,7,2,15,7,3.55e-05,0.874,1,0,5
 it,Synset('omw-iwn-11501381-n'),i98034,precipitazione d'acqua dal cielo,acqua,7,2,15,5,0.000195,0.201,1,1,10
-it,Synset('omw-iwn-07850329-n'),i78427,"prodotto alimentare ottenuto dalla coagulazione del latte di vacca, pecora, capra o bufala con il caglio",cacio,10,2,4,5,9.55e-07,0.507,0,0,2
+it,Synset('omw-iwn-11501381-n'),i98034,precipitazione d'acqua dal cielo,pioggia,7,2,15,7,3.55e-05,0.874,1,0,5
 it,Synset('omw-iwn-07850329-n'),i78427,"prodotto alimentare ottenuto dalla coagulazione del latte di vacca, pecora, capra o bufala con il caglio",formaggio,10,2,4,9,1.86e-05,0.827,0,0,2
+it,Synset('omw-iwn-07850329-n'),i78427,"prodotto alimentare ottenuto dalla coagulazione del latte di vacca, pecora, capra o bufala con il caglio",cacio,10,2,4,5,9.55e-07,0.507,0,0,2
 it,Synset('omw-iwn-03612814-n'),i55356,recipiente o apparecchio che serve a far bollire un liquido,bollitore,0,1,3,9,7.08e-07,0.738,0,0,3
 it,Synset('omw-iwn-09359803-n'),i85815,rilievo fisico naturale,monte,3,2,7,5,6.31e-05,0.201,0,1,3
 it,Synset('omw-iwn-09359803-n'),i85815,rilievo fisico naturale,montagna,3,2,7,8,4.47e-05,0.786,0,1,4
@@ -221,248 +221,248 @@ it,Synset('omw-iwn-04306847-n'),i59503,una scultura rappresentante un uomo o un 
 it,Synset('omw-iwn-11462526-n'),i97824,violenta tempesta di mare o di vento,bufera,5,7,28,6,2.34e-06,0.615,0,0,5
 it,Synset('omw-iwn-11462526-n'),i97824,violenta tempesta di mare o di vento,tempesta,5,7,28,8,1.91e-05,0.866,0,0,5
 it,Synset('omw-iwn-11462526-n'),i97824,violenta tempesta di mare o di vento,temporale,5,7,28,9,2.09e-05,0.748,0,0,4
-it,Synset('omw-it-09238926-n'),i85180,,grotta,2,2,8,6,8.91e-06,0.803,0,0,3
-it,Synset('omw-it-09238926-n'),i85180,,antro,2,2,8,5,5.5e-07,0.204,0,0,5
-it,Synset('omw-it-07574602-n'),i76564,,prima colazione,0,2,4,15,3.88e-05,0.797,0,0,1
-it,Synset('omw-it-10150940-n'),i90350,,invitato,0,2,8,8,2.14e-05,0.77,0,0,1
-it,Synset('omw-it-03876519-n'),i56911,,quadro,16,2,8,6,4.57e-05,0.774,0,1,7
-it,Synset('omw-it-03876519-n'),i56911,,dipinto,16,2,8,7,1.82e-05,0.622,0,0,1
-it,Synset('omw-it-02395406-n'),i48199,,sus scrofa,0,3,10,10,5.15e-07,0.82,0,0,2
-it,Synset('omw-it-15169421-n'),i116935,,imbrunire,0,2,4,9,1.58e-07,0.784,0,0,1
-it,Synset('omw-it-15169421-n'),i116935,,crepuscolo,0,2,4,10,1.91e-06,0.801,0,0,3
+it,Synset('omw-it-09468604-n'),i86379,,vallata,7,3,5,7,2.34e-06,0.72,0,0,1
+it,Synset('omw-it-09468604-n'),i86379,,conca,7,3,5,5,2.95e-06,0.205,0,0,1
+it,Synset('omw-it-07886849-n'),i78683,,birra,2,1,3,5,3.63e-05,0.195,0,0,3
+it,Synset('omw-iwn-07724943-n'),i77610,,fagiolo,0,1,4,7,1.51e-06,0.811,1,0,4
+it,Synset('omw-it-09428293-n'),i86148,,riva,0,4,20,4,2.04e-05,0.186,1,0,4
+it,Synset('omw-it-03781244-n'),i56337,,convento,2,2,10,8,1.29e-05,0.858,0,0,4
+it,Synset('omw-it-03781244-n'),i56337,,monastero,2,2,10,9,1.51e-05,0.768,0,0,6
+it,Synset('omw-it-08645033-n'),i82392,,campagna,0,1,9,8,0.000107,0.8,0,1,9
+it,Synset('omw-it-08226699-n'),i80343,,paese,0,4,17,5,0.000355,0.199,1,1,8
+it,Synset('omw-it-08226699-n'),i80343,,cittadina,0,4,17,9,2.63e-05,0.836,0,0,2
 it,Synset('omw-it-10231515-n'),i90847,,re,4,1,9,2,0.000182,0.176,1,1,9
-it,Synset('omw-it-00523513-n'),i38140,,sport,20,1,2,5,8.91e-05,0.759,0,1,2
+it,Synset('omw-it-02395406-n'),i48199,,sus scrofa,0,3,10,10,5.15e-07,0.82,0,0,2
+it,Synset('omw-it-07006119-n'),i73479,,drammaturgia,0,2,7,12,1.23e-06,0.842,0,0,1
+it,Synset('omw-it-03876519-n'),i56911,,dipinto,16,2,8,7,1.82e-05,0.622,0,0,1
+it,Synset('omw-it-03876519-n'),i56911,,quadro,16,2,8,6,4.57e-05,0.774,0,1,7
+it,Synset('omw-it-05946687-n'),i68078,,religione,16,2,12,9,7.24e-05,0.757,0,1,3
+it,Synset('omw-it-07352190-n'),i75330,,flutto,10,2,8,6,1.12e-07,0.756,0,0,1
+it,Synset('omw-it-15169421-n'),i116935,,crepuscolo,0,2,4,10,1.91e-06,0.801,0,0,3
+it,Synset('omw-it-15169421-n'),i116935,,imbrunire,0,2,4,9,1.58e-07,0.784,0,0,1
+it,Synset('omw-it-07574602-n'),i76564,,prima colazione,0,2,4,15,3.88e-05,0.797,0,0,1
+it,Synset('omw-it-02984061-n'),i51645,,duomo,0,2,3,5,2e-05,0.474,0,0,1
+it,Synset('omw-it-02984061-n'),i51645,,cattedrale,0,2,3,10,1.41e-05,0.815,0,0,2
+it,Synset('omw-it-04507155-n'),i60698,,ombrellone,1,3,5,10,1.48e-06,0.802,0,0,1
+it,Synset('omw-it-03612814-n'),i55356,,caldaia,0,2,6,7,4.07e-06,0.203,0,0,3
+it,Synset('omw-it-09503682-n'),i86562,,natura,0,1,9,6,0.000123,0.198,0,1,9
 it,Synset('omw-it-09475292-n'),i86414,,cateratta,1,3,12,9,7.76e-08,0.203,0,0,5
 it,Synset('omw-it-09475292-n'),i86414,,cataratta,1,3,12,9,7.41e-07,0.203,0,0,4
-it,Synset('omw-it-03899768-n'),i57055,,terrazza,0,3,6,8,5.75e-06,0.827,0,0,1
+it,Synset('omw-it-00523513-n'),i38140,,sport,20,1,2,5,8.91e-05,0.759,0,1,2
+it,Synset('omw-it-10150940-n'),i90350,,invitato,0,2,8,8,2.14e-05,0.77,0,0,1
+it,Synset('omw-it-11508382-n'),i98073,,nevicata,2,2,5,8,1.26e-06,0.204,0,0,1
 it,Synset('omw-it-03899768-n'),i57055,,patio,0,3,6,5,7.08e-07,0.206,0,0,1
-it,Synset('omw-it-07006119-n'),i73479,,drammaturgia,0,2,7,12,1.23e-06,0.842,0,0,1
-it,Synset('omw-it-03743902-n'),i56131,,monumento commemorativo,9,2,4,23,1.14e-06,0.811,0,0,1
-it,Synset('omw-iwn-07724943-n'),i77610,,fagiolo,0,1,4,7,1.51e-06,0.811,1,0,4
-it,Synset('omw-iwn-02924116-n'),i51285,,torpedone,3,1,2,9,4.79e-08,0.774,0,0,2
+it,Synset('omw-it-03899768-n'),i57055,,terrazza,0,3,6,8,5.75e-06,0.827,0,0,1
+it,Synset('omw-it-00428000-n'),i37653,,gala,3,2,7,4,4.57e-06,0.182,0,0,6
+it,Synset('omw-it-00428000-n'),i37653,,festività,3,2,7,9,8.13e-06,0.77,0,0,1
+it,Synset('omw-it-02858304-n'),i50885,,natante,19,3,9,7,4.47e-07,0.203,0,0,1
+it,Synset('omw-it-02858304-n'),i50885,,battello,19,3,9,8,2.04e-06,0.843,0,0,3
 it,Synset('omw-it-02924116-n'),i51285,,autobus,3,7,9,7,2.88e-05,0.65,0,0,2
 it,Synset('omw-it-02924116-n'),i51285,,pullman,3,7,9,7,1.05e-05,0.685,0,0,1
 it,Synset('omw-it-02924116-n'),i51285,,corriera,3,7,9,8,8.91e-07,0.196,0,0,1
-it,Synset('omw-it-00428000-n'),i37653,,festività,3,2,7,9,8.13e-06,0.77,0,0,1
-it,Synset('omw-it-00428000-n'),i37653,,gala,3,2,7,4,4.57e-06,0.182,0,0,6
-it,Synset('omw-it-04507155-n'),i60698,,ombrellone,1,3,5,10,1.48e-06,0.802,0,0,1
-it,Synset('omw-it-05946687-n'),i68078,,religione,16,2,12,9,7.24e-05,0.757,0,1,3
-it,Synset('omw-it-03781244-n'),i56337,,monastero,2,2,10,9,1.51e-05,0.768,0,0,6
-it,Synset('omw-it-03781244-n'),i56337,,convento,2,2,10,8,1.29e-05,0.858,0,0,4
-it,Synset('omw-it-08645033-n'),i82392,,campagna,0,1,9,8,0.000107,0.8,0,1,9
-it,Synset('omw-it-09468604-n'),i86379,,vallata,7,3,5,7,2.34e-06,0.72,0,0,1
-it,Synset('omw-it-09468604-n'),i86379,,conca,7,3,5,5,2.95e-06,0.205,0,0,1
-it,Synset('omw-it-08226699-n'),i80343,,paese,0,4,17,5,0.000355,0.199,1,1,8
-it,Synset('omw-it-08226699-n'),i80343,,cittadina,0,4,17,9,2.63e-05,0.836,0,0,2
-it,Synset('omw-it-11508382-n'),i98073,,nevicata,2,2,5,8,1.26e-06,0.204,0,0,1
-it,Synset('omw-it-03612814-n'),i55356,,caldaia,0,2,6,7,4.07e-06,0.203,0,0,3
+it,Synset('omw-iwn-02924116-n'),i51285,,torpedone,3,1,2,9,4.79e-08,0.774,0,0,2
+it,Synset('omw-it-09238926-n'),i85180,,grotta,2,2,8,6,8.91e-06,0.803,0,0,3
+it,Synset('omw-it-09238926-n'),i85180,,antro,2,2,8,5,5.5e-07,0.204,0,0,5
+it,Synset('omw-it-03743902-n'),i56131,,monumento commemorativo,9,2,4,23,1.14e-06,0.811,0,0,1
 it,Synset('omw-it-03787759-n'),i56381,,musaico,0,2,6,7,0.0,0.204,0,0,2
-it,Synset('omw-it-02984061-n'),i51645,,cattedrale,0,2,3,10,1.41e-05,0.815,0,0,2
-it,Synset('omw-it-02984061-n'),i51645,,duomo,0,2,3,5,2e-05,0.474,0,0,1
-it,Synset('omw-it-07352190-n'),i75330,,flutto,10,2,8,6,1.12e-07,0.756,0,0,1
-it,Synset('omw-it-09428293-n'),i86148,,riva,0,4,20,4,2.04e-05,0.186,1,0,4
-it,Synset('omw-it-02858304-n'),i50885,,battello,19,3,9,8,2.04e-06,0.843,0,0,3
-it,Synset('omw-it-02858304-n'),i50885,,natante,19,3,9,7,4.47e-07,0.203,0,0,1
-it,Synset('omw-it-09503682-n'),i86562,,natura,0,1,9,6,0.000123,0.198,0,1,9
-it,Synset('omw-it-07886849-n'),i78683,,birra,2,1,3,5,3.63e-05,0.195,0,0,3
-nb,Synset('omw-nb-04228054-n'),i58996,,ski,0,1,1,3,6.31e-05,0.185,0,1,1
-nb,Synset('omw-nb-09238926-n'),i85180,,hule,0,1,1,4,4.17e-06,0.563,0,0,1
-nb,Synset('omw-nb-11501381-n'),i98034,,regnvær,1,2,2,7,1.12e-06,0.817,0,0,1
-nb,Synset('omw-nb-11501381-n'),i98034,,regn,1,2,2,4,2.4e-05,0.195,1,1,1
-nb,Synset('omw-nb-12620196-n'),i103203,,rose,0,1,1,4,2.19e-05,0.466,1,1,1
-nb,Synset('omw-nb-07447641-n'),i75850,,tamtam,0,3,13,6,0.0,0.788,0,0,4
-nb,Synset('omw-nb-07447641-n'),i75850,,fest,0,3,13,4,6.17e-05,0.398,1,1,4
-nb,Synset('omw-nb-07447641-n'),i75850,,selskap,0,3,13,7,7.24e-05,0.839,0,1,5
-nb,Synset('omw-nb-03467517-n'),i54496,,gitar,0,1,1,5,1.32e-05,0.694,0,1,1
-nb,Synset('omw-nb-10547145-n'),i92688,,helgen,0,1,1,6,4.37e-05,0.75,0,0,1
-nb,Synset('omw-nb-04157320-n'),i58585,,skulptur,2,1,1,8,1.66e-06,0.895,0,0,1
-nb,Synset('omw-nb-09359803-n'),i85815,,fjell,1,1,1,5,4.17e-05,0.46,0,1,1
-nb,Synset('omw-nb-07669891-n'),i77246,,skinke,0,1,1,6,4.07e-06,0.669,0,0,1
-nb,Synset('omw-nb-07574602-n'),i76564,,frokost,0,1,1,7,2.51e-05,0.871,0,1,1
-nb,Synset('omw-nb-08287844-n'),i80699,,kultur,0,1,3,6,0.000148,0.881,0,1,3
-nb,Synset('omw-nb-03138669-n'),i52549,,krone,0,1,1,5,1.48e-05,0.792,1,1,1
-nb,Synset('omw-nb-07850329-n'),i78427,,ost,0,2,2,3,2.04e-05,0.268,0,1,1
-nb,Synset('omw-nb-07850329-n'),i78427,,ostetype,0,2,2,8,0.0,0.87,0,0,1
-nb,Synset('omw-nb-07933274-n'),i79004,,te,0,2,2,2,4.17e-05,0.194,0,1,1
-nb,Synset('omw-nb-07933274-n'),i79004,,tevann,0,2,2,6,4.37e-08,0.768,0,0,1
-nb,Synset('omw-nb-03624767-n'),i55427,,springer,0,2,3,8,5.25e-06,0.836,0,0,1
-nb,Synset('omw-nb-03624767-n'),i55427,,hest,0,2,3,4,2.45e-05,0.393,0,1,2
-nb,Synset('omw-nb-10150940-n'),i90350,,gjest,0,1,2,5,1.82e-05,0.357,1,1,2
-nb,Synset('omw-nb-11458314-n'),i97801,,tåke,1,1,2,4,6.76e-06,0.598,0,0,2
-nb,Synset('omw-nb-03876519-n'),i56911,,maleri,0,1,1,6,5.25e-06,0.704,0,1,1
-nb,Synset('omw-nb-15237250-n'),i117310,,sommer,0,1,1,6,0.000102,0.754,1,1,1
-nb,Synset('omw-nb-02395406-n'),i48199,,gris,0,1,2,4,1.15e-05,0.644,0,1,2
-nb,Synset('omw-nb-15168790-n'),i116932,,daggry,0,1,1,6,1.29e-06,0.828,0,0,1
-nb,Synset('omw-nb-15169421-n'),i116935,,tussmørke,0,1,1,9,5.75e-08,0.892,0,0,1
+nb,Synset('omw-nb-04373894-n'),i59896,,sverd,0,1,1,5,1.17e-05,0.461,0,1,1
 nb,Synset('omw-nb-09426788-n'),i86143,,hav,0,2,8,3,2.14e-05,0.187,0,1,3
 nb,Synset('omw-nb-09426788-n'),i86143,,sjø,0,2,8,3,1.48e-05,0.195,0,1,5
-nb,Synset('omw-nb-10231515-n'),i90847,,konge,0,1,3,5,4.37e-05,0.334,1,1,3
-nb,Synset('omw-nb-00523513-n'),i38140,,idrett,1,2,2,6,2.88e-05,0.863,0,1,1
-nb,Synset('omw-nb-00523513-n'),i38140,,sport,1,2,2,5,6.61e-05,0.801,0,1,1
-nb,Synset('omw-nb-03028079-n'),i51914,,guds hus,1,3,3,8,3.5e-05,0.893,0,0,1
-nb,Synset('omw-nb-03028079-n'),i51914,,kirke,1,3,3,5,5.5e-05,0.664,0,1,1
-nb,Synset('omw-nb-03028079-n'),i51914,,kirkebygning,1,3,3,12,3.55e-08,0.868,0,0,1
 nb,Synset('omw-nb-10472799-n'),i92240,,prins,0,1,1,5,1.58e-05,0.786,0,1,1
-nb,Synset('omw-nb-03322099-n'),i53601,,bondegård,1,3,5,9,6.17e-07,0.853,0,1,1
-nb,Synset('omw-nb-03322099-n'),i53601,,gård,1,3,5,4,1.78e-05,0.191,0,1,3
-nb,Synset('omw-nb-03322099-n'),i53601,,landeiendom,1,3,5,11,6.17e-08,0.812,0,0,1
-nb,Synset('omw-nb-04306847-n'),i59503,,billedstøtte,0,2,2,12,1.23e-08,0.892,0,0,1
-nb,Synset('omw-nb-04306847-n'),i59503,,statue,0,2,2,6,2.69e-06,0.802,0,0,1
-nb,Synset('omw-nb-09328904-n'),i85647,,sjø,1,1,5,3,1.48e-05,0.195,0,1,5
-nb,Synset('omw-nb-09475292-n'),i86414,,fall,0,2,4,4,0.0002,0.193,0,1,3
-nb,Synset('omw-nb-09475292-n'),i86414,,foss,0,2,4,4,1.1e-05,0.199,0,0,1
-nb,Synset('omw-nb-03899768-n'),i57055,,terrasse,0,1,1,8,4.47e-06,0.861,0,1,1
-nb,Synset('omw-nb-03541696-n'),i54942,,kro,0,1,1,3,2.14e-06,0.446,0,0,1
-nb,Synset('omw-nb-11524662-n'),i98170,,vær,2,1,1,3,0.000191,0.186,1,1,1
-nb,Synset('omw-nb-07006119-n'),i73479,,teater,0,1,1,6,1.7e-05,0.205,0,1,1
-nb,Synset('omw-nb-03743902-n'),i56131,,minnesmerke,0,1,1,11,1.38e-06,0.858,0,0,1
-nb,Synset('omw-nb-10093658-n'),i89974,,fisker,0,1,1,6,1.29e-05,0.804,0,1,1
-nb,Synset('omw-nb-07724943-n'),i77610,,bønne,0,1,1,5,5.89e-07,0.651,0,0,1
-nb,Synset('omw-nb-02924116-n'),i51285,,buss,0,1,1,4,3.89e-05,0.273,0,1,1
-nb,Synset('omw-nb-00428000-n'),i37653,,tamtam,1,3,13,6,0.0,0.788,0,0,4
-nb,Synset('omw-nb-00428000-n'),i37653,,fest,1,3,13,4,6.17e-05,0.398,1,1,4
-nb,Synset('omw-nb-00428000-n'),i37653,,selskap,1,3,13,7,7.24e-05,0.839,0,1,5
-nb,Synset('omw-nb-04507155-n'),i60698,,paraply,0,1,1,7,2.04e-06,0.832,0,0,1
-nb,Synset('omw-nb-05946687-n'),i68078,,tro,0,1,1,3,0.000324,0.446,1,0,1
-nb,Synset('omw-nb-04373894-n'),i59896,,sverd,0,1,1,5,1.17e-05,0.461,0,1,1
-nb,Synset('omw-nb-08639058-n'),i82357,,havn,0,1,2,4,1.51e-05,0.203,0,1,2
-nb,Synset('omw-nb-03781244-n'),i56337,,kloster,1,1,2,7,4.9e-06,0.885,0,0,2
-nb,Synset('omw-nb-09411430-n'),i86078,,elv,0,1,1,3,7.24e-06,0.194,1,1,1
-nb,Synset('omw-nb-08645033-n'),i82392,,landområde,0,3,9,10,5.37e-07,0.852,0,0,2
-nb,Synset('omw-nb-08645033-n'),i82392,,land,0,3,9,4,0.000355,0.195,1,1,5
-nb,Synset('omw-nb-08645033-n'),i82392,,landdistrikt,0,3,9,12,6.46e-08,0.896,0,0,2
-nb,Synset('omw-nb-09468604-n'),i86379,,dal,0,1,1,3,8.91e-06,0.191,0,1,1
-nb,Synset('omw-nb-07891726-n'),i78715,,druevin,0,2,3,7,0.0,0.834,0,0,1
 nb,Synset('omw-nb-07891726-n'),i78715,,vin,0,2,3,3,3.72e-05,0.188,0,1,2
-nb,Synset('omw-nb-15168185-n'),i116927,,midnatt,0,1,1,7,1.35e-05,0.884,0,1,1
-nb,Synset('omw-nb-07929519-n'),i78981,,kaffe,0,2,2,5,5.5e-05,0.713,0,1,1
-nb,Synset('omw-nb-07929519-n'),i78981,,mokka,0,2,2,5,2.29e-07,0.68,0,0,1
-nb,Synset('omw-nb-09450163-n'),i86272,,sol,0,1,2,3,3.09e-05,0.187,0,1,2
-nb,Synset('omw-nb-07622708-n'),i76902,,brød,1,2,3,4,2.19e-05,0.796,1,1,2
-nb,Synset('omw-nb-07622708-n'),i76902,,bakverk,1,2,3,7,7.59e-07,0.887,0,0,1
-nb,Synset('omw-nb-07970721-n'),i79200,,familie,1,3,5,7,0.000138,0.724,1,1,1
-nb,Synset('omw-nb-07970721-n'),i79200,,slekt,1,3,5,5,1.45e-05,0.824,0,1,2
-nb,Synset('omw-nb-07970721-n'),i79200,,stamtre,1,3,5,7,1.12e-07,0.882,0,0,2
-nb,Synset('omw-nb-15098161-n'),i116549,,tre,0,1,2,3,0.000692,0.442,0,0,2
-nb,Synset('omw-nb-11462526-n'),i97824,,uvær,0,2,2,4,3.89e-06,0.763,0,0,1
-nb,Synset('omw-nb-11462526-n'),i97824,,storm,0,2,2,5,2.24e-05,0.779,0,1,1
-nb,Synset('omw-nb-08226699-n'),i80343,,landsby,0,1,1,7,6.17e-06,0.831,1,1,1
-nb,Synset('omw-nb-11508382-n'),i98073,,snø,0,1,1,3,3.8e-05,0.486,0,1,1
+nb,Synset('omw-nb-07891726-n'),i78715,,druevin,0,2,3,7,0.0,0.834,0,0,1
+nb,Synset('omw-nb-09468604-n'),i86379,,dal,0,1,1,3,8.91e-06,0.191,0,1,1
 nb,Synset('omw-nb-15236475-n'),i117307,,årstid,5,1,1,6,9.55e-07,0.862,0,0,1
-nb,Synset('omw-nb-03612814-n'),i55356,,kjele,0,1,1,5,2.19e-06,0.472,0,1,1
-nb,Synset('omw-nb-02512053-n'),i48880,,fisk,0,1,2,4,5.13e-05,0.398,1,1,2
-nb,Synset('omw-nb-03787759-n'),i56381,,mosaikk,0,1,1,7,4.79e-07,0.799,0,0,1
-nb,Synset('omw-nb-02984061-n'),i51645,,katedral,0,1,1,8,1.05e-06,0.826,0,0,1
-nb,Synset('omw-nb-07352190-n'),i75330,,bølge,0,3,7,5,7.08e-06,0.647,0,1,1
-nb,Synset('omw-nb-07352190-n'),i75330,,sjø,0,3,7,3,1.48e-05,0.195,0,1,5
-nb,Synset('omw-nb-07352190-n'),i75330,,bølgegang,0,3,7,9,0.0,0.855,0,0,1
-nb,Synset('omw-nb-09428293-n'),i86148,,kystområde,0,3,3,10,1.38e-08,0.868,0,0,1
-nb,Synset('omw-nb-09428293-n'),i86148,,kyst,0,3,3,4,4.27e-06,0.397,0,1,1
-nb,Synset('omw-nb-09428293-n'),i86148,,kystland,0,3,3,8,1.1e-08,0.88,0,0,1
-nb,Synset('omw-nb-02858304-n'),i50885,,båt,2,1,1,3,5.01e-05,0.203,1,1,1
-nb,Synset('omw-nb-09503682-n'),i86562,,natur,0,1,10,5,3.89e-05,0.206,1,1,10
+nb,Synset('omw-nb-10547145-n'),i92688,,helgen,0,1,1,6,4.37e-05,0.75,0,0,1
 nb,Synset('omw-nb-07886849-n'),i78683,,øl,0,4,4,2,7.08e-05,0.188,0,1,1
 nb,Synset('omw-nb-07886849-n'),i78683,,humle,0,4,4,5,1.15e-06,0.564,0,0,1
 nb,Synset('omw-nb-07886849-n'),i78683,,mjød,0,4,4,4,7.41e-07,0.767,0,0,1
+nb,Synset('omw-nb-02512053-n'),i48880,,fisk,0,1,2,4,5.13e-05,0.398,1,1,2
+nb,Synset('omw-nb-07970721-n'),i79200,,familie,1,3,5,7,0.000138,0.724,1,1,1
+nb,Synset('omw-nb-07970721-n'),i79200,,slekt,1,3,5,5,1.45e-05,0.824,0,1,2
+nb,Synset('omw-nb-07970721-n'),i79200,,stamtre,1,3,5,7,1.12e-07,0.882,0,0,2
+nb,Synset('omw-nb-15237250-n'),i117310,,sommer,0,1,1,6,0.000102,0.754,1,1,1
+nb,Synset('omw-nb-07724943-n'),i77610,,bønne,0,1,1,5,5.89e-07,0.651,0,0,1
+nb,Synset('omw-nb-09428293-n'),i86148,,kyst,0,3,3,4,4.27e-06,0.397,0,1,1
+nb,Synset('omw-nb-09428293-n'),i86148,,kystland,0,3,3,8,1.1e-08,0.88,0,0,1
+nb,Synset('omw-nb-09428293-n'),i86148,,kystområde,0,3,3,10,1.38e-08,0.868,0,0,1
+nb,Synset('omw-nb-03781244-n'),i56337,,kloster,1,1,2,7,4.9e-06,0.885,0,0,2
+nb,Synset('omw-nb-04306847-n'),i59503,,billedstøtte,0,2,2,12,1.23e-08,0.892,0,0,1
+nb,Synset('omw-nb-04306847-n'),i59503,,statue,0,2,2,6,2.69e-06,0.802,0,0,1
+nb,Synset('omw-nb-08645033-n'),i82392,,land,0,3,9,4,0.000355,0.195,1,1,5
+nb,Synset('omw-nb-08645033-n'),i82392,,landområde,0,3,9,10,5.37e-07,0.852,0,0,2
+nb,Synset('omw-nb-08645033-n'),i82392,,landdistrikt,0,3,9,12,6.46e-08,0.896,0,0,2
+nb,Synset('omw-nb-15168185-n'),i116927,,midnatt,0,1,1,7,1.35e-05,0.884,0,1,1
+nb,Synset('omw-nb-03541696-n'),i54942,,kro,0,1,1,3,2.14e-06,0.446,0,0,1
+nb,Synset('omw-nb-08226699-n'),i80343,,landsby,0,1,1,7,6.17e-06,0.831,1,1,1
+nb,Synset('omw-nb-10231515-n'),i90847,,konge,0,1,3,5,4.37e-05,0.334,1,1,3
+nb,Synset('omw-nb-08287844-n'),i80699,,kultur,0,1,3,6,0.000148,0.881,0,1,3
+nb,Synset('omw-nb-04157320-n'),i58585,,skulptur,2,1,1,8,1.66e-06,0.895,0,0,1
+nb,Synset('omw-nb-07622708-n'),i76902,,brød,1,2,3,4,2.19e-05,0.796,1,1,2
+nb,Synset('omw-nb-07622708-n'),i76902,,bakverk,1,2,3,7,7.59e-07,0.887,0,0,1
+nb,Synset('omw-nb-02395406-n'),i48199,,gris,0,1,2,4,1.15e-05,0.644,0,1,2
+nb,Synset('omw-nb-15168790-n'),i116932,,daggry,0,1,1,6,1.29e-06,0.828,0,0,1
+nb,Synset('omw-nb-11462526-n'),i97824,,storm,0,2,2,5,2.24e-05,0.779,0,1,1
+nb,Synset('omw-nb-11462526-n'),i97824,,uvær,0,2,2,4,3.89e-06,0.763,0,0,1
+nb,Synset('omw-nb-07006119-n'),i73479,,teater,0,1,1,6,1.7e-05,0.205,0,1,1
+nb,Synset('omw-nb-03876519-n'),i56911,,maleri,0,1,1,6,5.25e-06,0.704,0,1,1
+nb,Synset('omw-nb-11501381-n'),i98034,,regnvær,1,2,2,7,1.12e-06,0.817,0,0,1
+nb,Synset('omw-nb-11501381-n'),i98034,,regn,1,2,2,4,2.4e-05,0.195,1,1,1
+nb,Synset('omw-nb-09450163-n'),i86272,,sol,0,1,2,3,3.09e-05,0.187,0,1,2
+nb,Synset('omw-nb-05946687-n'),i68078,,tro,0,1,1,3,0.000324,0.446,1,0,1
+nb,Synset('omw-nb-07352190-n'),i75330,,bølge,0,3,7,5,7.08e-06,0.647,0,1,1
+nb,Synset('omw-nb-07352190-n'),i75330,,bølgegang,0,3,7,9,0.0,0.855,0,0,1
+nb,Synset('omw-nb-07352190-n'),i75330,,sjø,0,3,7,3,1.48e-05,0.195,0,1,5
+nb,Synset('omw-nb-03624767-n'),i55427,,hest,0,2,3,4,2.45e-05,0.393,0,1,2
+nb,Synset('omw-nb-03624767-n'),i55427,,springer,0,2,3,8,5.25e-06,0.836,0,0,1
+nb,Synset('omw-nb-15169421-n'),i116935,,tussmørke,0,1,1,9,5.75e-08,0.892,0,0,1
+nb,Synset('omw-nb-03138669-n'),i52549,,krone,0,1,1,5,1.48e-05,0.792,1,1,1
+nb,Synset('omw-nb-07574602-n'),i76564,,frokost,0,1,1,7,2.51e-05,0.871,0,1,1
+nb,Synset('omw-nb-08639058-n'),i82357,,havn,0,1,2,4,1.51e-05,0.203,0,1,2
+nb,Synset('omw-nb-10093658-n'),i89974,,fisker,0,1,1,6,1.29e-05,0.804,0,1,1
+nb,Synset('omw-nb-07929519-n'),i78981,,mokka,0,2,2,5,2.29e-07,0.68,0,0,1
+nb,Synset('omw-nb-07929519-n'),i78981,,kaffe,0,2,2,5,5.5e-05,0.713,0,1,1
+nb,Synset('omw-nb-11524662-n'),i98170,,vær,2,1,1,3,0.000191,0.186,1,1,1
+nb,Synset('omw-nb-03322099-n'),i53601,,bondegård,1,3,5,9,6.17e-07,0.853,0,1,1
+nb,Synset('omw-nb-03322099-n'),i53601,,gård,1,3,5,4,1.78e-05,0.191,0,1,3
+nb,Synset('omw-nb-03322099-n'),i53601,,landeiendom,1,3,5,11,6.17e-08,0.812,0,0,1
+nb,Synset('omw-nb-02984061-n'),i51645,,katedral,0,1,1,8,1.05e-06,0.826,0,0,1
+nb,Synset('omw-nb-04507155-n'),i60698,,paraply,0,1,1,7,2.04e-06,0.832,0,0,1
+nb,Synset('omw-nb-04228054-n'),i58996,,ski,0,1,1,3,6.31e-05,0.185,0,1,1
+nb,Synset('omw-nb-03612814-n'),i55356,,kjele,0,1,1,5,2.19e-06,0.472,0,1,1
+nb,Synset('omw-nb-09503682-n'),i86562,,natur,0,1,10,5,3.89e-05,0.206,1,1,10
+nb,Synset('omw-nb-03028079-n'),i51914,,kirkebygning,1,3,3,12,3.55e-08,0.868,0,0,1
+nb,Synset('omw-nb-03028079-n'),i51914,,guds hus,1,3,3,8,3.5e-05,0.893,0,0,1
+nb,Synset('omw-nb-03028079-n'),i51914,,kirke,1,3,3,5,5.5e-05,0.664,0,1,1
+nb,Synset('omw-nb-09475292-n'),i86414,,fall,0,2,4,4,0.0002,0.193,0,1,3
+nb,Synset('omw-nb-09475292-n'),i86414,,foss,0,2,4,4,1.1e-05,0.199,0,0,1
+nb,Synset('omw-nb-09328904-n'),i85647,,sjø,1,1,5,3,1.48e-05,0.195,0,1,5
+nb,Synset('omw-nb-00523513-n'),i38140,,sport,1,2,2,5,6.61e-05,0.801,0,1,1
+nb,Synset('omw-nb-00523513-n'),i38140,,idrett,1,2,2,6,2.88e-05,0.863,0,1,1
+nb,Synset('omw-nb-15098161-n'),i116549,,tre,0,1,2,3,0.000692,0.442,0,0,2
+nb,Synset('omw-nb-10150940-n'),i90350,,gjest,0,1,2,5,1.82e-05,0.357,1,1,2
+nb,Synset('omw-nb-11508382-n'),i98073,,snø,0,1,1,3,3.8e-05,0.486,0,1,1
+nb,Synset('omw-nb-03899768-n'),i57055,,terrasse,0,1,1,8,4.47e-06,0.861,0,1,1
+nb,Synset('omw-nb-07850329-n'),i78427,,ostetype,0,2,2,8,0.0,0.87,0,0,1
+nb,Synset('omw-nb-07850329-n'),i78427,,ost,0,2,2,3,2.04e-05,0.268,0,1,1
+nb,Synset('omw-nb-09411430-n'),i86078,,elv,0,1,1,3,7.24e-06,0.194,1,1,1
+nb,Synset('omw-nb-12620196-n'),i103203,,rose,0,1,1,4,2.19e-05,0.466,1,1,1
+nb,Synset('omw-nb-03467517-n'),i54496,,gitar,0,1,1,5,1.32e-05,0.694,0,1,1
+nb,Synset('omw-nb-11458314-n'),i97801,,tåke,1,1,2,4,6.76e-06,0.598,0,0,2
+nb,Synset('omw-nb-07933274-n'),i79004,,tevann,0,2,2,6,4.37e-08,0.768,0,0,1
+nb,Synset('omw-nb-07933274-n'),i79004,,te,0,2,2,2,4.17e-05,0.194,0,1,1
+nb,Synset('omw-nb-00428000-n'),i37653,,selskap,1,3,13,7,7.24e-05,0.839,0,1,5
+nb,Synset('omw-nb-00428000-n'),i37653,,fest,1,3,13,4,6.17e-05,0.398,1,1,4
+nb,Synset('omw-nb-00428000-n'),i37653,,tamtam,1,3,13,6,0.0,0.788,0,0,4
+nb,Synset('omw-nb-09359803-n'),i85815,,fjell,1,1,1,5,4.17e-05,0.46,0,1,1
+nb,Synset('omw-nb-02858304-n'),i50885,,båt,2,1,1,3,5.01e-05,0.203,1,1,1
 nb,Synset('omw-nb-00478262-n'),i37904,,fotball,0,1,1,7,0.0002,0.84,1,1,1
-es,Synset('omw-es-04228054-n'),i58996,,tabla de esquí,0,1,1,14,3.59e-06,0.802,0,0,1
-es,Synset('omw-es-09238926-n'),i85180,,cueva,0,1,1,5,1.41e-05,0.542,0,0,1
-es,Synset('omw-es-11501381-n'),i98034,,lluvia,3,1,3,6,4.07e-05,0.186,1,1,3
-es,Synset('omw-es-12620196-n'),i103203,,rosa,0,1,5,4,5.13e-05,0.186,0,0,5
-es,Synset('omw-es-07447641-n'),i75850,,fiesta,5,1,4,6,9.77e-05,0.758,1,0,4
-es,Synset('omw-es-03467517-n'),i54496,,guitarra,1,1,2,8,1.86e-05,0.197,0,1,2
+nb,Synset('omw-nb-02924116-n'),i51285,,buss,0,1,1,4,3.89e-05,0.273,0,1,1
+nb,Synset('omw-nb-07669891-n'),i77246,,skinke,0,1,1,6,4.07e-06,0.669,0,0,1
+nb,Synset('omw-nb-09238926-n'),i85180,,hule,0,1,1,4,4.17e-06,0.563,0,0,1
+nb,Synset('omw-nb-03743902-n'),i56131,,minnesmerke,0,1,1,11,1.38e-06,0.858,0,0,1
+nb,Synset('omw-nb-07447641-n'),i75850,,selskap,0,3,13,7,7.24e-05,0.839,0,1,5
+nb,Synset('omw-nb-07447641-n'),i75850,,fest,0,3,13,4,6.17e-05,0.398,1,1,4
+nb,Synset('omw-nb-07447641-n'),i75850,,tamtam,0,3,13,6,0.0,0.788,0,0,4
+nb,Synset('omw-nb-03787759-n'),i56381,,mosaikk,0,1,1,7,4.79e-07,0.799,0,0,1
+es,Synset('omw-es-04373894-n'),i59896,,espada,6,1,2,6,2.14e-05,0.707,0,0,2
+es,Synset('omw-es-09426788-n'),i86143,,mar,5,2,5,3,0.000129,0.176,0,1,2
+es,Synset('omw-es-09426788-n'),i86143,,océano,5,2,5,6,1.86e-05,0.192,0,0,3
+es,Synset('omw-es-10472799-n'),i92240,,príncipe,1,1,1,8,4.17e-05,0.821,0,0,1
+es,Synset('omw-es-07891726-n'),i78715,,vino,7,1,1,4,9.12e-05,0.197,0,1,1
+es,Synset('omw-es-09468604-n'),i86379,,valle,3,1,1,5,4.57e-05,0.195,0,1,1
+es,Synset('omw-es-15236475-n'),i117307,,estación,5,1,3,8,6.46e-05,0.804,0,1,3
 es,Synset('omw-es-10547145-n'),i92688,,santo,13,1,3,5,7.41e-05,0.201,0,0,3
-es,Synset('omw-es-04157320-n'),i58585,,escultura,5,1,2,9,7.24e-06,0.811,0,1,2
-es,Synset('omw-es-09359803-n'),i85815,,monte,3,2,4,5,3.02e-05,0.2,0,1,1
-es,Synset('omw-es-09359803-n'),i85815,,montaña,3,2,4,7,3.55e-05,0.737,0,1,3
-es,Synset('omw-es-07669891-n'),i77246,,jamón,0,1,1,5,7.24e-06,0.191,0,0,1
-es,Synset('omw-es-07574602-n'),i76564,,almuerzo,0,2,6,8,1.45e-05,0.773,1,1,4
-es,Synset('omw-es-07574602-n'),i76564,,desayuno,0,2,6,8,2.4e-05,0.201,0,1,2
+es,Synset('omw-es-07886849-n'),i78683,,cerveza,4,1,1,7,3.31e-05,0.694,0,0,1
+es,Synset('omw-es-02512053-n'),i48880,,pez,2,2,3,3,1.55e-05,0.196,1,0,2
+es,Synset('omw-es-02512053-n'),i48880,,pisces,2,2,3,6,4.68e-08,0.758,0,0,1
+es,Synset('omw-es-07970721-n'),i79200,,familia,3,2,8,7,0.000339,0.191,1,0,6
+es,Synset('omw-es-07970721-n'),i79200,,linaje,3,2,8,6,4.57e-06,0.189,0,0,2
+es,Synset('omw-es-15237250-n'),i117310,,verano,0,1,1,6,8.71e-05,0.2,1,1,1
+es,Synset('omw-es-07724943-n'),i77610,,judía,1,2,9,5,7.59e-06,0.192,0,0,6
+es,Synset('omw-es-07724943-n'),i77610,,alubia,1,2,9,6,1.12e-07,0.189,0,1,3
+es,Synset('omw-es-09428293-n'),i86148,,costa,1,2,6,5,0.000105,0.206,0,1,3
+es,Synset('omw-es-09428293-n'),i86148,,playa,1,2,6,5,5.25e-05,0.544,0,1,3
+es,Synset('omw-es-03781244-n'),i56337,,convento,3,2,3,8,1.45e-05,0.866,0,0,2
+es,Synset('omw-es-03781244-n'),i56337,,monasterio,3,2,3,10,1.15e-05,0.79,0,1,1
+es,Synset('omw-es-04306847-n'),i59503,,estatua,0,2,13,7,1.29e-05,0.815,0,0,1
+es,Synset('omw-es-04306847-n'),i59503,,figura,0,2,13,6,5.89e-05,0.194,0,0,12
+es,Synset('omw-es-08645033-n'),i82392,,campo,0,1,14,5,0.000151,0.205,1,0,14
+es,Synset('omw-es-15168185-n'),i116927,,medianoche,0,1,1,10,7.59e-06,0.758,0,0,1
+es,Synset('omw-es-03541696-n'),i54942,,posada,1,5,8,6,5.5e-06,0.202,0,1,1
+es,Synset('omw-es-03541696-n'),i54942,,albergue,1,5,8,8,3.55e-06,0.743,0,1,2
+es,Synset('omw-es-03541696-n'),i54942,,hospedaje,1,5,8,9,1.95e-06,0.752,0,0,3
+es,Synset('omw-es-08226699-n'),i80343,,pueblo,1,1,13,6,0.000324,0.748,1,0,13
+es,Synset('omw-es-10231515-n'),i90847,,rey,9,2,6,3,0.000174,0.177,1,0,3
+es,Synset('omw-es-10231515-n'),i90847,,monarca,9,2,6,7,7.94e-06,0.199,0,1,3
 es,Synset('omw-es-08287844-n'),i80699,,civilización,2,2,7,12,1.38e-05,0.704,0,0,3
 es,Synset('omw-es-08287844-n'),i80699,,cultura,2,2,7,7,0.000174,0.757,0,1,4
-es,Synset('omw-es-03138669-n'),i52549,,corona,0,1,6,6,2.95e-05,0.2,0,0,6
-es,Synset('omw-es-07850329-n'),i78427,,queso,4,1,1,5,2.82e-05,0.199,0,1,1
-es,Synset('omw-es-07933274-n'),i79004,,té,1,1,4,2,1.95e-05,0.196,0,0,4
-es,Synset('omw-es-03624767-n'),i55427,,caballo,0,1,8,7,3.63e-05,0.198,0,0,8
-es,Synset('omw-es-10150940-n'),i90350,,invitado,1,2,5,8,2.29e-05,0.768,0,0,2
-es,Synset('omw-es-10150940-n'),i90350,,huésped,1,2,5,7,4.27e-06,0.719,0,0,3
-es,Synset('omw-es-11458314-n'),i97801,,niebla,0,1,1,6,8.13e-06,0.676,0,0,1
-es,Synset('omw-es-03876519-n'),i56911,,cuadro,3,2,10,6,3.31e-05,0.752,0,1,5
-es,Synset('omw-es-03876519-n'),i56911,,pintura,3,2,10,7,3.55e-05,0.757,0,1,5
-es,Synset('omw-es-15237250-n'),i117310,,verano,0,1,1,6,8.71e-05,0.2,1,1,1
+es,Synset('omw-es-04157320-n'),i58585,,escultura,5,1,2,9,7.24e-06,0.811,0,1,2
+es,Synset('omw-es-07622708-n'),i76902,,pastas,8,2,2,6,2.57e-06,0.736,0,0,1
+es,Synset('omw-es-07622708-n'),i76902,,repostería,8,2,2,10,1.02e-06,0.747,0,0,1
 es,Synset('omw-es-02395406-n'),i48199,,sus,1,5,10,3,0.00234,0.188,0,0,2
 es,Synset('omw-es-02395406-n'),i48199,,cerdo,1,5,10,5,1.26e-05,0.192,0,0,5
 es,Synset('omw-es-02395406-n'),i48199,,puerco,1,5,10,6,2.82e-06,0.778,0,1,1
 es,Synset('omw-es-15168790-n'),i116932,,orto,0,2,4,4,2.24e-05,0.196,0,0,1
 es,Synset('omw-es-15168790-n'),i116932,,amanecer,0,2,4,8,1.58e-05,0.192,0,0,3
-es,Synset('omw-es-15169421-n'),i116935,,anochecida,1,3,6,10,0.0,0.769,0,0,1
+es,Synset('omw-es-11462526-n'),i97824,,tormenta,4,2,4,8,2.75e-05,0.85,0,0,3
+es,Synset('omw-es-11462526-n'),i97824,,tormenta violenta,4,2,4,17,8.5e-06,0.835,0,0,1
+es,Synset('omw-es-07006119-n'),i73479,,teatro,1,1,6,6,6.76e-05,0.202,0,1,6
+es,Synset('omw-es-03876519-n'),i56911,,cuadro,3,2,10,6,3.31e-05,0.752,0,1,5
+es,Synset('omw-es-03876519-n'),i56911,,pintura,3,2,10,7,3.55e-05,0.757,0,1,5
+es,Synset('omw-es-11501381-n'),i98034,,lluvia,3,1,3,6,4.07e-05,0.186,1,1,3
+es,Synset('omw-es-09450163-n'),i86272,,sol,0,1,7,3,0.000123,0.183,0,1,7
+es,Synset('omw-es-05946687-n'),i68078,,fe,7,3,10,2,8.51e-05,0.184,0,0,6
+es,Synset('omw-es-05946687-n'),i68078,,credo,7,3,10,5,2.4e-06,0.567,0,1,2
+es,Synset('omw-es-05946687-n'),i68078,,religión,7,3,10,8,4.68e-05,0.672,0,0,2
+es,Synset('omw-es-07352190-n'),i75330,,ola,4,1,4,3,1.62e-05,0.18,0,0,4
+es,Synset('omw-es-03624767-n'),i55427,,caballo,0,1,8,7,3.63e-05,0.198,0,0,8
 es,Synset('omw-es-15169421-n'),i116935,,anochecer,1,3,6,9,2.75e-06,0.765,0,0,2
+es,Synset('omw-es-15169421-n'),i116935,,anochecida,1,3,6,10,0.0,0.769,0,0,1
 es,Synset('omw-es-15169421-n'),i116935,,crepúsculo,1,3,6,10,2.14e-06,0.802,0,0,3
-es,Synset('omw-es-09426788-n'),i86143,,océano,5,2,5,6,1.86e-05,0.192,0,0,3
-es,Synset('omw-es-09426788-n'),i86143,,mar,5,2,5,3,0.000129,0.176,0,1,2
-es,Synset('omw-es-10231515-n'),i90847,,monarca,9,2,6,7,7.94e-06,0.199,0,1,3
-es,Synset('omw-es-10231515-n'),i90847,,rey,9,2,6,3,0.000174,0.177,1,0,3
-es,Synset('omw-es-00523513-n'),i38140,,deporte,8,1,2,7,4.9e-05,0.208,0,1,2
-es,Synset('omw-es-03028079-n'),i51914,,iglesia,3,1,4,7,0.000132,0.758,0,1,4
-es,Synset('omw-es-10472799-n'),i92240,,príncipe,1,1,1,8,4.17e-05,0.821,0,0,1
-es,Synset('omw-es-03322099-n'),i53601,,hacienda,4,4,15,8,2.75e-05,0.845,0,0,7
-es,Synset('omw-es-03322099-n'),i53601,,estancia,4,4,15,8,1.58e-05,0.816,0,0,4
-es,Synset('omw-es-03322099-n'),i53601,,cortijo,4,4,15,7,1.95e-06,0.767,0,0,2
-es,Synset('omw-es-04306847-n'),i59503,,estatua,0,2,13,7,1.29e-05,0.815,0,0,1
-es,Synset('omw-es-04306847-n'),i59503,,figura,0,2,13,6,5.89e-05,0.194,0,0,12
-es,Synset('omw-es-09328904-n'),i85647,,lago,6,1,1,4,3.02e-05,0.185,0,1,1
-es,Synset('omw-es-09475292-n'),i86414,,cascada,9,1,2,7,3.63e-06,0.766,0,0,2
-es,Synset('omw-es-03899768-n'),i57055,,patio,0,1,2,5,2.51e-05,0.205,0,0,2
-es,Synset('omw-es-03541696-n'),i54942,,posada,1,5,8,6,5.5e-06,0.202,0,1,1
-es,Synset('omw-es-03541696-n'),i54942,,albergue,1,5,8,8,3.55e-06,0.743,0,1,2
-es,Synset('omw-es-03541696-n'),i54942,,hospedaje,1,5,8,9,1.95e-06,0.752,0,0,3
+es,Synset('omw-es-03138669-n'),i52549,,corona,0,1,6,6,2.95e-05,0.2,0,0,6
+es,Synset('omw-es-07574602-n'),i76564,,desayuno,0,2,6,8,2.4e-05,0.201,0,1,2
+es,Synset('omw-es-07574602-n'),i76564,,almuerzo,0,2,6,8,1.45e-05,0.773,1,1,4
+es,Synset('omw-es-08639058-n'),i82357,,puerto,2,1,2,6,0.000115,0.778,0,1,2
+es,Synset('omw-es-10093658-n'),i89974,,pescador,0,1,1,8,3.63e-06,0.761,0,0,1
+es,Synset('omw-es-07929519-n'),i78981,,café,2,1,5,4,6.46e-05,0.198,0,0,5
 es,Synset('omw-es-11524662-n'),i98170,,tiempo,6,4,9,6,0.000933,0.778,1,0,5
 es,Synset('omw-es-11524662-n'),i98170,,condiciones,6,4,9,11,0.000135,0.815,0,0,2
 es,Synset('omw-es-11524662-n'),i98170,,condición atmosférica,6,4,9,21,2.19e-06,0.84,0,0,1
-es,Synset('omw-es-07006119-n'),i73479,,teatro,1,1,6,6,6.76e-05,0.202,0,1,6
-es,Synset('omw-es-03743902-n'),i56131,,monumento,8,1,3,9,1.74e-05,0.206,0,1,3
-es,Synset('omw-es-10093658-n'),i89974,,pescador,0,1,1,8,3.63e-06,0.761,0,0,1
-es,Synset('omw-es-07724943-n'),i77610,,alubia,1,2,9,6,1.12e-07,0.189,0,1,3
-es,Synset('omw-es-07724943-n'),i77610,,judía,1,2,9,5,7.59e-06,0.192,0,0,6
-es,Synset('omw-es-02924116-n'),i51285,,autobús,2,1,1,7,2.04e-05,0.2,0,1,1
+es,Synset('omw-es-03322099-n'),i53601,,hacienda,4,4,15,8,2.75e-05,0.845,0,0,7
+es,Synset('omw-es-03322099-n'),i53601,,estancia,4,4,15,8,1.58e-05,0.816,0,0,4
+es,Synset('omw-es-03322099-n'),i53601,,cortijo,4,4,15,7,1.95e-06,0.767,0,0,2
+es,Synset('omw-es-02984061-n'),i51645,,catedral,0,1,2,8,1.82e-05,0.753,0,1,2
+es,Synset('omw-es-04507155-n'),i60698,,paraguas,0,1,1,8,6.03e-06,0.734,0,0,1
+es,Synset('omw-es-04228054-n'),i58996,,tabla de esquí,0,1,1,14,3.59e-06,0.802,0,0,1
+es,Synset('omw-es-03612814-n'),i55356,,caldera,0,1,1,7,4.57e-06,0.73,0,0,1
+es,Synset('omw-es-09503682-n'),i86562,,naturaleza,0,1,5,10,8.32e-05,0.197,0,1,5
+es,Synset('omw-es-03028079-n'),i51914,,iglesia,3,1,4,7,0.000132,0.758,0,1,4
+es,Synset('omw-es-09475292-n'),i86414,,cascada,9,1,2,7,3.63e-06,0.766,0,0,2
+es,Synset('omw-es-09328904-n'),i85647,,lago,6,1,1,4,3.02e-05,0.185,0,1,1
+es,Synset('omw-es-00523513-n'),i38140,,deporte,8,1,2,7,4.9e-05,0.208,0,1,2
+es,Synset('omw-es-15098161-n'),i116549,,madera,12,1,3,6,4.9e-05,0.189,0,0,3
+es,Synset('omw-es-10150940-n'),i90350,,invitado,1,2,5,8,2.29e-05,0.768,0,0,2
+es,Synset('omw-es-10150940-n'),i90350,,huésped,1,2,5,7,4.27e-06,0.719,0,0,3
+es,Synset('omw-es-11508382-n'),i98073,,nieve,0,1,4,5,2.45e-05,0.208,0,0,4
+es,Synset('omw-es-03899768-n'),i57055,,patio,0,1,2,5,2.51e-05,0.205,0,0,2
+es,Synset('omw-es-07850329-n'),i78427,,queso,4,1,1,5,2.82e-05,0.199,0,1,1
+es,Synset('omw-es-09411430-n'),i86078,,río,37,1,2,3,0.000126,0.179,1,1,2
+es,Synset('omw-es-12620196-n'),i103203,,rosa,0,1,5,4,5.13e-05,0.186,0,0,5
+es,Synset('omw-es-03467517-n'),i54496,,guitarra,1,1,2,8,1.86e-05,0.197,0,1,2
+es,Synset('omw-es-11458314-n'),i97801,,niebla,0,1,1,6,8.13e-06,0.676,0,0,1
+es,Synset('omw-es-07933274-n'),i79004,,té,1,1,4,2,1.95e-05,0.196,0,0,4
 es,Synset('omw-es-00428000-n'),i37653,,festejo,3,2,5,7,3.39e-06,0.757,0,0,2
 es,Synset('omw-es-00428000-n'),i37653,,celebración,3,2,5,11,3.02e-05,0.76,0,0,3
-es,Synset('omw-es-04507155-n'),i60698,,paraguas,0,1,1,8,6.03e-06,0.734,0,0,1
-es,Synset('omw-es-05946687-n'),i68078,,credo,7,3,10,5,2.4e-06,0.567,0,1,2
-es,Synset('omw-es-05946687-n'),i68078,,fe,7,3,10,2,8.51e-05,0.184,0,0,6
-es,Synset('omw-es-05946687-n'),i68078,,religión,7,3,10,8,4.68e-05,0.672,0,0,2
-es,Synset('omw-es-04373894-n'),i59896,,espada,6,1,2,6,2.14e-05,0.707,0,0,2
-es,Synset('omw-es-08639058-n'),i82357,,puerto,2,1,2,6,0.000115,0.778,0,1,2
-es,Synset('omw-es-03781244-n'),i56337,,monasterio,3,2,3,10,1.15e-05,0.79,0,1,1
-es,Synset('omw-es-03781244-n'),i56337,,convento,3,2,3,8,1.45e-05,0.866,0,0,2
-es,Synset('omw-es-09411430-n'),i86078,,río,37,1,2,3,0.000126,0.179,1,1,2
-es,Synset('omw-es-08645033-n'),i82392,,campo,0,1,14,5,0.000151,0.205,1,0,14
-es,Synset('omw-es-09468604-n'),i86379,,valle,3,1,1,5,4.57e-05,0.195,0,1,1
-es,Synset('omw-es-07891726-n'),i78715,,vino,7,1,1,4,9.12e-05,0.197,0,1,1
-es,Synset('omw-es-15168185-n'),i116927,,medianoche,0,1,1,10,7.59e-06,0.758,0,0,1
-es,Synset('omw-es-07929519-n'),i78981,,café,2,1,5,4,6.46e-05,0.198,0,0,5
-es,Synset('omw-es-09450163-n'),i86272,,sol,0,1,7,3,0.000123,0.183,0,1,7
-es,Synset('omw-es-07622708-n'),i76902,,pastas,8,2,2,6,2.57e-06,0.736,0,0,1
-es,Synset('omw-es-07622708-n'),i76902,,repostería,8,2,2,10,1.02e-06,0.747,0,0,1
-es,Synset('omw-es-07970721-n'),i79200,,linaje,3,2,8,6,4.57e-06,0.189,0,0,2
-es,Synset('omw-es-07970721-n'),i79200,,familia,3,2,8,7,0.000339,0.191,1,0,6
-es,Synset('omw-es-15098161-n'),i116549,,madera,12,1,3,6,4.9e-05,0.189,0,0,3
-es,Synset('omw-es-11462526-n'),i97824,,tormenta violenta,4,2,4,17,8.5e-06,0.835,0,0,1
-es,Synset('omw-es-11462526-n'),i97824,,tormenta,4,2,4,8,2.75e-05,0.85,0,0,3
-es,Synset('omw-es-08226699-n'),i80343,,pueblo,1,1,13,6,0.000324,0.748,1,0,13
-es,Synset('omw-es-11508382-n'),i98073,,nieve,0,1,4,5,2.45e-05,0.208,0,0,4
-es,Synset('omw-es-15236475-n'),i117307,,estación,5,1,3,8,6.46e-05,0.804,0,1,3
-es,Synset('omw-es-03612814-n'),i55356,,caldera,0,1,1,7,4.57e-06,0.73,0,0,1
-es,Synset('omw-es-02512053-n'),i48880,,pisces,2,2,3,6,4.68e-08,0.758,0,0,1
-es,Synset('omw-es-02512053-n'),i48880,,pez,2,2,3,3,1.55e-05,0.196,1,0,2
-es,Synset('omw-es-03787759-n'),i56381,,mosaico,0,1,4,7,2.75e-06,0.2,0,0,4
-es,Synset('omw-es-02984061-n'),i51645,,catedral,0,1,2,8,1.82e-05,0.753,0,1,2
-es,Synset('omw-es-07352190-n'),i75330,,ola,4,1,4,3,1.62e-05,0.18,0,0,4
-es,Synset('omw-es-09428293-n'),i86148,,playa,1,2,6,5,5.25e-05,0.544,0,1,3
-es,Synset('omw-es-09428293-n'),i86148,,costa,1,2,6,5,0.000105,0.206,0,1,3
+es,Synset('omw-es-09359803-n'),i85815,,montaña,3,2,4,7,3.55e-05,0.737,0,1,3
+es,Synset('omw-es-09359803-n'),i85815,,monte,3,2,4,5,3.02e-05,0.2,0,1,1
 es,Synset('omw-es-02858304-n'),i50885,,barco,8,3,12,5,3.31e-05,0.204,1,1,2
-es,Synset('omw-es-02858304-n'),i50885,,bote,8,3,12,4,1.05e-05,0.204,1,0,8
 es,Synset('omw-es-02858304-n'),i50885,,embarcación,8,3,12,11,3.47e-06,0.81,0,0,2
-es,Synset('omw-es-09503682-n'),i86562,,naturaleza,0,1,5,10,8.32e-05,0.197,0,1,5
-es,Synset('omw-es-07886849-n'),i78683,,cerveza,4,1,1,7,3.31e-05,0.694,0,0,1
+es,Synset('omw-es-02858304-n'),i50885,,bote,8,3,12,4,1.05e-05,0.204,1,0,8
 es,Synset('omw-es-00478262-n'),i37904,,fútbol,0,1,2,6,0.000115,0.701,1,1,2
+es,Synset('omw-es-02924116-n'),i51285,,autobús,2,1,1,7,2.04e-05,0.2,0,1,1
+es,Synset('omw-es-07669891-n'),i77246,,jamón,0,1,1,5,7.24e-06,0.191,0,0,1
+es,Synset('omw-es-09238926-n'),i85180,,cueva,0,1,1,5,1.41e-05,0.542,0,0,1
+es,Synset('omw-es-03743902-n'),i56131,,monumento,8,1,3,9,1.74e-05,0.206,0,1,3
+es,Synset('omw-es-07447641-n'),i75850,,fiesta,5,1,4,6,9.77e-05,0.758,1,0,4
+es,Synset('omw-es-03787759-n'),i56381,,mosaico,0,1,4,7,2.75e-06,0.2,0,0,4
