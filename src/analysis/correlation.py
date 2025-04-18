@@ -183,28 +183,75 @@ def calculate_correlations(filter_by_relevant_lang=True):
 
     # Create visualization of the correlations
     if all_results:
+        # --- Load p-values ---
+        p_value_file = os.path.join(output_dir, "spearman_p_values.csv")
+        try:
+            p_values_df = pd.read_csv(p_value_file, index_col=0)
+            # Ensure columns match languages (case might differ if manually edited)
+            p_values_df.columns = p_values_df.columns.str.lower()
+        except FileNotFoundError:
+            print(
+                f"Warning: P-value file not found at {p_value_file}. Cannot add significance stars."
+            )
+            p_values_df = None
+        except Exception as e:
+            print(
+                f"Warning: Error reading p-value file {p_value_file}: {e}. Cannot add significance stars."
+            )
+            p_values_df = None
+
         # Create heatmap of Spearman correlations
         plt.figure(figsize=(14, 8))
 
-        # Prepare data for heatmap
+        # Prepare data for heatmap and annotations
         heatmap_data = []
+        annot_labels = []  # For custom annotations (corr + p-value stars)
         langs_with_data = []
 
-        for lang in languages:
-            if lang not in all_results or "spearman" not in all_results[lang]:
+        for lang_lower in languages:  # Use lowercase for internal consistency
+            lang_upper = lang_lower.upper()
+            if (
+                lang_lower not in all_results
+                or "spearman" not in all_results[lang_lower]
+            ):
                 continue
 
-            row = []
+            corr_row = []
+            label_row = []
+            valid_lang_data = False
             for feature in feature_cols:
-                if feature in all_results[lang]["spearman"]:
-                    corr, _ = all_results[lang]["spearman"][feature]
-                    row.append(corr)
-                else:
-                    row.append(np.nan)
+                if feature in all_results[lang_lower]["spearman"]:
+                    corr, p_val = all_results[lang_lower]["spearman"][feature]
+                    corr_row.append(corr)
 
-            if row:  # Only add row if it contains data
-                heatmap_data.append(row)
-                langs_with_data.append(lang.upper())
+                    # Determine significance stars
+                    stars = ""
+                    # Check if p_values_df was loaded successfully and contains the necessary data
+                    if (
+                        p_values_df is not None
+                        and lang_lower in p_values_df.columns
+                        and feature in p_values_df.index
+                    ):
+                        p_val_from_file = p_values_df.loc[feature, lang_lower]
+                        # Add a check for NaN p-values read from the file
+                        if pd.notna(p_val_from_file):
+                            if p_val_from_file < 0.001:
+                                stars = "***"
+                            elif p_val_from_file < 0.01:
+                                stars = "**"
+                            elif p_val_from_file < 0.05:
+                                stars = "*"
+
+                    label_row.append(f"{corr:.2f}{stars}")
+                    valid_lang_data = True
+                else:
+                    corr_row.append(np.nan)
+                    label_row.append("")  # Empty label for missing data
+
+            if valid_lang_data:  # Only add row if it contains data
+                heatmap_data.append(corr_row)
+                annot_labels.append(label_row)
+                langs_with_data.append(lang_upper)  # Keep original case for labels
 
         if not heatmap_data:
             print("No correlation data to visualize")
@@ -212,15 +259,16 @@ def calculate_correlations(filter_by_relevant_lang=True):
 
         # Convert to numpy array
         heatmap_array = np.array(heatmap_data)
+        annot_array = np.array(annot_labels)
 
-        # Create mask for NaN values
+        # Create mask for NaN values in correlation data
         mask = np.isnan(heatmap_array)
 
         # Plot heatmap
         ax = sns.heatmap(
             heatmap_array,
-            annot=True,
-            fmt=".2f",
+            annot=annot_array,  # Use custom annotations
+            fmt="",  # Use pre-formatted strings in annot_array
             cmap="coolwarm",
             vmin=-1,
             vmax=1,
@@ -228,6 +276,7 @@ def calculate_correlations(filter_by_relevant_lang=True):
             xticklabels=[f.replace("_", " ").title() for f in feature_cols],
             yticklabels=langs_with_data,
             mask=mask,
+            annot_kws={"size": 8},  # Adjust font size if needed
         )
 
         filter_text = (
