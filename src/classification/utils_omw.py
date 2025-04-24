@@ -1,3 +1,7 @@
+"""
+Author: Gianluca Barmina
+"""
+
 import ast
 from collections import defaultdict
 from typing import List, Dict, Iterable, Union, Tuple

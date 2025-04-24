@@ -1,3 +1,7 @@
+"""
+Author: Federico Torrielli
+"""
+
 import json
 
 import krippendorff  # type: ignore
