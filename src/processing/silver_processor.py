@@ -1,3 +1,7 @@
+"""
+Author: Federico Torrielli
+"""
+
 import pandas as pd
 import re
 from collections import Counter

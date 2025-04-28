@@ -1,3 +1,7 @@
+"""
+Author: Gianluca Barmina
+"""
+
 import os
 from typing import Iterable
 

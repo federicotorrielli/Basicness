@@ -1,3 +1,7 @@
+"""
+Author: Federico Torrielli
+"""
+
 import itertools
 import os
 

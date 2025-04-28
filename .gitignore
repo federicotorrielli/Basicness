@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode,linux
 
+# Local files
+src/res.txt
+
+
 src/classification/resources/raw
 
 # JetBrains IDEs

@@ -1,3 +1,7 @@
+"""
+Author: Federico Torrielli
+"""
+
 import os
 
 import matplotlib.pyplot as plt
