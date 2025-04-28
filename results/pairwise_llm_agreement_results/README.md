@@ -4,11 +4,10 @@ This directory contains the results of pairwise agreement analysis between diffe
 
 ## Files Overview
 
-- **pairwise_agreement_summary.png**: Combined visualization of all agreement metrics
+- **pairwise_agreement_summary.png**: Combined visualization of Cohen's Kappa and MSE
 - **heatmap_kappa.png**: Heatmap of Cohen's Kappa scores between model pairs
-- **heatmap_correlation.png**: Heatmap of Spearman correlation coefficients between model pairs
-- **heatmap_binary_agreement.png**: Heatmap of binary agreement percentages (after converting 1-2→0, 3-4→1)
 - **heatmap_mse.png**: Heatmap of Mean Squared Error between model pairs
+- **heatmap_corr_vs_agreement.png**: Combined heatmap showing Spearman Correlation (lower triangle) and Binary Agreement (upper triangle)
 - **pairwise_agreement_table.tex**: LaTeX code for a table of pairwise metrics
 - **latex_table_standalone.tex**: Complete LaTeX document containing the table (can be compiled independently)
 - **summary_statistics.csv**: CSV file with summary statistics across all model pairs

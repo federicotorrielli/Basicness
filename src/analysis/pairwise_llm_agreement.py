@@ -9,8 +9,8 @@ from scipy.stats import spearmanr
 from sklearn.metrics import cohen_kappa_score
 
 # Configuration
-SILVER_PATH = "culture_annotation_datasets_silver_annotated_simple.csv"
-OUTPUT_DIR = "pairwise_agreement_results"
+SILVER_PATH = "./data/model_annotations/culture_annotation_datasets_silver_annotated.csv"
+OUTPUT_DIR = "./results/pairwise_llm_agreement_results"
 OUTPUT_LATEX = os.path.join(OUTPUT_DIR, "pairwise_agreement_table.tex")
 OUTPUT_SUMMARY = os.path.join(OUTPUT_DIR, "pairwise_agreement_summary.png")
 
@@ -221,6 +221,125 @@ def create_heatmap(results_df, metric, title, ax=None):
     return ax
 
 
+def create_combined_heatmap(results_df, metric1, metric2, title1, title2, filename):
+    """Create a combined heatmap for two metrics using different triangles and colorbars."""
+    models = sorted(
+        list(set(results_df["model1"].unique()) | set(results_df["model2"].unique()))
+    )
+    n_models = len(models)
+    pretty_labels = [pretty_model_name(model) for model in models]
+
+    # Create matrices for both metrics
+    matrix1 = np.zeros((n_models, n_models))
+    matrix2 = np.zeros((n_models, n_models))
+    annot_matrix1 = np.full((n_models, n_models), "", dtype=object)
+    annot_matrix2 = np.full((n_models, n_models), "", dtype=object)
+
+    for _, row in results_df.iterrows():
+        i = models.index(row["model1"])
+        j = models.index(row["model2"])
+        val1 = row[metric1]
+        val2 = row[metric2]
+        matrix1[i, j] = matrix1[j, i] = val1
+        matrix2[i, j] = matrix2[j, i] = val2
+
+    # Set diagonals (metric1 for lower/diag, metric2 for upper)
+    fmt1 = ".3f"
+    fmt2 = ".3f" # Use the same decimal format for both metrics
+    for i in range(n_models):
+        matrix1[i, i] = 1.0 if metric1 != "mse" else 0.0
+        matrix2[i, i] = 1.0 if metric2 != "mse" else 0.0 # Will be masked out for upper triangle
+
+    # Create annotation matrices
+    for i in range(n_models):
+        for j in range(n_models):
+             # Lower triangle + diagonal uses metric1
+            annot_matrix1[i, j] = f"{matrix1[i, j]:{fmt1}}"
+            # Upper triangle uses metric2
+            annot_matrix2[i, j] = f"{matrix2[i, j]:{fmt2}}"
+
+
+    # Masks: lower includes diagonal, upper excludes diagonal
+    mask_lower = np.triu(np.ones_like(matrix1, dtype=bool), k=1) # Mask upper triangle for metric1 plot
+    mask_upper = np.tril(np.ones_like(matrix2, dtype=bool), k=0) # Mask lower triangle + diagonal for metric2 plot
+
+    # Plotting setup
+    fig, ax = plt.subplots(figsize=(12, 10))
+
+    # Determine cmaps and vmin/vmax for each metric
+    cmap1 = "YlGnBu" # Back to original for metric1 (e.g., correlation)
+    vmin1 = 0 if metric1 != "mse" else None
+    vmax1 = 1 if metric1 != "mse" else None
+
+    cmap2 = "inferno_r"
+    vmin2 = 0 if metric2 != "mse" else None
+    vmax2 = 1 if metric2 != "mse" else None
+
+
+    # Plot lower triangle (metric1)
+    sns.heatmap(
+        matrix1,
+        mask=mask_lower,
+        annot=annot_matrix1, fmt="", # Use pre-formatted annotations
+        cmap=cmap1,
+        vmin=vmin1,
+        vmax=vmax1,
+        ax=ax,
+        cbar=False, # Disable default cbar
+        xticklabels=pretty_labels,
+        yticklabels=pretty_labels,
+        annot_kws={"size": 8} # Adjust font size if needed
+    )
+
+    # Plot upper triangle (metric2)
+    sns.heatmap(
+        matrix2,
+        mask=mask_upper,
+        annot=annot_matrix2, fmt="", # Use pre-formatted annotations
+        cmap=cmap2,
+        vmin=vmin2,
+        vmax=vmax2,
+        ax=ax,
+        cbar=False, # Disable default cbar
+        xticklabels=pretty_labels, # Ensure labels are not overwritten
+        yticklabels=pretty_labels,
+        annot_kws={"size": 8}
+    )
+
+    # Improve layout
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha="right")
+    ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
+    ax.set_title(f"{title1} (Lower) vs. {title2} (Upper)")
+
+    # Manually add colorbars
+    # Need ScalarMappable to create separate colorbars
+    from matplotlib.cm import ScalarMappable
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+
+    divider = make_axes_locatable(ax)
+
+    # Colorbar for metric1 (lower triangle)
+    cax1 = divider.append_axes("right", size="5%", pad=0.1)
+    norm1 = plt.Normalize(vmin=vmin1 if vmin1 is not None else np.nanmin(matrix1[~mask_lower]),
+                          vmax=vmax1 if vmax1 is not None else np.nanmax(matrix1[~mask_lower]))
+    sm1 = ScalarMappable(cmap=cmap1, norm=norm1)
+    sm1.set_array([]) # Important for mappable
+    fig.colorbar(sm1, cax=cax1, label=title1)
+
+    # Colorbar for metric2 (upper triangle)
+    cax2 = divider.append_axes("right", size="5%", pad=0.6) # Add more padding
+    norm2 = plt.Normalize(vmin=vmin2 if vmin2 is not None else np.nanmin(matrix2[~mask_upper]),
+                          vmax=vmax2 if vmax2 is not None else np.nanmax(matrix2[~mask_upper]))
+    sm2 = ScalarMappable(cmap=cmap2, norm=norm2)
+    sm2.set_array([])
+    fig.colorbar(sm2, cax=cax2, label=title2)
+
+
+    plt.tight_layout(rect=[0, 0, 1, 1]) # Use slightly more width for the main plot
+    plt.savefig(filename, dpi=300)
+    print(f"Combined heatmap saved to {filename}")
+
+
 def generate_readme(results_df, model_stats_df):
     """Generate a README.md file explaining the analysis and files"""
     readme_text = """# Pairwise Inter-Model Agreement Analysis
@@ -229,11 +348,10 @@ This directory contains the results of pairwise agreement analysis between diffe
 
 ## Files Overview
 
-- **pairwise_agreement_summary.png**: Combined visualization of all agreement metrics
+- **pairwise_agreement_summary.png**: Combined visualization of Cohen's Kappa and MSE
 - **heatmap_kappa.png**: Heatmap of Cohen's Kappa scores between model pairs
-- **heatmap_correlation.png**: Heatmap of Spearman correlation coefficients between model pairs
-- **heatmap_binary_agreement.png**: Heatmap of binary agreement percentages (after converting 1-2→0, 3-4→1)
 - **heatmap_mse.png**: Heatmap of Mean Squared Error between model pairs
+- **heatmap_corr_vs_agreement.png**: Combined heatmap showing Spearman Correlation (lower triangle) and Binary Agreement (upper triangle)
 - **pairwise_agreement_table.tex**: LaTeX code for a table of pairwise metrics
 - **latex_table_standalone.tex**: Complete LaTeX document containing the table (can be compiled independently)
 - **summary_statistics.csv**: CSV file with summary statistics across all model pairs
@@ -337,17 +455,28 @@ def main():
         f.write(latex_table)
     print(f"\nLaTeX table saved to {OUTPUT_LATEX}")
 
-    # Create summary visualization with all metrics
-    fig, axes = plt.subplots(2, 2, figsize=(16, 12))
+    # Create summary visualization with Kappa and MSE only
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6)) # Changed to 1x2
 
-    create_heatmap(results_df, "kappa", "Cohen's Kappa", axes[0, 0])
-    create_heatmap(results_df, "correlation", "Spearman Correlation", axes[0, 1])
-    create_heatmap(results_df, "binary_agreement", "Agreement", axes[1, 0])
-    create_heatmap(results_df, "mse", "Mean Squared Error", axes[1, 1])
+    create_heatmap(results_df, "kappa", "Cohen's Kappa", axes[0])
+    create_heatmap(results_df, "mse", "Mean Squared Error", axes[1])
+    # Removed correlation and binary_agreement from summary plot
 
     plt.tight_layout()
     plt.savefig(OUTPUT_SUMMARY, dpi=300)
     print(f"Summary visualizations saved to {OUTPUT_SUMMARY}")
+
+    # Create combined heatmap for Kappa and Binary Agreement
+    create_combined_heatmap(
+        results_df,
+        # metric1="correlation",
+        metric1="kappa",
+        metric2="binary_agreement",
+        # title1="Spearman ρ",
+        title1="Cohen\'s κ",
+        title2="Binary Agreement",
+        filename=os.path.join(OUTPUT_DIR, "heatmap_kappa_vs_agreement.png") # Updated filename
+    )
 
     # Also display individual models' average agreement with others
     model_stats = []
@@ -376,12 +505,13 @@ def main():
     # Save individual heatmaps in higher resolution
     metrics = {
         "kappa": "Cohen's Kappa",
-        "correlation": "Spearman Correlation",
-        "binary_agreement": "Agreement (%)",
         "mse": "Mean Squared Error",
     }
 
     for metric, title in metrics.items():
+        # Skip correlation and binary agreement as they are now combined
+        if metric in ["correlation", "binary_agreement"]:
+            continue
         fig, ax = plt.subplots(figsize=(10, 8))
         create_heatmap(results_df, metric, title, ax)
         plt.tight_layout()

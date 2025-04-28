@@ -191,21 +191,26 @@ def calculate_correlations(filter_by_relevant_lang=True):
             p_values_df.columns = p_values_df.columns.str.lower()
         except FileNotFoundError:
             print(
-                f"Warning: P-value file not found at {p_value_file}. Cannot add significance stars."
+                f"Warning: P-value file not found at {p_value_file}. Cannot add significance arrows."
             )
             p_values_df = None
         except Exception as e:
             print(
-                f"Warning: Error reading p-value file {p_value_file}: {e}. Cannot add significance stars."
+                f"Warning: Error reading p-value file {p_value_file}: {e}. Cannot add significance arrows."
             )
             p_values_df = None
 
-        # Create heatmap of Spearman correlations
-        plt.figure(figsize=(14, 8))
+        # Create heatmap of Spearman correlations - adjust figure size for content
+        # Dynamically calculate width based on number of features
+        width = max(14, len(feature_cols) * 1.2)
+        plt.figure(figsize=(width, 8))
+
+        # Use figure's full width by adjusting subplot parameters
+        plt.subplots_adjust(right=0.95)  # Extend plot area closer to right edge
 
         # Prepare data for heatmap and annotations
         heatmap_data = []
-        annot_labels = []  # For custom annotations (corr + p-value stars)
+        annot_labels = []  # For custom annotations (corr + arrow and p-value)
         langs_with_data = []
 
         for lang_lower in languages:  # Use lowercase for internal consistency
@@ -224,8 +229,8 @@ def calculate_correlations(filter_by_relevant_lang=True):
                     corr, p_val = all_results[lang_lower]["spearman"][feature]
                     corr_row.append(corr)
 
-                    # Determine significance stars
-                    stars = ""
+                    # Determine annotation: corr coefficient, potentially with arrow and p-value
+                    label = f"{corr:.2f}"  # Default label is just the correlation
                     # Check if p_values_df was loaded successfully and contains the necessary data
                     if (
                         p_values_df is not None
@@ -233,16 +238,17 @@ def calculate_correlations(filter_by_relevant_lang=True):
                         and feature in p_values_df.index
                     ):
                         p_val_from_file = p_values_df.loc[feature, lang_lower]
-                        # Add a check for NaN p-values read from the file
-                        if pd.notna(p_val_from_file):
-                            if p_val_from_file < 0.001:
-                                stars = "***"
-                            elif p_val_from_file < 0.01:
-                                stars = "**"
-                            elif p_val_from_file < 0.05:
-                                stars = "*"
+                        # Add arrow and p-value if significant and p-value is valid
+                        if pd.notna(p_val_from_file) and p_val_from_file < 0.05:
+                            arrow = (
+                                "↑" if corr > 0 else "↓" if corr < 0 else ""
+                            )  # Added check for corr == 0
+                            if (
+                                arrow
+                            ):  # Only add arrow and p-value if there's a direction
+                                label += f" {arrow} p={p_val_from_file:.3f}"
 
-                    label_row.append(f"{corr:.2f}{stars}")
+                    label_row.append(label)
                     valid_lang_data = True
                 else:
                     corr_row.append(np.nan)
@@ -259,16 +265,17 @@ def calculate_correlations(filter_by_relevant_lang=True):
 
         # Convert to numpy array
         heatmap_array = np.array(heatmap_data)
-        annot_array = np.array(annot_labels)
+        # annot_array = np.array(annot_labels) # No longer needed
 
         # Create mask for NaN values in correlation data
         mask = np.isnan(heatmap_array)
 
-        # Plot heatmap
+        # Plot heatmap without default annotations
         ax = sns.heatmap(
             heatmap_array,
-            annot=annot_array,  # Use custom annotations
-            fmt="",  # Use pre-formatted strings in annot_array
+            annot=False,  # Turn off default annotations
+            # annot=annot_array,  # Use custom annotations
+            # fmt="",  # Use pre-formatted strings in annot_array
             cmap="coolwarm",
             vmin=-1,
             vmax=1,
@@ -276,16 +283,102 @@ def calculate_correlations(filter_by_relevant_lang=True):
             xticklabels=[f.replace("_", " ").title() for f in feature_cols],
             yticklabels=langs_with_data,
             mask=mask,
-            annot_kws={"size": 8},  # Adjust font size if needed
+            # annot_kws={"size": 8},  # Adjust font size if needed
+            linewidths=0.5,  # Add lines between cells for clarity
+            linecolor="lightgray",
         )
 
-        filter_text = (
-            "Filtered by relevant language"
-            if filter_by_relevant_lang
-            else "All annotations"
-        )
+        # --- Manual Annotations --- >
+        for i, lang_lower in enumerate(
+            [l.lower() for l in langs_with_data]
+        ):  # Iterate rows (langs)
+            for j, feature in enumerate(feature_cols):  # Iterate columns (features)
+                if mask[i, j]:  # Skip masked (NaN) cells
+                    continue
+
+                corr = heatmap_array[i, j]
+                text_color = (
+                    "white" if abs(corr) > 0.6 else "black"
+                )  # Contrast for text
+
+                # Default text is just the correlation coefficient
+                base_text = f"{corr:.2f}"
+                pill_text = ""
+                pill_color = None
+
+                # Check significance if p-values are available
+                if (
+                    p_values_df is not None
+                    and lang_lower in p_values_df.columns
+                    and feature in p_values_df.index
+                ):
+                    p_val_from_file = p_values_df.loc[feature, lang_lower]
+                    if pd.notna(p_val_from_file):
+                        # Determine significance level and corresponding colors/text
+                        if p_val_from_file < 0.001:
+                            sig_text = "p<0.001"
+                            pos_color = "darkgreen"
+                            neg_color = "darkred"
+                        elif p_val_from_file < 0.01:
+                            sig_text = "p<0.01"
+                            pos_color = "forestgreen"
+                            neg_color = "firebrick"
+                        elif p_val_from_file < 0.05:
+                            sig_text = "p<0.05"
+                            pos_color = "mediumseagreen"
+                            neg_color = "indianred"
+                        else:
+                            sig_text = ""
+                            pos_color = neg_color = None
+
+                        if sig_text:  # Only create pill if significant
+                            if corr > 0:
+                                arrow = "↑"
+                                pill_color = pos_color
+                            elif corr < 0:
+                                arrow = "↓"
+                                pill_color = neg_color
+                            else:
+                                arrow = ""
+                                pill_color = None
+
+                            if arrow and pill_color:
+                                pill_text = f"{arrow} {sig_text}"
+                                base_text += " "  # Add space before pill
+
+                # --- Draw the text elements --- >
+                # Use text alignment to place base text and pill text side-by-side
+                # Place base text slightly left
+                ax.text(
+                    j + 0.45,
+                    i + 0.5,
+                    base_text,
+                    ha="right",
+                    va="center",
+                    color=text_color,
+                    fontsize=7,
+                )
+
+                # If there's a pill, draw it slightly right with background
+                if pill_text:
+                    ax.text(
+                        j + 0.55,
+                        i + 0.5,
+                        pill_text,
+                        ha="left",
+                        va="center",
+                        color="white",
+                        fontsize=6,
+                        bbox=dict(
+                            boxstyle="round,pad=0.2",
+                            facecolor=pill_color,
+                            edgecolor="none",
+                        ),
+                    )
+                # --- End Manual Annotations ---
+
         plt.title(
-            f"Spearman Correlation between Features and Basicness Scores ({filter_text})",
+            "Spearman Correlation between Features and Basicness Scores",
             fontsize=14,
         )
         plt.tight_layout()
