@@ -351,28 +351,27 @@ def calculate_correlations(filter_by_relevant_lang=True):
                                 base_text += " "  # Add space before pill
 
                 # --- Draw the text elements --- >
-                # Use text alignment to place base text and pill text side-by-side
-                # Place base text slightly left
+                # Place base text slightly above center
                 ax.text(
-                    j + 0.45,
-                    i + 0.5,
+                    j + 0.5,  # Center horizontally
+                    i + 0.65,  # Position slightly above vertical center
                     base_text,
-                    ha="right",
-                    va="center",
+                    ha="center",  # Center align horizontally
+                    va="center",  # Vertically align relative to its position
                     color=text_color,
-                    fontsize=7,
+                    fontsize=10,
                 )
 
-                # If there's a pill, draw it slightly right with background
+                # If there's a pill, draw it below the base text
                 if pill_text:
                     ax.text(
-                        j + 0.55,
-                        i + 0.5,
+                        j + 0.5,  # Center horizontally
+                        i + 0.35,  # Position slightly below vertical center
                         pill_text,
-                        ha="left",
-                        va="center",
+                        ha="center",  # Center align horizontally
+                        va="center",  # Vertically align relative to its position
                         color="white",
-                        fontsize=6,
+                        fontsize=8,
                         bbox=dict(
                             boxstyle="round,pad=0.2",
                             facecolor=pill_color,
