@@ -359,7 +359,7 @@ def calculate_correlations(filter_by_relevant_lang=True):
                     ha="center",  # Center align horizontally
                     va="center",  # Vertically align relative to its position
                     color=text_color,
-                    fontsize=10,
+                    fontsize=12,
                 )
 
                 # If there's a pill, draw it below the base text
@@ -371,7 +371,7 @@ def calculate_correlations(filter_by_relevant_lang=True):
                         ha="center",  # Center align horizontally
                         va="center",  # Vertically align relative to its position
                         color="white",
-                        fontsize=8,
+                        fontsize=10,
                         bbox=dict(
                             boxstyle="round,pad=0.2",
                             facecolor=pill_color,
