@@ -13,7 +13,9 @@ from scipy.stats import spearmanr
 from sklearn.metrics import cohen_kappa_score
 
 # Configuration
-SILVER_PATH = "./data/model_annotations/culture_annotation_datasets_silver_annotated.csv"
+SILVER_PATH = (
+    "./data/model_annotations/culture_annotation_datasets_silver_annotated.csv"
+)
 OUTPUT_DIR = "./results/pairwise_llm_agreement_results"
 OUTPUT_LATEX = os.path.join(OUTPUT_DIR, "pairwise_agreement_table.tex")
 OUTPUT_SUMMARY = os.path.join(OUTPUT_DIR, "pairwise_agreement_summary.png")
@@ -249,29 +251,34 @@ def create_combined_heatmap(results_df, metric1, metric2, title1, title2, filena
 
     # Set diagonals (metric1 for lower/diag, metric2 for upper)
     fmt1 = ".3f"
-    fmt2 = ".3f" # Use the same decimal format for both metrics
+    fmt2 = ".3f"  # Use the same decimal format for both metrics
     for i in range(n_models):
         matrix1[i, i] = 1.0 if metric1 != "mse" else 0.0
-        matrix2[i, i] = 1.0 if metric2 != "mse" else 0.0 # Will be masked out for upper triangle
+        matrix2[i, i] = (
+            1.0 if metric2 != "mse" else 0.0
+        )  # Will be masked out for upper triangle
 
     # Create annotation matrices
     for i in range(n_models):
         for j in range(n_models):
-             # Lower triangle + diagonal uses metric1
+            # Lower triangle + diagonal uses metric1
             annot_matrix1[i, j] = f"{matrix1[i, j]:{fmt1}}"
             # Upper triangle uses metric2
             annot_matrix2[i, j] = f"{matrix2[i, j]:{fmt2}}"
 
-
     # Masks: lower includes diagonal, upper excludes diagonal
-    mask_lower = np.triu(np.ones_like(matrix1, dtype=bool), k=1) # Mask upper triangle for metric1 plot
-    mask_upper = np.tril(np.ones_like(matrix2, dtype=bool), k=0) # Mask lower triangle + diagonal for metric2 plot
+    mask_lower = np.triu(
+        np.ones_like(matrix1, dtype=bool), k=1
+    )  # Mask upper triangle for metric1 plot
+    mask_upper = np.tril(
+        np.ones_like(matrix2, dtype=bool), k=0
+    )  # Mask lower triangle + diagonal for metric2 plot
 
     # Plotting setup
     fig, ax = plt.subplots(figsize=(12, 10))
 
     # Determine cmaps and vmin/vmax for each metric
-    cmap1 = "YlGnBu" # Back to original for metric1 (e.g., correlation)
+    cmap1 = "YlGnBu"  # Back to original for metric1 (e.g., correlation)
     vmin1 = 0 if metric1 != "mse" else None
     vmax1 = 1 if metric1 != "mse" else None
 
@@ -279,35 +286,36 @@ def create_combined_heatmap(results_df, metric1, metric2, title1, title2, filena
     vmin2 = 0 if metric2 != "mse" else None
     vmax2 = 1 if metric2 != "mse" else None
 
-
     # Plot lower triangle (metric1)
     sns.heatmap(
         matrix1,
         mask=mask_lower,
-        annot=annot_matrix1, fmt="", # Use pre-formatted annotations
+        annot=annot_matrix1,
+        fmt="",  # Use pre-formatted annotations
         cmap=cmap1,
         vmin=vmin1,
         vmax=vmax1,
         ax=ax,
-        cbar=False, # Disable default cbar
+        cbar=False,  # Disable default cbar
         xticklabels=pretty_labels,
         yticklabels=pretty_labels,
-        annot_kws={"size": 8} # Adjust font size if needed
+        annot_kws={"size": 11},  # Adjust font size if needed
     )
 
     # Plot upper triangle (metric2)
     sns.heatmap(
         matrix2,
         mask=mask_upper,
-        annot=annot_matrix2, fmt="", # Use pre-formatted annotations
+        annot=annot_matrix2,
+        fmt="",  # Use pre-formatted annotations
         cmap=cmap2,
         vmin=vmin2,
         vmax=vmax2,
         ax=ax,
-        cbar=False, # Disable default cbar
-        xticklabels=pretty_labels, # Ensure labels are not overwritten
+        cbar=False,  # Disable default cbar
+        xticklabels=pretty_labels,  # Ensure labels are not overwritten
         yticklabels=pretty_labels,
-        annot_kws={"size": 8}
+        annot_kws={"size": 11},
     )
 
     # Improve layout
@@ -324,22 +332,25 @@ def create_combined_heatmap(results_df, metric1, metric2, title1, title2, filena
 
     # Colorbar for metric1 (lower triangle)
     cax1 = divider.append_axes("right", size="5%", pad=0.1)
-    norm1 = plt.Normalize(vmin=vmin1 if vmin1 is not None else np.nanmin(matrix1[~mask_lower]),
-                          vmax=vmax1 if vmax1 is not None else np.nanmax(matrix1[~mask_lower]))
+    norm1 = plt.Normalize(
+        vmin=vmin1 if vmin1 is not None else np.nanmin(matrix1[~mask_lower]),
+        vmax=vmax1 if vmax1 is not None else np.nanmax(matrix1[~mask_lower]),
+    )
     sm1 = ScalarMappable(cmap=cmap1, norm=norm1)
-    sm1.set_array([]) # Important for mappable
+    sm1.set_array([])  # Important for mappable
     fig.colorbar(sm1, cax=cax1, label=title1)
 
     # Colorbar for metric2 (upper triangle)
-    cax2 = divider.append_axes("right", size="5%", pad=0.6) # Add more padding
-    norm2 = plt.Normalize(vmin=vmin2 if vmin2 is not None else np.nanmin(matrix2[~mask_upper]),
-                          vmax=vmax2 if vmax2 is not None else np.nanmax(matrix2[~mask_upper]))
+    cax2 = divider.append_axes("right", size="5%", pad=0.6)  # Add more padding
+    norm2 = plt.Normalize(
+        vmin=vmin2 if vmin2 is not None else np.nanmin(matrix2[~mask_upper]),
+        vmax=vmax2 if vmax2 is not None else np.nanmax(matrix2[~mask_upper]),
+    )
     sm2 = ScalarMappable(cmap=cmap2, norm=norm2)
     sm2.set_array([])
     fig.colorbar(sm2, cax=cax2, label=title2)
 
-
-    plt.tight_layout(rect=[0, 0, 1, 1]) # Use slightly more width for the main plot
+    plt.tight_layout(rect=[0, 0, 1, 1])  # Use slightly more width for the main plot
     plt.savefig(filename, dpi=300)
     print(f"Combined heatmap saved to {filename}")
 
@@ -460,7 +471,7 @@ def main():
     print(f"\nLaTeX table saved to {OUTPUT_LATEX}")
 
     # Create summary visualization with Kappa and MSE only
-    fig, axes = plt.subplots(1, 2, figsize=(16, 6)) # Changed to 1x2
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6))  # Changed to 1x2
 
     create_heatmap(results_df, "kappa", "Cohen's Kappa", axes[0])
     create_heatmap(results_df, "mse", "Mean Squared Error", axes[1])
@@ -477,9 +488,11 @@ def main():
         metric1="kappa",
         metric2="binary_agreement",
         # title1="Spearman ρ",
-        title1="Cohen\'s κ",
+        title1="Cohen's κ",
         title2="Binary Agreement",
-        filename=os.path.join(OUTPUT_DIR, "heatmap_kappa_vs_agreement.png") # Updated filename
+        filename=os.path.join(
+            OUTPUT_DIR, "heatmap_kappa_vs_agreement.png"
+        ),  # Updated filename
     )
 
     # Also display individual models' average agreement with others
