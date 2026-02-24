@@ -1,166 +1,246 @@
 [
   {
-    "method": "correlation_weights vs. Human (IT)",
+    "method": "S1_opt_correlation_en",
+    "language": "en",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.4133967499009117,
+      "percent_agreement": 0.6125,
+      "binary_agreement": 0.775,
+      "mse": 0.6125
+    },
+    "by_language": {
+      "en": {
+        "cohen_kappa": 0.4133967499009117,
+        "percent_agreement": 0.6125,
+        "binary_agreement": 0.775,
+        "mse": 0.6125,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S1_opt_correlation_it",
     "language": "it",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.28301886792452835,
+      "cohen_kappa": 0.44798301486199577,
       "percent_agreement": 0.5375,
-      "binary_agreement": 0.8375,
-      "mse": 0.5
-    },
-    "by_language": {
-      "it": {
-        "cohen_kappa": 0.28301886792452835,
-        "percent_agreement": 0.5375,
-        "binary_agreement": 0.8375,
-        "mse": 0.5,
-        "common_items": 80
-      }
-    }
-  },
-  {
-    "method": "uniform_weights vs. Human (IT)",
-    "language": "it",
-    "common_items": 80,
-    "overall": {
-      "cohen_kappa": 0.21036397285626152,
-      "percent_agreement": 0.375,
-      "binary_agreement": 0.6,
-      "mse": 1.15
-    },
-    "by_language": {
-      "it": {
-        "cohen_kappa": 0.21036397285626152,
-        "percent_agreement": 0.375,
-        "binary_agreement": 0.6,
-        "mse": 1.15,
-        "common_items": 80
-      }
-    }
-  },
-  {
-    "method": "literature_weights vs. Human (IT)",
-    "language": "it",
-    "common_items": 80,
-    "overall": {
-      "cohen_kappa": 0.20819112627986347,
-      "percent_agreement": 0.375,
-      "binary_agreement": 0.625,
-      "mse": 0.925
-    },
-    "by_language": {
-      "it": {
-        "cohen_kappa": 0.20819112627986347,
-        "percent_agreement": 0.375,
-        "binary_agreement": 0.625,
-        "mse": 0.925,
-        "common_items": 80
-      }
-    }
-  },
-  {
-    "method": "correlation_weights vs. Human (NB)",
-    "language": "nb",
-    "common_items": 80,
-    "overall": {
-      "cohen_kappa": 0.27175843694493784,
-      "percent_agreement": 0.55,
-      "binary_agreement": 0.85,
-      "mse": 0.6375
-    },
-    "by_language": {
-      "nb": {
-        "cohen_kappa": 0.27175843694493784,
-        "percent_agreement": 0.55,
-        "binary_agreement": 0.85,
-        "mse": 0.6375,
-        "common_items": 80
-      }
-    }
-  },
-  {
-    "method": "uniform_weights vs. Human (NB)",
-    "language": "nb",
-    "common_items": 80,
-    "overall": {
-      "cohen_kappa": 0.20612813370473537,
-      "percent_agreement": 0.4,
-      "binary_agreement": 0.725,
-      "mse": 0.9375
-    },
-    "by_language": {
-      "nb": {
-        "cohen_kappa": 0.20612813370473537,
-        "percent_agreement": 0.4,
-        "binary_agreement": 0.725,
-        "mse": 0.9375,
-        "common_items": 80
-      }
-    }
-  },
-  {
-    "method": "literature_weights vs. Human (NB)",
-    "language": "nb",
-    "common_items": 80,
-    "overall": {
-      "cohen_kappa": 0.3877551020408163,
-      "percent_agreement": 0.5375,
-      "binary_agreement": 0.85,
+      "binary_agreement": 0.7875,
       "mse": 0.5375
     },
     "by_language": {
-      "nb": {
-        "cohen_kappa": 0.3877551020408163,
+      "it": {
+        "cohen_kappa": 0.44798301486199577,
         "percent_agreement": 0.5375,
-        "binary_agreement": 0.85,
+        "binary_agreement": 0.7875,
         "mse": 0.5375,
         "common_items": 80
       }
     }
   },
   {
-    "method": "correlation_weights vs. Human (EN)",
-    "language": "en",
+    "method": "S1_opt_correlation_es",
+    "language": "es",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.39736346516007537,
-      "percent_agreement": 0.625,
-      "binary_agreement": 0.85,
-      "mse": 0.45
+      "cohen_kappa": 0.05691056910569103,
+      "percent_agreement": 0.15,
+      "binary_agreement": 0.7375,
+      "mse": 1.5875
     },
     "by_language": {
-      "en": {
-        "cohen_kappa": 0.39736346516007537,
-        "percent_agreement": 0.625,
-        "binary_agreement": 0.85,
-        "mse": 0.45,
+      "es": {
+        "cohen_kappa": 0.05691056910569103,
+        "percent_agreement": 0.15,
+        "binary_agreement": 0.7375,
+        "mse": 1.5875,
         "common_items": 80
       }
     }
   },
   {
-    "method": "uniform_weights vs. Human (EN)",
-    "language": "en",
+    "method": "S1_opt_correlation_nb",
+    "language": "nb",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.11376649240726922,
-      "percent_agreement": 0.2,
-      "binary_agreement": 0.45,
-      "mse": 1.7625
+      "cohen_kappa": 0.4233687405159333,
+      "percent_agreement": 0.575,
+      "binary_agreement": 0.8875,
+      "mse": 0.575
     },
     "by_language": {
-      "en": {
-        "cohen_kappa": 0.11376649240726922,
-        "percent_agreement": 0.2,
-        "binary_agreement": 0.45,
-        "mse": 1.7625,
+      "nb": {
+        "cohen_kappa": 0.4233687405159333,
+        "percent_agreement": 0.575,
+        "binary_agreement": 0.8875,
+        "mse": 0.575,
         "common_items": 80
       }
     }
   },
   {
-    "method": "literature_weights vs. Human (EN)",
+    "method": "S2_opt_literature_en",
+    "language": "en",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.2928176795580111,
+      "percent_agreement": 0.5125,
+      "binary_agreement": 0.6875,
+      "mse": 0.85
+    },
+    "by_language": {
+      "en": {
+        "cohen_kappa": 0.2928176795580111,
+        "percent_agreement": 0.5125,
+        "binary_agreement": 0.6875,
+        "mse": 0.85,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S2_opt_literature_it",
+    "language": "it",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.44727272727272727,
+      "percent_agreement": 0.5625,
+      "binary_agreement": 0.7875,
+      "mse": 0.55
+    },
+    "by_language": {
+      "it": {
+        "cohen_kappa": 0.44727272727272727,
+        "percent_agreement": 0.5625,
+        "binary_agreement": 0.7875,
+        "mse": 0.55,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S2_opt_literature_es",
+    "language": "es",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.08256880733944949,
+      "percent_agreement": 0.3875,
+      "binary_agreement": 0.7375,
+      "mse": 1.2125
+    },
+    "by_language": {
+      "es": {
+        "cohen_kappa": 0.08256880733944949,
+        "percent_agreement": 0.3875,
+        "binary_agreement": 0.7375,
+        "mse": 1.2125,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S2_opt_literature_nb",
+    "language": "nb",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.5015576323987538,
+      "percent_agreement": 0.6375,
+      "binary_agreement": 0.8875,
+      "mse": 0.475
+    },
+    "by_language": {
+      "nb": {
+        "cohen_kappa": 0.5015576323987538,
+        "percent_agreement": 0.6375,
+        "binary_agreement": 0.8875,
+        "mse": 0.475,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S3_opt_uniform_en",
+    "language": "en",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.34535738142952566,
+      "percent_agreement": 0.5375,
+      "binary_agreement": 0.6625,
+      "mse": 0.9125
+    },
+    "by_language": {
+      "en": {
+        "cohen_kappa": 0.34535738142952566,
+        "percent_agreement": 0.5375,
+        "binary_agreement": 0.6625,
+        "mse": 0.9125,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S3_opt_uniform_it",
+    "language": "it",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.3515106853352984,
+      "percent_agreement": 0.5,
+      "binary_agreement": 0.7625,
+      "mse": 0.65
+    },
+    "by_language": {
+      "it": {
+        "cohen_kappa": 0.3515106853352984,
+        "percent_agreement": 0.5,
+        "binary_agreement": 0.7625,
+        "mse": 0.65,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S3_opt_uniform_es",
+    "language": "es",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.13701741105223308,
+      "percent_agreement": 0.5,
+      "binary_agreement": 0.7125,
+      "mse": 1.1375
+    },
+    "by_language": {
+      "es": {
+        "cohen_kappa": 0.13701741105223308,
+        "percent_agreement": 0.5,
+        "binary_agreement": 0.7125,
+        "mse": 1.1375,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S3_opt_uniform_nb",
+    "language": "nb",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.3114754098360656,
+      "percent_agreement": 0.5375,
+      "binary_agreement": 0.8375,
+      "mse": 0.675
+    },
+    "by_language": {
+      "nb": {
+        "cohen_kappa": 0.3114754098360656,
+        "percent_agreement": 0.5375,
+        "binary_agreement": 0.8375,
+        "mse": 0.675,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S4_nonopt_literature_en",
     "language": "en",
     "common_items": 80,
     "overall": {
@@ -180,27 +260,107 @@
     }
   },
   {
-    "method": "correlation_weights vs. Human (ES)",
-    "language": "es",
+    "method": "S4_nonopt_literature_it",
+    "language": "it",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.050000000000000044,
-      "percent_agreement": 0.2875,
-      "binary_agreement": 0.95,
-      "mse": 0.7125
+      "cohen_kappa": 0.20819112627986347,
+      "percent_agreement": 0.375,
+      "binary_agreement": 0.625,
+      "mse": 0.925
     },
     "by_language": {
-      "es": {
-        "cohen_kappa": 0.050000000000000044,
-        "percent_agreement": 0.2875,
-        "binary_agreement": 0.95,
-        "mse": 0.7125,
+      "it": {
+        "cohen_kappa": 0.20819112627986347,
+        "percent_agreement": 0.375,
+        "binary_agreement": 0.625,
+        "mse": 0.925,
         "common_items": 80
       }
     }
   },
   {
-    "method": "uniform_weights vs. Human (ES)",
+    "method": "S4_nonopt_literature_es",
+    "language": "es",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.03991370010787476,
+      "percent_agreement": 0.2,
+      "binary_agreement": 0.625,
+      "mse": 1.7375
+    },
+    "by_language": {
+      "es": {
+        "cohen_kappa": 0.03991370010787476,
+        "percent_agreement": 0.2,
+        "binary_agreement": 0.625,
+        "mse": 1.7375,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S4_nonopt_literature_nb",
+    "language": "nb",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.3877551020408163,
+      "percent_agreement": 0.5375,
+      "binary_agreement": 0.85,
+      "mse": 0.5375
+    },
+    "by_language": {
+      "nb": {
+        "cohen_kappa": 0.3877551020408163,
+        "percent_agreement": 0.5375,
+        "binary_agreement": 0.85,
+        "mse": 0.5375,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S5_nonopt_uniform_en",
+    "language": "en",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.11376649240726922,
+      "percent_agreement": 0.2,
+      "binary_agreement": 0.45,
+      "mse": 1.7625
+    },
+    "by_language": {
+      "en": {
+        "cohen_kappa": 0.11376649240726922,
+        "percent_agreement": 0.2,
+        "binary_agreement": 0.45,
+        "mse": 1.7625,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S5_nonopt_uniform_it",
+    "language": "it",
+    "common_items": 80,
+    "overall": {
+      "cohen_kappa": 0.21036397285626152,
+      "percent_agreement": 0.375,
+      "binary_agreement": 0.6,
+      "mse": 1.15
+    },
+    "by_language": {
+      "it": {
+        "cohen_kappa": 0.21036397285626152,
+        "percent_agreement": 0.375,
+        "binary_agreement": 0.6,
+        "mse": 1.15,
+        "common_items": 80
+      }
+    }
+  },
+  {
+    "method": "S5_nonopt_uniform_es",
     "language": "es",
     "common_items": 80,
     "overall": {
@@ -220,21 +380,21 @@
     }
   },
   {
-    "method": "literature_weights vs. Human (ES)",
-    "language": "es",
+    "method": "S5_nonopt_uniform_nb",
+    "language": "nb",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.03991370010787476,
-      "percent_agreement": 0.2,
-      "binary_agreement": 0.625,
-      "mse": 1.7375
+      "cohen_kappa": 0.20612813370473537,
+      "percent_agreement": 0.4,
+      "binary_agreement": 0.725,
+      "mse": 0.9375
     },
     "by_language": {
-      "es": {
-        "cohen_kappa": 0.03991370010787476,
-        "percent_agreement": 0.2,
-        "binary_agreement": 0.625,
-        "mse": 1.7375,
+      "nb": {
+        "cohen_kappa": 0.20612813370473537,
+        "percent_agreement": 0.4,
+        "binary_agreement": 0.725,
+        "mse": 0.9375,
         "common_items": 80
       }
     }

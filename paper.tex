@@ -1,0 +1,1159 @@
+%% 
+%% Copyright 2007-2025 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.3 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times,authoryear]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Journal of Memory and Language}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \affiliation for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \affiliation{organization={},
+%%            addressline={}, 
+%%            city={},
+%%            postcode={}, 
+%%            state={},
+%%            country={}}
+%% \fntext[label3]{}
+
+\title{Quantifying The Basic Level of Words: A Multilingual Computational Approach} %% Article title
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \affiliation[label1]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+%%
+%% \affiliation[label2]{organization={},
+%%             addressline={},
+%%             city={},
+%%             postcode={},
+%%             state={},
+%%             country={}}
+
+\author[l1]{Federico Torrielli}
+\corref{cor1}
+\author[l2]{Gianluca Barmina}
+\author[l1]{Amon Rapp}
+\author[l1]{Luigi Di Caro}
+
+%% Author affiliation
+\affiliation[l1]{organization={University of Turin, Department of Computer Science},
+            addressline={Corso Svizzera 185}, 
+            zip={10149},
+            city={Turin},
+            country={Italy}}
+
+\affiliation[l2]{organization={University of Southern Denmark, Department of Mathematics and Computer Science},
+            addressline={Moseskovvej},
+            zip={5230},
+            city={Odense},
+            country={Denmark}}
+
+\cortext[cor1]{Corresponding author | federico.torrielli@unito.it}
+
+%% Abstract
+\begin{abstract}
+Does `basicness' vary across different languages? Current research, predominantly English-centric, often overlooks this critical question. This paper introduces a computational framework to quantify basicness across four languages from different families: English, Italian, Spanish, and Norwegian. It combines established lexical-semantic features (frequency, length, polysemy, hyponymy) to compute language-specific basicness scores. To evaluate this, we curated a unique multilingual benchmark of 80 culturally relevant and literature-derived nouns, annotated by 12 native human speakers (960 gold-standard ratings) and 9 distinct Large Language Models (7,200 silver-standard ratings) on a 4-point scale. Our analyses reveal that while benchmark construction is feasible, it highlights challenges like moderate chance-corrected inter-annotator agreement, underscoring subjectivity and skewed distributions. Crucially, findings show that basicness perception and the predictive power of linguistic features vary significantly across languages, revealing sharp Germanic vs. Romance divergences. While frequency and length are consistent predictors, hyponymy shows notable language-specific relevance. LLMs exhibit only partial, language-variable alignment with human intuition, capturing some statistical patterns but lacking deeper cultural grounding, especially in languages with higher human rating variability. This study delivers: (1) a novel, data-informed computational framework for basicness, (2) a publicly available multilingual annotated benchmark, (3) critical insights into cross-linguistic basicness predictors, and (4) a model demonstrating that language-specific calibration (doubling baseline accuracy) is essential for evaluating conceptual prominence.
+\end{abstract}
+
+\begin{highlights}
+\item Basic-level categories are not strictly universal but shaped by linguistic and cultural factors.
+\item LLMs demonstrate partial, language-variable alignment with human basicness judgments.
+\item Language-specific feature weights significantly improve computational basicness prediction.
+\item Introduces an 80-word, 4-language benchmark with 960 human and 7,200 LLM judgments.
+\end{highlights}
+
+%% Keywords
+\begin{keyword}
+Basic-level categories \sep Computational psycholinguistics \sep Cross-linguistic variation \sep Basicness quantification \sep Large Language Models (LLMs) \sep Multilingual benchmark
+\end{keyword}
+
+\end{frontmatter}
+
+\section{Introduction}
+\label{introduction}
+
+Understanding how humans categorize the world is a foundational question in both cognitive science and computational linguistics. One influential concept in this space is the notion of the \textit{basic level}, introduced by Rosch et al. (1976), which identifies an intermediate level of categorization that balances informativeness with cognitive efficiency. Basic-level categories such as ``\textit{dog}'' or ``\textit{car}'' are typically more salient, learnable, and functionally relevant than either broader (e.g., ``\textit{animal}'') or narrower (e.g., ``\textit{poodle}'') categories. While this idea has shaped decades of research, significant methodological and conceptual challenges remain. These include the ambiguity of defining this property across languages, a historical over-reliance on English-centric lexical resources, and the underrepresentation of abstract or culturally embedded concepts. Furthermore, the rise of multilingual NLP systems and generative technologies like Large Language Models (LLMs) poses new questions about how well computational tools reflect culturally grounded semantic intuitions. 
+
+In this paper, we confront these challenges by proposing a multilingual, computationally tractable approach to studying basicness. We first review key limitations in current research, then motivate the need for a culturally-aware and cross-linguistic framework. Finally, we outline our research questions and contributions, which include constructing a multilingual benchmark, identifying key linguistic predictors of basicness, and evaluating whether LLMs can approximate human judgments across diverse languages and cultures.
+
+\subsection{The basic level and the Basicness property}
+The original concept of the \textit{basic level}, as formalized by Rosch et al. (1976), builds on this intuitive middle ground in categorization. It represents the level at which category members share most perceptual and functional similarities, making them cognitively optimal for recognition and communication, offering a high degree of informativeness while remaining cognitively economical \cite{tversky_objects_1984, archambault_natural_2000, hollink_predicting_2020, hajibayova_basic-level_2013}.  
+Research has also shown that these categories are recognized more quickly and are acquired earlier in language development \cite{murphy_explaining_2016, rogers_object_2007}. 
+
+\subsection{Current challenges in basic level research}
+Despite decades of interest, the study of the basic level remains methodologically fragmented and linguistically narrow.
+While a single and universally accepted definition remains elusive, researchers agree on its existence \cite{chen_synthetic_2021}, but often conflate the lexical level (i.e., words) with the semantic level (i.e., concepts), leading to inconsistent interpretations. For instance, one might say that the word ``\textit{bar}'' is basic without considering other meanings, such as ``\textit{Musical notation for a repeating pattern of musical beats}'', where the word assumes instead a highly specific and complex meaning. Moreover, certain concepts (and their associated lemmas) may be perceived as basic in only a few languages.
+
+In addition, basicness is inherently graded and context-sensitive, yet many studies treat it as a binary classification. This oversimplification fails to account for the cultural specificity of categorizations.
+
+On the computational side, a common issue of the existing works on basic level assessment is the over-reliance on Wordnet \cite{hajibayova_basic-level_2013}, an English-centric knowledge base structuring language-specific semantic hierarchies and grammatical features. In addition, many studies on basic level categories have focused on a limited set of specific, tangible objects, neglecting other semantic areas like events, abstract concepts, and less-specialized knowledge \cite{hollink_predicting_2020}.
+
+Another underexplored challenge concerns evaluation practices in basicness research, particularly in terms of agreement measurement, term selection, and multilingual consistency. There is still limited work examining inter-annotator agreement for basicness judgments, especially in controlled, cross-linguistic settings. In many studies, the criteria for choosing candidate terms are ad hoc or overly reliant on pre-existing resources, which may introduce bias or limit coverage across semantic domains. Furthermore,  basicness evaluation in multilingual contexts has not been systematically studied so far, and little is known about how consistently speakers of different languages perceive basicness for comparable concepts.
+
+\subsection{Motivation for a Multilingual, Computational Approach}
+
+Most efforts have been dedicated to the English language, reinforcing an anglocentric bias that undermines the broader applicability of basic-level theories.
+
+As \citet{bolognesi_abstraction_2020} emphasize, basicness is a culturally and linguistically situated phenomenon. For example, \citet{murphy_explaining_2016} highlights that basic-level categories for plants and animals vary significantly between cultures based on their specific environments and interactions with these entities. Therefore, studies limited to a single language may overlook essential semantic features of languages with different grammatical structures or methods of encoding semantic relationships, which could result in varying basic-level categories.
+
+This linguistic narrowness poses a serious limitation for cross-linguistic generalization and for computational models of basic-level categorization used in multilingual NLP systems. The assumption that predictors such as word frequency or length have uniform interpretive value across languages is empirically untested. Languages vary in morphological complexity, orthographic depth, and phonological factors that may influence perceived basicness but are rarely accounted for in existing models.
+
+Moreover, while Large Language Models (LLMs) are increasingly used for semantic judgments, they have not yet been applied to the study of basicness. Though capable of capturing surface-level patterns, LLMs often lack the cultural grounding needed for modeling subjective and community-based concepts, especially in low-resource or typologically diverse languages. This raises concerns about bias and generalization limits, reinforcing the need for human-validated multilingual benchmarks.
+
+Taken together, these challenges motivate a multilingual framework for studying basicness. By incorporating cross-linguistic lexical-semantic features and validating with both LLMs and human annotations, we aim to provide a more inclusive and empirically grounded model of basic-level categorization. This approach not only broadens theoretical understanding but also informs the development of culturally-aware AI systems that might be capable of semantic reasoning.
+
+\subsection{Research Questions}
+
+In this paper, we propose a more comprehensive approach to understanding the basic level by capturing both lexical and semantic dimensions. Then, we introduce a methodology to study the basic level through a multilingual approach. Our method aims to uncover cross-linguistic differences, guided by the following research questions:
+
+\begin{enumerate}
+	\item \textbf{RQ1}: Is it possible to construct a benchmark dataset for multilingual basicness analysis that reliably assesses the existence and the consistency of basicness across languages?
+	\item \textbf{RQ2}: Does basicness perception and lexical realization vary systematically across different languages?
+    \item \textbf{RQ3}: Which quantifiable linguistic features (e.g., frequency, length, specificity, polysemy, etc.) are the most robust predictors of human basicness ratings, and do these features vary across diverse languages?
+	\item \textbf{RQ4}: How closely do Large Language Models align with human intuition about basicness across languages?
+    
+\end{enumerate}
+
+
+\subsection{Contributions, impact and research implications}
+
+This research is particularly significant in two interconnected domains: linguistics and Artificial Intelligence. As the development of language-specific LLMs (``national LLMs'') accelerates, there is an urgent need for robust evaluation frameworks that can assess whether these models authentically reflect the linguistic patterns of their target cultures. Basic-level categories represent one of the most fundamental aspects of how different cultures conceptualize and communicate about \emph{their} world.
+
+Understanding basicness across languages provides critical insights into cognitive and cultural differences that should be reflected in truly localized AI systems. Without such understanding, we risk developing LLMs that use the vocabulary of a target language but retain the conceptual frameworks and basic-level categorizations of dominant languages like English. This creates AI systems that appear localized on the surface but fail to capture the deeper cognitive patterns of their target cultures \cite{navigli_biases_2023}.
+
+Our cross-linguistic analysis of basicness offers a theoretically grounded benchmark against which language-specific AI models can be evaluated. For example, a Norwegian-specific LLM should demonstrate the same elevated basicness for concepts like ``\textit{ski}'' that native Norwegian speakers exhibit, rather than preserving English-centric basicness patterns while generating text in Norwegian.
+Such benchmarks are essential for moving beyond superficial localization toward AI systems that genuinely reflect diverse cultural perspectives.
+
+Beyond AI evaluation, mapping basic-level categories across languages contributes to our understanding of linguistic relativity and cognitive universals. It provides empirical evidence regarding which aspects of conceptual organization are shared across cultures and which are culturally specific. This knowledge has implications for cross-cultural communication, language education, and information systems design where understanding culture-specific cognitive prominence is crucial for effective knowledge organization.
+
+This study begins by defining the basic level and  justifying the selection of languages and target terms. It then introduces a unified lexical-semantic framework and presents an annotation exercise that highlights both the complexity and presence of basicness in multilingual contexts. Subsequently, we detail the features employed for basic level automatic detection and understanding, correlating these results with manual annotations. We also leverage the recent Generative AI technology to study whether state-of-the-art Large Language Models are able to align with human intuition in a manner similar to real-world scenarios.
+Finally, we offer interpretations of our findings and discuss avenues for future research and unresolved issues.
+
+Our code is open-source and available at the following link: \url{https://github.com/federicotorrielli/Basicness}.
+
+\section{Related Works}
+\label{sec:related}
+
+The concept of basic-level categorization has been explored across multiple disciplines, including cognitive psychology, linguistics, developmental science, and computational modeling. This section reviews foundational theories and empirical findings that define and characterize the basic level, highlights its role in language acquisition and cognitive development, and examines cross-cultural and linguistic variations that challenge its universality. It also surveys recent computational approaches developed to detect basic-level categories, emphasizing both their potential and limitations.
+
+\subsection{Characteristics of the Basic-Level}
+
+The Basic-Level is characterized by several distinctive properties recognized across cognitive psychology, linguistics, anthropology, and information science. At this level, items within a category tend to have similar shapes (i.e., it is easier to form a mental image of an ``average'' member) and shared motor programs, making them easier to recognize and conceptualize (e.g., ``\textit{apple}'' rather than the more general ``\textit{fruit}'' or specific ``\textit{Granny Smith}'') \cite{hajibayova_basic-level_2013}. \citet{markman_similar_1997} proposed that basic-level categories exhibit the most ``alignable differences'', meaning humans highlight differences in degree rather than in kind, between members. Researchers such as \citet{tversky_objects_1984} expanded on this by showing that parts and configurations of objects, which are central to basic-level objects, serve as fundamental determinants, as they provide both perceptual and functional cues for categorization.
+
+\subsection{Basic-Level in Developmental Psychology}
+
+In developmental psychology, studies have shown that children acquire basic-level terms early in their language development, as these terms are generally easier to conceptualize and verbalize.  \citet{brown_how_1958} observed that parents tend to use basic-level terms when teaching language to children, as these terms are shorter, simpler and more frequent in everyday use.
+Caregivers predominantly use basic-level terms when labeling objects for infants and toddlers \cite{Liu_2001}. This consistent exposure to basic-level labels likely reinforces their cognitive importance for young learners. For instance, a parent is far more likely to say \textit{cow} than the more general \textit{farm animal} or the more specific \textit{Holstein cow}.
+
+\citet{mervis_order_1982} provided evidence of the developmental ordering of category levels. They created an artificial taxonomy and asked children to sort pictures into categories at three levels of specificity. Two-year-olds reliably sorted items into basic-level groups but failed to consistently sort at the superordinate level (too broad) or the subordinate level (too specific). Even without hearing any category names, children spontaneously grouped the items according to basic-level similarity. \citet{bornstein_development_2010} conducted a longitudinal study of object categorization in 12- to 30-month-olds using a sequential touching method (i.e., toddlers are given objects and the order of touches/clusters reveals categorization). They reported that more inclusive categories (superordinate level) are detected slightly earlier in development than finer basic-level categories in some cases, but this pattern depended on perceptual contrast. Even so, by about 2 years old, most children show basic-level categorization abilities (grouping cats with cats, cars with cars, etc.), whereas understanding of subordinate distinctions (e.g. breeds of dogs) typically comes later in preschool years.
+
+\subsection{Cultural and Linguistic Influences on the Basic-Level}
+
+Basic-level categories are shaped by individual factors such as expertise, familiarity, and, importantly, cultural context. It is well established that culture and language mutually influence one another: language serves as a cultural tool \cite{everett_language_2012}, which leads to significant variations in semantics and lexical choices across languages. As language is a cognitive model of reality, the terms and categories used in communication reflect the cultural conditions under which they are employed. This suggests that the linguistic manifestations of basicness can differ, leading to varying interpretations and understandings among speakers of different languages \cite{mauri_linguistic_2018}. For instance, Chinese possesses an extensive list of synonyms for the concept of ``\textit{family}'', demonstrating the cultural prominence of family in Chinese tradition. Another compelling example is found in language acquisition. \citet{fulcher_language_2006} observed that learners with familiarity in the cultural context of their target language achieved deeper understanding, greater proficiency, and faster learning times.
+
+Notably, non-Western societies often categorize objects at different levels than those typically observed in Western contexts. Research across different cultures has shown clear patterns in how people organize and classify their world. When \citet{riviere_principles_1975} studied the Tzeltal Maya, he found they used complex plant classification systems that captured subtle distinctions Western botanists often overlooked. Looking at how people think about \textit{fish}, \citet{medin_folkbiology_2006} discovered fascinating differences between Native American Menominee and European American fishermen: while Menominee experts thought about fish in terms of their roles in the ecosystem, European Americans tended to group them by scientific categories. These cultural patterns extend to basic perception. \citet{roberson_colour_2006}'s work with the Himba people of Namibia showed they carved up the color spectrum differently than English speakers, with particularly fine-grained distinctions among greens that mattered in their environment.
+
+In exploring basic-level categorization, it is thus critical to consider the dominance of certain languages and cultural perspectives. As \citet{kim_exploring_2003} discusses, dynamics of power between dominant and minority languages can influence linguistic identity and cultural relevance. This phenomenon is particularly present in basic-level categorization studies, where English-centric research may impose an Anglocentric view on categorization, assuming that English-language categorizations are universally applicable. 
+
+These findings expose a critical gap in current research: the need for computational models of basicness that are sensitive to cross-linguistic and cross-cultural variation. While, as the next subsections detail, several computational methods exist for identifying basic-level categories, they have largely overlooked the influence of culture, often relying on an implicit assumption of universality that these examples clearly refute.
+
+\subsection{Computational Approaches to Identify the Basic-Level}
+
+In recent years, computational methods have been developed to automatically identify basic-level categories using heuristic and machine learning techniques. These methods have important applications in image indexing, search optimization, and text simplification. Among the various computational approaches proposed for detecting the basic level in conceptual and linguistic hierarchies, five methods have received particular attention in the literature: rule-based systems, machine learning classifiers, category utility, feature entropy, and, more recently, generative Artificial Intelligence. Notably, these systems have primarily been evaluated using English language data.
+
+\subsubsection{Rule-Based Systems}
+
+Rule-based systems employ predefined rules derived from the characteristics of basic-level categories to identify them within hierarchies. For example, \citet{mills_automatic_2018} developed a system that achieved 77\% accuracy in identifying basic-level categories in WordNet by combining filtering and voting rules over a dataset of 154 noun synsets. The filtering rules removed synsets unlikely to represent basic-level concepts, while the voting rules selected the best candidate along hypernym paths from root to leaf. These rules leveraged features such as word length, number of hyponyms, and corpus frequency. Of the 154 labeled categories, 78 were basic-level, 24 superordinate, and 50 subordinate. However, a manual evaluation of 250 predicted basic-level synsets found only 10.4\% were actually basic-level, revealing the system's tendency to over-generate. Many false positives did not fit into the basic/subordinate/superordinate framework, highlighting the limits of the traditional 3-level categorization.
+
+\subsubsection{Machine Learning Classifiers}
+
+Machine learning classifiers treat the detection of basic-level terms as a binary classification task, using features derived from basic-level theory \cite{rosch_basic_1976}. \citet{hollink_predicting_2020} trained a model on WordNet synsets labeled as basic or not, using features in three groups: lexical (e.g. word length, polysemy from WordNet), structural (e.g. hyponym count, gloss length, depth), and frequency (from Google Ngram). Their approach performed well within very specific domains (accuracy of $\approx 0.84$ in tools, $0.79$ in fruits), but generalization across domains was poor unless structural features were normalized.
+
+\subsubsection{Category Utility}
+
+Category utility is a method that measures how much knowing that an item belongs to a particular category improves the ability to predict its features. For instance, knowing that an object is a \textit{bird} allows one to predict characteristics such as the ability to fly, having wings, and laying eggs.\citet{belohlavek_basic_2020} found that category utility, cue validity, and category-feature collocation produced similar predictions in identifying basic-level categories. This finding suggests that these measures are effective for this purpose.
+
+\subsubsection{Feature Entropy}
+
+\citet{li_detecting_2019} propose a method for identifying basic-level categories based on hierarchical clustering and a new metric, bdcECU, designed to operate effectively on both textual and continuous datasets. The core of their approach is the integration of Enhanced Category Utility (ECU), which substitutes traditional feature probabilities with feature entropy to better capture intra-class similarity, and Balanced Distributional Concentration (BDC), an entropy-based term-weighting scheme that adjusts for the global concentration of feature values. This modification addresses two key limitations of prior work: the inability of standard category utility to operate on continuous data, and its lack of sensitivity to evolving feature distributions during clustering. The algorithm iteratively merges clusters, computing bdcECU at each step, and selects the cluster structure corresponding to the maximum bdcECU score as the basic level.
+
+The method was tested on two textual datasets: China News (2400 documents across 4 categories) and 20 Newsgroups (2500 documents across 5 categories), as well as six continuous datasets, including Iris, Wine, and Ecoli. In the text setting, bdcECU outperformed standard category utility in scenarios with unfiltered or noisy features, demonstrating greater robustness to feature sparsity and noise. In the continuous setting, the number of categories identified by bdcECU matched or closely approximated ground truth, and clustering quality was higher compared to both k-means and single-linkage baselines. For example, on the Iris dataset (150 samples, 3 classes), bdcECU correctly recovered three clusters without requiring the number of clusters to be specified, whereas k-means and single-linkage required this as an input parameter and showed degraded performance under incorrect values.
+
+Nevertheless, the method has notable limitations. It was not evaluated on established lexical hierarchies such as WordNet, which restricts comparability with prior work in cognitive-inspired basic-level detection. The absence of human-annotated ground truth beyond class counts prevents any assessment of interpretability or alignment with human category judgments. Moreover, although ECU generalizes to continuous data by relying on entropy rather than feature probability, it still presupposes a meaningful clustering structure and sufficient feature informativeness to discriminate between categories. In cases of low-dimensional or noisy data, the entropy estimates become unreliable, degrading performance.
+
+\subsubsection{Generative AI Approaches}
+
+More recently, \citet{torrielli_how_2023} introduced \textit{stableKnowledge}, a multi-modal pipeline that combines a Large Language Model (LLM) and a Latent Diffusion Model (LDM). This approach works by mapping terms to images using the LDM and leveraging the LLM to evaluate the linguistic basicness and concreteness of terms. The method outperformed previous approaches in measuring concreteness---a concept significantly overlapping with basicness---suggesting that integrating multi-modal data can enhance the detection of basic-level categories.
+
+\section{Methodology}
+
+To investigate our research questions, we first design a comprehensive experimental framework leveraging different languages and lexical resources. Then, we revisit and define both well-known and new features for the automatic detection of basic-level terms. Finally, we extract and collect an experimental set of target words to evaluate both human- and AI-assisted annotations.
+
+\subsection{Languages and Resources}
+We selected four languages representing different linguistic families and cultural backgrounds: English (\textit{en}) Italian (\textit{it}), Spanish (\textit{es}), and Norwegian (\textit{nb}). Our selection was motivated by several linguistic and methodological considerations, since these languages represent two distinct Indo-European branches---Germanic (English, Norwegian), and Romance (Italian, Spanish)---providing a specific perspective on how basic-level categorization manifests across related but distinct linguistic families. The selection was also motivated by the fact that it allows us to examine basic-level categories across languages with different typological features. Firstly, English, as an analytic language with relatively simple morphology but complex syntax, serves as our primary reference due to its extensive documentation in basic-level research and presence in knowledge bases. Italian and Spanish, as highly inflectional Romance languages, offer interesting contrasts in how morphology might influence basic-level categorization. These languages also feature rich systems of derivational morphology, potentially affecting how basic concepts are lexicalized. Finally, Norwegian, representing North Germanic languages, provides insights through its compound-friendly structure.
+Our methodology focused on concrete nouns, as they provide clearer cross-cultural comparisons and are more likely to exhibit basic-level characteristics.
+
+As lexical-semantic reference, we utilized the Open Multilingual WordNet (OMW) \cite{vossen_toward_2016}, which provides synchronized access to multiple WordNet-style resources across multiple languages. Specifically, we used:
+\begin{itemize}
+	\item English WordNet 3.0 (for English)
+	\item MultiWordNet (for Italian)
+	\item Multilingual Central Repository (for Spanish)
+	\item Norwegian WordNet (for Norwegian)
+\end{itemize}
+
+The synchronization between different language resources was achieved through the Collaborative Interlingual Index (CILI) \cite{bond_cili_2016}, which provides reliable matching between synsets across different languages and knowledge bases.
+
+While we initially considered BabelNet \cite{navigli_babelnet_2010}, a very large machine-augmented semantic network, several limitations led us to choose CILI instead. BabelNet's approach of treating synsets as centralized semantic units that remain constant across languages, while computationally efficient, overlooks linguistic differences. Such one-size-fits-all model may fail to capture how semantic information can vary significantly across different language communities and cultural contexts. 
+Furthermore, BabelNet's reliance on automatic machine translation and mapping techniques, while enabling impressive coverage, introduces potential inaccuracies that could propagate through our system. In particular, our manual evaluation of BabelNet entries revealed several mapping errors and semantic misalignments that would have compromised our methodology's precision. In contrast, CILI's more curated approach, with its focus on manual verification and language-specific expertise, provides a more reliable foundation for cross-lingual semantic analysis, but also comes with the problem of having less data to work with.
+
+\subsection{Basicness Features}
+We developed a novel automatic measure, named \textit{basicness score} from now on, to automatically quantify the basic level in a language. This score combines multiple features that characterize basic-level terms, directly inspired by the previous works on basic-level categorization (see Section \ref{sec:related}). Specifically we calculate the basicness score of synsets, including features at two different levels: the lexical level and the synset level, as detailed later on.
+
+\subsubsection{Word frequency}
+Word frequency is a particularly robust predictor of basicness, consistently highlighted across seminal studies. \citet{brown_how_1958} and \citet{rosch_basic_1976} demonstrated that basic-level terms tend to be the most frequently used. This correlation is also supported by the principle of cognitive economy (i.e., languages optimize communication by making frequently needed concepts easily accessible), age of acquisition studies by \citet{morrison_age_1997} and cross-linguistic studies \cite{riviere_principles_1975,majid_cross-linguistic_2008}.
+
+\subsubsection{Word length}
+Word length represents another relevant feature which naturally correlates with basicness. Zipf's law of abbreviation \cite{zipf_psycho-biology_1935} establishes an inverse relationship between word length and frequency, suggesting that basic concepts tend to be expressed through shorter words. Secondly, the principle of least effort \cite{chao_human_1950} indicates that frequently used concepts tend to be encoded in shorter forms across all languages. Finally, processing studies by \citet{bybee_language_2010} show that shorter words are accessed more quickly in lexical decision tasks, aligning with the rapid accessibility characteristic of basic-level terms.
+
+\subsubsection{Polysemy}
+Polysemy, the phenomenon where a single word has multiple related meanings (e.g., ``\textit{bank}'' as a financial institution or the side of a river), also influences basicness. A word's polysemy often correlates with its cognitive salience and linguistic utility, as more polysemous words tend to have higher communicative importance in language. Research by \citet{zipf_meaning-frequency_1945} posits that words frequently used in diverse contexts are more likely to evolve multiple meanings.
+
+From a computational perspective, studies such as \cite{mccarthy_finding_2004} have demonstrated that polysemous words are central in semantic networks due to their high connectivity. This centrality may contribute to their cognitive accessibility, a characteristic of basic-level words. Additionally, \citet{piantadosi_communicative_2012} stated that languages optimize ambiguity, with polysemy emerging as a result of this optimization, particularly for frequently used words.
+
+In our methodology, polysemy is quantified using the number of distinct senses a word has in a lexical resource. This feature must be interpreted cautiously, as excessive polysemy could also indicate semantic complexity. For instance, some senses related to polysemous words may be highly complex, thus potentially creating misalignment with basic-level categorization.
+
+\subsubsection{Synonymy}
+Synonymy represents the relationship where multiple words share the same or similar meanings (e.g., ``\textit{car}'' and ``\textit{automobile}''). Literature often describes basic-level terms exhibiting lower synonymy compared to superordinate terms because they represent the most cognitively salient and commonly accessed categories \cite{rosch_principles_1978,markman_childrens_1988,langacker_women_1988}. For instance, \citet{rosch_basic_1976} suggested that basic-level categories tend to have a single prototypical label that minimizes ambiguity in communication.
+
+\subsubsection{Synset lemmas polysemy}
+To capture a broader measure of semantic ambiguity associated with a concept, we introduce a novel feature termed Synset Lemmas Polysemy. Unlike standard polysemy which typically focuses on the number of senses for a single word, this feature aggregates ambiguity across all lexical representations within a synset. Specifically, it calculates the sum of the number of distinct senses listed in the lexical resource for every lemma (i.e., synonymous word) belonging to that synset.
+
+The rationale is that the collective semantic range of all words used to denote a concept might reflect its cognitive centrality. A high Synset Lemmas Polysemy score signifies that the concept is expressed through a set of words which, taken together, cover a wide array of meanings. We hypothesize that this collective ambiguity might correlate with basicness, as basic concepts are often lexicalized by common, versatile words that have accumulated diverse senses through frequent use in varied contexts.
+
+\subsubsection{Hyponymy}
+
+Hyponymy, the hierarchical relationship where one term is a more specific instance of another (e.g., ``\textit{dog}'' is a hyponym of ``\textit{animal}''), is a foundational concept in lexical semantics. Basic-level terms are typically positioned at the midpoint of a taxonomy, balancing informativeness and generality. According to \citet{rosch_basic_1976} basic-level categories maximize shared features among members while minimizing overlap with other categories.
+
+As noticed by  \citet{hollink_predicting_2020}, hyponymy does not stand out as the best performing. This is often because this feature, just like any other feature that depends on the structure of a curated knowledge base, is heavily dependent on the granularity of the annotation---often subjective because done by extensive manual labor---and resource specific rather than language-specific.
+
+\subsubsection{Pronunciation complexity}
+
+Pronunciation difficulty, which refers to the ease or complexity of articulating a word, is another factor that may influence basicness. Basic-level terms are often phonologically simpler, adhering to the principle of least effort in language production and comprehension. For example, \citet{bybee_language_2010} demonstrated that frequently used words tend to be shorter and easier to articulate, as they undergo phonological reduction over time.
+
+In NLP, pronunciation difficulty has been studied in the context of language learning and psycholinguistics. \cite{gierut_phonological_2007} found that phonetically easier words are preferred by language learners, especially children.
+
+We introduce a computational measure for quantifying pronunciation complexity, which unexpectedly but significantly impacts the perception of basicness across languages (see Section \ref{sec:basicness_features}). The implementation of this feature and algorithm is available in Section \ref{sec:pron_complex}.
+
+\subsection{Basicness Score Calculation}
+\label{sec:basicness_score_calc}
+
+We propose an experimental basicness score designed to quantify the basic level of a concept (represented by an Interlingual Index identifier, ILI) within a specific language ($L$). This approach employs a weighted linear combination of normalized features, followed by a sigmoid transformation. This structure is particularly suited for incorporating feature weights derived from correlation analyses (such as Spearman's $\rho$), which can be positive or negative.
+
+\subsubsection{Feature Aggregation per ILI and Language}
+For each unique ILI $i$, and for each language $L$ associated with that ILI, we first aggregate lemma-level features associated with the synsets belonging to $(i, L)$:
+\begin{itemize}
+    \item Average word length ($\text{Len}_{avg}(i, L)$), average word frequency ($F_{avg}(i, L)$), average pronunciation complexity ($P_{avg}(i, L)$), and average number of senses ($\text{Sen}_{avg}(i, L)$) are calculated by averaging the respective values of all lemmas within the synsets for $(i, L)$.
+    \item Maximum number of hyponyms ($\text{Hypo}_{max}(i, L)$), maximum number of synonyms ($\text{Syn}_{max}(i, L)$), and maximum number of synset senses ($\text{SSen}_{max}(i, L)$) are taken as the maximum value observed among the synsets for $(i, L)$.
+    \item Presence in children's resources ($\text{Kid}(i, L)$) and presence in second language learner resources ($\text{Lrn}(i, L)$) are determined by the maximum value (1 if present in any synset for $(i, L)$, 0 otherwise).
+\end{itemize}
+
+\subsubsection{Pronunciation Complexity Calculation}
+\label{sec:pron_complex}
+
+To evaluate the pronunciation complexity of a certain term, we created an open source Python library\footnote{available at \url{https://github.com/federicotorrielli/pron-difficulty}}, licensed under the EUPL License.
+
+While previous studies have generally relied on qualitative judgments or simple heuristic approaches \cite{chen_word_2015,pennington_assessing_2018}, our method integrates phonological analysis, syllable structure, phonotactic constraints, and prosodic patterns within a single framework.
+Specifically, our approach utilizes a multilingual phonemization pipeline to obtain phonetic transcriptions in English, Norwegian, Spanish, and Italian. For each transcribed phoneme, we calculate complexity scores based on language-specific phonological features.
+
+First, we evaluate the complexity of the individual phonemes themselves. Each phoneme $p_i$ is assigned a score $C_{phon}(p_i,L)$ reflecting how difficult that term is to articulate in a specific language $L$. From these individual scores, we derive an average phoneme complexity $\bar{C}_{phon}(w,L)$, identify the maximum complexity found in any single phoneme $C_{phon}^{max}(w,L)$, and calculate the proportion of phonemes considered particularly complex, $R_{complex}(w,L)$, exceeding a threshold $\tau_{complex}=0.6$.
+
+Beyond individual sounds, the model examines how these sounds combine. The syllable structure complexity, $C_{syll}(w,L)$, evaluates the arrangement of phonemes into syllables, penalizing complex structures like consonant structures based on typical patterns in language $L$.
+Furthermore, we assess phono-tactic correctness through $C_{phono}(w,L)$. This component assigns a penalty if the sequence of phonemes violates or stretches the typical sound combination rules of the target language.
+
+Finally, the model considers the overall rhythm and flow, or prosodic complexity $C_{pros}(w,L)$. This is estimated by analyzing the sonority profile of the phoneme sequence, drawing on the Sonority Sequencing Principle \cite{selkirk_phonology_1984,selkirk_major_1984}. By assigning a sonority score $S(p_i)$ to each phoneme, we analyze the resulting profile $\mathcal{S}=[S(p_1),\dots,S(p_n)]$ to identify features like sonority peaks (often corresponding to syllable nuclei), valleys, and the steepness of transitions between sounds. Metrics derived from this analysis, such as proxies for syllable count, the variance of sonority $\sigma^2(\mathcal{S})$, the average sonority $1 - \bar{S}$, and the frequency of abrupt transitions, are combined to yield the prosodic complexity score, with an exponential scaling applied to capture the disproportionate difficulty of highly complex prosodic patterns.
+
+All these factors are then integrated into a base difficulty score $S_{base}$, though weighted summation:
+
+\begin{equation} \label{eq:base_score}
+\begin{split}
+S_{base}(w, L) = & \omega_{avg} \bar{C}_{phon}(w, L) + \omega_{max} C_{phon}^{max}(w, L) + \omega_{syll} C_{syll}(w, L) \\
+                 & + \omega_{phono} C_{phono}(w, L) + \omega_{pros} C_{pros}(w, L) + \omega_{ratio} R_{complex}(w, L)
+\end{split}
+\end{equation}
+
+Given that the perception of complexity is influenced by word length, but not always linearly, we apply a length adjustment factor $f_{len}(n)$, where $n$ is the number of phonemes. This adjustment treats phonologically simpler words (where $S_{base} < 0.4$) differently from more complex ones. Simpler words receive a reduced base score and only a minimal length penalty, while more complex words are subject to a more standard length scaling factor, capped at $0.7$ to prevent excessive penalization of very long words. This results in a pre-scaled score $S'_{pre}$.
+
+To arrive at the final pronunciation difficulty score $D(w, L)$ within the desired range of $[0, 1]$, $S'_{pre}$ undergoes a final non-linear transformation. This scaling uses a segmented function involving sigmoid and exponential components, applying gentler curves to simpler words and steeper curves to more complex ones, with an additional exponential boost for very high scores. This approach aims to better capture the perceived distinctions in difficulty across the spectrum from very easy to very challenging words.
+
+The sequence of steps involved in calculating this score is formally outlined in Algorithm \ref{alg:pronunciation_complexity}. This resulting value, $D(w, L)$, is then used as a feature contributing negatively to the overall basicness measure described in Section \ref{sec:basicness_score_calc}.
+
+\begin{algorithm}[ht]
+\caption{Pronunciation complexity calculation}
+\label{alg:pronunciation_complexity}
+\begin{algorithmic}[1]
+\Require Word \( w \), Language \( L \)
+\Ensure Pronunciation Difficulty Score \( D(w, L) \in [0, 1] \)
+
+\State Phonemize \( w \) in language \( L \) to obtain phoneme sequence \( \mathcal{P} = [p_1, \dots, p_n] \) using \texttt{phonemizer} with \texttt{espeak-ng}.
+\State Calculate phoneme complexities \( C_{phon}(p_i, L) \) for all \( i \in [1, n] \).
+\State Compute aggregate phoneme statistics: \( \bar{C}_{phon}, C_{phon}^{max}, R_{complex} \).
+\State Compute Syllable Structure Complexity \( C_{syll}(\mathcal{P}, L) \).
+\State Compute Phonotactic Constraint Penalty \( C_{phono}(\mathcal{P}, L) \).
+\State Compute Prosodic Complexity \( C_{pros}(\mathcal{P}) \) based on sonority profile analysis.
+\State Calculate Base Score \( S_{base} \) using weighted sum of components (Eq. \ref{eq:base_score}).
+\State Calculate pre-scaled score \( S'_{pre} \) by applying length adjustment factor \( f_{len}(n) \) based on \( S_{base} \) threshold (0.4).
+\State Apply final non-linear scaling (segmented sigmoid/exponential) to \( S'_{pre} \) to obtain \( D(w, L) \).
+\State \Return \( D(w, L) \)
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Feature Normalization (Per Language)}
+Crucially, numerical features are normalized using Min-Max scaling applied within each language across all ILIs present in that language. This contrasts with the previous ILI-level normalization. Let $X_{agg}(i, L)$ be an aggregated feature value for ILI $i$ in language $L$. Its normalized value $X'_{norm}(i, L)$ is calculated as:
+\[
+X'_{norm}(i, L) = \frac{X_{agg}(i, L) - \min_{j \in \text{ILIs}_L}(X_{agg}(j, L))}{\max_{k \in \text{ILIs}_L}(X_{agg}(k, L)) - \min_{j \in \text{ILIs}_L}(X_{agg}(j, L)) + \epsilon}
+\]
+where $\text{ILIs}_L$ represents the set of all ILIs considered for language $L$, and $\epsilon$ is a small constant (e.g., $10^{-10}$) to prevent division by zero.
+
+This normalization is applied to:
+\begin{itemize}
+    \item $\text{Len}'_{norm}(i, L)$ based on $\text{Len}_{avg}(i, L)$.
+    \item $F'_{norm}(i, L)$ based on $F_{avg}(i, L)$.
+    \item $\text{Hypo}'_{norm}(i, L)$ based on $\text{Hypo}_{max}(i, L)$.
+    \item $\text{Syn}'_{norm}(i, L)$ based on $\text{Syn}_{max}(i, L)$.
+    \item $\text{Sen}'_{norm}(i, L)$ based on $\text{Sen}_{avg}(i, L)$.
+\end{itemize}
+The aggregated pronunciation complexity $P_{avg}(i, L)$ is used directly as $P'_{norm}(i, L)$ in the formula (assuming its scale is meaningful relative to its weight or it has been pre-scaled). The binary features $\text{Kid}(i, L)$ and $\text{Lrn}(i, L)$ are used directly as they are already scaled [0, 1]. The feature $\text{SSen}_{max}(i, L)$ is assumed to be pre-normalized to $[0, 1]$ before use, or clipped if outside this range, denoted as $\text{SSen}'_{norm}(i, L)$.
+
+\subsubsection{Weighted Linear Combination}
+\label{sec:weighted_linear_combination}
+A raw score, $S_{raw}(i, L)$, is computed as a linear combination of the normalized features, where each feature $X'_{norm, k}$ is multiplied by its corresponding weight $w_k$:
+\begin{align*} \label{eq:raw_score}
+S_{raw}(i, L) = & \quad w_{freq} \cdot F'_{norm}(i, L) \\
+             & + w_{len} \cdot \text{Len}'_{norm}(i, L) \\
+             & + w_{pron} \cdot P'_{norm}(i, L) \\
+             & + w_{hypo} \cdot \text{Hypo}'_{norm}(i, L) \\
+             & + w_{syn} \cdot \text{Syn}'_{norm}(i, L) \\
+             & + w_{sen} \cdot \text{Sen}'_{norm}(i, L) \\
+             & + w_{kid} \cdot \text{Kid}(i, L) \\
+             & + w_{lrn} \cdot \text{Lrn}(i, L) \\
+             & + w_{ssen} \cdot \text{SSen}'_{norm}(i, L)
+\end{align*}
+The weights ($w_{freq}, w_{len}, \ldots, w_{ssen}$) represent the relative importance and direction of influence of each feature on basicness. These weights can be derived empirically, for example, from the Spearman correlation coefficients between each feature and human basicness ratings. The sign of the weight determines whether a higher feature value increases or decreases the raw basicness score.
+
+\subsubsection{Sigmoid Transformation}
+Finally, the raw score $S_{raw}(i, L)$, which can range across positive and negative values, is transformed using the standard sigmoid (logistic) function to map it to the range $[0, 1]$. This yields the final experimental basicness score, $Bness_{exp}(i, L)$:
+\[ \label{eq:sigmoid}
+Bness_{exp}(i, L) = \frac{1}{1 + e^{-S_{raw}(i, L)}}
+\]
+This sigmoid function provides a smooth, non-linear mapping, compressing the potentially wide range of the raw score into a probabilistic-like scale bounded between 0 and 1, where values closer to 1 indicate higher predicted basicness. This $Bness_{exp}(i, L)$ value is the final score for the concept $i$ in language $L$ under this experimental model and is not further normalized relative to other languages for the same ILI.
+
+\subsection{Dataset Curation for Evaluation}
+
+To evaluate our proposed method and investigate our research questions, we constructed a specific dataset of words. Our approach involved selecting different categories of nouns, each chosen to help us understand how basicness might vary due to linguistic and cultural influences. Every word selected went through the same preparation steps. First, for each word, we identified its corresponding concept in our target languages using the Interlingual Index (ILI). Next, we applied quality checks to ensure the data was reliable and comparable across languages, confirming that a meaningful equivalent of the word existed in each language and that its conceptual mapping was consistent. Finally, we calculated the various word characteristics (the linguistic features) that we described earlier. The following sections explain the three distinct strategies we used to choose these words: one focused on terms likely to hold different cultural importance, another on words commonly discussed in basic-level research, and a third to provide a general comparison. These selections together formed the set of words used for our annotation task.
+
+\subsubsection{Extraction 1: Culturally Significant Terms}
+\label{sec:ex1}
+The first extraction focused on terms hypothesized to have varying cultural significance across our selected languages. These terms were selected based on their potential cultural relevance to specific languages and regions, allowing us to test whether our basicness metric could capture cultural differences.
+
+The first set of terms were the following (``\textit{tea}'', ``\textit{queen}'', ``\textit{beer}'', ``\textit{ski}'', ``\textit{snow}'', ``\textit{fish}'', ``\textit{beach}'', ``\textit{sun}'', ``\textit{cattle}'') and was selected based on the Cultural Linguistics framework proposed in \cite{sharifian_advances_2017}, which explains that lexical concepts often encode cultural conceptualizations. These terms were chosen because they represent climatic-environmental concepts (e.g., snow, sun, beach), that may exhibit varying degrees of cultural salience based on geographical conditions, social-institutional concepts (e.g., queen), and cultural practice concepts (e.g., tea and beer) that represent varying consumption patterns and social rituals. This selection also allows us to test whether basicness scores correlated with documented cultural significance, following \citet{wierzbicka_understanding_1997}'s theory of cultural keywords. From our initial selection, we extended our term list to include 60+ lemmas per language, following the same methodology.
+
+\subsubsection{Extraction 2: Literature-Based Terms}
+\label{sec:ex2}
+The second extraction examined terms frequently discussed in basic-level categorization literature. This extraction aimed to validate our approach against established theoretical frameworks and previous research findings. Terms like ``\textit{pizza}'', ``\textit{church}'', ``\textit{family}'', and ``\textit{green}'' were considered, as they were extensively studied in basic-level categorization literature (see Section \ref{sec:related}).
+
+
+To focus on commonly used senses and reduce ambiguity, native domain experts manually filtered the synsets associated with each lemma. We excluded overly complex or less common senses and selected up to four of the most relevant synsets per lemma. This ensured that the basicness assessment targeted the most representative meanings of each term.
+
+\subsubsection{Extraction 3: Control Group Terms}
+\label{sec:ex3}
+The third extraction utilized a mixed set of common nouns from various semantic domains, including household objects, colors, professions, and climate-related terms. This broader selection served as a control group and helped establish baseline patterns across languages. The terms were selected as concrete nouns with clear referents, following \citet{rosch_basic_1976}'s methodology, they were also terms representing different taxonomic levels (superordinate, basic, and subordinate), with varying degrees of polysemy and frequency, and with equal representation across semantic domains. Terms were included only if respecting four key criteria: presence in all WordNets, concrete (following concreteness ratings from \cite{brysbaert_concreteness_2013}), and with sufficient frequency in corpus data.
+
+\subsubsection{Creating the annotation set for the gold standard}
+
+We proceeded to annotate a dataset consisting of 20 culturally-relevant terms per language (80 terms in total) to establish a gold-standard for evaluating our methodology. Terms for each language were selected from the expanded versions of the first and second extraction lists (see subsections \ref{sec:ex1} and \ref{sec:ex2}). These terms were chosen based on their presumed basicness and cultural relevance within each language and were expected to reflect commonly understood concepts across linguistic communities.
+
+Our aim was to assess whether these terms were widely recognized as basic terms and concepts by speakers from each linguistic background. Specifically, one hypothesis we sought to verify was whether, for example, Italian speakers would consistently identify basic terms originating from Spanish, Norwegian, and English as basic within their own language context, and vice versa. Additionally, we aimed to investigate the extent of this recognition and examine any notable differences among annotators with the same mother tongue.
+
+This approach allows us to address several research questions related to the perception of term basicness across different languages and cultures. To our knowledge, this is the first attempt in the literature to systematically explore cross-linguistic and cross-cultural perceptions of terminological basicness, making it a novel contribution beyond current state-of-the-art methodologies.
+
+\subsection{Annotation Procedures}
+
+This section details our annotation process, designed to assess the effectiveness of our proposed basicness measure and its alignment with human judgments. We employed both automatic (silver) and manual (gold) annotation strategies, followed by a thorough analysis of the results. We designed experiments to assess both the cross-linguistic validity of basicness measurements, while simultaneously creating an annotated benchmark. We chose to employ a silver annotation \cite{tan_large_2024} because it allowed us to experiment with annotation results at a fraction of the cost and time required for manual annotation. By employing multiple Large Language Models (LLMs) with different architectures and training data, we obtain very diverse perspectives on the task, similarly to human annotated data. While models might not perfectly replicate human judgments, their annotation can complement the gold standard data. We reveal the interesting insights of this comparison in the discussion section.
+
+\subsubsection{Silver Annotation}
+
+To generate a dataset for initial evaluation, we employed a silver annotation approach using nine state-of-the-art commercially available chatbot-tuned LLMs: Claude-3.7-Sonnet, DeepSeek-R1, Gemini-2.0-Flash, GPT-4o, GPT-o1, GPT-o3-mini-high, Grok-2, LLama-3-70B, and Mistral-Medium.
+
+For each of the terms in our dataset, each LLM was prompted to assign a basicness score ranging from 1 to 4, where 1 indicated the least basic and 4 the most basic. The prompt included the target concept, its definition, and the two most frequent lemmas in the target language (if available). Additionally, a set of guidelines detailing what constitutes a basic-level concept was provided to the LLMs. These were the same guidelines given to human annotators in the gold annotation task.
+
+To ensure consistency and robustness, the test was conducted ten times for each model, and the final basicness score was determined using majority voting, producing a total of 7200 annotations.
+
+\subsubsection{Gold Annotation}
+
+To establish a more definitive evaluation dataset, we conducted a gold annotation process with human annotators. Three native-speaking annotators were recruited for each of the four selected languages (English, Italian, Spanish, and Norwegian), resulting in a total of 12 participants. This represented a diverse group in terms of age and background: participants' ages ranged from 22 to 58 years, with 9 identifying as male and 3 as female. Furthermore, the group included a mix of educational and professional experiences: half of the annotators came from various STEM (Science, Technology, Engineering, and Mathematics) backgrounds, including fields like computer science and biology, while the other half represented diverse non-STEM fields and professions.
+
+These annotators were tasked with rating a total of 80 words (20 terms selected for their potential cultural relevance within each language, as detailed in Sections \ref{sec:ex1} and \ref{sec:ex2}). For each term, annotators were presented with its definition, its primary meaning, and the most frequent lemmas associated with that concept across all four target languages. Annotators were then asked to rate each term's basicness on the following 4-point scale:
+
+\begin{itemize}
+    \item \textit{Not basic} (1) -- Specialized or complex terms requiring specific knowledge
+    \item \textit{Somewhat basic} (2) -- Terms with moderate complexity that most adult native speakers would know
+    \item \textit{Basic} (3) -- Common terms understood by most native speakers, including children
+    \item \textit{Very basic} (4) -- Fundamental terms known to virtually all native speakers, including young children
+\end{itemize}
+
+Annotators received detailed guidelines emphasizing consideration of factors such as age of acquisition, frequency of use, cognitive accessibility, and cultural relevance. These guidelines were identical to those provided in our silver annotation task, ensuring methodological consistency across annotation approaches.
+
+\section{Evaluation Metrics}
+\label{sec:evaluation_metrics}
+
+To evaluate the consistency of basicness ratings and the relationship between features and human perception, we employ a set of specific statistical metrics. These are chosen for their suitability to ordinal rating scales and correlation analysis within our multilingual context.
+
+\subsection{Assessing Annotator Consistency}
+
+Evaluating the reliability of basicness ratings, whether from human annotators (gold standard) or LLMs (silver standard), requires quantifying the extent to which different raters agree. Given the subjective nature of basicness and the use of a 1-4 ordinal scale, we utilize several complementary metrics to provide a comprehensive picture of inter-annotator agreement (IAA).
+
+Specifically, we employ Cohen's Kappa ($\kappa$), which measures pairwise agreement between two raters while correcting for chance agreement, making it suitable for nominal or ordinal scales; its primary use here is for calculating average pairwise agreement within and between groups. For assessing agreement among multiple ($>$2) raters, we use Krippendorff's Alpha ($\alpha$), a metric that handles various scale types and missing data, allowing us to determine the overall reliability within a complete rater group, such as the three human annotators for a language or the nine LLMs. We also utilize the Intraclass Correlation Coefficient (ICC), specifically the ICC(2,k) model, which assesses reliability by comparing between-item variance to total variance, treating scores as interval data to check consistency among raters. To evaluate agreement on the relative ordering of items by basicness, even if exact scores differ, we use Spearman's Rho ($\rho$), a non-parametric measure of monotonic correlation between rankings. A more intuitive baseline is provided by Percent Agreement (\%), the raw proportion of items receiving identical ratings, which helps contextualize chance-corrected measures like Kappa. Additionally, we calculate Binary Agreement Metrics, applying standard measures like Kappa and Percent Agreement after collapsing the 1-4 scale into a binary classification (e.g., non-basic vs. basic). Finally, to quantify the magnitude of disagreement, we use Mean Squared Error (MSE), which calculates the average squared difference between numerical ratings.
+
+These metrics offer complementary perspectives. While percent agreement provides an intuitive baseline, Kappa and Alpha correct for chance, giving a more conservative reliability estimate. Spearman's correlation assesses agreement on the relative ranking of terms, even if exact scores differ. ICC provides insights assuming interval properties, and MSE directly quantifies the average magnitude of rating differences. Furthermore, analyzing metrics on binarized scores helps understand agreement on the fundamental basic/non-basic distinction, which is particularly useful when high raw agreement contrasts with moderate Kappa scores due to skewed rating distributions (the ``Kappa paradox'') \cite{feinstein_high_1990,cicchetti_high_1990}.
+
+We apply these metrics to assess consistency within each human language group (e.g., among three Italian annotators), within the group of LLMs, to compare consistency levels across different human language groups, and finally, to compare the aggregated ratings from the Silver Standard (LLMs) with those from the Gold Standard (humans).
+
+\subsection{Analyzing Feature Correlations}
+
+To understand which linguistic and semantic characteristics are associated with human perceptions of basicness (derived from the Gold Standard annotations, typically using the median score per item per language), we analyze the correlation between the engineered features (detailed in Section~\ref{sec:basicness_features}) and these human ratings. For this purpose, we primarily rely on Spearman's Rank Correlation Coefficient ($\rho$). This non-parametric measure is chosen for its ability to detect monotonic relationships (where one variable tends to increase or decrease as the other does, not necessarily linearly) and its robustness to outliers, making it well-suited for comparing diverse feature values against ordinal basicness ratings. To better see the reliability of these observed correlations, we calculate p-values, which indicate the statistical significance of the relationship. This correlation analysis is performed independently for each language, allowing us to identify both cross-linguistically consistent patterns and language-specific associations between features and perceived basicness.
+
+\section{Results}
+
+\subsection{Inter-LLM Agreement}
+
+The results were aggregated to compute multiple agreement metrics, including inter-LLM agreement, mean Cohen's Kappa, mean correlation, Krippendorff's Alpha, Fleiss' Kappa, and Intraclass Correlation Coefficient (ICC). These metrics revealed moderate agreement among the LLMs, with a mean Cohen's Kappa of 0.291, a mean Spearman Correlation of 0.589, and Krippendorff's Alpha of 0.300. The ICC(2,k) score of 0.586 indicated a moderate-to-high degree of consistency across models.
+
+Pairwise inter-annotator agreement among LLMs further illustrated these varying degrees of consensus. For example, Claude 3.7 Sonnet and GPT-4o exhibited the highest agreement (Kappa: 0.644, Correlation: 0.783), while other pairs showed lower levels of agreement.
+
+Overall, the LLMs agreed 86.3\% of the time, with Figure \ref{fig:pairwise-agreement-llms} illustrating the pairwise agreement between the models.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{images/heatmap_kappa_vs_agreement.png}
+	\caption{Pairwise agreement percentages (on the right) and Cohen's kappa (on the left), between the different LLMs}
+	\label{fig:pairwise-agreement-llms}
+\end{figure}
+
+\subsection{Inter-Annotator Agreement}
+
+We first assessed the consistency of basicness judgments among the three native-speaking human annotators within each language group. Table \ref{tab:iaa_within_language} summarizes the key inter-annotator agreement (IAA) metrics calculated for each language. Higher values generally indicate better agreement, with darker shading highlighting stronger consensus for each metric.
+
+\begin{table}[ht]
+\centering
+\caption{Inter-annotator agreement metrics within each language group. Higher values indicate stronger agreement and are shaded darker.}
+\label{tab:iaa_within_language}
+\sisetup{round-mode=places, round-precision=3}
+\begin{tabular}{@{}l
+                S[table-format=1.3]
+                S[table-format=1.3]
+                S[table-format=1.3]
+                S[table-format=1.3]
+                S[table-format=1.3]@{}}
+\toprule
+\textbf{Language} & {\textbf{Kappa}} & {\textbf{Correlation}} & {\textbf{Kripp.'s $\alpha$}} & {\textbf{ICC}} & {\textbf{Agreement}} \\
+\midrule
+English   & \cellcolor{gray!60} 0.33709 & \cellcolor{gray!70} 0.41590 & \cellcolor{gray!55} 0.33674 & \cellcolor{gray!65} 0.58603 & \cellcolor{gray!95} 95.0 \\
+Italian   & \cellcolor{gray!50} 0.31833 & \cellcolor{gray!60} 0.36412 & \cellcolor{gray!50} 0.31662 & \cellcolor{gray!60} 0.54010 & \cellcolor{gray!90} 93.3 \\
+Norwegian & \cellcolor{gray!70} 0.37250 & \cellcolor{gray!80} 0.45144 & \cellcolor{gray!65} 0.36837 & \cellcolor{gray!75} 0.61028 & \cellcolor{gray!98} 97.5 \\
+Spanish   & \cellcolor{gray!15} 0.11733 & \cellcolor{gray!20} 0.18531 & \cellcolor{gray!10} 0.11669 & \cellcolor{gray!25} 0.27943 & \cellcolor{gray!85} 93.3 \\
+\midrule
+\textbf{Overall Avg.} & 0.29376 & 0.37181 & 0.29206 & 0.50396 & 94.8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The overall average agreement across languages, as measured by Cohen's Kappa ($\kappa \approx 0.294$) and Krippendorff's Alpha ($\alpha \approx 0.292$), suggests fair agreement when corrected for chance. However, the average raw percentage agreement is very high (94.8\%), indicating that annotators frequently assigned the same score. This discrepancy, often observed in tasks with skewed rating distributions (where most items fall into one or two categories), is sometimes referred to as the ``Kappa paradox'' and will be discussed further in Section \ref{sec:kappa_paradox}. Notably, agreement levels varied across languages, with Norwegian showing the highest consistency (e.g., $\kappa = 0.373$) and Spanish the lowest ($\kappa = 0.117$). The Intraclass Correlation Coefficient (ICC), assessing consistency assuming interval data, shows moderate reliability overall (average $0.504$), again with variations between languages.
+
+The pairwise agreement metrics between languages (Table~\ref{tab:pairwise_agreement}) reveal notable variations in cross-linguistic consensus.
+
+\begin{table}[h]
+\centering
+\caption{Pairwise agreement metrics between languages. Higher values for Kappa, Correlation, and Agreement are shaded with darker grey, while for MSE, lower values are shaded darker since smaller MSE indicates better performance.}
+\label{tab:pairwise_agreement}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Language Pair} & \textbf{Kappa} & \textbf{Correlation} & \textbf{Agreement} & \textbf{MSE} \\
+\midrule
+Italian-Norwegian & \cellcolor{gray!68} 0.495 & \cellcolor{gray!84} 0.704 & \cellcolor{gray!65} 90.7\% & \cellcolor{gray!74} 0.198 \\
+Italian-English   & \cellcolor{gray!86} 0.626 & \cellcolor{gray!70} 0.582 & \cellcolor{gray!75} 93.2\% & \cellcolor{gray!75} 0.194 \\
+Italian-Spanish   & \cellcolor{gray!20} 0.093 & \cellcolor{gray!27} 0.190 & \cellcolor{gray!75} 93.2\% & \cellcolor{gray!30} 0.493 \\
+Norwegian-English & \cellcolor{gray!52} 0.375 & \cellcolor{gray!40} 0.324 & \cellcolor{gray!88} 96.1\% & \cellcolor{gray!55} 0.312 \\
+Norwegian-Spanish & \cellcolor{gray!17} 0.039 & \cellcolor{gray!12} 0.048 & \cellcolor{gray!90} 96.4\% & \cellcolor{gray!27} 0.505 \\
+English-Spanish   & \cellcolor{gray!25} 0.138 & \cellcolor{gray!64} 0.481 & \cellcolor{gray!98} 98.9\% & \cellcolor{gray!60} 0.283 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The results reveal significant variability in consensus across language pairs. Notably strong alignment is observed between Italian and English, which show the highest Cohen's Kappa ($\kappa = 0.626$), indicating substantial agreement beyond chance, coupled with high percentage agreement (93.2\%) and low Mean Squared Error (MSE = $0.194$). Similarly, the Italian-Norwegian pair demonstrates strong agreement, particularly in terms of rank order correlation (Spearman's $\rho = 0.704$, the highest observed) and low rating differences (MSE = $0.198$, the lowest observed), suggesting these groups rank the basicness of terms very similarly, even if their exact scores differ slightly more often than the IT-EN pair ($\kappa=0.495$).
+
+Conversely, pairs involving Spanish consistently exhibit lower agreement scores according to chance-corrected metrics and correlation, despite maintaining high raw percentage agreement. The Norwegian-Spanish pair shows exceptionally low Kappa ($\kappa = 0.039$) and correlation ($\rho = 0.048$), alongside the highest MSE ($0.505$), indicating significant divergence in how these two groups perceive or rate basicness for the selected terms. The Italian-Spanish pair also displays low Kappa ($\kappa = 0.093$) and high MSE ($0.493$). The English-Spanish pair presents a mixed picture with very low Kappa ($\kappa = 0.138$) but moderate correlation ($\rho = 0.481$) and very high percentage agreement (98.9\%).
+
+\subsubsection{The Kappa Paradox in Skewed Distributions}
+\label{sec:kappa_paradox}
+
+A particularly important observation is the striking contrast between the moderate Kappa values and the consistently high percentage agreement (94.8\% overall). This phenomenon, sometimes called the ``Kappa paradox'' \citep{feinstein_high_1990,cicchetti_high_1990}, occurs frequently in datasets with highly skewed class distributions.
+
+An examination of our gold standard dataset reveals precisely such a distribution:
+\begin{itemize}
+\item Approximately 75\% of all ratings across languages fell in the 3-4 range (basic/very basic)
+\item Less than 10\% of items received consistent ratings of 1 (not basic)
+\end{itemize}
+
+This skew reflects both our intentional selection of culturally significant terms likely to be basic and the natural prevalence of basic-level terms in everyday language. The mathematical properties of Kappa in such distributions are well-documented: when most items fall into one category, the expected agreement by chance becomes very high, which in turn reduces Kappa values despite high raw agreement.
+
+Converting our 4-point scale to a binary classification (basic vs. non-basic) demonstrates this effect clearly. The binary agreement across language pairs exceeds 90\% in all cases, with several pairs reaching above 96\%. This strongly suggests that annotators broadly agreed on the fundamental distinction between basic and non-basic terms.
+
+\subsubsection{Evidence from Specific Agreement Patterns}
+
+Analyzing cases of perfect agreement versus maximum disagreement provides further insights. Among the items with complete agreement across all three annotators within a language:
+
+\begin{itemize}
+\item Terms like ``\textit{fish}'', ``\textit{boat}'', and ``\textit{mountain}'' received unanimous ratings of 4 (very basic) across all four language groups;
+\item Concrete objects and natural phenomena dominated the list of high-agreement terms.
+\end{itemize}
+
+Conversely, the terms generating the most disagreement across annotators tended to be:
+
+\begin{itemize}
+\item Cultural institutions (e.g., ``\textit{cathedral}'', ``\textit{monastery}'')
+\item Terms with varying regional or demographic significance (e.g., ``\textit{bus}'', ``\textit{knight}'')
+\item Terms whose position in the conceptual hierarchy seemed ambiguous, falling somewhere between the standard basic, superordinate, or subordinate levels (e.g., ``\textit{bean}'', ``\textit{crown}'')
+\end{itemize}
+
+The Italian annotators, for instance, showed maximum disagreement (standard deviation 1.15) on ``\textit{cathedral}'' with ratings spanning from 2 to 4, while Norwegian annotators showed similar disagreement patterns for terms like ``\textit{inn}'' and ``\textit{countryside}''.
+
+These patterns suggest that disagreements were not random but concentrated on genuinely ambiguous cases where multiple valid perspectives on basicness could reasonably coexist. Such disagreements reflect the cognitive complexity of basicness judgment rather than annotation quality issues.
+
+\subsubsection{Cross-Linguistic Patterns in Basicness Perception}
+
+The language-specific agreement statistics reveal meaningful patterns in how basicness is perceived across languages. The Italian and Norwegian annotator groups showed the highest internal consistency (Kappa: 0.318 and 0.373 respectively), while Spanish annotators showed notably lower agreement (Kappa: 0.117).
+
+This variation likely reflects genuine cross-linguistic differences in basicness conceptualization. The Spanish language's extensive dialectal variation across both Europe and Latin America potentially leads to more diverse perspectives on what constitutes a basic term \cite{lipski_geographical_2012,tellez_regionalized_2023}. Indeed, examining Spanish annotators' ratings on culturally-loaded terms shows greater dispersion than other language groups.
+
+Table~\ref{tab:cross_ling_patterns} presents selected examples that illustrate systematic cross-linguistic patterns in basicness ratings.
+
+%\begin{table}[h]
+%\centering
+%\caption{Selected Examples of Mean Basicness Ranks Across Languages}
+%\label{tab:cross_ling_patterns}
+%\begin{tabular}{lccccc}
+%\toprule
+%\textbf{Term} & \textbf{English} & \textbf{Spanish} & \textbf{Italian} & \textbf{Norwegian} & \textbf{Silver} \\
+%\midrule
+%\textit{tea} & 3.67 & 3.67 & 3.00 & 3.67 & 3.56 \\
+%\textit{knight} & 2.67 & 2.00 & 3.00 & 1.67 & 2.11 \\
+%\textit{ski} & 3.00 & 2.67 & 2.67 & 3.67 & 3.56 \\
+%\textit{twilight} & 1.67 & 3.33 & 2.00 & 1.33 & 3.22 \\
+%\textit{monastery} & 2.33 & 3.33 & 2.33 & 2.00 & 2.56 \\
+%\bottomrule
+%\end{tabular}
+%\end{table}
+
+
+\begin{table}[h]
+\centering
+\caption{Selected examples of mean basicness ranks across languages}
+\label{tab:cross_ling_patterns}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Term} & \textbf{English} & \textbf{Spanish} & \textbf{Italian} & \textbf{Norwegian} & \textbf{Silver (LLM)} \\
+\midrule
+\textit{tea} & \cellcolor{gray!71} 3.67 & \cellcolor{gray!71} 3.67 & \cellcolor{gray!60} 3.00 & \cellcolor{gray!71} 3.67 & \cellcolor{gray!69} 3.56 \\
+\textit{knight} & \cellcolor{gray!53} 2.67 & \cellcolor{gray!40} 2.00 & \cellcolor{gray!60} 3.00 & \cellcolor{gray!27} 1.67 & \cellcolor{gray!37} 2.11 \\
+\textit{ski} & \cellcolor{gray!60} 3.00 & \cellcolor{gray!53} 2.67 & \cellcolor{gray!53} 2.67 & \cellcolor{gray!71} 3.67 & \cellcolor{gray!69} 3.56 \\
+\textit{twilight} & \cellcolor{gray!27} 1.67 & \cellcolor{gray!66} 3.33 & \cellcolor{gray!40} 2.00 & \cellcolor{gray!13} 1.33 & \cellcolor{gray!66} 3.22 \\
+\textit{monastery} & \cellcolor{gray!47} 2.33 & \cellcolor{gray!66} 3.33 & \cellcolor{gray!47} 2.33 & \cellcolor{gray!33} 2.00 & \cellcolor{gray!53} 2.56 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These examples reveal systematic patterns related to cultural and environmental factors. For instance, ``\textit{ski}'' shows higher basicness in Norwegian, reflecting its cultural prominence, while ``\textit{monastery}'' scores higher in Spanish, consistent with the stronger presence of Catholic institutions.
+
+\subsubsection{Comparison with Silver Standard}
+
+The comparison between our human gold standard and the LLM-generated silver standard provides additional validation of our annotation approach. Despite using completely different methodologies, we observed significant correlation between human and LLM judgments:
+
+\begin{itemize}
+\item Italian annotators showed the highest agreement with LLMs (Kappa: 0.465, Spearman: 0.645)
+\item English annotators also demonstrated substantial agreement with LLMs (Kappa: 0.425, Spearman: 0.569)
+\item Spanish annotators showed the lowest agreement with LLMs (Kappa: 0.090, Spearman: 0.129)
+\end{itemize}
+
+The consistency between gold (human) and silver (LLM) annotations for most languages provides convergent evidence for the validity of our approach. This is because independent evaluators --- humans relying on cognitive intuition and LLMs leveraging statistical language patterns --- arrived at similar conclusions when applying the same operational definition and guidelines for basicness, suggesting these guidelines capture a relatively stable underlying construct.
+
+\subsection{Feature Correlation with Human Basicness Judgments}
+\label{sec:basicness_features}
+
+To investigate the relationship between quantifiable lexical-semantic features and the human perception of basicness, we computed Spearman's rank correlation coefficient ($\rho$) between each feature and the median basicness score assigned by the native human annotators for their respective language. For instance, features calculated for Italian terms were correlated against the median basicness ratings provided by the ``Human (IT)'' annotator group. We assessed statistical significance using p-values, considering correlations with $p < 0.05$ as significant.
+
+Figure \ref{fig:correlation_heatmap} presents the Spearman correlation coefficients ($\rho$) for each feature across the four languages. Significant positive correlations are marked with different shades of green, while negative correlations are marked in red. The p-values are displayed in the `pills'.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{images/feature_basicness_correlations.png}
+    \caption{Correlation heatmap between features and median human basicness score per language.}
+    \label{fig:correlation_heatmap}
+\end{figure}
+
+\subsubsection{Word Frequency}
+This feature exhibits a strong, consistent positive correlation with human basicness scores across all four languages ($\rho$ between 0.395 and 0.604, all $p < 0.001$). This aligns strongly with foundational theories \cite{brown_how_1958, rosch_basic_1976}, confirming that words perceived as more basic are indeed used more frequently in general language corpora. Norwegian shows the strongest correlation here.
+
+\subsubsection{Word Length}
+A consistent negative correlation is observed, indicating that shorter words tend to be rated as more basic. This correlation is highly significant for Italian, Spanish, and Norwegian ($\rho \approx -0.4$, $p < 0.001$), and weaker, though still present, for English ($\rho = -0.165$). This supports Zipf's principles \cite{zipf_psycho-biology_1935, zipf_meaning-frequency_1945}.
+
+\subsubsection{Learning Resources}
+Presence in resources designed for children and second language learners consistently shows positive correlations with basicness. The correlation with children's resources is significant across all languages ($\rho$ between 0.245 and 0.321). The correlation with learner resources is particularly strong and significant for English, Italian, and Norwegian ($\rho$ between 0.352 and 0.522), but not significant for Spanish. This suggests that concepts deemed fundamental for acquisition (both first and second language) are strongly associated with perceived basicness.
+
+\subsubsection{Pronunciation Complexity}
+A negative correlation exists across all languages, implying simpler pronunciation is associated with higher basicness. This relationship reaches statistical significance for Spanish ($\rho = -0.299$, $p < 0.01$) and Norwegian ($\rho = -0.446$, $p < 0.001$), suggesting phonological simplicity might play a more prominent role in basicness perception in these languages compared to English and Italian in our dataset.
+
+\subsubsection{Taxonomic Structure (Hyponyms)}
+The number of hyponyms shows a significant positive correlation with basicness ratings in Italian ($\rho = 0.351$, $p < 0.01$) and Spanish ($\rho = 0.303$, $p < 0.01$). This indicates that in these Romance languages within our dataset, terms rated as more basic tend to be those that have more specific examples beneath them in the semantic hierarchy. This relationship was not significant for English or Norwegian.
+
+\subsubsection{Lexical Richness (Synonyms, Senses)}
+The number of synonyms tends to show a weak negative correlation, significant only for English and Spanish ($\rho \approx -0.2$, $p < 0.05$), suggesting a slight tendency for basic words to have fewer synonyms. The average number of senses per word only shows a significant positive correlation for Norwegian ($\rho = 0.226$, $p < 0.05$), while the number of senses across all lemmas in a synset shows only a weak significant negative correlation for English ($\rho = -0.208$, $p < 0.05$). Overall, these measures of polysemy and synonymy show less consistent or strong relationships with basicness compared to frequency, length, or learning resource presence.
+
+These findings demonstrate that several computationally accessible features correlate significantly with human judgments of basicness. The consistency of correlations for features like frequency, length, and presence in learning resources across languages underscores their potential universality as indicators of basicness. However, the varying significance and strength of other features (like pronunciation complexity and hyponymy) highlight language-specific nuances.
+
+\subsection{Final Experiment and Evaluation}
+
+Having established the significant correlations between various linguistic features and human basicness judgments (Section \ref{sec:basicness_features}), we now proceed to the core experiment: evaluating the efficacy of our proposed basicness score calculator (Section \ref{sec:basicness_score_calc}). The central goal of this experiment is to determine how well a computational model, directly informed by the observed relationships within our specific dataset, can reflect the peculiarities of human basicness perception captured in our gold standard annotations.
+
+Crucially, this evaluation operates within a specific methodological context. Due to the exploratory nature of this study and the primary goal of understanding feature relevance within our curated multilingual dataset, we leverage the entire annotated dataset (80 terms across 4 languages) for two purposes: first, to derive the data-informed weights for our basicness formula, and second, to serve as the benchmark against which the formula's output is compared. This approach allows us to assess the potential of the features and the formula structure to capture basicness patterns as observed in our specific data, serving as a form of model calibration and internal validation rather than a test of predictive generalization to unseen data.
+
+\subsubsection{Feature Weights Selection}
+
+For each language, we determined an optimal set of weights based on the correlation between the features and human annotations, as outlined in Section \ref{sec:basicness_features}. The weights obtained are the same as those shown in Figure \ref{fig:correlation_heatmap}, and are presented in Table \ref{tab:feature_weights} for improved clarity. This approach takes into account the subjectivity inherent in basicness, which is influenced by linguistic and cultural factors specific to each language. By assigning distinct feature weights for each language, we account for the varying relevance of each feature within different linguistic contexts. This variation can be interpreted as reflecting both linguistic and cultural differences, either directly or indirectly.
+
+Linguistic differences are directly considered, as many features are strongly tied to the structure of individual languages and partially represent their characteristics (e.g., word length and frequency). Additionally, there is an indirect consideration of cultural factors, as each language is intrinsically shaped by its culture, which in turn influences language use. A clear example is the word ``\textit{snow}'', which appears more frequently and has a shorter length in Norwegian compared to other languages (snø), reflecting the cultural and environmental significance of the term in Norwegian society.
+
+%\begin{table}[ht]
+%	\centering
+%	\caption{Optimized Feature Weights by Language}
+%	\label{tab:feature_weights}
+%	\begin{tabular}{@{}l r r r r@{}}
+%		\toprule
+%		\textbf{Feature}               & \textbf{EN} & \textbf{NB} & \textbf{ES} & \textbf{IT} \\ 
+%		\midrule
+%		Word Frequency                 & 0.4975 & 0.6044 & 0.3948 & 0.4304 \\
+%		Word Length                    & -0.1648 & -0.4139 & -0.3961 & -0.4199 \\
+%		Pronunciation Complexity       & -0.1348 & -0.4464 & -0.2998 & -0.1994 \\
+%		\midrule
+%		Number of Hyponyms             & 0.1611 & 0.0794 & 0.3031 & 0.3510 \\
+%		Number of Synonyms             & -0.2137 & 0.0148 & -0.2255 & -0.1981 \\
+%		Number of Senses               & -0.0732 & 0.2263 & -0.0318 & 0.0872 \\
+%		\midrule
+%		Presence in children's stories & 0.2625 & 0.2957 & 0.2452 & 0.3213 \\
+%		Presence in L2 learner posts   & 0.3523 & 0.5222 & 0.1721 & 0.3983 \\
+%		\midrule
+%		Number of Synset Senses        & -0.2084 & 0.1719 & -0.1608 & -0.0917 \\
+%		\bottomrule
+%	\end{tabular}
+%	\smallskip
+%\end{table}
+
+
+
+
+
+\begin{table}[ht]
+\centering
+\caption{Correlation-based optimized feature weights by language.}
+\label{tab:feature_weights}
+\begin{tabular}{@{}l r r r r@{}}
+\toprule
+\textbf{Feature} & \textbf{EN} & \textbf{NB} & \textbf{ES} & \textbf{IT} \\
+\midrule
+Word Frequency                 & \cellcolor{green!75} 0.4975  & \cellcolor{green!85} 0.6044  & \cellcolor{green!60} 0.3948  & \cellcolor{green!65} 0.4304 \\
+Word Length                    & \cellcolor{red!20} -0.1648  & \cellcolor{red!50} -0.4139  & \cellcolor{red!47} -0.3961  & \cellcolor{red!52} -0.4199 \\
+Pronunciation Complexity       & \cellcolor{red!17} -0.1348  & \cellcolor{red!56} -0.4464  & \cellcolor{red!37} -0.2998  & \cellcolor{red!25} -0.1994 \\
+\midrule
+Number of Hyponyms             & \cellcolor{green!50} 0.1611  & \cellcolor{green!40} 0.0794  & \cellcolor{green!65} 0.3031  & \cellcolor{green!70} 0.3510 \\
+Number of Synonyms             & \cellcolor{red!27} -0.2137  & \cellcolor{green!30} 0.0148  & \cellcolor{red!29} -0.2255  & \cellcolor{red!25} -0.1981 \\
+Number of Senses               & \cellcolor{red!10} -0.0732  & \cellcolor{green!55} 0.2263  & \cellcolor{red!5} -0.0318  & \cellcolor{green!45} 0.0872 \\
+\midrule
+Presence in children's stories & \cellcolor{green!60} 0.2625  & \cellcolor{green!65} 0.2957  & \cellcolor{green!55} 0.2452  & \cellcolor{green!70} 0.3213 \\
+Presence in L2 learner posts   & \cellcolor{green!70} 0.3523  & \cellcolor{green!82} 0.5222  & \cellcolor{green!48} 0.1721  & \cellcolor{green!72} 0.3983 \\
+\midrule
+Number of Synset Senses        & \cellcolor{red!26} -0.2084  & \cellcolor{green!50} 0.1719  & \cellcolor{red!20} -0.1608  & \cellcolor{red!10} -0.0917 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\end{table}
+
+
+
+
+It is important to note that the weights are directly derived from the correlations between the feature values and human annotations, with values in the range $[-1,1]$. However, the proposed formula accommodates weights within this range, ensuring that the output score remains within the $[0,1]$ interval.
+
+\subsubsection{Mapping Continuous Scores to Discrete Ranks}
+
+A key challenge arises in comparing the calculator's continuous output $[0,1]$ with the discrete 4-point scale $[1,4]$ used by human annotators. A direct comparison requires mapping the continuous scores onto the discrete ranks. We explored several methods to achieve this mapping, aiming for an approach that best reflects the distribution of scores and aligns with the human rating categories.
+
+\textbf{Attempt with fixed thresholds.} Our initial, simplest approach involved dividing the $[0,1]$ range into four equal segments using fixed thresholds at 0.25, 0.50, and 0.75:
+
+$$ 
+rank(x) = 
+\begin{cases}
+	1 \quad \text{if} \quad Bness(x) \leq 0.25 \\
+	2 \quad \text{if} \quad Bness(x) \leq 0.50 \\
+	3 \quad \text{if} \quad Bness(x) \leq 0.75 \\
+	4 \quad \text{if} \quad Bness(x) > 0.75    \\
+\end{cases}
+$$
+
+However, evaluating the agreement between ranks derived in this way and the human annotations yielded unsatisfactory results. The rigid, equal partitioning failed to capture the often skewed and uneven distribution of the calculated basicness scores, leading to poor alignment with the human categories. This suggested that a more data-aware approach to fixed thresholding was necessary.
+
+\textbf{Attempt with data-driven clustering (KMeans).} We next explored using KMeans clustering $k=4$ on the calculated continuous scores. The rationale was to let the algorithm identify natural groupings within the score distribution, which could then be mapped to the 1-4 ranks based on cluster centroid values. 
+
+The method used was KMeans with $n_{init}=10$ runs and $n_{clusters}=4$ clusters. All scores calculated through the proposed basicness function were used to fit the model. Finally, discrete ranks (from 1 to 4) were assigned to each cluster based on the value of the centroid of each cluster. Specifically, scores belonging to the cluster with the lowest centroid value were assigned the lowest basicness rank (1), and so on, up to the cluster with the highest centroid, which was assigned the highest basicness rank (4). This approach also proved suboptimal, as KMeans relies on assumptions (e.g., spherical clusters, sensitivity to outliers, handling imbalanced data) that were likely violated by the inherent complexity and potential skewness of the basicness score distribution. The resulting clusters did not consistently align well with the human-perceived categories.
+
+\textbf{Attempt with calibrating thresholds via optimization.} Recognizing the limitations of the previous methods and the inherent subjectivity of basicness, we adopted a calibration approach. We performed a grid search optimization to find the set of three thresholds that maximized the agreement (e.g., Cohen's Kappa or Percent Agreement) between the resulting discrete ranks and the median human annotations from our gold standard dataset.
+
+This method does not constitute model training in the traditional sense but rather a calibration of the output scale. We are using the human data as a reference to determine how best to segment the continuous score range produced by our already-informed formula to match the categorical distinctions made by humans on this specific dataset. This approach acknowledges that the ``optimal'' thresholds might be specific to the distribution generated by our formula and dataset, reflecting the potentially non-linear mapping between computational scores and subjective human judgments. The optimized thresholds identified were $[0.3545,0.3982,0.5291]$.
+
+$$ 
+rank(x) = 
+\begin{cases}
+	1 \quad \text{if} \quad Bness(x) \leq 0.3545 \\
+	2 \quad \text{if} \quad Bness(x) \leq 0.3982 \\
+	3 \quad \text{if} \quad Bness(x) \leq 0.5291 \\
+	4 \quad \text{if} \quad Bness(x) > 0.5291    \\
+\end{cases}
+$$
+
+The justification for this calibration step lies in the subjective nature of basicness. It is plausible that the perceived boundaries between ``somewhat basic'' and ``basic'', for example, do not fall at neat, predefined intervals of a computed score. This optimization allows us to find the thresholds that empirically best reflect these boundaries as observed in our human data.
+
+\subsubsection{Evaluating the Calibrated Model's Reflection of Human Judgments}
+
+Using the basicness scores generated by our correlation-weighted formula and the ranks derived from the optimized thresholds, we evaluated how well this calibrated model reflects the original human annotations. We measured agreement on two levels: binary agreement, and a 4-point scale agreement. Specifically:
+
+\begin{enumerate}
+    \item Binary Agreement: collapsing the 4-point scale into a binary distinction (Ranks 1-2 = Non-Basic/0, Ranks 3-4 = Basic/1). This aligns with common practice in basicness literature.
+    \item 4-Point Scale Agreement: Assessing agreement using the original granular scale $[1,4]$, including Percent Agreement and Cohen's Kappa. This provides a stricter evaluation of alignment.
+\end{enumerate}
+
+Table \ref{tab:agreement_scores} presents the results. The binary agreement achieved is consistently high across languages (ranging from 83.75\% to 88.75\%), indicating that the model, informed by feature correlations and calibrated thresholds, effectively captures the fundamental basic/non-basic distinction present in the human data.
+
+Performance on the more granular 4-point scale, measured by Percent Agreement and Cohen's Kappa, shows moderate alignment (Kappa ranging from $0.05$ for Spanish to $0.44$ for Norwegian). This suggests that while capturing the broad distinction is successful, perfectly mirroring the finer-grained human judgments remains challenging, reflecting the inherent subjectivity and variability in assigning precise basicness levels. The notably lower performance for Spanish aligns with the previously observed lower inter-annotator agreement within the Spanish human group, potentially indicating greater inherent variability or noise in the Spanish annotations themselves.
+
+%\begin{table}[ht]
+%	\centering
+%	\caption{Evaluation Results for Binary and Percent Agreement between Predicted and Human-annotated Basicness Values}
+%	\label{tab:agreement_scores}
+%	\begin{tabular}{@{}l r r r r@{}}
+%		\toprule
+%		\textbf{Metric} & \textbf{EN} & \textbf{NB} & \textbf{ES} & \textbf{IT} \\ 
+%		\midrule
+%		Binary Agreement     & 0.8500 & 0.8875 & 0.8375 & 0.8375 \\
+%		Percent Agreement    & 0.6125 & 0.5875 & 0.1875 & 0.5750 \\
+%		Cohen Kappa          & 0.3800 & 0.4360 & 0.0548 & 0.3639 \\
+%		\bottomrule
+%	\end{tabular}
+%	\smallskip
+%\end{table}
+
+
+\begin{table}[ht]
+\centering
+\caption{Evaluation results for binary and percent agreement between predicted and human-annotated basicness values.}
+\label{tab:agreement_scores}
+\begin{tabular}{@{}l r r r r@{}}
+\toprule
+\textbf{Metric} & \textbf{EN} & \textbf{NB} & \textbf{ES} & \textbf{IT} \\ 
+\midrule
+Binary Agreement     & \cellcolor{gray!85} 0.8500 & \cellcolor{gray!90} 0.8875 & \cellcolor{gray!82} 0.8375 & \cellcolor{gray!82} 0.8375 \\
+Percent Agreement    & \cellcolor{gray!70} 0.6125 & \cellcolor{gray!67} 0.5875 & \cellcolor{gray!22} 0.1875 & \cellcolor{gray!65} 0.5750 \\
+Cohen Kappa          & \cellcolor{gray!43} 0.3800 & \cellcolor{gray!49} 0.4360 & \cellcolor{gray!5} 0.0548  & \cellcolor{gray!41} 0.3639 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\end{table}
+
+
+
+
+
+\subsubsection{Comparison with Baseline Approaches}
+
+To contextualize these results and demonstrate the value of our data-informed and calibrated approach, we compared its performance against simpler baseline configurations. These baselines represent scenarios where either the weights are not derived from data correlations or the thresholds are not optimized. We considered four baseline settings varying across two dimensions:
+
+\begin{itemize}
+    \item Weights: \begin{itemize}
+        \item Uniform Weights: simple +1/-1 weights based on intuitive assumptions about feature effects (see Table \ref{tab:feature_weights_bad}).
+        \item Literature Weights: weights informed by general findings in basicness literature \cite{hollink_predicting_2020,hajibayova_basic-level_2013} (e.g., emphasizing lexical features over structural ones, see Table \ref{tab:feature_weights_bad}).
+    \end{itemize}
+    \item Thresholds: \begin{itemize}
+        \item Non-optimized: fixed thresholds at $[0.25, 0.5, 0.75]$.
+        \item Optimized: thresholds derived from grid search calibration (as used in our main approach).
+    \end{itemize}
+\end{itemize}
+
+For building the uniform weights set, given a generic lemma $w$ in a synset $s$, the following considerations were made:
+
+\begin{itemize}
+    \item A high frequency of $w$, its presence in children's resources, and its presence in resources for L2 (second language) learners positively impact basicness, increasing it (and vice versa).
+    \item A high length of $w$ and its high pronunciation complexity negatively impact basicness, decreasing it (and vice versa).
+    \item A high number of hyponyms in synset $s$, a high number of lemmas (synonyms) in $s$, a high number of senses for $s$, and a high number of senses for the various lemmas in $s$ (Synset Senses) negatively impact basicness, decreasing it (and vice versa).
+\end{itemize}
+
+For features with a positive impact, the weight was set to $+1.0$, and for those with a negative impact, the weight was set to $-1.0$, reflecting the described effects in our proposed formula.
+
+The literature-based weight set builds on the uniform set defined above, with the following differences based on the literature \cite{hollink_predicting_2020}:
+
+\begin{itemize}
+    \item Lexical features are considered more impactful than structural ones, that is, those related to the structure of the knowledge graph.
+    \item Structural features generally do not contribute significantly to the calculation of basicness and can therefore be ignored in favor of lexical features.
+\end{itemize}
+
+\begin{table}[ht]
+	\centering
+	\caption{Alternative feature weights}
+	\label{tab:feature_weights_bad}
+	\begin{tabular}{@{}l r r r r@{}}
+		\toprule
+		\textbf{Feature}               & \textbf{Uniform Weights} & \textbf{Literature Weights} \\ 
+		\midrule
+		Word Frequency                 & 1.0 & 1.0 \\
+		Word Length                    & -1.0 & -1.0 \\
+		Pronunciation Complexity       & -1.0 & -1.0 \\
+		\midrule
+		Number of Hyponyms             & -1.0 & 0.0 \\
+		Number of Synonyms             & -1.0 & 0.0 \\
+		Number of Senses               & -1.0 & 0.0 \\
+		\midrule
+		Presence in children's stories & 1.0 & 1.0 \\
+		Presence in L2 learner posts   & 1.0 & 1.0 \\
+		\midrule
+		Number of Synset Senses        & -1.0 & 0.0 \\
+		\bottomrule
+	\end{tabular}
+	\smallskip
+\end{table}
+
+In Tables \ref{tab:agreement_scores_comparison_en}, \ref{tab:agreement_scores_comparison_nb}, \ref{tab:agreement_scores_comparison_es}, and \ref{tab:agreement_scores_comparison_it}, one for each language, a summary of the results for the tested settings is provided:
+
+\begin{itemize}
+    \item Setting 1: Optimized thresholds and our weights (final approach)
+    \item Setting 2: Optimized thresholds and literature weights
+    \item Setting 3: Optimized thresholds and uniform weights
+    \item Setting 4: Non-optimized thresholds and literature weights
+    \item Setting 5: Non-optimized thresholds and uniform weights
+\end{itemize}
+
+%\begin{table}[ht]
+%	\centering
+%	\caption{Evaluation Results for Binary and Percent Agreement between Predicted and Human-annotated Basicness Values - Comparison with Different Settings for English}
+	%\label{tab:agreement_scores_comparison_en}
+	%\begin{tabular}{@{}l r r r r r@{}}
+	%	\toprule
+	%	\textbf{Metric} & \textbf{Set. 1} & \textbf{Set. 2} & \textbf{Set. 3} & \textbf{Set. 4} & \textbf{Set. 5} \\ 
+	%	\midrule
+	%	Binary Agreement     & \textbf{0.8500} & 0.6375 & 0.45 & 0.5125 & 0.35 \\
+	%	Percent Agreement    & \textbf{0.6125} & 0.425  & 0.2625 & 0.2875 & 0.1125 \\
+	%	Cohen Kappa          & \textbf{0.3800} & 0.1953 & 0.1465 & 0.1109 & 0.0790 \\
+	%	\bottomrule
+	%\end{tabular}
+	%\smallskip
+%\end{table}
+
+
+
+\begin{table}[ht]
+\centering
+\caption{Agreement between predicted and human-annotated basicness values with different settings for English. For each row, higher numbers are shaded with darker grey while bolded cells indicate the maximum values.}
+\label{tab:agreement_scores_comparison_en}
+\begin{tabular}{@{}l r r r r r@{}}
+\toprule
+\textbf{Metric} & \textbf{Set. 1} & \textbf{Set. 2} & \textbf{Set. 3} & \textbf{Set. 4} & \textbf{Set. 5} \\ 
+\midrule
+Binary Agreement     & \cellcolor{gray!85} \textbf{0.8500} & \cellcolor{gray!55} 0.6375 & \cellcolor{gray!30} 0.4500 & \cellcolor{gray!38} 0.5125 & \cellcolor{gray!20} 0.3500 \\
+Percent Agreement    & \cellcolor{gray!70} \textbf{0.6125} & \cellcolor{gray!45} 0.4250 & \cellcolor{gray!28} 0.2625 & \cellcolor{gray!32} 0.2875 & \cellcolor{gray!12} 0.1125 \\
+Cohen Kappa          & \cellcolor{gray!43} \textbf{0.3800} & \cellcolor{gray!22} 0.1953 & \cellcolor{gray!17} 0.1465 & \cellcolor{gray!13} 0.1109 & \cellcolor{gray!8} 0.0790 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\end{table}
+
+
+
+
+%\begin{table}[ht]
+%	\centering
+%	\caption{Evaluation Results for Binary and Percent Agreement between Predicted and Human-annotated Basicness Values - Comparison with Different Settings for Norwegian}
+	%\label{tab:agreement_scores_comparison_nb}
+	%\begin{tabular}{@{}l r r r r r@{}}
+	%	\toprule
+	%	\textbf{Metric} & \textbf{Setting 1} & \textbf{Setting 2} & \textbf{Setting 3} & \textbf{Setting 4} & \textbf{Setting 5} \\ 
+	%	\midrule
+	%	Binary Agreement     & \textbf{0.8875} & 0.8375 & 0.7 & 0.725 & 0.5375 \\
+	%	Percent Agreement    & \textbf{0.5875} & 0.475 & 0.35 & 0.3125 & 0.2125 \\
+	%	Cohen Kappa          & \textbf{0.4360} & 0.375 & 0.2141 & 0.2246 & 0.1170 \\
+	%	\bottomrule
+	%\end{tabular}
+	%\smallskip
+%\end{table}
+
+
+\begin{table}[ht]
+\centering
+\caption{Agreement between predicted and human-annotated Basicness values with different settings for Norwegian. For each row, higher numbers are shaded with darker grey while bolded cells indicate the maximum values.}
+\label{tab:agreement_scores_comparison_nb}
+\begin{tabular}{@{}l r r r r r@{}}
+\toprule
+\textbf{Metric} & \textbf{Setting 1} & \textbf{Setting 2} & \textbf{Setting 3} & \textbf{Setting 4} & \textbf{Setting 5} \\ 
+\midrule
+Binary Agreement     & \cellcolor{gray!90} \textbf{0.8875} & \cellcolor{gray!82} 0.8375 & \cellcolor{gray!57} 0.7000 & \cellcolor{gray!61} 0.7250 & \cellcolor{gray!36} 0.5375 \\
+Percent Agreement    & \cellcolor{gray!67} \textbf{0.5875} & \cellcolor{gray!54} 0.4750 & \cellcolor{gray!40} 0.3500 & \cellcolor{gray!36} 0.3125 & \cellcolor{gray!25} 0.2125 \\
+Cohen Kappa          & \cellcolor{gray!49} \textbf{0.4360} & \cellcolor{gray!43} 0.3750 & \cellcolor{gray!25} 0.2141 & \cellcolor{gray!27} 0.2246 & \cellcolor{gray!15} 0.1170 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\end{table}
+
+
+
+
+%\begin{table}[ht]
+%	\centering
+%	\caption{Evaluation Results for Binary and Percent Agreement between Predicted and Human-annotated Basicness Values - Comparison with Different Settings for Spanish}
+	%\label{tab:agreement_scores_comparison_es}
+	%\begin{tabular}{@{}l r r r r r@{}}
+	%	\toprule
+	%	\textbf{Metric} & \textbf{Set. 1} & \textbf{Set. 2} & \textbf{Set. 3} & \textbf{Set. 4} & \textbf{Set. 5} \\ 
+	%	\midrule
+	%	Binary Agreement     & \textbf{0.8375} & 0.675  & 0.4375 & 0.5 & 0.2375 \\
+	%	Percent Agreement    & 0.1875 & \textbf{0.45}   & 0.2375 & 0.15 & 0.025  \\
+	%	Cohen Kappa          & 0.0548 & \textbf{0.0819} & 0.0447 & 0.0250 & 0.0094 \\
+	%	\bottomrule
+	%\end{tabular}
+	%\smallskip
+%\end{table}
+
+
+
+\begin{table}[ht]
+\centering
+\caption{Agreement between predicted and human-annotated basicness values with different settings for Spanish. For each row, higher numbers are shaded with darker grey while bolded cells indicate the maximum values.}
+\label{tab:agreement_scores_comparison_es}
+\begin{tabular}{@{}l r r r r r@{}}
+\toprule
+\textbf{Metric} & \textbf{Set. 1} & \textbf{Set. 2} & \textbf{Set. 3} & \textbf{Set. 4} & \textbf{Set. 5} \\ 
+\midrule
+Binary Agreement     & \cellcolor{gray!85} \textbf{0.8375} & \cellcolor{gray!58} 0.6750 & \cellcolor{gray!32} 0.4375 & \cellcolor{gray!38} 0.5000 & \cellcolor{gray!18} 0.2375 \\
+Percent Agreement    & \cellcolor{gray!22} 0.1875 & \cellcolor{gray!53} \textbf{0.4500} & \cellcolor{gray!25} 0.2375 & \cellcolor{gray!15} 0.1500 & \cellcolor{gray!5} 0.0250 \\
+Cohen Kappa          & \cellcolor{gray!7} 0.0548 & \cellcolor{gray!10} \textbf{0.0819} & \cellcolor{gray!6} 0.0447 & \cellcolor{gray!5} 0.0250 & \cellcolor{gray!3} 0.0094 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\end{table}
+
+
+
+
+
+
+%\begin{table}[ht]
+%	\centering
+%	\caption{Evaluation Results for Binary and Percent Agreement between Predicted and Human-annotated Basicness Values - Comparison with Different Settings for Italian.}
+	%\label{tab:agreement_scores_comparison_it}
+	%\begin{tabular}{@{}l r r r r r@{}}
+	%	\toprule
+	%	\textbf{Metric} & \textbf{Set. 1} & \textbf{Set. 2} & \textbf{Set. 3} & \textbf{Set. 4} & \textbf{Set. 5} \\ 
+	%	\midrule
+	%	Binary Agreement     & \textbf{0.8375} & 0.675  & 0.55  & 0.5875 & 0.425 \\
+	%	Percent Agreement    & \textbf{0.5750} & 0.425  & 0.2375 & 0.2375 & 0.1625 \\
+	%	Cohen Kappa          & \textbf{0.3639} & 0.3013 & 0.1797 & 0.1341 & 0.0819 \\
+	%	\bottomrule
+	%\end{tabular}
+	%\smallskip
+%\end{table}
+
+
+\begin{table}[ht]
+\centering
+\caption{Agreement between predicted and human-annotated basicness values with different settings for Italian. For each row, higher numbers are shaded with darker grey while bolded cells indicate the maximum values.}
+\label{tab:agreement_scores_comparison_it}
+\begin{tabular}{@{}l r r r r r@{}}
+\toprule
+\textbf{Metric} & \textbf{Set. 1} & \textbf{Set. 2} & \textbf{Set. 3} & \textbf{Set. 4} & \textbf{Set. 5} \\ 
+\midrule
+Binary Agreement     & \cellcolor{gray!85} \textbf{0.8375} & \cellcolor{gray!58} 0.6750 & \cellcolor{gray!45} 0.5500 & \cellcolor{gray!50} 0.5875 & \cellcolor{gray!36} 0.4250 \\
+Percent Agreement    & \cellcolor{gray!65} \textbf{0.5750} & \cellcolor{gray!36} 0.4250 & \cellcolor{gray!25} 0.2375 & \cellcolor{gray!25} 0.2375 & \cellcolor{gray!18} 0.1625 \\
+Cohen Kappa          & \cellcolor{gray!41} \textbf{0.3639} & \cellcolor{gray!34} 0.3013 & \cellcolor{gray!22} 0.1797 & \cellcolor{gray!17} 0.1341 & \cellcolor{gray!10} 0.0819 \\
+\bottomrule
+\end{tabular}
+\smallskip
+\end{table}
+
+The results obtained allow for several key observations. We see that optimizing thresholds and weights significantly impacts the performance across all languages, except for Spanish. %\footnote{For each annotation, a manual quality check was performed, and the Spanish annotations were found to be of relatively low quality and particularly sparse. We hypothesize that the annotators were not particularly motivated. Looking at the time difference in completing the task, the Spanish annotators completed the task in half the time in respect to the mean times of the other annotators.}.
+This confirms that accounting for the subjectivity and variability inherent in basicness can substantially improve binary classification performance and, more importantly, help increase the granularity of basicness measurement, enhancing its precision. A more precise measurement enables more detailed analyses of the phenomenon, including psycho-linguistic perspectives. These results (1 vs others) also highlight the importance of using different weight sets for each language, supporting the idea that the subjectivity of basicness accounts for linguistic and cultural differences, as discussed in Section \ref{sec:basicness_score_calc}, and that these differences must be considered.
+% Aggiungere reference per giustificare, forse inter annotator agreement?
+Settings with optimized thresholds (1, 2, 3) generally outperform settings without optimization (4, 5), suggesting that even optimizing thresholds alone positively influences performance.
+When comparing settings with the same threshold optimization, and contrasting the differences between weight sets derived from the literature and uniform weights (2 vs 3 both with optimized thresholds, 4 vs 5 both with non-optimized thresholds), we observe that our approach aligns with existing findings from the literature. This confirms that our approach computationally models what prior research has shown through psycho-linguistic experiments, as seen in Section \ref{sec:related}.
+
+\section{Discussion}
+\label{sec:discussion}
+
+This section discusses the principal outcomes of our study in relation to the research questions posed and provides a detailed examination of the findings, exploring their potential causes and effects within the context of computational linguistics and basic-level categorization theory.
+
+\subsection{Addressing the Research Questions}
+
+We structured our investigation around four key research questions. Here, we address each question based on the experimental results presented.
+
+\subsubsection{RQ1: a Multilingual Basicness Benchmark}
+Our first research question asked whether it is possible to construct a reliable benchmark dataset for multilingual basicness analysis. The results suggest that constructing such a benchmark is indeed feasible, although it presents notable challenges. We successfully curated a dataset of terms across four languages and gathered both human (gold standard) and LLM-generated (silver standard) basicness ratings on a 4-point scale. The annotation process itself revealed the complexity of the task: while overall percentage agreement among human annotators was high (around 95\%), standard chance-corrected agreement metrics like Cohen's Kappa were only moderate (average $\kappa \approx 0.29$). This discrepancy likely stems from the subjective nature of basicness judgments and the highly skewed distribution of ratings towards the \textit{basic-end} of the scale, a situation known to deflate Kappa scores. Furthermore, agreement levels varied across language groups, being particularly low among Spanish annotators, possibly reflecting greater dialectal or individual variation. Despite these measurement complexities, the systematic collection of ratings, combined with the identification of consistent patterns (e.g., high agreement on concrete objects) and meaningful disagreements (e.g., on cultural terms), demonstrates that a benchmark capturing the existence and consistency (or lack thereof) of basicness across languages can be developed. Our cross-linguistic annotation, involving native speakers rating terms pertinent to different languages, provides a valuable, new resource for future research in this area, moving beyond single-language studies. The benchmark's utility, however, depends on acknowledging and carefully interpreting the observed agreement patterns and sources of variation.
+
+\subsubsection{RQ2: Cross-Linguistic Variation in Basicness}
+The second research question explored whether basicness perception and lexical form vary across languages and cultures. Our findings support show that the cognitive function of a basic level might be widespread, its specific realization is significantly shaped by linguistic and cultural context. Evidence for this comes from several observations.
+
+Firstly, mean basicness ratings for specific terms clearly varied across languages in ways that align with cultural or environmental factors; notable examples include the higher basicness of ``\textit{ski}'' in Norwegian and ``\textit{monastery}'' in Spanish.
+
+Secondly, the internal consistency of basicness judgments differed between language groups, with Spanish annotators exhibiting lower agreement, perhaps pointing to more diverse conceptualizations within that linguistic community.
+
+Thirdly, the correlation analysis (discussed under RQ3) showed that the predictive power of certain linguistic features for basicness was not uniform across languages. For example, pronunciation complexity was a stronger negative predictor in Spanish and Norwegian than in English or Italian.
+
+Finally, the superior performance of our basicness prediction model when using language-specific feature weights compared to uniform weights confirms that the contribution of different linguistic properties to perceived basicness varies systematically between the Germanic (English, Norwegian) and Romance (Italian, Spanish) languages studied here, and likely between individual languages within those families.
+
+\subsubsection{RQ3: Quantifiable Predictors of Basicness}
+Our third question was aimed at identifying quantifiable linguistic features that robustly predict human basicness ratings and to determine if these predictors vary across languages. The correlation analysis (Section \ref{sec:basicness_features}) revealed a clear hierarchy of predictive features. Word frequency emerged as the strongest and most consistent positive predictor across all four languages ($\rho$ ranging from 0.395 to 0.604, $p < 0.001$), confirming longstanding---albeit, English-only---observations that more basic terms are used more often. Average word length showed a consistent negative correlation, particularly strong outside of English ($\rho \approx -0.4$, $p < 0.001$), supporting the idea that basic concepts tend to receive shorter labels (Zipf's law). Presence in resources for children and second language learners also showed consistent positive correlations, highlighting that terms considered fundamental for language acquisition are typically rated as basic.
+
+Other features showed more variable predictive power. Pronunciation complexity exhibited a significant negative correlation in Spanish and Norwegian, suggesting phonological ease is more strongly associated with basicness perception in these languages within our dataset. The number of hyponyms (more specific concepts) was positively correlated with basicness in Italian and Spanish, indicating that concepts acting as local superordinates within these WordNets tend to be rated higher. Features that were dependent on knowledge bases, such as the number of synonyms or the number of senses (polysemy), showed weaker and less consistent correlations with basicness ratings. The number of synonyms tended to be weakly negatively correlated. Polysemy measures yielded mixed results; this ambiguity may partly stem from the dual nature of high polysemy (indicating either wide applicability or semantic complexity), but it likely also reflects the inherent limitations and subjective choices embedded in the semantic resources used, such as the delineation and counting of senses within WordNet.
+
+Crucially, the optimal weights derived for our basicness score calculator (Table \ref{tab:feature_weights}) confirmed that the relative contribution of these features differs across languages. Thus, while some features like frequency and length appear universally relevant, a comprehensive computational account of basicness benefits from considering language-specific feature profiles.
+
+\subsubsection{RQ4: Alignment of Large Language Models with Human Basicness Intuition}
+The final research question asked how closely LLMs align with human intuition about basicness across languages. Our comparison between the silver standard (LLM ratings) and the gold standard (human ratings) suggests a partial but imperfect alignment. The LLMs demonstrated moderate inter-model agreement (e.g., Krippendorff's $\alpha = 0.300$, mean Spearman $\rho = 0.589$), indicating some shared representation of basicness-related properties. Furthermore, the aggregated LLM ratings showed significant positive correlations with aggregated human ratings for English and Italian, though notably less so for Norwegian and especially Spanish. This suggests LLMs capture some of the statistical regularities associated with basicness (likely related to frequency, typical contexts, etc.) present in their vast training data.
+
+However, several factors limit the extent of this alignment. The moderate agreement levels, both among LLMs and between LLMs and humans, indicate considerable divergence, particularly on finer-grained judgments. The lower alignment for Spanish might reflect both the higher variability in human Spanish ratings and potential limitations in the LLMs' training data or handling of Spanish linguistic diversity. More fundamentally, LLMs operate based on learned statistical patterns rather than grounded conceptual understanding or cultural experience. While they might reproduce patterns associated with culturally significant terms if those patterns are frequent in the training data, they likely lack the deeper world knowledge and cultural sensitivity that informs human judgments about basicness, especially for concepts whose salience is tied to specific cultural practices or environmental contexts not adequately represented in generic web text. Therefore, while LLMs can offer a faster way to generate preliminary basicness estimates, they do not fully replicate human intuition, particularly its culturally situated aspects, and should be used with awareness of their potential biases (e.g., towards dominant linguistic patterns in training data).
+
+\subsection{Further Remarks}
+
+Beyond addressing the specific research questions, our investigation yielded several important observations concerning the nature and computational treatment of basicness across languages.
+
+The finding that pronunciation complexity showed varying predictive strength across languages (stronger negative correlation in Spanish and Norwegian) is particularly interesting. It suggests that phonological ease might play a different role in shaping perceptions of basicness in these language communities, or perhaps that our specific measure better captures relevant complexity aspects in those languages' phonologies compared to English and Italian. This finding also highlights the potential utility of the open-source pronunciation complexity tool developed as part of this research. This tool, integrating multiple phonetic and phonotactic factors, offers a resource for other studies in psycholinguistics, second language acquisition research, or text simplification where quantifiable measures of articulatory difficulty are needed. Its contribution here demonstrates that moving beyond simple length to consider phonological form can provide additional explanatory power, although its effect appears language-dependent.
+
+Similarly, the positive correlation between the number of hyponyms and basicness found only in Italian and Spanish warrants further interpretation. It might reflect differences in the structure or granularity of the respective WordNets, or perhaps a tendency in these Romance languages (as represented in our data) for terms occupying a mid-level generalizing position within the knowledge base to be perceived as more basic. This contrasts with the expectation from some theories that basic terms might have many subordinates but fewer immediate hyponyms if they sit at a specific optimal level\footnote{To clarify this distinction: 'subordinates' refers to all the more specific concepts nested underneath a term anywhere in the hierarchy, while 'immediate hyponyms' are only those concepts directly one level below.}. The theoretical expectation, therefore, is that a basic term like 'dog' covers many specific breeds overall (subordinates), but might branch directly into fewer distinct types (immediate hyponyms) compared to a broader term like 'animal'.
+
+The weak and inconsistent performance of features measuring polysemy and synonymy suggests that simple counts of senses or synonyms are insufficient proxies for the aspects of conceptual breadth or specificity relevant to basicness. A word might be basic because its primary sense is fundamental, even if it has many obscure secondary senses. Conversely, a non-basic specialized term might have numerous synonyms within its technical domain. Capturing the relationship between structural features and basicness likely requires more sophisticated approaches, perhaps considering sense frequency distributions or the semantic distance between synonyms. Such features, however, are challenging to extract reliably from currently existing, often incomplete, knowledge bases.
+
+Our experiments with LLMs confirm they can approximate human basicness judgments moderately well by detecting statistical patterns associated with basicness (e.g., frequency, common collocations) in their training data. However, their failure to fully replicate human consensus, especially culturally-informed judgments, and the observed variability in alignment across languages underscore the gap between statistical pattern recognition and grounded, culturally-situated understanding.
+
+Finally, the performance of our computational model when using language-specific weights derived from empirical correlations and calibrated output thresholds demonstrates the value of data-informed modeling for subjective linguistic phenomena like basicness. It shows that while theoretical principles guide feature selection (like frequency or length), empirical tuning is crucial for capturing the specific ways these and other features manifest basicness within different linguistic systems. This iterative process of feature engineering, empirical validation, and model calibration appears necessary for developing computational accounts that genuinely reflect the complexities of human language use, especially across diverse cultural settings. The positive outcome supports the viability of computationally modeling basicness, provided the approach acknowledges and adapts to observed linguistic and cultural variations, moving beyond one-size-fits-all assumptions.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This study investigated how basicness can vary across four languages: English, Italian, Spanish, and Norwegian. We employed a computational analysis of linguistic features, gathered human basicness ratings from native speakers, and assessed the performance of Large Language Models to explore the cross-linguistic nature of basicness.
+
+Our findings indicate that developing a multilingual benchmark for basicness analysis is achievable, yet the process can be quite difficult due to the inherently subjective nature of the basic-level (RQ1): humans correctly perceive there exists a basic level, but often find difficult differentiating subtleties (e.g., mid-to-high basicness words from high basicness words). High raw agreement among annotators contrasted with moderate chance-corrected agreement scores, likely influenced by skewed rating distributions common in such tasks.
+
+The results challenge the notion of a strictly universal basic level, pointing instead to significant variation influenced by linguistic and cultural contexts (RQ2). This was apparent in the distinct basicness ratings assigned to culturally significant terms across languages and in the differing levels of agreement observed within annotator groups for each language.
+
+Analysis identified several quantifiable linguistic features predictive of human basicness ratings (RQ3). Word frequency, word length, and presence in language learning resources showed relatively consistent correlations across the languages studied. However, the predictive strength of features tied to semantic structures varied, suggesting language-specific influences. A computational model incorporating language-specific feature weights derived from these correlations proved more effective at reflecting human judgments than models using uniform weights.
+
+Regarding the alignment of Large Language Models with human intuition (RQ4), our experiments showed partial but existent convergence. LLMs captured certain statistical patterns associated with basicness, resulting in moderate agreement with human ratings, particularly for English and Italian. Yet, significant divergences remained, especially concerning culturally relevant terms and in languages exhibiting greater human rating variability, indicating that current LLMs do not fully replicate the culturally grounded aspects of human basicness perception, but could, given language-specific fine-tuning.
+
+These findings contribute to linguistic theory by providing empirical evidence for the relationship between cognitive tendencies and language-specific factors in basic-level categorization. The study also highlights the importance of considering language-specific properties when modeling conceptual prominence. The feature analyses, including the developed pronunciation complexity measure, and the annotated dataset serve as resources for future research. The results may also inform the development of culturally aware NLP applications and methods for evaluating language models.
+
+This research is constrained by its focus on four European languages and a specific set of nouns, as well as its reliance on existing WordNet structures. Future research could extend this work to a wider range of language families and typologies. Investigating additional linguistic features, refining annotation methodologies for graded judgments, and further analyzing the representations of basicness within language models present promising paths for future work.
+
+\section{Author contributions: CRediT}
+
+\begin{itemize}
+    \item \textbf{Federico Torrielli}: Methodology, Writing -- original draft, Writing -- review and editing, Software, Formal analysis
+    \item \textbf{Gianluca Barmina}: Software, Writing -- review and editing
+    \item \textbf{Amon Rapp}: Supervision, Writing -- review and editing
+    \item \textbf{Luigi Di Caro}: Conceptualization, Project administration, Funding acquisition, Writing -- review and editing
+\end{itemize}
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{bibliography}
+
+\end{document}
+
+\endinput
+%%
+%% End of file `elsarticle-template-harv.tex'.
+
+

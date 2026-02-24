@@ -366,7 +366,16 @@ def run_scoring() -> dict[str, pd.DataFrame]:
 # ---------------------------------------------------------------------------
 # Agreement evaluation
 # ---------------------------------------------------------------------------
+AGREEMENT_OUTPUT_DIR = os.path.join(PROJECT_ROOT, "results", "agreement_metrics")
+
+
 def run_agreements(scored: dict[str, pd.DataFrame] | None = None) -> None:
+    from src.analysis.agreements import (
+        calculate_feature_human_agreement,
+        export_feature_human_results,
+        export_feature_human_to_json,
+    )
+
     human_dfs = _load_human_annotations()
 
     if scored is None:
@@ -377,8 +386,24 @@ def run_agreements(scored: dict[str, pd.DataFrame] | None = None) -> None:
             scored[label] = pd.read_csv(path)
 
     print("\n=== Agreement evaluation ===")
+    all_feature_human_results: list[dict] = []
+
     for label, df in scored.items():
         _print_agreements(label, df, human_dfs)
+
+        # Collect per-language results for export
+        for lang, human_df in human_dfs.items():
+            result = calculate_feature_human_agreement(
+                df, human_df, f"{label}_{lang}", lang
+            )
+            all_feature_human_results.append(result)
+
+    # Export to Excel + JSON
+    os.makedirs(AGREEMENT_OUTPUT_DIR, exist_ok=True)
+    xlsx_path = os.path.join(AGREEMENT_OUTPUT_DIR, "feature_human_agreement.xlsx")
+    json_path = os.path.join(AGREEMENT_OUTPUT_DIR, "feature_human_agreement.json")
+    export_feature_human_results(all_feature_human_results, output_path=xlsx_path)
+    export_feature_human_to_json(all_feature_human_results, output_path=json_path)
 
 
 # ---------------------------------------------------------------------------

@@ -23,9 +23,9 @@ HUMAN_PATHS = [
 
 # Feature-based method paths
 FEATURE_BASED_PATHS = {
-    "correlation_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_correlation_weights_lang_syn.csv",
-    "uniform_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_uniform_weights_lang_syn.csv",
-    "literature_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_literature_weights_lang_syn.csv",
+    "correlation_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_S1_opt_correlation_lang_syn.csv",
+    "uniform_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_S2_opt_literature_lang_syn.csv",
+    "literature_weights": "src/classification/analysis/annotation_culture_gold_it_copy_omw_scored_S3_opt_uniform_lang_syn.csv",
 }
 
 
