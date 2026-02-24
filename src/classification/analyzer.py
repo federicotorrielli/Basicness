@@ -49,7 +49,6 @@ class OMWBasicnessAnalyzer:
             self.__basicness_weights = {
                 "word_frequency_weight": 3,
                 "word_length_weight": 1,
-                "pronounce_complexity_weight": 1,
                 "n_hyponyms_weight": 0.1,
                 "n_synonyms_weight": 0.1,
                 "n_senses_weight": 0.1,
@@ -102,9 +101,6 @@ class OMWBasicnessAnalyzer:
             weights = {
                 "word_frequency_weight": corr_df.loc["avg_word_frequency", lang],
                 "word_length_weight": corr_df.loc["avg_word_length", lang],
-                "pronounce_complexity_weight": corr_df.loc[
-                    "avg_pronounce_complexity", lang
-                ],
                 "n_hyponyms_weight": corr_df.loc["n_hyponyms", lang],
                 "n_synonyms_weight": corr_df.loc["n_synonyms", lang],
                 "n_senses_weight": corr_df.loc["avg_n_senses", lang],
@@ -138,7 +134,6 @@ class OMWBasicnessAnalyzer:
         # Between 0 and 3
         word_frequency_weight = weights["word_frequency_weight"]
         word_length_weight = weights["word_length_weight"]
-        pronounce_complexity_weight = weights["pronounce_complexity_weight"]
 
         # Between 0 and 1
         n_hyponyms_weight = weights["n_hyponyms_weight"]
@@ -152,7 +147,6 @@ class OMWBasicnessAnalyzer:
 
         normalized_frequency = row["normalized_frequency"]
         normalized_length = row["normalized_length"]
-        normalized_pronounce_complexity = row["normalized_pronounce_complexity"]
         normalized_n_hyponyms = row["normalized_n_hyponyms"]
         normalized_n_synonyms = row["normalized_n_synonyms"]
         normalized_n_senses = row["normalized_n_senses"]
@@ -166,11 +160,6 @@ class OMWBasicnessAnalyzer:
         #     (1 - normalized_length)
         #     if weights["word_length_weight"] < 0
         #     else normalized_length
-        # )
-        # pronounce_complexity_factor = (
-        #     (1 - normalized_pronounce_complexity)
-        #     if weights["pronounce_complexity_weight"] < 0
-        #     else normalized_pronounce_complexity
         # )
         # n_synonyms_factor = (
         #     (1 - normalized_n_synonyms)
@@ -201,9 +190,6 @@ class OMWBasicnessAnalyzer:
             * np.pow(
                 normalized_length, abs(word_length_weight)
             )  # changed from factor to normalized_length
-            * np.pow(
-                normalized_pronounce_complexity, abs(pronounce_complexity_weight)
-            )  # changed from factor to normalized_pronounce_complexity
         )
 
         # Also here changed from factors to result data directly, restoring original formula
@@ -249,7 +235,6 @@ class OMWBasicnessAnalyzer:
         # The sign of the weight handles the direction of influence.
         norm_freq = row["normalized_frequency"]
         norm_len = row["normalized_length"]
-        norm_pron_comp = row["normalized_pronounce_complexity"]
         norm_hypo = row["normalized_n_hyponyms"]
         norm_syn = row["normalized_n_synonyms"]
         norm_senses = row["normalized_n_senses"]
@@ -271,8 +256,6 @@ class OMWBasicnessAnalyzer:
         raw_score = (
             weights["word_frequency_weight"] * norm_freq
             + weights["word_length_weight"] * norm_len  # Weight sign determines effect
-            + weights["pronounce_complexity_weight"]
-            * norm_pron_comp  # Weight sign determines effect
             + weights["n_hyponyms_weight"] * norm_hypo
             + weights["n_synonyms_weight"] * norm_syn
             + weights["n_senses_weight"] * norm_senses
@@ -313,7 +296,6 @@ class OMWBasicnessAnalyzer:
             .agg(
                 avg_word_length=("word_length", "mean"),
                 avg_word_frequency=("word_frequency", "mean"),
-                avg_pronounce_complexity=("pronounce_complexity", "mean"),
                 n_hyponyms=("n_hyponyms", "max"),
                 n_synonyms=("n_synonyms", "max"),
                 avg_n_senses=("n_senses", "mean"),
@@ -332,8 +314,6 @@ class OMWBasicnessAnalyzer:
                 max_word_length=("avg_word_length", "max"),
                 min_word_frequency=("avg_word_frequency", "min"),
                 max_word_frequency=("avg_word_frequency", "max"),
-                min_pronounce_complexity=("avg_pronounce_complexity", "min"),
-                max_pronounce_complexity=("avg_pronounce_complexity", "max"),
                 min_n_hyponyms=("n_hyponyms", "min"),
                 max_n_hyponyms=("n_hyponyms", "max"),
                 min_n_synonyms=("n_synonyms", "min"),
@@ -364,10 +344,6 @@ class OMWBasicnessAnalyzer:
             - normalized["min_word_frequency"]
             + norm_freq_denom
         )
-
-        normalized["normalized_pronounce_complexity"] = normalized[
-            "avg_pronounce_complexity"
-        ]
 
         normalized["normalized_n_hyponyms"] = (
             normalized["n_hyponyms"] - normalized["min_n_hyponyms"]
@@ -514,11 +490,9 @@ class OMWBasicnessAnalyzer:
                 "n_synonyms",
                 "n_syn_senses",
                 "avg_word_length",
-                "avg_pronounce_complexity",
                 "avg_word_frequency",
                 "avg_n_senses",
                 "normalized_length",
-                "normalized_pronounce_complexity",
                 "normalized_n_senses",
                 "normalized_frequency",
                 "normalized_n_hyponyms",

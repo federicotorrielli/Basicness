@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "ipykernel>=7.2.0",
     "krippendorff>=0.8.2",
     "matplotlib>=3.10.8",
     "numpy>=2.4.2",
@@ -12,7 +13,6 @@ dependencies = [
     "pandas>=3.0.1",
     "pandasql>=0.7.3",
     "pingouin>=0.6.0",
-    "pron-difficulty>=0.2.0",
     "scikit-learn>=1.8.0",
     "scipy>=1.17.1",
     "seaborn>=0.13.2",

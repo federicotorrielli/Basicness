@@ -4,17 +4,17 @@
     "language": "it",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": -0.09006928406466508,
-      "percent_agreement": 0.3375,
+      "cohen_kappa": 0.28301886792452835,
+      "percent_agreement": 0.5375,
       "binary_agreement": 0.8375,
-      "mse": 0.8875
+      "mse": 0.5
     },
     "by_language": {
       "it": {
-        "cohen_kappa": -0.09006928406466508,
-        "percent_agreement": 0.3375,
+        "cohen_kappa": 0.28301886792452835,
+        "percent_agreement": 0.5375,
         "binary_agreement": 0.8375,
-        "mse": 0.8875,
+        "mse": 0.5,
         "common_items": 80
       }
     }
@@ -24,17 +24,17 @@
     "language": "it",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.0,
-      "percent_agreement": 0.3875,
-      "binary_agreement": 0.8375,
-      "mse": 1.1
+      "cohen_kappa": 0.21036397285626152,
+      "percent_agreement": 0.375,
+      "binary_agreement": 0.6,
+      "mse": 1.15
     },
     "by_language": {
       "it": {
-        "cohen_kappa": 0.0,
-        "percent_agreement": 0.3875,
-        "binary_agreement": 0.8375,
-        "mse": 1.1,
+        "cohen_kappa": 0.21036397285626152,
+        "percent_agreement": 0.375,
+        "binary_agreement": 0.6,
+        "mse": 1.15,
         "common_items": 80
       }
     }
@@ -44,17 +44,17 @@
     "language": "it",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": -0.024685607824872058,
+      "cohen_kappa": 0.20819112627986347,
       "percent_agreement": 0.375,
-      "binary_agreement": 0.8375,
-      "mse": 0.8125
+      "binary_agreement": 0.625,
+      "mse": 0.925
     },
     "by_language": {
       "it": {
-        "cohen_kappa": -0.024685607824872058,
+        "cohen_kappa": 0.20819112627986347,
         "percent_agreement": 0.375,
-        "binary_agreement": 0.8375,
-        "mse": 0.8125,
+        "binary_agreement": 0.625,
+        "mse": 0.925,
         "common_items": 80
       }
     }
@@ -64,17 +64,17 @@
     "language": "nb",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": -0.05839416058394176,
-      "percent_agreement": 0.425,
+      "cohen_kappa": 0.27175843694493784,
+      "percent_agreement": 0.55,
       "binary_agreement": 0.85,
-      "mse": 1.05
+      "mse": 0.6375
     },
     "by_language": {
       "nb": {
-        "cohen_kappa": -0.05839416058394176,
-        "percent_agreement": 0.425,
+        "cohen_kappa": 0.27175843694493784,
+        "percent_agreement": 0.55,
         "binary_agreement": 0.85,
-        "mse": 1.05,
+        "mse": 0.6375,
         "common_items": 80
       }
     }
@@ -84,17 +84,17 @@
     "language": "nb",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.0,
-      "percent_agreement": 0.45,
-      "binary_agreement": 0.85,
-      "mse": 1.125
+      "cohen_kappa": 0.20612813370473537,
+      "percent_agreement": 0.4,
+      "binary_agreement": 0.725,
+      "mse": 0.9375
     },
     "by_language": {
       "nb": {
-        "cohen_kappa": 0.0,
-        "percent_agreement": 0.45,
-        "binary_agreement": 0.85,
-        "mse": 1.125,
+        "cohen_kappa": 0.20612813370473537,
+        "percent_agreement": 0.4,
+        "binary_agreement": 0.725,
+        "mse": 0.9375,
         "common_items": 80
       }
     }
@@ -104,17 +104,17 @@
     "language": "nb",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.02877697841726612,
-      "percent_agreement": 0.45,
+      "cohen_kappa": 0.3877551020408163,
+      "percent_agreement": 0.5375,
       "binary_agreement": 0.85,
-      "mse": 0.95
+      "mse": 0.5375
     },
     "by_language": {
       "nb": {
-        "cohen_kappa": 0.02877697841726612,
-        "percent_agreement": 0.45,
+        "cohen_kappa": 0.3877551020408163,
+        "percent_agreement": 0.5375,
         "binary_agreement": 0.85,
-        "mse": 0.95,
+        "mse": 0.5375,
         "common_items": 80
       }
     }
@@ -124,17 +124,17 @@
     "language": "en",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.10773611770289504,
-      "percent_agreement": 0.475,
+      "cohen_kappa": 0.39736346516007537,
+      "percent_agreement": 0.625,
       "binary_agreement": 0.85,
-      "mse": 0.7375
+      "mse": 0.45
     },
     "by_language": {
       "en": {
-        "cohen_kappa": 0.10773611770289504,
-        "percent_agreement": 0.475,
+        "cohen_kappa": 0.39736346516007537,
+        "percent_agreement": 0.625,
         "binary_agreement": 0.85,
-        "mse": 0.7375,
+        "mse": 0.45,
         "common_items": 80
       }
     }
@@ -144,17 +144,17 @@
     "language": "en",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.0,
-      "percent_agreement": 0.5125,
-      "binary_agreement": 0.85,
-      "mse": 1.0
+      "cohen_kappa": 0.11376649240726922,
+      "percent_agreement": 0.2,
+      "binary_agreement": 0.45,
+      "mse": 1.7625
     },
     "by_language": {
       "en": {
-        "cohen_kappa": 0.0,
-        "percent_agreement": 0.5125,
-        "binary_agreement": 0.85,
-        "mse": 1.0,
+        "cohen_kappa": 0.11376649240726922,
+        "percent_agreement": 0.2,
+        "binary_agreement": 0.45,
+        "mse": 1.7625,
         "common_items": 80
       }
     }
@@ -164,17 +164,17 @@
     "language": "en",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.11026975863700905,
-      "percent_agreement": 0.475,
-      "binary_agreement": 0.85,
-      "mse": 0.7375
+      "cohen_kappa": 0.26332794830371564,
+      "percent_agreement": 0.4125,
+      "binary_agreement": 0.625,
+      "mse": 0.9625
     },
     "by_language": {
       "en": {
-        "cohen_kappa": 0.11026975863700905,
-        "percent_agreement": 0.475,
-        "binary_agreement": 0.85,
-        "mse": 0.7375,
+        "cohen_kappa": 0.26332794830371564,
+        "percent_agreement": 0.4125,
+        "binary_agreement": 0.625,
+        "mse": 0.9625,
         "common_items": 80
       }
     }
@@ -184,17 +184,17 @@
     "language": "es",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": -0.05121293800539095,
-      "percent_agreement": 0.525,
-      "binary_agreement": 0.975,
-      "mse": 0.5125
+      "cohen_kappa": 0.050000000000000044,
+      "percent_agreement": 0.2875,
+      "binary_agreement": 0.95,
+      "mse": 0.7125
     },
     "by_language": {
       "es": {
-        "cohen_kappa": -0.05121293800539095,
-        "percent_agreement": 0.525,
-        "binary_agreement": 0.975,
-        "mse": 0.5125,
+        "cohen_kappa": 0.050000000000000044,
+        "percent_agreement": 0.2875,
+        "binary_agreement": 0.95,
+        "mse": 0.7125,
         "common_items": 80
       }
     }
@@ -204,17 +204,17 @@
     "language": "es",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": 0.0,
-      "percent_agreement": 0.85,
-      "binary_agreement": 0.975,
-      "mse": 0.225
+      "cohen_kappa": 0.025406080799666886,
+      "percent_agreement": 0.0875,
+      "binary_agreement": 0.4125,
+      "mse": 2.6125
     },
     "by_language": {
       "es": {
-        "cohen_kappa": 0.0,
-        "percent_agreement": 0.85,
-        "binary_agreement": 0.975,
-        "mse": 0.225,
+        "cohen_kappa": 0.025406080799666886,
+        "percent_agreement": 0.0875,
+        "binary_agreement": 0.4125,
+        "mse": 2.6125,
         "common_items": 80
       }
     }
@@ -224,17 +224,17 @@
     "language": "es",
     "common_items": 80,
     "overall": {
-      "cohen_kappa": -0.0714285714285714,
-      "percent_agreement": 0.5625,
-      "binary_agreement": 0.975,
-      "mse": 0.475
+      "cohen_kappa": 0.03991370010787476,
+      "percent_agreement": 0.2,
+      "binary_agreement": 0.625,
+      "mse": 1.7375
     },
     "by_language": {
       "es": {
-        "cohen_kappa": -0.0714285714285714,
-        "percent_agreement": 0.5625,
-        "binary_agreement": 0.975,
-        "mse": 0.475,
+        "cohen_kappa": 0.03991370010787476,
+        "percent_agreement": 0.2,
+        "binary_agreement": 0.625,
+        "mse": 1.7375,
         "common_items": 80
       }
     }

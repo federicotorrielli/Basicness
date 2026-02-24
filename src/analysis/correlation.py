@@ -34,7 +34,6 @@ def calculate_correlations(filter_by_relevant_lang=True):
     feature_cols = [
         "avg_word_length",
         "avg_word_frequency",
-        "avg_pronounce_complexity",
         "n_hyponyms",
         "n_synonyms",
         "avg_n_senses",
@@ -206,11 +205,8 @@ def calculate_correlations(filter_by_relevant_lang=True):
 
         # Create heatmap of Spearman correlations - adjust figure size for content
         # Dynamically calculate width based on number of features
-        width = max(14, len(feature_cols) * 1.2)
+        width = max(10, len(feature_cols) * 1.4)
         plt.figure(figsize=(width, 8))
-
-        # Use figure's full width by adjusting subplot parameters
-        plt.subplots_adjust(right=0.95)  # Extend plot area closer to right edge
 
         # Prepare data for heatmap and annotations
         heatmap_data = []
@@ -318,30 +314,28 @@ def calculate_correlations(filter_by_relevant_lang=True):
                 ):
                     p_val_from_file = p_values_df.loc[feature, lang_lower]
                     if pd.notna(p_val_from_file):
-                        # Determine significance level and corresponding colors/text
+                        # Determine significance level and corresponding color/text
+                        # Use green shades only — darker = more significant
                         if p_val_from_file < 0.001:
                             sig_text = "p<0.001"
-                            pos_color = "darkgreen"
-                            neg_color = "darkred"
+                            sig_color = "darkgreen"
                         elif p_val_from_file < 0.01:
                             sig_text = "p<0.01"
-                            pos_color = "forestgreen"
-                            neg_color = "firebrick"
+                            sig_color = "forestgreen"
                         elif p_val_from_file < 0.05:
                             sig_text = "p<0.05"
-                            pos_color = "mediumseagreen"
-                            neg_color = "indianred"
+                            sig_color = "mediumseagreen"
                         else:
                             sig_text = ""
-                            pos_color = neg_color = None
+                            sig_color = None
 
                         if sig_text:  # Only create pill if significant
                             if corr > 0:
                                 arrow = "↑"
-                                pill_color = pos_color
+                                pill_color = sig_color
                             elif corr < 0:
                                 arrow = "↓"
-                                pill_color = neg_color
+                                pill_color = sig_color
                             else:
                                 arrow = ""
                                 pill_color = None
@@ -388,7 +382,7 @@ def calculate_correlations(filter_by_relevant_lang=True):
 
         # Save figure
         output_path = os.path.join(output_dir, "feature_basicness_correlations.png")
-        plt.savefig(output_path)
+        plt.savefig(output_path, bbox_inches="tight")
         plt.close()
 
         print(f"\nHeatmap saved to {output_path}")

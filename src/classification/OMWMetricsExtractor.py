@@ -5,17 +5,15 @@ Author: Gianluca Barmina
 import os
 from collections import defaultdict
 from datetime import datetime
-from typing import Iterable, Union, List
-from pron_difficulty import PronDifficulty
+from typing import Iterable, List, Union
 
 import pandas as pd
 import ujson as json
 import wn
-
+from utils import get_lemma_freq, get_path_from_root
+from utils_omw import get_omw_synsets, synsets_empty
 from wn import Synset
 
-from utils_omw import get_omw_synsets, synsets_empty
-from utils import get_path_from_root, get_lemma_freq
 
 class OMWMetricsExtractor:
     def __init__(self):
@@ -23,50 +21,45 @@ class OMWMetricsExtractor:
         self.__n_lemmas_lang_dict = {}
         self.__num_synsets = 0
         self.extraction_settings = {}
-        self.pronounce_complexity_evaluator = PronDifficulty()
 
-        with open(get_path_from_root("resources/preprocessed_stories_dict.json"), "r") as f:
+        with open(
+            get_path_from_root("resources/preprocessed_stories_dict.json"), "r"
+        ) as f:
             self.__children_stories_dict = json.load(f)
 
-        with open(get_path_from_root("resources/second_language_learning_dict.json"), "r") as f:
+        with open(
+            get_path_from_root("resources/second_language_learning_dict.json"), "r"
+        ) as f:
             self.__second_language_learn_dict = json.load(f)
 
         # create the folder results/omw if it does not exist
         os.makedirs(get_path_from_root("results/omw"), exist_ok=True)
-
-
-    def __calculate_pronounce_complexity(self, word: str, lang: str):
-        # Evaluate a word's pronunciation difficulty (returns a score from 0 to 1)
-        difficulty = self.pronounce_complexity_evaluator.evaluate(word, language=lang)
-
-        return difficulty
-
 
     def __extract_lemma_info(self, lemma: str, lang: str):
         """
         Extract the info for a word in a given language
         :param lemma: Lemma for which to extract info
         :param lang: Language of the lemma
-        :return: Dictionary with the info: word_length, word_frequency, pronounce_complexity
+        :return: Dictionary with the info: word_length, word_frequency
         """
         metrics = {}
         metrics["word_length"] = len(lemma)
 
         metrics["word_frequency"] = get_lemma_freq(lemma, lang)
-        # Uncomment the following line to calculate the pronounce complexity, excluded because of cost-benefit imbalance
-        metrics["pronounce_complexity"] = self.__calculate_pronounce_complexity(lemma, lang)
 
-        metrics["word_in_children_res"] = 1 if lemma in self.__children_stories_dict[lang] else 0
-        metrics["word_in_second_lang_learn_res"] = 1 if lemma in self.__second_language_learn_dict[lang] else 0
-        metrics["n_senses"] = len(wn.senses(lemma, pos='n', lang=lang))
+        metrics["word_in_children_res"] = (
+            1 if lemma in self.__children_stories_dict[lang] else 0
+        )
+        metrics["word_in_second_lang_learn_res"] = (
+            1 if lemma in self.__second_language_learn_dict[lang] else 0
+        )
+        metrics["n_senses"] = len(wn.senses(lemma, pos="n", lang=lang))
 
         return metrics
 
-    def __extract_synset_info(self,
-                              synset: Synset,
-                              lemmas: List[str],
-                              lang: str,
-                              max_lemmas: int = 10):
+    def __extract_synset_info(
+        self, synset: Synset, lemmas: List[str], lang: str, max_lemmas: int = 10
+    ):
         """
         Extract info for a language subset (lemmas of a given language) of a given synset
         and add them to the result dictionary.
@@ -84,30 +77,42 @@ class OMWMetricsExtractor:
         # Consider only the first max_lemmas
         if len(lemmas) > max_lemmas:
             # Sort the lemmas by frequency
-            lemmas = sorted(lemmas, key=lambda x: get_lemma_freq(x, lang), reverse=True) # TODO is this ok?
+            lemmas = sorted(
+                lemmas, key=lambda x: get_lemma_freq(x, lang), reverse=True
+            )  # TODO is this ok?
             lemmas = lemmas[:max_lemmas]
 
         # Get the definition of the synset and add it to the result dictionary
         definition = synset.definition()
         if definition is None:
             definition = "nd"
-        self.__result_dict.setdefault(lang_lower, {}).setdefault(synset_str, {}).setdefault("definition", definition)
+        self.__result_dict.setdefault(lang_lower, {}).setdefault(
+            synset_str, {}
+        ).setdefault("definition", definition)
 
         # Get the number of hyponyms of the synset, filtering out the inferred ones as no other information is available
         filtered_hyponyms = [h for h in synset.hyponyms() if "*INFERRED*" not in h.id]
         n_hyponyms = len(filtered_hyponyms)
 
         # Get the number of synonyms of the synset
-        n_synonyms = len(synset.lemmas()) # in this case only valid lemmas are considered. Use len(synset.lemmas()) to consider all lemmas
+        n_synonyms = len(
+            synset.lemmas()
+        )  # in this case only valid lemmas are considered. Use len(synset.lemmas()) to consider all lemmas
 
         # Get the total number of senses for all the synset lemmas
         n_syn_senses = 0
         for lemma in synset.lemmas():
-            n_syn_senses += len(wn.senses(lemma, pos='n', lang=lang))
+            n_syn_senses += len(wn.senses(lemma, pos="n", lang=lang))
 
-        self.__result_dict.setdefault(lang_lower, {}).setdefault(synset_str, {}).setdefault("n_hyponyms", n_hyponyms)
-        self.__result_dict.setdefault(lang_lower, {}).setdefault(synset_str, {}).setdefault("n_synonyms", n_synonyms)
-        self.__result_dict.setdefault(lang_lower, {}).setdefault(synset_str, {}).setdefault("n_syn_senses", n_syn_senses)
+        self.__result_dict.setdefault(lang_lower, {}).setdefault(
+            synset_str, {}
+        ).setdefault("n_hyponyms", n_hyponyms)
+        self.__result_dict.setdefault(lang_lower, {}).setdefault(
+            synset_str, {}
+        ).setdefault("n_synonyms", n_synonyms)
+        self.__result_dict.setdefault(lang_lower, {}).setdefault(
+            synset_str, {}
+        ).setdefault("n_syn_senses", n_syn_senses)
 
         # TODO (1) eventually finish integrating all lemmas in the dataframe for the "lang_lemmas" column (synonyms).
         #  Now using the pandaSQL query it outputs only a part of them
@@ -134,30 +139,38 @@ class OMWMetricsExtractor:
             metrics = self.__extract_lemma_info(lemma_str, lang_lower)
 
             self.__n_lemmas_lang_dict[lang_lower] += 1
-            self.__result_dict.setdefault(lang_lower, {}).setdefault(synset_str, {}).setdefault("ili", synset.ili.id)
-            self.__result_dict.setdefault(lang_lower, {}).setdefault(synset_str, {}).setdefault(lemma_str, {})
+            self.__result_dict.setdefault(lang_lower, {}).setdefault(
+                synset_str, {}
+            ).setdefault("ili", synset.ili.id)
+            self.__result_dict.setdefault(lang_lower, {}).setdefault(
+                synset_str, {}
+            ).setdefault(lemma_str, {})
             for key, value in metrics.items():
                 self.__result_dict[lang_lower][synset_str][lemma_str][key] = value
 
         if len(self.__result_dict[lang_lower]) == 0:
-            print(f"Warning: no lemmas matching the set conditions for synset {synset_str} in language {lang_lower}")
+            print(
+                f"Warning: no lemmas matching the set conditions for synset {synset_str} in language {lang_lower}"
+            )
 
-    def extract(self,
-                input: Union[Iterable[Synset], Synset, str, Iterable[str], pd.DataFrame],
-                languages: Iterable[str] = ("en", "it", "en", "nb"),
-                max_lemmas: int = 10,
-                filter_zero_freq: bool = False,
-                freq_threshold: float = 0.0,
-                verbose: bool = False,
-                reset_data: bool = True,
-                json_path: str = None,
-                csv_path: str = None,
-                use_ili_list: bool = False) -> dict:
+    def extract(
+        self,
+        input: Union[Iterable[Synset], Synset, str, Iterable[str], pd.DataFrame],
+        languages: Iterable[str] = ("en", "it", "en", "nb"),
+        max_lemmas: int = 10,
+        filter_zero_freq: bool = False,
+        freq_threshold: float = 0.0,
+        verbose: bool = False,
+        reset_data: bool = True,
+        json_path: str = None,
+        csv_path: str = None,
+        use_ili_list: bool = False,
+    ) -> dict:
         """
         For each synset retrieved, if it has lemmas in all the specified languages
         and all the eventual filtering condition are met, extract info for it and its lemmas.
         For each language each synset is specified with the following info: n_hyponyms, n_synonyms.
-        For each synset each lemma is specified with the following info: word_length, word_frequency, pronounce_complexity
+        For each synset each lemma is specified with the following info: word_length, word_frequency
         :param input: If str or Iterable[str], these are used as word or list of words to retrieve related synsets
         from Open Multilingual Wordnet (OMW) resources.
         If Synset or Iterable[Synset], these are used as starting synsets from which corresponding synsets
@@ -178,20 +191,31 @@ class OMWMetricsExtractor:
             self.__reset_data()
 
         # Handle the input according to its type getting synsets
-        lang_syn_dict, syn_lemmas_dict = get_omw_synsets(input, langs=list(languages), poses=['n'],
-                                                         use_ili=True, match_exact_ili=True,
-                                                         filter_zero_freq=filter_zero_freq,
-                                                         freq_threshold=freq_threshold,
-                                                         use_ili_list=use_ili_list)
+        lang_syn_dict, syn_lemmas_dict = get_omw_synsets(
+            input,
+            langs=list(languages),
+            poses=["n"],
+            use_ili=True,
+            match_exact_ili=True,
+            filter_zero_freq=filter_zero_freq,
+            freq_threshold=freq_threshold,
+            use_ili_list=use_ili_list,
+        )
 
         if synsets_empty(lang_syn_dict):
             print("No synsets found for the given input")
             return self.__result_dict
 
         # Populate the extraction settings
-        self.populate_extraction_settings(input, languages,
-                                          max_lemmas, filter_zero_freq, freq_threshold, verbose,
-                                          reset_data)
+        self.populate_extraction_settings(
+            input,
+            languages,
+            max_lemmas,
+            filter_zero_freq,
+            freq_threshold,
+            verbose,
+            reset_data,
+        )
 
         for lang, synsets in lang_syn_dict.items():
             for synset in synsets:
@@ -249,10 +273,16 @@ class OMWMetricsExtractor:
                 # Skip first elements of synset_info as they are the definition, ili, n_hyponyms and n_synonyms
                 n_to_skip = 5
                 for lemma, metrics in list(synset_info.items())[n_to_skip:]:
-                    row = {"Language": language, "Synset": synset, "ili": ili, "Gloss": gloss,
-                           "Lemma": lemma, "n_hyponyms": n_hyponyms, "n_synonyms": n_synonyms,
-                           "n_syn_senses": n_syn_senses
-                           }
+                    row = {
+                        "Language": language,
+                        "Synset": synset,
+                        "ili": ili,
+                        "Gloss": gloss,
+                        "Lemma": lemma,
+                        "n_hyponyms": n_hyponyms,
+                        "n_synonyms": n_synonyms,
+                        "n_syn_senses": n_syn_senses,
+                    }
                     # row.update(synonyms_dict)
                     row.update(metrics)
                     data.append(row)
@@ -266,12 +296,20 @@ class OMWMetricsExtractor:
         self.extraction_settings = {}
 
     def __print_verbose(self):
-        print(f"|----| Extraction results |----|")
+        print("|----| Extraction results |----|")
         print("Number of valid synsets: ", self.__num_synsets)
         print("Number of valid lemmas per language: ", self.__n_lemmas_lang_dict)
 
-    def populate_extraction_settings(self, input, languages, max_lemmas,
-                                     filter_zero_freq, freq_threshold, verbose, reset_data):
+    def populate_extraction_settings(
+        self,
+        input,
+        languages,
+        max_lemmas,
+        filter_zero_freq,
+        freq_threshold,
+        verbose,
+        reset_data,
+    ):
         """
         Populate the extraction settings dictionary with the provided parameters
         """
@@ -290,7 +328,7 @@ class OMWMetricsExtractor:
         settings = {
             "datetime": str(datetime.now()),
             "num_synsets": self.__num_synsets,
-            "num_lemmas_for_lang": self.__n_lemmas_lang_dict
+            "num_lemmas_for_lang": self.__n_lemmas_lang_dict,
         }
         settings.update(self.extraction_settings)
 
@@ -315,11 +353,12 @@ class OMWMetricsExtractor:
         df = self.__convert_to_df()
 
         # Convert "nd" strings to None for proper None handling in 'Gloss' column
-        df['Gloss'].replace({'nd'}, None, inplace=True)
+        df["Gloss"].replace({"nd"}, None, inplace=True)
 
         # Sort by 'Gloss' so that non-None Gloss rows come before None ones, then drop duplicates by 'Lemma' and 'Language'
-        deduplicated_data_with_headers = df.sort_values(by='Gloss', na_position='last').drop_duplicates(
-            subset=['Lemma', 'Language', 'ili'], keep='first')
+        deduplicated_data_with_headers = df.sort_values(
+            by="Gloss", na_position="last"
+        ).drop_duplicates(subset=["Lemma", "Language", "ili"], keep="first")
 
         return deduplicated_data_with_headers
 
@@ -332,35 +371,32 @@ class OMWMetricsExtractor:
         result_dict = defaultdict(lambda: defaultdict(dict))
 
         for _, row in deduplicated_df.iterrows():
-            language = row['Language']
-            synset = row['Synset']
-            gloss = row['Gloss']
-            ili = row['ili']
-            n_hyponyms = row['n_hyponyms']
-            n_synonyms = row['n_synonyms']
-            n_syn_senses = row['n_syn_senses']
-            lemma = row['Lemma']
+            language = row["Language"]
+            synset = row["Synset"]
+            gloss = row["Gloss"]
+            ili = row["ili"]
+            n_hyponyms = row["n_hyponyms"]
+            n_synonyms = row["n_synonyms"]
+            n_syn_senses = row["n_syn_senses"]
+            lemma = row["Lemma"]
             # TODO (1)
 
             # Add the main structure for the synset
-            if 'definition' not in result_dict[language][synset]:
-                result_dict[language][synset]['definition'] = gloss
-                result_dict[language][synset]['ili'] = ili
-                result_dict[language][synset]['n_hyponyms'] = n_hyponyms
-                result_dict[language][synset]['n_synonyms'] = n_synonyms
-                result_dict[language][synset]['n_syn_senses'] = n_syn_senses
+            if "definition" not in result_dict[language][synset]:
+                result_dict[language][synset]["definition"] = gloss
+                result_dict[language][synset]["ili"] = ili
+                result_dict[language][synset]["n_hyponyms"] = n_hyponyms
+                result_dict[language][synset]["n_synonyms"] = n_synonyms
+                result_dict[language][synset]["n_syn_senses"] = n_syn_senses
 
             # Add lemma metrics
             result_dict[language][synset][lemma] = {
-                'word_length': row['word_length'],
-                'word_frequency': row['word_frequency'],
-                'pronounce_complexity': row['pronounce_complexity'],
-                'word_in_children_res': row['word_in_children_res'],
-                'word_in_second_lang_learn_res': row['word_in_second_lang_learn_res'],
-                'n_senses': row['n_senses']
+                "word_length": row["word_length"],
+                "word_frequency": row["word_frequency"],
+                "word_in_children_res": row["word_in_children_res"],
+                "word_in_second_lang_learn_res": row["word_in_second_lang_learn_res"],
+                "n_senses": row["n_senses"],
                 # Add other metrics as needed
             }
 
         self.__result_dict = result_dict
-
-
