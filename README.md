@@ -11,7 +11,8 @@ This repository contains code and data for analyzing agreement between human and
 ## Setup
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/federicotorrielli/Basicness
+uv sync
 ```
 
 ## Usage
